@@ -3,6 +3,7 @@ import Image from "next/image";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import SaveIcon from "@mui/icons-material/Save";
+import BuyButton from "@/component/buy-button/page";
 
 export default function WhyGeregePassport() {
   return (
@@ -17,12 +18,12 @@ export default function WhyGeregePassport() {
       <Image
         alt=""
         src="/image/QR.png"
-        width={500}
-        height={500}
-        className="w-[520px] h-[620px] absolute z-10 top-[10%] right-[4%]"
+        width={450}
+        height={450}
+        className="w-[500px] h-[600px] absolute z-10 top-[10%] right-[30px]"
       />
       <div className="w-full h-1/2 bg-gray-100 pt-[5%]">
-        <div className="w-[730px] h-[170px] ml-[10%] flex flex-col justify-between">
+        <div className="w-[730px] h-[170px] ml-[7%] flex flex-col justify-between">
           <div className="w-full h-[84px] flex flex-col gap-2">
             <div className="text-[28px] text-gray-800 font-bold">
               Why Choose Gerege Tours Passport
@@ -32,12 +33,12 @@ export default function WhyGeregePassport() {
               performances and more
             </div>
           </div>
-          <button className="w-[220px] h-[54px] bg-[#0087FF] text-white">
-            Buy now for 55$
-          </button>
+          <div>
+            <BuyButton width={220} height={45} />
+          </div>
         </div>
       </div>
-      <div className="w-full h-1/2 bg-[#034EA2] flex items-center pl-[10%]">
+      <div className="w-full h-1/2 bg-[#034EA2] flex items-center pl-[7%]">
         <div className="w-[760px] h-fit flex flex-col justify-between gap-4">
           <div className="flex items-center justify-center">
             <div className="w-[50px] h-[50px] rounded-full bg-white flex items-center justify-center">

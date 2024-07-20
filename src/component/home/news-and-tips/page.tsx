@@ -66,7 +66,7 @@ export default function NewsAndTips() {
   return (
     <div
       id="news-and-tips"
-      className="w-full h-[450px] mb-[60px] flex flex-col justify-between"
+      className="w-full h-[450px] mb-[80px] flex flex-col justify-between"
     >
       <div className="w-fit h-fit flex flex-col gap-2 items-center justify-between m-auto">
         <div className="text-gray-800 text-[26px] font-bold">NEWS AND TIPS</div>
@@ -76,18 +76,18 @@ export default function NewsAndTips() {
       </div>
       <div className="w-full relative">
         <div
-          className="w-[36px] h-[36px] border rounded-full flex items-center justify-center cursor-pointer absolute left-[3%] top-[45%]"
+          className="w-[32px] h-[32px] border rounded-full flex items-center justify-center cursor-pointer absolute left-[3%] top-[45%]"
           onClick={handlePrevious}
         >
           <KeyboardArrowLeft />
         </div>
 
-        <div className="w-full max-w-screen-xl mx-auto">
-          <div className="absolute right-[1%] z-10 w-[400px] h-[315px] bg-gradient-to-r from-white/0 to-white"></div>
+        <div className="w-[1220px] mx-auto">
+          <div className="absolute right-[1%] z-10 w-[400px] h-[310px] bg-gradient-to-r from-white/0 to-white"></div>
           <Slider ref={sliderRef} {...settings}>
             {cardList.map((card) => (
               <div key={card.id}>
-                <div className="w-[305px] h-[315px] flex flex-col items-center justify-between ">
+                <div className="w-[285px] h-[310px] flex flex-col items-center justify-between">
                   <Image
                     alt={card.title}
                     src={card.imageUrl}
@@ -115,7 +115,7 @@ export default function NewsAndTips() {
           </Slider>
         </div>
         <div
-          className="w-[36px] h-[36px] border rounded-full flex items-center justify-center cursor-pointer absolute right-[3%] top-[45%] z-20"
+          className="w-[32px] h-[32px] border rounded-full flex items-center justify-center cursor-pointer absolute right-[3%] top-[45%] z-20"
           onClick={handleNext}
         >
           <KeyboardArrowRight />

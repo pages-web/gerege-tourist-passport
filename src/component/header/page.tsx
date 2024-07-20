@@ -1,15 +1,15 @@
 "use client";
-
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import Link from "next/link";
 import SearchIcon from "@mui/icons-material/Search";
+import BuyButton from "../buy-button/page";
 
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "#about" },
-  { name: "Gerege Benefit", href: "#benefit" },
+  { name: "Gerege Benefit", href: "/gerege-benefits" },
   { name: "Store Information", href: "#store-info" },
   { name: "News And Tips", href: "#news-and-tips" },
   { name: "FAQ", href: "#faq" },
@@ -18,6 +18,7 @@ const navItems = [
 export default function Header() {
   const [selectedLanguage, setSelectedLanguage] = useState("EN US");
   const [clickedItem, setClickedItem] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleItemClick = (index: any) => {
     setClickedItem(index === clickedItem ? null : index);
@@ -27,9 +28,18 @@ export default function Header() {
     setSelectedLanguage(language);
   };
 
+  const handleSearchChange = (event: any) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleSearchSubmit = () => {
+    // Implement your search logic here
+    console.log("Search query:", searchQuery);
+  };
+
   return (
     <div className="w-full h-[155px] border">
-      <div className="w-full h-[55px] bg-gray-300 flex justify-between items-center px-[80px]">
+      <div className="w-full h-[55px] bg-gray-300 flex justify-between items-center px-[70px]">
         <div className="w-[144px] h-[20px] flex justify-between items-center">
           <div
             className={`w-[73px] font-extrabold text-base flex justify-between cursor-pointer ${
@@ -53,22 +63,32 @@ export default function Header() {
         </div>
         <div className="w-[267px] h-[35px] flex items-center justify-between pl-[12px] bg-white">
           <SearchIcon className="w-[24px] h-[24px] text-gray-600" />
-          <Input type="search" placeholder="Search..." />
+          <Input
+            type="search"
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={handleSearchChange}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                handleSearchSubmit();
+              }
+            }}
+          />
         </div>
       </div>
-      <div className="w-full h-[100px] px-[80px] flex justify-between items-center border">
+      <div className="w-full h-[100px] px-[70px] flex justify-between items-center">
         <Link
           href="/"
           className="logo-text text-[20px] font-semibold text-[#034EA2]"
         >
           GEREGE TOURIST PASSPORT LLC
         </Link>
-        <div className="w-[850px] h-[100px] flex justify-between items-center gap-[20px]">
+        <div className="w-[840px] h-[100px] flex justify-between items-center gap-[18px]">
           {navItems.map((item, index) => (
             <Link key={index} href={item.href}>
               <div
                 className={`text-[14px] font-semibold ${
-                  index === clickedItem ? "text-[#034EA2]" : "text-gray-600"
+                  index === clickedItem ? "text-blue-600" : "text-gray-600"
                 }`}
                 onClick={() => handleItemClick(index)}
               >
@@ -76,20 +96,7 @@ export default function Header() {
               </div>
             </Link>
           ))}
-          <button className="w-[240px] h-[50px] border text-center px-[20px] bg-blue-600">
-            <div className="flex justify-between items-center">
-              <Image
-                alt=""
-                src="/image/Store.png"
-                width={23}
-                height={20}
-                className="font-bold"
-              />
-              <div className="text-white font-bold text-[16px]">
-                Gerege Buy for 55$
-              </div>
-            </div>
-          </button>
+          <BuyButton />
         </div>
       </div>
     </div>

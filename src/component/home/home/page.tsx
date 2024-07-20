@@ -1,9 +1,10 @@
+import WeatherAndCurrency from "@/component/weather-and-currency/page";
 import React from "react";
 
 export default function HomeComponent() {
   return (
     <div
-      className="w-full h-[620px] flex justify-center pt-[300px]"
+      className="w-full h-[620px] flex justify-center pt-[300px] relative"
       style={{
         backgroundImage: "url(/image/home-bg.png)",
         backgroundPositionY: "55%",
@@ -24,6 +25,7 @@ export default function HomeComponent() {
           Buying now
         </button>
       </div>
+      {/* <WeatherAndCurrency /> */}
     </div>
   );
 }

@@ -17,10 +17,10 @@ export default function Footer() {
         backgroundSize: "70% 100%",
       }}
     >
-      <div className="w-[1200px] h-[185px] flex justify-between ">
+      <div className="w-fit h-[185px] flex gap-[100px]">
         <div className="w-[150px] h-full flex flex-col justify-between">
           <div className="text-white text-[24px] font-bold">About</div>
-          <Link href="/about" className="text-white text-[16px] font-normal">
+          <Link href="/about-us" className="text-white text-[16px] font-normal">
             About us
           </Link>
           <Link

@@ -8,7 +8,7 @@ export default function Benefits() {
   return (
     <div
       id="benefit"
-      className="w-full h-[730px] mb-[60px] flex flex-col justify-between "
+      className="w-full h-[730px] mb-[60px] flex flex-col justify-between"
     >
       <div className="flex flex-col items-center justify-between gap-3">
         <div className="text-black text-[26px] font-bold ">
@@ -22,13 +22,13 @@ export default function Benefits() {
 
       {/* start cards */}
 
-      <div className="w-full h-[600px] flex justify-between items-center px-[50px] ">
+      <div className="w-full h-[600px] flex items-center justify-center gap-8 px-[50px]">
         {/* start left cards */}
 
-        <div className="w-[520px] h-full flex justify-between ">
-          <div className="w-[235px] h-[520px] flex flex-col justify-between mt-[30px]">
-            <Link href="/">
-              <div className="w-[235px] h-[235px] bg-gray-100">
+        <div className="w-[480px] h-full flex justify-between">
+          <div className="w-[225px] h-[520px] flex flex-col justify-between mt-[30px]">
+            <Link href="/" className="hover:scale-105">
+              <div className="w-[225px] h-[235px] bg-gray-100">
                 <div className="w-full h-[200px] p-[24px] flex flex-col items-center gap-3">
                   <Image alt="" src="/image/flag.png" width={32} height={32} />
                   <div className="text-gray-800 text-[16px] font-semibold">
@@ -43,7 +43,7 @@ export default function Benefits() {
                   </div>
                 </div>
                 <div
-                  className="w-[235px] h-[52px] flex items-center justify-center"
+                  className="w-[225px] h-[52px] flex items-center justify-center"
                   style={{
                     backgroundImage: "url(/image/culture-bg.png)",
                     backgroundPositionY: "50%",
@@ -59,8 +59,8 @@ export default function Benefits() {
               </div>
             </Link>
 
-            <Link href="/">
-              <div className="w-[235px] h-[235px] bg-gray-100 ">
+            <Link href="/" className="hover:scale-105">
+              <div className="w-[225px] h-[235px] bg-gray-100 ">
                 <div className="w-full h-[200px] p-[24px] flex flex-col items-center gap-3">
                   <Image
                     alt=""
@@ -80,7 +80,7 @@ export default function Benefits() {
                   </div>
                 </div>
                 <div
-                  className="w-[235px] h-[52px] flex items-center justify-center"
+                  className="w-[225px] h-[52px] flex items-center justify-center"
                   style={{
                     backgroundImage: "url(/image/musuem-bg.png)",
                     backgroundPositionY: "50%",
@@ -97,9 +97,9 @@ export default function Benefits() {
             </Link>
           </div>
 
-          <div className="w-[235px] h-[582px] flex flex-col justify-between">
-            <Link href="/">
-              <div className="w-[235px] h-[235px] bg-gray-100 ">
+          <div className="w-[225px] h-[582px] flex flex-col justify-between">
+            <Link href="/" className="hover:scale-105">
+              <div className="w-[225px] h-[235px] bg-gray-100 ">
                 <div className="w-full h-[200px] p-[24px] flex flex-col items-center gap-3">
                   <Image
                     alt=""
@@ -119,7 +119,7 @@ export default function Benefits() {
                   </div>
                 </div>
                 <div
-                  className="w-[235px] h-[52px] flex items-center justify-center"
+                  className="w-[225px] h-[52px] flex items-center justify-center"
                   style={{
                     backgroundImage: "url(/image/musuem-bg.png)",
                     backgroundPositionY: "50%",
@@ -135,8 +135,8 @@ export default function Benefits() {
               </div>
             </Link>
 
-            <Link href="/">
-              <div className="w-[235px] h-[235px] bg-gray-100 ">
+            <Link href="/" className="hover:scale-105">
+              <div className="w-[225px] h-[235px] bg-gray-100 ">
                 <div className="w-full h-[200px] p-[24px] flex flex-col items-center gap-3">
                   <Image
                     alt=""
@@ -156,7 +156,7 @@ export default function Benefits() {
                   </div>
                 </div>
                 <div
-                  className="w-[235px] h-[52px] flex items-center justify-center"
+                  className="w-[225px] h-[52px] flex items-center justify-center"
                   style={{
                     backgroundImage: "url(/image/musuem-bg.png)",
                     backgroundPositionY: "50%",
@@ -176,12 +176,14 @@ export default function Benefits() {
 
         {/* end left cards */}
 
+        {/* Start center image */}
+
         <div
-          className="w-[300px] h-[400px] flex items-center justify-center"
+          className="w-[280px] h-[370px] flex items-center justify-center"
           style={{
             backgroundImage: "url(image/benefit-spin-1.png)",
             backgroundRepeat: "no-repeat",
-            backgroundPositionX: "50%",
+            backgroundPosition: "center",
             backgroundSize: "cover",
           }}
         >
@@ -197,12 +199,14 @@ export default function Benefits() {
           </div>
         </div>
 
+        {/* End center image */}
+
         {/* start right cards */}
 
-        <div className="w-[520px] h-full flex justify-between">
-          <div className="w-[235px] h-[582px] flex flex-col justify-between">
-            <Link href="/">
-              <div className="w-[235px] h-[235px] bg-gray-100">
+        <div className="w-[480px] h-full flex justify-between">
+          <div className="w-[225px] h-[582px] flex flex-col justify-between">
+            <Link href="/" className="hover:scale-105">
+              <div className="w-[225px] h-[235px] bg-gray-100">
                 <div className="w-full h-[200px] p-[24px] flex flex-col items-center gap-3">
                   <Image
                     alt=""
@@ -222,7 +226,7 @@ export default function Benefits() {
                   </div>
                 </div>
                 <div
-                  className="w-[235px] h-[52px] flex items-center justify-center"
+                  className="w-[225px] h-[52px] flex items-center justify-center"
                   style={{
                     backgroundImage: "url(/image/musuem-bg.png)",
                     backgroundPositionY: "50%",
@@ -238,8 +242,8 @@ export default function Benefits() {
               </div>
             </Link>
 
-            <Link href="/">
-              <div className="w-[235px] h-[235px] bg-gray-100 border">
+            <Link href="/" className="hover:scale-105">
+              <div className="w-[225px] h-[235px] bg-gray-100 border">
                 <div className="w-full h-[200px] p-[24px] flex flex-col items-center gap-3">
                   <Image
                     alt=""
@@ -259,7 +263,7 @@ export default function Benefits() {
                   </div>
                 </div>
                 <div
-                  className="w-[235px] h-[52px] flex items-center justify-center"
+                  className="w-[225px] h-[52px] flex items-center justify-center"
                   style={{
                     backgroundImage: "url(/image/musuem-bg.png)",
                     backgroundPositionY: "50%",
@@ -276,9 +280,9 @@ export default function Benefits() {
             </Link>
           </div>
 
-          <div className="w-[235px] h-[520px] flex flex-col justify-between mt-[30px]">
-            <Link href="/">
-              <div className="w-[235px] h-[235px] bg-gray-100 border">
+          <div className="w-[225px] h-[520px] flex flex-col justify-between mt-[30px]">
+            <Link href="/" className="hover:scale-105">
+              <div className="w-[225px] h-[235px] bg-gray-100 border">
                 <div className="w-full h-[200px] p-[24px] flex flex-col items-center gap-3">
                   <Image
                     alt=""
@@ -298,7 +302,7 @@ export default function Benefits() {
                   </div>
                 </div>
                 <div
-                  className="w-[235px] h-[52px] flex items-center justify-center"
+                  className="w-[225px] h-[52px] flex items-center justify-center"
                   style={{
                     backgroundImage: "url(/image/musuem-bg.png)",
                     backgroundPositionY: "50%",
@@ -314,8 +318,8 @@ export default function Benefits() {
               </div>
             </Link>
 
-            <Link href="/">
-              <div className="w-[235px] h-[235px] bg-gray-100 border">
+            <Link href="/" className="hover:scale-105">
+              <div className="w-[225px] h-[235px] bg-gray-100 border">
                 <div className="w-full h-[200px] p-[24px] flex flex-col items-center gap-3">
                   <Image
                     alt=""
@@ -335,7 +339,7 @@ export default function Benefits() {
                   </div>
                 </div>
                 <div
-                  className="w-[235px] h-[52px] flex items-center justify-center"
+                  className="w-[225px] h-[52px] flex items-center justify-center"
                   style={{
                     backgroundImage: "url(/image/musuem-bg.png)",
                     backgroundPositionY: "50%",

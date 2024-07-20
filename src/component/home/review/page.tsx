@@ -48,12 +48,12 @@ const initialReviews = [
   {
     id: 4,
     username: "Jane Smith",
-    type: "travel",
+    type: "client",
     content:
       "“Untitled has saved us thousands of hours of work. We’re able to spin up projects faster.”",
     rating: 4,
     img: "",
-    bgImage: "/image/USA.png",
+    bgImage: "/image/Korea.png",
     countryCode: "KR",
     bgColor: "[#815E7F]",
   },
@@ -183,13 +183,7 @@ export default function Review() {
       {/* Reviews Section */}
       <div className="w-fit h-[352px] m-auto flex items-center gap-8">
         {/* review cards */}
-        <div className="flex items-center gap-6 border">
-          {/* <div
-            className="w-[30px] h-[30px] bg-white border rounded-full flex items-center justify-center cursor-pointer"
-            onClick={handlePrevious}
-          >
-            <KeyboardArrowLeft />
-          </div> */}
+        <div className="flex items-center gap-6">
           <div className="w-[1030px] relative">
             <div className="absolute z-10 right-0 w-[200px] h-[352px] bg-gradient-to-r from-white/0 to-white"></div>
 
@@ -200,7 +194,7 @@ export default function Review() {
                 );
 
                 return (
-                  <div key="" className="border border-gray-300">
+                  <div key="" className="">
                     <div
                       key={review.id}
                       className={`review w-fit h-[350px] py-3 px-1 flex flex-col justify-between `}
@@ -266,12 +260,6 @@ export default function Review() {
               })}
             </Slider>
           </div>
-          {/* <div
-            className="w-[30px] h-[30px] bg-white border rounded-full flex items-center justify-center cursor-pointer"
-            onClick={handleNext}
-          >
-            <KeyboardArrowRight />
-          </div> */}
         </div>
         {/* end review card */}
 
