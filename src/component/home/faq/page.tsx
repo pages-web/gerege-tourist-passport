@@ -14,7 +14,7 @@ const question = [
     id: 1,
     title: "Би гэрэгэ пасспортоо хэрхэн ашиглах вэ?",
     content:
-      "1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione.",
+      "Та Гэрэгэ пасспортын хамтрагч байгууллагуудын онцлогоос хамаарч Гэрэгэ пасспортоо үзүүлэх, Гэрэгэ пасспортын ард хэсгийн QR кодыг уншуулах, зарим шаардлагатай тохиолдолд гэрэгэ пасспорттой дагалдаж ирсэн сим картны утасны дугаарыг бүртгүүлэн үйлчлүүлнэ.",
   },
   {
     id: 2,
@@ -167,8 +167,9 @@ export default function FAQ() {
                 }`}
               />
             </div>
+
             {selectedQuestion === item.id && (
-              <div className="w-full h-fit p-4 text-gray-600">
+              <div className="w-full h-fit p-4 text-gray-800 font-bold text-[13px]">
                 {item.content}
               </div>
             )}

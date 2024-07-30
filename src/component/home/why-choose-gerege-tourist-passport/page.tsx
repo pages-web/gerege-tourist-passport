@@ -3,11 +3,13 @@ import Image from "next/image";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import SaveIcon from "@mui/icons-material/Save";
-import BuyButton from "@/component/buy-button/page";
 
 export default function WhyGeregePassport() {
   return (
-    <div className="w-full h-[700px] mb-[60px] mt-[60px] relative">
+    <div
+      id="store-info"
+      className="w-full h-[700px] mb-[60px] mt-[60px] relative"
+    >
       <Image
         alt=""
         src="/image/logo_color_png 4.png"
@@ -33,9 +35,9 @@ export default function WhyGeregePassport() {
               performances and more
             </div>
           </div>
-          <div>
-            <BuyButton width={220} height={45} />
-          </div>
+          <button className="w-[210px] h-[45px] text-white font-normal text-[16px] bg-blue-600 hover:bg-blue-700 hover:scale-105">
+            Buy now for 55$
+          </button>
         </div>
       </div>
       <div className="w-full h-1/2 bg-[#034EA2] flex items-center pl-[7%]">

@@ -1,416 +1,92 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import React, { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import SearchIcon from "@mui/icons-material/Search";
 import { Input } from "@/components/ui/input";
-import BuyButton from "@/component/buy-button/page";
+import PayemntBasicPage from "@/component/payment/page";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { CardList, CardType, CardListType } from "./CardList";
 
 const navItems = [
-  { name: "ALL", icon: "/image/flag.png", href: "" },
-  { name: "MUSEUM", icon: "/image/museum.png", href: "" },
-  { name: "CULTURE", icon: "/image/flag.png", href: "" },
-  { name: "VOUCHERS", icon: "/image/museum.png", href: "" },
-  { name: "U POINT CARD", icon: "/image/museum.png", href: "" },
-  { name: "DATA SIM", icon: "/image/museum.png", href: "" },
-];
-
-declare global {
-  interface Window {
-    initMap: () => void;
-  }
-}
-
-interface CardType {
-  id: number;
-  imgURL?: string;
-  title: string;
-  content: string;
-  cuponContent: string;
-  about: AboutType;
-  contact: ContactType;
-  shopping: ShoppingType;
-  service: ServiceType;
-  appBenefits: AplicationBenefitsType;
-  consideration: ConsiderationType;
-}
-interface ContactType {
-  phone: string;
-  email: string;
-  address: string;
-}
-
-interface ShoppingType {
-  text1: string;
-  text2: string;
-  text3: string;
-  text4: string;
-  text5: string;
-  text6: string;
-  text7: string;
-}
-interface ServiceType {
-  text1: string;
-  text2: string;
-  text3: string;
-  text4: string;
-  text5: string;
-  text6: string;
-  text7: string;
-}
-interface AplicationBenefitsType {
-  text1: string;
-  text2: string;
-}
-interface ConsiderationType {
-  text1: string;
-  text2: string;
-}
-interface AboutType {
-  text1: string;
-  text2: string;
-}
-
-const cardList: CardType[] = [
+  { name: "ALL", icon: null, category: "ALL" },
+  { name: "Museums", icon: "/image/museum.png", category: "museum" },
+  { name: "Culture", icon: "/image/flag.png", category: "culture" },
+  { name: "Vouchers", icon: "/image/flag.png", category: "vouchers" },
   {
-    id: 1,
-    imgURL: "/image/nomin-logo.png",
-    title: '"Nomin" chain supermarkets',
-    content:
-      "Nomin Supermarket first started its operations in 1997 in the Nomin Plaza branch in the 14th district of Bayangol district. In the 30 years since its opening, it has 19 branches in Ulaanbaatar city and 3 branches in the local area, totaling 22 branches and wholesale trade.",
-    cuponContent:
-      "Discount coupon book for over 10 brands (outlet price + up to 10% additional discount, 1 coffee coupon)",
-    about: {
-      text1:
-        "Nomin Supermarket first started its operations in 1997 in the Nomin Plaza branch in the 14th district of Bayangol district. In the 30 years since its opening, it has 19 branches in Ulaanbaatar city and 3 branches in the local area, totaling 22 branches. and wholesale trade.",
-      text2:
-        "We deliver quality guaranteed and hygienic food, household, and electronic goods to more than 20,000 customers. In 2022, Nomin Supermarket Nomunvillage and in July 2023, Nomin Supermarket Belh Branch are successfully opened.",
-    },
-
-    contact: {
-      phone: "+976 8888 8888",
-      email: "Nominchain@nomin.com",
-      address: "BZD - 7 khoroo, Ulaanbaatar 13345",
-    },
-    shopping: {
-      text1: "All categories of groceries and drinks",
-      text2: "All categories of household goods",
-      text3: "Home and kitchen electronics",
-      text4: "Flowers and souvernirs",
-      text5: "Bakery",
-      text6: "",
-      text7: "",
-    },
-    service: {
-      text1: "АТМ",
-      text2: "/Pick Pack/",
-      text3: "International food court",
-      text4: "Dry cleaning",
-      text5: "Repair services",
-      text6: "Cellular operator",
-      text7: "CASH BANK",
-    },
-    appBenefits: {
-      text1:
-        "Discount coupon book for over 10 brands (outlet price + up to 10% additional discount, 1 coffee coupon)",
-      text2: "Limited to one time per person, passport must be presented.",
-    },
-    consideration: {
-      text1: "Limited to one time per person, passport must be presented.",
-      text2: "",
-    },
+    name: "U-Point Card",
+    icon: "/image/flag.png",
+    category: "upointcard",
   },
   {
-    id: 2,
-    imgURL: "/image/cu-logo.png",
-    title: "CU convenience store",
-    content:
-      "Nomin Supermarket first started its operations in [year] at the [store location]. In the [number] years since its opening, it has grown to [number] branches nationwide, offering [services/products].",
-    cuponContent:
-      "Discount coupon book for over 10 brands (outlet price + up to 10% additional discount, 1 coffee coupon)",
-    about: {
-      text1:
-        "Nomin Supermarket first started its operations in 1997 in the Nomin Plaza branch in the 14th district of Bayangol district. In the 30 years since its opening, it has 19 branches in Ulaanbaatar city and 3 branches in the local area, totaling 22 branches. and wholesale trade.",
-      text2:
-        "We deliver quality guaranteed and hygienic food, household, and electronic goods to more than 20,000 customers. In 2022, Nomin Supermarket Nomunvillage and in July 2023, Nomin Supermarket Belh Branch are successfully opened.",
-    },
-    contact: {
-      phone: "8888888",
-      email: "",
-      address: "",
-    },
-    shopping: {
-      text1: "",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-    },
-    service: {
-      text1: "",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-    },
-    appBenefits: {
-      text1: "",
-      text2: "",
-    },
-    consideration: {
-      text1: "",
-      text2: "",
-    },
-  },
-  {
-    id: 3,
-    imgURL: "/image/nomin-logo.png",
-    title: '"Nomin" chain supermarkets',
-    content:
-      "Nomin Supermarket first started its operations in 1997 in the Nomin Plaza branch in the 14th district of Bayangol district. In the 30 years since its opening, it has 19 branches in Ulaanbaatar city and 3 branches in the local area, totaling 22 branches and wholesale trade.",
-    cuponContent:
-      "Discount coupon book for over 10 brands (outlet price + up to 10% additional discount, 1 coffee coupon)",
-    about: {
-      text1:
-        "Nomin Supermarket first started its operations in 1997 in the Nomin Plaza branch in the 14th district of Bayangol district. In the 30 years since its opening, it has 19 branches in Ulaanbaatar city and 3 branches in the local area, totaling 22 branches. and wholesale trade.",
-      text2:
-        "We deliver quality guaranteed and hygienic food, household, and electronic goods to more than 20,000 customers. In 2022, Nomin Supermarket Nomunvillage and in July 2023, Nomin Supermarket Belh Branch are successfully opened.",
-    },
-    contact: {
-      phone: "8888888",
-      email: "",
-      address: "",
-    },
-    shopping: {
-      text1: "",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-    },
-    service: {
-      text1: "",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-    },
-    appBenefits: {
-      text1: "",
-      text2: "",
-    },
-    consideration: {
-      text1: "",
-      text2: "",
-    },
-  },
-  {
-    id: 4,
-    imgURL: "/image/nomin-logo.png",
-    title: '"Nomin" chain supermarkets',
-    content:
-      "Nomin Supermarket first started its operations in 1997 in the Nomin Plaza branch in the 14th district of Bayangol district. In the 30 years since its opening, it has 19 branches in Ulaanbaatar city and 3 branches in the local area, totaling 22 branches and wholesale trade.",
-    cuponContent:
-      "Discount coupon book for over 10 brands (outlet price + up to 10% additional discount, 1 coffee coupon)",
-    about: {
-      text1:
-        "Nomin Supermarket first started its operations in 1997 in the Nomin Plaza branch in the 14th district of Bayangol district. In the 30 years since its opening, it has 19 branches in Ulaanbaatar city and 3 branches in the local area, totaling 22 branches. and wholesale trade.",
-      text2:
-        "We deliver quality guaranteed and hygienic food, household, and electronic goods to more than 20,000 customers. In 2022, Nomin Supermarket Nomunvillage and in July 2023, Nomin Supermarket Belh Branch are successfully opened.",
-    },
-    contact: {
-      phone: "8888888",
-      email: "",
-      address: "",
-    },
-    shopping: {
-      text1: "",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-    },
-    service: {
-      text1: "",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-    },
-    appBenefits: {
-      text1: "",
-      text2: "",
-    },
-    consideration: {
-      text1: "",
-      text2: "",
-    },
-  },
-  {
-    id: 5,
-    imgURL: "/image/nomin-logo.png",
-    title: '"Nomin" chain supermarkets',
-    content:
-      "Nomin Supermarket first started its operations in 1997 in the Nomin Plaza branch in the 14th district of Bayangol district. In the 30 years since its opening, it has 19 branches in Ulaanbaatar city and 3 branches in the local area, totaling 22 branches and wholesale trade.",
-    cuponContent:
-      "Discount coupon book for over 10 brands (outlet price + up to 10% additional discount, 1 coffee coupon)",
-    about: {
-      text1:
-        "Nomin Supermarket first started its operations in 1997 in the Nomin Plaza branch in the 14th district of Bayangol district. In the 30 years since its opening, it has 19 branches in Ulaanbaatar city and 3 branches in the local area, totaling 22 branches. and wholesale trade.",
-      text2:
-        "We deliver quality guaranteed and hygienic food, household, and electronic goods to more than 20,000 customers. In 2022, Nomin Supermarket Nomunvillage and in July 2023, Nomin Supermarket Belh Branch are successfully opened.",
-    },
-    contact: {
-      phone: "8888888",
-      email: "",
-      address: "",
-    },
-    shopping: {
-      text1: "",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-    },
-    service: {
-      text1: "",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-    },
-    appBenefits: {
-      text1: "",
-      text2: "",
-    },
-    consideration: {
-      text1: "",
-      text2: "",
-    },
-  },
-  {
-    id: 6,
-    imgURL: "/image/nomin-logo.png",
-    title: '"Nomin" chain supermarkets',
-    content:
-      "Nomin Supermarket first started its operations in 1997 in the Nomin Plaza branch in the 14th district of Bayangol district. In the 30 years since its opening, it has 19 branches in Ulaanbaatar city and 3 branches in the local area, totaling 22 branches and wholesale trade.",
-    cuponContent:
-      "Discount coupon book for over 10 brands (outlet price + up to 10% additional discount, 1 coffee coupon)",
-    about: {
-      text1:
-        "Nomin Supermarket first started its operations in 1997 in the Nomin Plaza branch in the 14th district of Bayangol district. In the 30 years since its opening, it has 19 branches in Ulaanbaatar city and 3 branches in the local area, totaling 22 branches. and wholesale trade.",
-      text2:
-        "We deliver quality guaranteed and hygienic food, household, and electronic goods to more than 20,000 customers. In 2022, Nomin Supermarket Nomunvillage and in July 2023, Nomin Supermarket Belh Branch are successfully opened.",
-    },
-    contact: {
-      phone: "8888888",
-      email: "",
-      address: "",
-    },
-    shopping: {
-      text1: "",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-    },
-    service: {
-      text1: "",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-    },
-    appBenefits: {
-      text1: "",
-      text2: "",
-    },
-    consideration: {
-      text1: "",
-      text2: "",
-    },
+    name: "Data Simcard",
+    icon: "/image/flag.png",
+    category: "datasimcard",
   },
 ];
 
-export default function GeregeBenefits() {
+function BenefitsContent() {
   const [searchQuery, setSearchQuery] = useState("");
   const [clickedItem, setClickedItem] = useState<number | null>(0);
   const [visibleCount, setVisibleCount] = useState(4);
   const [selectedCard, setSelectedCard] = useState<CardType | null>(null);
+  const [category, setCategory] = useState<string | undefined>(undefined);
 
-  const handleSearchChange = (event: any) => {
+  // Header iin search heseg. ehlel
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("category");
+  useEffect(() => {
+    if (categoryParam) {
+      setCategory(categoryParam);
+      setClickedItem(getCategoryIndex(categoryParam));
+    }
+  }, [categoryParam]);
+  const getCategoryIndex = (category: string | undefined): number => {
+    return navItems.findIndex((item) => item.category === category);
+  };
+  // Header iin search heseg. tugsgul
+
+  // gerege-benefits iin search heseg. ehlel
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
   };
 
   const handleSearchSubmit = () => {
-    console.log("Search query:", searchQuery);
+    console.log("");
   };
+  // gerege-benefits iin search heseg. tugsgul
 
   const handleItemClick = (index: number) => {
     setClickedItem(index === clickedItem ? null : index);
+    setSelectedCard(null);
   };
 
   const handleCardClick = (card: CardType) => {
     setSelectedCard(card);
   };
 
-  const filteredCards = cardList.filter((card) =>
+  const getAllCards = (): CardType[] => {
+    const category = navItems[clickedItem!]?.category;
+    if (category === "ALL") {
+      return Object.values(CardList).flat();
+    } else if (category && CardList.hasOwnProperty(category)) {
+      return CardList[category as keyof CardListType] || [];
+    }
+    return [];
+  };
+
+  const filteredCards = getAllCards().filter((card: CardType) =>
     card.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-  useEffect(() => {
-    // Dynamically create the script tag to load the Google Maps API
-    const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap`;
-    script.async = true;
-    script.defer = true;
-
-    // Append the script to the document body
-    document.body.appendChild(script);
-
-    // Define the initMap function on the window object
-    window.initMap = () => {
-      const mapElement = document.getElementById("map");
-      if (mapElement) {
-        const map = new google.maps.Map(mapElement as HTMLElement, {
-          center: { lat: 47.9243792, lng: 106.9380916 },
-          zoom: 14.38,
-        });
-
-        new google.maps.Marker({
-          position: { lat: 47.9243792, lng: 106.9380916 },
-          map: map,
-          title: "Nomin Supermarket",
-        });
-      }
-    };
-  }, []);
+  const handleReload = () => {
+    window.location.reload();
+  };
 
   return (
-    <div className="w-[1200px] h-fit mx-auto mt-12 mb-12 border">
+    <div className="w-[1200px] h-fit mx-auto mt-12 mb-12">
       <div className="text-center mb-10">
         <div className="text-[#1D2939] font-bold text-[26px]">
           GEREGE TOUR CARD Benefits
@@ -424,7 +100,7 @@ export default function GeregeBenefits() {
       {/* Start nav */}
       <div className="flex gap-4 mb-7">
         {navItems.map((item, index) => (
-          <Link key={index} href={item.href}>
+          <div key={index}>
             <div
               className={`w-fit h-[35px] flex gap-2 px-2 items-center text-[16px] font-medium border border-gray-100 cursor-pointer ${
                 index === clickedItem
@@ -438,14 +114,29 @@ export default function GeregeBenefits() {
               )}
               {item.name}
             </div>
-          </Link>
+          </div>
         ))}
       </div>
       <div className="w-full flex justify-between items-center mb-8">
-        <div className="text-gray-600 text-[17px] font-semibold mt-4">
-          Find out benefits from{" "}
-          <span className="text-blue-600">{filteredCards.length}</span> brands
-        </div>
+        {selectedCard ? (
+          <div className="flex gap-3">
+            {" "}
+            <div
+              className="flex gap-2 text-gray-800 font-bold cursor-pointer"
+              onClick={handleReload}
+            >
+              Benefits <KeyboardArrowRightIcon />
+            </div>
+            <div className="text-[#0087FF] text-[18px] font-semibold">
+              {selectedCard.title}
+            </div>
+          </div>
+        ) : (
+          <div className="text-gray-600 text-[17px] font-semibold mt-4">
+            Find out benefits from{" "}
+            <span className="text-blue-600">{filteredCards.length}</span> brands
+          </div>
+        )}
 
         <div className="w-[260px] h-[35px] flex items-center justify-between pl-[12px] bg-[#FCFCFD] border-[2px] border-gray-100">
           <SearchIcon className="w-[24px] h-[24px] text-gray-400" />
@@ -469,10 +160,11 @@ export default function GeregeBenefits() {
       {/* Start card list */}
 
       {selectedCard ? (
-        <div className="w-full h-fit flex flex-col gap-[80px] mt-6 p-4 border border-gray-200">
+        <div className="w-full h-fit flex flex-col gap-[80px] mt-6 p-4">
           {/* coupon */}
           <div className="w-full h-[100px] flex items-center pl-8 gap-[30px] bg-gray-200">
-            <div className="w-[52px] h-[52px] bg-black"></div>
+            <Image alt="" src="/image/coupon-icon.png" width={44} height={44} />
+
             <div className="h-fit flex gap-2 flex-col">
               <div className="text-gray-800 font-bold text-[20px]">Coupon</div>
               <ul className="list-disc pl-5">
@@ -497,15 +189,24 @@ export default function GeregeBenefits() {
                   {selectedCard.about.text2}
                 </div>
                 <div>
-                  <BuyButton />
+                  <PayemntBasicPage />
                 </div>
               </div>
-              <div className="w-[600px] h-[350px] border border-black">
-                <Image alt="" src="" />
+              <div className="w-[600px] h-[350px]">
+                {selectedCard.imgURL && (
+                  <Image
+                    alt=""
+                    src={selectedCard.imgURL}
+                    width={599}
+                    height={349}
+                  />
+                )}
               </div>
             </div>
           </div>
+
           {/* contact shopping and service */}
+
           <div className="w-full h-fit flex justify-between">
             {/* Contact */}
             <div className="w-fit h-fit flex flex-col gap-1">
@@ -513,19 +214,19 @@ export default function GeregeBenefits() {
                 Contact
               </div>
               <div className="flex items-center gap-2">
-                <LocalPhoneIcon className="w-[21px] h-[21px]" />
+                <LocalPhoneIcon className="w-[21px] h-[21px] text-gray-700" />
                 <div className="text-gray-600 text-[14px]">
                   {selectedCard.contact.phone}
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <EmailIcon className="w-[21px] h-[21px]" />
+                <EmailIcon className="w-[21px] h-[21px] text-gray-700" />
                 <div className="text-gray-600 text-[14px]">
                   {selectedCard.contact.email}
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <LocationOnIcon className="w-[21px] h-[21px]" />
+                <LocationOnIcon className="w-[21px] h-[21px] text-gray-700" />
                 <div className="text-gray-600 text-[14px]">
                   {selectedCard.contact.address}
                 </div>
@@ -562,18 +263,24 @@ export default function GeregeBenefits() {
               </ul>
             </div>
           </div>
+
           {/* Condition of use & consideration */}
 
           <div className="w-full h-fit flex flex-col gap-4">
             <div className="text-gray-600 font-bold text-[18px]">
               Condition of use & consideration
             </div>
-            {/* Aplication benefits */}
+            {/* Application benefits */}
             <div className="w-full h-fit bg-gray-200 flex items-center gap-5 p-7">
-              <div>icon</div>
+              <Image
+                alt=""
+                src="/image/check-circle-broken.png"
+                width={44}
+                height={44}
+              />
               <div className="flex flex-col gap-1">
                 <div className="text-gray-800 font-bold text-[17px]">
-                  Aplication benefits
+                  Application benefits
                 </div>
                 <div className="text-gray-500 text-[13px]">
                   {selectedCard.appBenefits.text1}
@@ -585,7 +292,13 @@ export default function GeregeBenefits() {
             </div>
             {/* Consideration */}
             <div className="w-full h-fit bg-gray-200 flex items-center gap-5 p-7">
-              <div>icon</div>
+              <Image
+                alt=""
+                src="/image/consideratio-icon.png"
+                width={44}
+                height={44}
+              />
+
               <div className="flex flex-col gap-1">
                 <div className="text-gray-800 font-bold text-[17px]">
                   Consideration
@@ -597,20 +310,55 @@ export default function GeregeBenefits() {
             </div>
           </div>
 
-          {/* Map */}
-          <div id="map" className="w-full h-[400px] border border-black"></div>
+          {/* Start google map */}
+
+          <div
+            id="map"
+            className="w-full h-[399px] flex items-center justify-between"
+          >
+            {selectedCard !== null && (
+              <iframe
+                src={selectedCard.mapURL}
+                width="780px"
+                height="400px"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+              ></iframe>
+            )}
+            <div className="w-[340px] h-full flex flex-col gap-2 p-1 border">
+              <div className="w-full h-fit p-2 bg-[#EBFAFF] text-gray-800 font-bold text-lg">
+                Address-4
+              </div>
+              <div className="w-full h-fit flex justify-between border border-t-0 border-l-0 border-r-0 p-1">
+                {/* address map */}
+                <div>1</div>
+                <div className="flex flex-col gap-1">
+                  <div>Nomin supermarket</div>
+                  <div>address</div>
+                  <div>open closed time</div>
+                </div>
+                <div>open or closed</div>
+              </div>
+            </div>
+          </div>
         </div>
       ) : (
         <div className="w-full h-fit flex flex-col gap-2">
-          {filteredCards.slice(0, visibleCount).map((card) => (
+          {filteredCards.slice(0, visibleCount).map((card: CardType) => (
             <div
               key={card.id}
               className="w-full h-[200px] flex gap-8 bg-gray-50 pt-2 cursor-pointer"
               onClick={() => handleCardClick(card)}
             >
               <div className="w-[200px] h-[180px] border border-gray-200 flex items-center justify-center">
-                {card.imgURL && (
-                  <Image alt="" src={card.imgURL} width={180} height={180} />
+                {card.logoImgURL && (
+                  <Image
+                    alt=""
+                    src={card.logoImgURL}
+                    width={180}
+                    height={180}
+                  />
                 )}
               </div>
 
@@ -629,5 +377,13 @@ export default function GeregeBenefits() {
 
       {/* Card details */}
     </div>
+  );
+}
+
+export default function GeregeBenefits() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BenefitsContent />
+    </Suspense>
   );
 }

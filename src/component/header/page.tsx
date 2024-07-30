@@ -1,24 +1,53 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { Input } from "@/components/ui/input";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SearchIcon from "@mui/icons-material/Search";
-import BuyButton from "../buy-button/page";
+import PayemntBasicPage from "../payment/page";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { useRouter } from "next/navigation";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "About", href: "#about" },
-  { name: "Gerege Benefit", href: "/gerege-benefits" },
-  { name: "Store Information", href: "#store-info" },
-  { name: "News And Tips", href: "#news-and-tips" },
-  { name: "FAQ", href: "#faq" },
+  { name: "About", href: "/#about" },
+  { name: "Gerege Benefit", href: "/#gerege-benefit" },
+  { name: "Store Information", href: "/#store-info" },
+  { name: "News And Tips", href: "/#news-and-tips" },
+  { name: "FAQ", href: "/#faq" },
+];
+
+const searchSuggest = [
+  {
+    id: 1,
+    title: "Chinggis Khaan",
+    name: "National Museum",
+    href: "/gerege-benefits?category=museum",
+  },
+  {
+    id: 2,
+    title: "Chinggis Khaan",
+    name: "Air port",
+    href: "",
+  },
+  {
+    id: 3,
+    title: "Chinggis Khaan",
+    name: "Air port",
+    href: "",
+  },
+  {
+    id: 4,
+    title: "Chinggis Khaan",
+    name: "Air port",
+    href: "",
+  },
 ];
 
 export default function Header() {
+  const router = useRouter();
   const [selectedLanguage, setSelectedLanguage] = useState("EN US");
   const [clickedItem, setClickedItem] = useState(null);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [buttonClick, setButtonClick] = useState(false);
 
   const handleItemClick = (index: any) => {
     setClickedItem(index === clickedItem ? null : index);
@@ -28,18 +57,9 @@ export default function Header() {
     setSelectedLanguage(language);
   };
 
-  const handleSearchChange = (event: any) => {
-    setSearchQuery(event.target.value);
-  };
-
-  const handleSearchSubmit = () => {
-    // Implement your search logic here
-    console.log("Search query:", searchQuery);
-  };
-
   return (
-    <div className="w-full h-[155px] border">
-      <div className="w-full h-[55px] bg-gray-300 flex justify-between items-center px-[70px]">
+    <div className="w-full max-w-screen-2xl h-[155px]">
+      <div className="w-full h-[55px]  bg-gray-300 flex justify-between items-center px-[70px]">
         <div className="w-[144px] h-[20px] flex justify-between items-center">
           <div
             className={`w-[73px] font-extrabold text-base flex justify-between cursor-pointer ${
@@ -61,25 +81,50 @@ export default function Header() {
             <div>KR</div>
           </div>
         </div>
-        <div className="w-[267px] h-[35px] flex items-center justify-between pl-[12px] bg-white">
-          <SearchIcon className="w-[24px] h-[24px] text-gray-600" />
-          <Input
-            type="search"
-            placeholder="Search..."
-            value={searchQuery}
-            onChange={handleSearchChange}
-            onKeyDown={(event) => {
-              if (event.key === "Enter") {
-                handleSearchSubmit();
-              }
-            }}
-          />
+        <div className="relative">
+          <button
+            className="w-[267px] h-[35px] flex gap-4 items-center pl-[12px] bg-white"
+            onClick={() => setButtonClick(!buttonClick)}
+          >
+            <SearchIcon className="w-[24px] h-[24px] text-gray-600" />
+            <div className="text-gray-600 font-bold text-[15px]">Search...</div>
+          </button>
+
+          {!buttonClick ? (
+            ""
+          ) : (
+            <div className="absolute z-10 right-0 top-11 w-[440px] h-fit flex flex-col gap-4 border bg-white p-3">
+              <div className="font-bold text-gray-800 text-[15px] ml-[2px]">
+                Suggest results.
+              </div>
+              {searchSuggest.map((suggest) => (
+                <Link
+                  href={suggest.href}
+                  className="flex justify-between p-1 w-full h-fit border"
+                  key={suggest.id}
+                  onClick={() => setButtonClick(!buttonClick)}
+                >
+                  <div className="flex gap-2 items-center">
+                    <div className="font-bold text-gray-800 text-[16px]">
+                      {suggest.title}
+                    </div>
+
+                    <div className="font-medium text-gray-600 text-[14px]">
+                      {suggest.name}
+                    </div>
+                  </div>
+                  <KeyboardArrowRightIcon />
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </div>
       <div className="w-full h-[100px] px-[70px] flex justify-between items-center">
         <Link
           href="/"
           className="logo-text text-[20px] font-semibold text-[#034EA2]"
+          onClick={() => setClickedItem(null)}
         >
           GEREGE TOURIST PASSPORT LLC
         </Link>
@@ -96,7 +141,7 @@ export default function Header() {
               </div>
             </Link>
           ))}
-          <BuyButton />
+          <PayemntBasicPage />
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
-import BuyButton from "@/component/buy-button/page";
+import PayemntBasicPage from "@/component/payment/page";
 
 const imageList = [
   {
@@ -74,7 +74,7 @@ export default function AboutGeregePassport() {
           </div>
           <div className="w-full h-[100px] flex flex-col justify-between">
             <div>
-              <BuyButton width={215} height={45} />
+              <PayemntBasicPage />
             </div>
 
             <div className="text-[14px] text-[#475467] font-normal">

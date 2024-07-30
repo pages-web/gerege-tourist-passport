@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import Rating from "@mui/material/Rating";
 import Slider from "react-slick";
-import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 
 const initialReviews = [
   {
@@ -16,10 +15,7 @@ const initialReviews = [
     content:
       "“Untitled has saved us thousands of hours of work. We’re able to spin up projects faster.”",
     rating: 5,
-    img: "/image/US.png",
-    bgImage: "/image/USA.png",
     countryCode: "USA",
-    bgColor: "[#815E7F]",
   },
   {
     id: 2,
@@ -28,10 +24,7 @@ const initialReviews = [
     content:
       "“Untitled has saved us thousands of hours of work. We’re able to spin up projects faster.”",
     rating: 4,
-    img: "/image/Ca.png",
-    bgImage: "/image/Canada.png",
     countryCode: "CAN",
-    bgColor: "[#815E7F]",
   },
   {
     id: 3,
@@ -40,10 +33,7 @@ const initialReviews = [
     content:
       "“Untitled has saved us thousands of hours of work. We’re able to spin up projects faster.”",
     rating: 3,
-    img: "/image/IT.png",
-    bgImage: "/image/italy.png",
     countryCode: "ITA",
-    bgColor: "[#296200]",
   },
   {
     id: 4,
@@ -52,10 +42,7 @@ const initialReviews = [
     content:
       "“Untitled has saved us thousands of hours of work. We’re able to spin up projects faster.”",
     rating: 4,
-    img: "",
-    bgImage: "/image/Korea.png",
     countryCode: "KR",
-    bgColor: "[#815E7F]",
   },
   {
     id: 5,
@@ -64,81 +51,91 @@ const initialReviews = [
     content:
       "“Untitled has saved us thousands of hours of work. We’re able to spin up projects faster.”",
     rating: 4,
-    img: "",
-    bgImage: "/image/USA.png",
     countryCode: "USA",
   },
 ];
 
 const countries = [
-  { name: "United States", code: "USA", bgColor: "#815E7F" },
-  { name: "Canada", code: "CAN", bgColor: "#9C6A79" },
-  { name: "Germany", code: "DEU", bgColor: "#815E7F" },
-  { name: "France", code: "FRA", bgColor: "#815E7F" },
-  { name: "Japan", code: "JPN", bgColor: "#815E7F" },
-  { name: "Italy", code: "ITA", bgColor: "#296200" },
-  { name: "Korea", code: "KR", bgColor: "#0087FF" },
-  // Add more countries as needed
+  {
+    name: "United States",
+    code: "USA",
+    bgColor: "#815E7F",
+    flagImg: "/image/US.png",
+    bgImage: "/image/USA.png",
+  },
+  {
+    name: "Canada",
+    code: "CAN",
+    bgColor: "#9C6A79",
+    flagImg: "/image/Ca.png",
+    bgImage: "/image/Canada.png",
+  },
+  {
+    name: "Germany",
+    code: "DEU",
+    bgColor: "#815E7F",
+    flagImg: "",
+    bgImage: "",
+  },
+  { name: "France", code: "FRA", bgColor: "#815E7F", flagImg: "", bgImage: "" },
+  { name: "Japan", code: "JPN", bgColor: "#815E7F", flagImg: "", bgImage: "" },
+  {
+    name: "Italy",
+    code: "ITA",
+    bgColor: "#296200",
+    flagImg: "/image/IT.png",
+    bgImage: "/image/italy.png",
+  },
+  {
+    name: "Korea",
+    code: "KR",
+    bgColor: "#0087FF",
+    flagImg: "/image/KR.png",
+    bgImage: "/image/Korea.png",
+  },
+  // Add more countries
 ];
 
 export default function Review() {
   const reviewButton = ["Travel", "Client", "Trave"];
 
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+  const [selectedButton, setSelectedButton] = useState<string | null>(null);
 
-  const handleChange = (event: any) => {
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedCode = event.target.value;
     const country = countries.find((c) => c.code === selectedCode);
-
     if (country) {
       setSelectedCountry(country);
-    } else {
-      setSelectedCountry(countries[0]);
     }
   };
 
-  const [selectedButton, setSelectedButton] = useState<string | null>(null);
   const handleButtonClick = (item: string) => {
     setSelectedButton(item);
   };
 
-  // review start
-
   const [reviews, setReviews] = useState(initialReviews);
   const [username, setUsername] = useState("");
   const [content, setContent] = useState("");
-  const [type, setType] = useState("travel");
   const [rating, setRating] = useState(0);
-  const [img, setImg] = useState("");
-  const [bgImage, setBgImage] = useState("");
-  const [countryCode, setCountryCode] = useState("");
-  const [bgColor, setBgColor] = useState("");
 
-  const handleAddReview = (e: any) => {
+  const handleAddReview = (e: React.FormEvent) => {
     e.preventDefault();
     const newReview = {
       id: reviews.length + 1,
       username,
-      type,
+      type: selectedButton || "",
       content,
       rating,
-      img,
-      bgImage,
-      countryCode,
-      bgColor,
+      countryCode: selectedCountry.code,
+      bgColor: selectedCountry.bgColor,
     };
     setReviews([...reviews, newReview]);
     setUsername("");
     setContent("");
-    setType("travel");
     setRating(0);
-    setImg("");
-    setBgImage("");
-    setCountryCode("");
-    setBgColor("");
+    setSelectedButton(null);
   };
-
-  // rating start
 
   const handleRatingChange = (
     event: React.ChangeEvent<{}>,
@@ -149,23 +146,12 @@ export default function Review() {
     }
   };
 
-  // slider start
-
   const sliderRef = useRef<Slider | null>(null);
-
   const settings = {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-  };
-
-  const handleNext = () => {
-    sliderRef.current?.slickNext();
-  };
-
-  const handlePrevious = () => {
-    sliderRef.current?.slickPrev();
   };
 
   return (
@@ -180,13 +166,10 @@ export default function Review() {
         </div>
       </div>
 
-      {/* Reviews Section */}
       <div className="w-fit h-[352px] m-auto flex items-center gap-8">
-        {/* review cards */}
         <div className="flex items-center gap-6">
           <div className="w-[1030px] relative">
             <div className="absolute z-10 right-0 w-[200px] h-[352px] bg-gradient-to-r from-white/0 to-white"></div>
-
             <Slider ref={sliderRef} {...settings}>
               {reviews.map((review) => {
                 const country = countries.find(
@@ -194,25 +177,24 @@ export default function Review() {
                 );
 
                 return (
-                  <div key="" className="">
+                  <div key={review.id} className="">
                     <div
-                      key={review.id}
                       className={`review w-fit h-[350px] py-3 px-1 flex flex-col justify-between `}
                       style={{
-                        backgroundImage: `url(${review.bgImage})`,
+                        backgroundImage: `url(${country?.bgImage || ""})`,
                         backgroundRepeat: "no-repeat",
                         backgroundPositionX: "50%",
                         overflow: "hidden",
                         backgroundSize: "270px 270px",
-                        backgroundColor: `${country?.bgColor}`,
+                        backgroundColor: `${country?.bgColor || ""}`,
                       }}
                     >
                       <div className="w-full flex gap-[10px] items-center">
-                        {review.img && (
+                        {country?.flagImg && (
                           <div className="review-image">
                             <Image
                               alt=""
-                              src={review.img}
+                              src={country.flagImg}
                               width={28}
                               height={28}
                             />
@@ -261,9 +243,7 @@ export default function Review() {
             </Slider>
           </div>
         </div>
-        {/* end review card */}
 
-        {/* Add Review Form */}
         <div className="w-[265px] h-[345px] bg-blue-600 px-[12px] py-[16px] flex flex-col gap-3">
           <div>
             <div className="text-white font-bold text-[18px]">Add review</div>
@@ -305,7 +285,6 @@ export default function Review() {
               </div>
             </div>
 
-            {/* Select Country Section */}
             <div className="w-[209px] h-[24px] flex items-center justify-between">
               <div className="text-[12px] text-white font-bold">
                 Where are you from?
@@ -329,7 +308,6 @@ export default function Review() {
               </div>
             </div>
 
-            {/* Review Content */}
             <Textarea
               id="content"
               className="w-[209px] h-[75px] bg-blue-400 border border-white rounded-xl text-[#FCFCFD] text-[12px]"
@@ -339,7 +317,6 @@ export default function Review() {
               required
             />
 
-            {/* Rating Section */}
             <Rating
               name="simple-controlled"
               value={rating}
@@ -347,7 +324,6 @@ export default function Review() {
             />
           </div>
 
-          {/* Submit Button */}
           <button
             onClick={handleAddReview}
             className="w-[232px] h-[43px] rounded-[6px] bg-white text-center text-gray-800 font-semibold text-[17px]"

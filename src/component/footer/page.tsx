@@ -9,7 +9,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 export default function Footer() {
   return (
     <div
-      className="w-full h-[390px] bg-[#034EA2] flex flex-col items-center justify-between pt-[50px]"
+      className="w-full max-w-screen-2xl h-[390px] bg-[#034EA2] flex flex-col items-center justify-between pt-[50px]"
       style={{
         backgroundImage: "url(/image/footer-bg-logo.png)",
         backgroundPosition: "right",
