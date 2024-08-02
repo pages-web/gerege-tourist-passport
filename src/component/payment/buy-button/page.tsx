@@ -13,8 +13,8 @@ interface BuyButtonProps {
 
 const BuyButton: React.FC<BuyButtonProps> = ({
   onClick,
-  width = 220,
-  height = 50,
+  width = 200,
+  height = 40,
   bgColor = "bg-blue-600",
   text = "",
   icon = "",
@@ -32,7 +32,7 @@ const BuyButton: React.FC<BuyButtonProps> = ({
           height={20}
           className="font-bold"
         />
-        <div className="text-white font-bold text-[16px]">
+        <div className="text-white font-bold text-[13px]">
           Gerege Buy for 55$
         </div>
       </div>

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import PayemntBasicPage from "@/component/payment/page";
+import BuyButton from "@/component/payment/buy-button/page";
 
 const imageList = [
   {
@@ -40,9 +41,9 @@ export default function AboutGeregePassport() {
   };
 
   return (
-    <div className="w-[1000px] h-[900px] flex flex-col justify-between">
+    <div className="lg:w-[1000px] w-[389px] lg:h-[900px] h-[540px] flex flex-col justify-between">
       <div
-        className="w-full h-[450px]"
+        className="lg:w-full w-[389px] lg:h-[450px] h-[200px]"
         style={{
           backgroundImage: "url(image/about-1.png)",
           backgroundSize: "cover",
@@ -50,21 +51,21 @@ export default function AboutGeregePassport() {
         }}
       ></div>
 
-      <div className="w-full h-[390px] flex justify-between">
-        <div className="w-[580px] h-[340px] flex flex-col justify-between">
+      <div className="lg:w-full w-[389px] lg:h-[390px] h-fit flex justify-between">
+        <div className="lg:w-[580px] w-[240px] lg:h-[340px] h-[330px] flex flex-col justify-between lg:pl-0 pl-2">
           <div>
-            <div className="text-[#0087FF] font-bold text-[30px]">
+            <div className="text-[#0087FF] font-bold lg:text-[30px] text-[16px]">
               GEREGE TOURIS PASSPORT
             </div>
-            <div className="text-[#1D2939] text-[22px] font-medium">
+            <div className="text-[#1D2939] l:text-[22px] text-[12px] font-medium">
               Must-have item for travel Mongolia
             </div>
           </div>
           <div>
-            <div className="text-[#1D2939] text-[20px] font-bold">
+            <div className="text-[#1D2939] lg:text-[20px] text-[14px] font-bold">
               GEREGE Today
             </div>
-            <div className="text-[14px] leading-5 text-[#475467]">
+            <div className="lg:text-[14px] text-[11px] leading-5 text-[#475467]">
               Even today, the spirit of the ancient Gerege lives on through the
               Gerege Passport, offering special privileges and exclusive
               benefits in Mongolia. Own a piece of this historical tradition by
@@ -72,61 +73,54 @@ export default function AboutGeregePassport() {
               modern-day advantages.
             </div>
           </div>
-          <div className="w-full h-[100px] flex flex-col justify-between">
+          <div className="w-full lg:h-[100px] h-[80px] flex flex-col justify-between">
             <div>
               <PayemntBasicPage />
             </div>
 
-            <div className="text-[14px] text-[#475467] font-normal">
+            <div className="lg:text-[14px] text-[9px] text-[#475467] font-normal">
               $1 from every purchase is donated to support children with special
               needs at the 10th Kindergarten.
             </div>
           </div>
         </div>
-        <div className="w-[350px] h-full bg-gray-100 p-3 flex flex-col justify-between relative">
+        <div className="lg:w-[350px] w-[145px] lg:h-full h-[250px] bg-gray-100 lg:p-3 p-1 flex flex-col justify-between relative">
           <div className="w-fit h-fit flex items-center gap-2">
             <div
               onClick={() => handle3DAnd2DClick("3D")}
-              className={`text-[18px] font-medium cursor-pointer ${
+              className={`lg:text-[18px] text-[15px] font-medium cursor-pointer ${
                 selected3DAnd2D === "3D" ? " text-gray-800" : "text-gray-500"
               }`}
             >
               3D
             </div>
-            <hr className="w-[1px] h-[20px] bg-black" />
+            <hr className="w-[1px] lg:h-[20px] h-[14px] bg-black" />
 
             <div
               onClick={() => handle3DAnd2DClick("2D")}
-              className={`text-[18px] font-medium cursor-pointer ${
+              className={`lg:text-[18px] text-[15px] font-medium cursor-pointer ${
                 selected3DAnd2D === "2D" ? " text-gray-800" : "text-gray-500"
               }`}
             >
               2D
             </div>
           </div>
-          <div className="w-[250px] h-full flex flex-col justify-start pt-3 absolute top-0 right-2">
-            <div
-
-            // style={{
-            //   backgroundImage: `url(${imageList[currentIndex].imgURL})`,
-            //   backgroundSize: "contain",
-            //   backgroundRepeat: "no-repeat",
-            //   backgroundPosition: "center",
-            // }}
-            >
+          <div className="lg:w-[250px] w-full lg:h-full h-full flex flex-col lg:justify-start justify-center items-center lg:pt-3 lg:absolute lg:top-0 lg:right-2">
+            <div>
               <Image
                 alt=""
                 src={imageList[currentIndex].imgURL}
                 width={200}
                 height={200}
+                className="lg:w-[200px] w-[120px] lg:h-[250px] h-[160px]"
               />
             </div>
-            <div className="w-[80px] flex items-center justify-between absolute right-1 bottom-1">
+            <div className="w-[80px] flex items-center justify-between lg:absolute lg:right-1 lg:bottom-1">
               <KeyboardArrowLeft
                 onClick={handlePreviousClick}
                 className="cursor-pointer"
               />
-              <div className="text-gray-800 text-base font-normal">
+              <div className="text-gray-800 lg:text-base text-[13px] font-normal">
                 {currentIndex + 1}-{imageList.length}
               </div>
               <KeyboardArrowRight

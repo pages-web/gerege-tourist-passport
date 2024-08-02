@@ -23,6 +23,7 @@ const Modal: React.FC<ModalProps> = ({ isVisible, onClose, children }) => {
     if (isVisible) {
       document.addEventListener("mousedown", handleClickOutside);
     }
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -34,11 +35,9 @@ const Modal: React.FC<ModalProps> = ({ isVisible, onClose, children }) => {
     <div
       className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
       style={{ zIndex: 9999 }}
+      ref={modalRef}
     >
-      <div
-        ref={modalRef}
-        className="relative bg-white p-4 rounded-lg shadow-lg max-w-md w-full"
-      >
+      <div className="relative bg-white p-4 rounded-lg shadow-lg max-w-md w-full">
         <button
           className="absolute top-2 right-2 p-1 text-gray-500 hover:text-gray-700"
           onClick={onClose}

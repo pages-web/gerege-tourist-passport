@@ -19,8 +19,8 @@ const Card: React.FC<CardProps> = ({
   bgImage,
 }) => {
   return (
-    <div className="w-[225px] h-[235px] bg-gray-100">
-      <div className="w-full h-[200px] p-[24px] flex flex-col items-center gap-3">
+    <div className="lg:w-[225px] w-[180px] lg:h-[235px] h-[180px] bg-gray-100">
+      <div className="w-full lg:h-[200px] h-[180px] p-[24px] flex flex-col items-center gap-3">
         <Image alt="" src={imageSrc} width={32} height={32} />
         <div
           className={`text-gray-800 text-[16px] font-semibold 
@@ -39,7 +39,7 @@ const Card: React.FC<CardProps> = ({
           {title}
         </div>
         <div
-          className="w-[204px] h-[47px] text-xs text-gray-600"
+          className="lg:w-[204px] w-[160px] h-[47px] text-xs text-gray-600"
           style={{
             display: "-webkit-box",
             WebkitBoxOrient: "vertical",
@@ -53,7 +53,7 @@ const Card: React.FC<CardProps> = ({
       </div>
       <Link href={link}>
         <div
-          className="w-[225px] h-[52px] flex items-center justify-center"
+          className="lg:w-[225px] w-[180px] lg:h-[52px] h-[32px] flex items-center justify-center"
           style={{
             backgroundImage: `url(${bgImage})`,
             backgroundPositionY: "50%",
@@ -64,7 +64,7 @@ const Card: React.FC<CardProps> = ({
         >
           <div className="w-full h-full flex items-center justify-center text-xs text-gray-300 font-medium bg-black/[0.5] transition-all duration-700 ease-in-out hover:scale-105 hover:gap-[10px] hover:text-white hover:font-bold">
             ABOUT {title.toUpperCase()}
-            <ArrowForwardIosIcon />
+            <ArrowForwardIosIcon className="lg:w-[30px] w-[20px] lg:h-[30px] h-[20px]" />
           </div>
         </div>
       </Link>

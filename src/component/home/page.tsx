@@ -10,7 +10,7 @@ import LoyaltyCard from "./loyalty-card/page";
 
 export default function HomePage() {
   return (
-    <main className="w-full max-w-screen-2xl h-fit flex flex-col items-center m-auto">
+    <main className="w-full lg:max-w-screen-2xl h-fit flex flex-col items-center m-auto">
       <Carousel />
       <WhyUs />
       <Benefits />

@@ -77,19 +77,20 @@ const LoyaltyCard = () => {
 
     return selectedIndices.map((card, index) => (
       <div key={index} className="flex flex-col items-center gap-[10px]">
-        <div className="flex items-center justify-center border w-[185px] h-[130px]">
+        <div className="flex items-center justify-center border lg:w-[185px] lg:h-[130px]">
           {selectedCardData && (
             <Image
               alt=""
               src={selectedCardData.imgURL || ""}
               width={120}
               height={80}
+              className="lg:w-[120px] w-[100px] lg:h-[80px] h-[80px]"
             />
           )}
         </div>
         <div className="flex">
-          <LocationOnIcon className="text-gray-700" />
-          <div className="w-[170px] h-[45px] text-gray-800 font-medium text-[12px] leading-[16px]">
+          <LocationOnIcon className="text-gray-700 lg:w-[24px] w-[16px] lg:h-[24px] h-[16px]" />
+          <div className="lg:w-[170px] w-[100px] lg:h-[45px] h-fit text-gray-800 font-medium lg:text-[12px] text-[9px] lg:leading-[16px] leading-3">
             {card ? card.address : "No address available"}
           </div>
         </div>
@@ -130,28 +131,28 @@ const LoyaltyCard = () => {
   // };
 
   return (
-    <div className="w-[1200px] h-[560px] flex flex-col justify-between gap-5 m-auto mb-[60px]">
+    <div className="lg:w-[1200px] w-[389px] h-fit flex flex-col justify-between gap-6 m-auto lg:mb-[60px] mb-[40px]">
       <div className="text-center">
-        <div className="text-gray-800 text-[22px] font-bold">
+        <div className="text-gray-800 lg:text-[22px] text-[16px] font-bold">
           RECEIVE SPECIAL OFFERS WITH OUR &quot;U POINT&quot; LOYALTY CARD.
         </div>
-        <div className="text-[18px] text-gray-600 font-normal">
+        <div className="lg:text-[18px] text-[14px] text-gray-600 font-normal">
           In partnership with over 60 Mongolian top brands
         </div>
       </div>
 
       {/* menu start */}
       {selectedListAndMap === "MAP" ? (
-        // Start google map
-        <div className="w-full h-[428px] flex gap-3">
-          <div className="w-[850px] h-[430px]">
-            <div className="w-full h-[65px] flex justify-between items-center border">
-              <div className="w-fit h-full flex items-center justify-evenly border">
+        // Start clicked google map
+        <div className="lg:w-full w-[389px] lg:h-[430px] h-fit lg:flex lg:flex-nowrap gap-5 flex flex-wrap">
+          <div className="lg:w-[810px] w-full lg:h-[430px] h-fit border">
+            <div className="w-full lg:h-[65px] h-fit flex lg:justify-between lg:items-center flex-wrap gap-2 justify-end border py-2">
+              <div className="lg:w-fit w-[389px] h-full flex items-center justify-evenly">
                 {menuItems.map((item) => (
                   <div
                     key={item}
                     onClick={() => handleMenuClick(item)}
-                    className={`text-[18px] font-bold cursor-pointer border border-l-0 border-t-0 border-b-0 p-[17px] ${
+                    className={`lg:text-[18px] text-[14px] font-bold cursor-pointer border border-l-0 border-t-0 border-b-0 lg:p-[17px] p-2 ${
                       selectedMenu === item
                         ? "bg-[#ebfaff] text-[#0087FF]"
                         : "text-gray-800"
@@ -162,22 +163,22 @@ const LoyaltyCard = () => {
                 ))}
                 <div
                   onClick={handleHowToBuy}
-                  className="text-[18px] text-[#0087FF] font-bold border border-l-0 border-t-0 border-b-0 p-[17px] w-fit h-full cursor-pointer"
+                  className="lg:text-[18px] text-[13px] text-[#0087FF] font-bold border border-l-0 border-t-0 border-b-0 lg:p-[17px] p-2 w-fit h-full cursor-pointer"
                 >
                   HOW TO BUY?
                 </div>
               </div>
-              <div className="w-fit h-full flex">
+              <div className="w-fit h-full flex items-center gap-2 lg:mr-0 mr-4">
                 <div
                   onClick={() => handleListAndMapClick("LIST")}
-                  className={`w-1/2 h-full text-[18px] font-bold flex items-center justify-center gap-1 border border-t-0 border-b-0 p-[17px] cursor-pointer`}
+                  className={`w-1/2 h-full lg:text-[18px] text-[14px] font-bold flex items-center justify-center gap-1 border border-t-0 border-b-0 lg:p-[17px] p-2 cursor-pointer`}
                 >
                   <ListIcon />
                   LIST
                 </div>
                 <div
                   onClick={() => handleListAndMapClick("MAP")}
-                  className={`w-1/2 h-full text-[18px] font-bold flex items-center justify-center gap-1 p-[17px] cursor-pointer ${
+                  className={`w-1/2 h-full lg:text-[18px] text-[14px] font-bold flex items-center justify-center gap-1 lg:p-[17px] p-2 cursor-pointer ${
                     selectedListAndMap === "MAP"
                       ? "bg-[#ebfaff] text-[#0087FF]"
                       : "text-gray-800"
@@ -188,15 +189,16 @@ const LoyaltyCard = () => {
                     src="/image/map-svgrepo-com 1.png"
                     width={24}
                     height={24}
+                    className="lg:w-[24px] w-[20px] lg:h-[24px] h-[20px]"
                   />{" "}
                   MAP
                 </div>
               </div>
             </div>
 
-            <div className="w-full h-fit flex flex-col gap-[24px] py-[24px] px-4">
+            <div className="w-full h-fit flex flex-col gap-[24px] py-[24px] lg:px-4 px-2">
               <div className="w-full h-fit flex justify-between py-3 border border-t-0 border-l-0 border-r-0">
-                <div className="text-gray-800 text-[20px] font-bold">
+                <div className="text-gray-800 lg:text-[20px] text-[15px] font-bold">
                   {selectedCard !== null &&
                     getCardList().find((card) => card.id === selectedCard)
                       ?.title}
@@ -206,10 +208,10 @@ const LoyaltyCard = () => {
                 </div>
               </div>
 
-              <div className="w-full h-fit flex gap-[20px]">
-                <div className="w-fit h-fit flex flex-col gap-6 pb-4">
+              <div className="w-full h-fit flex lg:gap-5 gap-10 border">
+                <div className="lg:w-fit w-[350px] h-fit flex flex-col gap-6 pb-4">
                   {selectedCard !== null && (
-                    <div className="w-[400px] h-[125px] text-sm font-medium text-gray-800">
+                    <div className="lg:w-[400px] w-full lg:h-[125px] h-fit lg:text-sm text-[12px] lg:leading-5 leading-4 font-medium text-gray-800">
                       {
                         getCardList().find((card) => card.id === selectedCard)
                           ?.content
@@ -217,15 +219,15 @@ const LoyaltyCard = () => {
                     </div>
                   )}
                   {selectedCard !== null && (
-                    <div className="w-[400px] h-fit flex flex-col gap-3">
-                      <div className="w-full flex gap-1 text-gray-800 text-sm">
-                        <PlaceIcon />
+                    <div className="lg:w-[400px] w-full h-fit flex flex-col gap-3">
+                      <div className="w-full flex gap-1 text-gray-800 lg:text-sm text-[11px]">
+                        <PlaceIcon className="lg:w-[24px] w-[16px] lg:h-[24px] h-[16px]" />
                         {
                           getCardList().find((card) => card.id === selectedCard)
                             ?.address
                         }
                       </div>
-                      <button className="w-[169px] h-[37px] text-center bg-[#0087FF] text-white font-semibold text-sm">
+                      <button className="lg:w-[169px] w-[100px] lg:h-[37px] h-[25px] text-center bg-[#0087FF] text-white font-semibold lg:text-sm text-[9px]">
                         CHECK FOR DETAILS
                       </button>
                     </div>
@@ -233,11 +235,11 @@ const LoyaltyCard = () => {
                 </div>
 
                 {/* card start */}
-                <div className="w-fit h-fit flex gap-3 relative">
+                <div className="w-fit h-fit lg:flex lg:flex-nowrap gap-3 flex flex-wrap-reverse relative">
                   {visibleCards.map((card) => (
                     <div
                       key={card.id}
-                      className={`w-[180px] h-[180px] border ${
+                      className={`lg:w-[180px] w-[140px] lg:h-[185px] h-[140px] border ${
                         selectedCard === card.id
                           ? "border-blue-500 shadow-inner shadow-blue-300"
                           : "border-gray-300"
@@ -250,12 +252,13 @@ const LoyaltyCard = () => {
                           src={card.imgURL}
                           width={180}
                           height={180}
+                          className="lg:w-[180px] w-[120px] lg:h-[180px] h-[120px]"
                         />
                       )}
                     </div>
                   ))}
                   {hiddenCardsCount > 0 && (
-                    <div className="absolute w-[180px] h-[180px] bg-black/[0.5] border flex items-center justify-center text-white font-bold right-0">
+                    <div className="absolute lg:w-[180px] w-[140px] lg:h-[185px] h-[140px] bg-black/[0.5] border flex items-center justify-center text-white font-bold lg:right-0 right-[10px]">
                       +{hiddenCardsCount} MORE
                     </div>
                   )}
@@ -265,7 +268,7 @@ const LoyaltyCard = () => {
             </div>
           </div>
           <div
-            className="w-[428px] h-[430px]"
+            className="lg:w-[400px] w-[389px] lg:h-[429px] h-[260px]"
             onClick={() => handleListAndMapClick("MAP")}
           >
             {selectedCard !== null && (
@@ -287,17 +290,17 @@ const LoyaltyCard = () => {
           </div>
         </div>
       ) : (
-        // End google map
+        // End clicked google map
 
         // Start basic chain
-        <div className="w-full h-[430px] border">
-          <div className="w-full h-[65px] flex justify-between items-center border">
-            <div className="w-fit h-full flex items-center justify-evenly border">
+        <div className="lg:w-full w-[389px] h-fit border">
+          <div className="w-full lg:h-[65px] h-fit flex lg:justify-between lg:items-center flex-wrap gap-2 justify-end border">
+            <div className="w-fit h-full flex items-center justify-evenly">
               {menuItems.map((item) => (
                 <div
                   key={item}
                   onClick={() => handleMenuClick(item)}
-                  className={`text-[18px] font-bold cursor-pointer border border-l-0 border-t-0 border-b-0 p-[17px] ${
+                  className={`lg:text-[18px] text-[14px] font-bold cursor-pointer border border-l-0 border-t-0 border-b-0 lg:p-[17px] p-2 ${
                     selectedMenu === item
                       ? "bg-[#ebfaff] text-[#0087FF]"
                       : "text-gray-800"
@@ -308,26 +311,26 @@ const LoyaltyCard = () => {
               ))}
               <div
                 onClick={handleHowToBuy}
-                className="cursor-pointer text-[18px] text-[#0087FF] font-bold border border-l-0 border-t-0 border-b-0 p-[17px] w-fit h-full"
+                className="cursor-pointer lg:text-[18px] text-[13px] text-[#0087FF] font-bold border border-l-0 border-t-0 border-b-0 p-[17px] w-fit h-full"
               >
                 HOW TO BUY?
               </div>
             </div>
-            <div className="w-fit h-full flex">
+            <div className="w-fit h-full flex items-center gap-2 lg:mr-0 mr-4">
               <div
                 onClick={() => handleListAndMapClick("LIST")}
-                className={`w-1/2 h-full text-[18px] font-bold flex items-center justify-center gap-1 border border-t-0 border-b-0 p-[17px] cursor-pointer ${
+                className={`w-1/2 h-full lg:text-[18px] text-[14px] font-bold flex items-center justify-center gap-1 border border-t-0 border-b-0 lg:p-[17px] p-2 cursor-pointer ${
                   selectedListAndMap === "LIST"
                     ? "bg-[#ebfaff] text-[#0087FF]"
                     : "text-gray-800"
                 }`}
               >
-                <ListIcon />
+                <ListIcon className="lg:w-[30px] w-[26px] lg:h-[30px] h-[26px]" />
                 LIST
               </div>
               <div
                 onClick={() => handleListAndMapClick("MAP")}
-                className={`w-1/2 h-full text-[18px] font-bold flex items-center justify-center gap-1 p-[17px] cursor-pointer ${
+                className={`w-1/2 h-full lg:text-[18px] text-[14px] font-bold flex items-center justify-center gap-1 lg:p-[17px] p-1 cursor-pointer ${
                   selectedListAndMap === "MAP"
                     ? "bg-[#ebfaff] text-[#0087FF]"
                     : "text-gray-800"
@@ -338,6 +341,7 @@ const LoyaltyCard = () => {
                   src="/image/map-svgrepo-com 1.png"
                   width={24}
                   height={24}
+                  className="lg:w-[24px] w-[20px] lg:h-[24px] h-[20px]"
                 />{" "}
                 MAP
               </div>
@@ -345,28 +349,18 @@ const LoyaltyCard = () => {
           </div>
 
           {/* Start How to buy? */}
-
           {showHowToBuy ? (
-            <div className="flex w-full h-[430px] gap-6 p-6">
-              <div className="w-1/2 h-full flex flex-col gap-5">
-                <div className="flex flex-col gap-2">
-                  <div className="text-gray-600 font-semibold text-xl ml-2">
+            <div className="lg:flex lg:flex-nowrap flex flex-wrap w-full h-fit lg:gap-6 gap-10 lg:p-6 p-3 border">
+              <div className="lg:w-1/2 w-full h-fit flex flex-col gap-5">
+                <div className="flex h-fit flex-col gap-2">
+                  <div className="text-gray-600 font-semibold lg:text-xl text-[14px] ml-2">
                     1.{" "}
                     {
                       getCardList().find((card) => card.id === selectedCard)
                         ?.title
                     }
                   </div>
-                  <div
-                    className="text-gray-600 font-normal text-base w-full h-[80px] leading-5"
-                    style={{
-                      display: "-webkit-box",
-                      WebkitBoxOrient: "vertical",
-                      WebkitLineClamp: 4,
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                    }}
-                  >
+                  <div className="text-gray-600 font-normal lg:text-base text-[12px] w-full h-fit lg:leading-5 leading-4">
                     {
                       getCardList().find((card) => card.id === selectedCard)
                         ?.howToBuy.howToBuy1
@@ -375,9 +369,9 @@ const LoyaltyCard = () => {
                 </div>
                 <div className="flex">{renderSelectedCardDetails()}</div>
               </div>
-              <div className="w-1/2 h-full flex flex-col gap-6">
+              <div className="lg:w-1/2 w-full lg:h-full h-fit flex flex-col lg:gap-6 gap-3">
                 <div className="flex flex-col gap-2">
-                  <div className="text-gray-600 font-semibold text-xl ml-2">
+                  <div className="text-gray-600 font-semibold lg:text-xl text-[14px] ml-2">
                     2.{" "}
                     {
                       getCardList().find((card) => card.id === selectedCard)
@@ -385,7 +379,7 @@ const LoyaltyCard = () => {
                     }{" "}
                   </div>
                   <div
-                    className="text-gray-600 font-normal text-base w-full h-[62px] leading-5"
+                    className="text-gray-600 font-normal lg:text-base text-[11px] w-full h-[62px] lg:leading-5 leading-3"
                     style={{
                       display: "-webkit-box",
                       WebkitBoxOrient: "vertical",
@@ -400,7 +394,7 @@ const LoyaltyCard = () => {
                     }
                   </div>
                 </div>
-                <div className="w-[190px] h-[170px] border flex items-center justify-center">
+                <div className="lg:w-[190px] w-[150px] lg:h-[170px] h-[105px] border flex items-center justify-center">
                   {" "}
                   {selectedCard !== null &&
                     getCardList().find((card) => card.id === selectedCard) && (
@@ -412,15 +406,16 @@ const LoyaltyCard = () => {
                         }
                         width={180}
                         height={120}
+                        className="lg:w-[180px] w-[120px] lg:h-[120px] h-[100px]"
                       />
                     )}
                 </div>
               </div>
             </div>
           ) : (
-            <div className="w-full h-fit flex flex-col gap-[24px] py-[24px] px-4 border">
+            <div className="w-full h-fit flex flex-col gap-[24px] lg:py-[24px] lg:px-4 px-2 border">
               <div className="w-full h-fit flex justify-between py-3 border border-t-0 border-l-0 border-r-0">
-                <div className="text-gray-800 text-[20px] font-bold">
+                <div className="text-gray-800 lg:text-[20px] text-[15px] font-bold">
                   {selectedCard !== null &&
                     getCardList().find((card) => card.id === selectedCard)
                       ?.title}
@@ -430,10 +425,10 @@ const LoyaltyCard = () => {
                 </div>
               </div>
 
-              <div className="w-full h-fit flex gap-[20px]">
+              <div className="w-full h-fit flex lg:gap-[20px] gap-3">
                 <div className="w-fit h-fit flex flex-col gap-6 pb-4">
                   {selectedCard !== null && (
-                    <div className="w-[400px] h-[125px] text-sm font-medium text-gray-800">
+                    <div className="lg:w-[400px] w-[150px] lg:h-[125px] h-fit lg:text-sm text-[10px] font-medium text-gray-800">
                       {
                         getCardList().find((card) => card.id === selectedCard)
                           ?.content
@@ -441,15 +436,15 @@ const LoyaltyCard = () => {
                     </div>
                   )}
                   {selectedCard !== null && (
-                    <div className="w-[400px] h-fit flex flex-col gap-3">
-                      <div className="w-full flex gap-1 text-gray-800 text-sm">
-                        <PlaceIcon />
+                    <div className="lg:w-[400px] w-[150px] h-fit flex flex-col lg:gap-3 gap-1">
+                      <div className="w-full flex gap-1 text-gray-800 lg:text-sm text-[10px]">
+                        <PlaceIcon className="lg:w-[24px] w-[16px] lg:h-[24px] h-[16px]" />
                         {
                           getCardList().find((card) => card.id === selectedCard)
                             ?.address
                         }
                       </div>
-                      <button className="w-[169px] h-[37px] text-center bg-[#0087FF] text-white font-semibold text-sm">
+                      <button className="lg:w-[169px] w-[100px] lg:h-[37px] h-[20px] text-center bg-[#0087FF] text-white font-semibold lg:text-sm text-[8px]">
                         CHECK FOR DETAILS
                       </button>
                     </div>
@@ -457,13 +452,13 @@ const LoyaltyCard = () => {
                 </div>
 
                 {/* card start */}
-                <div className="w-fit h-fit flex gap-3 relative">
+                <div className="lg:w-fit w-[206px] lg:h-[181px] h-[210px] lg:flex lg:flex-nowrap lg:gap-3 flex flex-wrap-reverse gap-1 relative">
                   {getCardList().map((card, index) => (
                     <div
                       key={card.id}
-                      className={`w-[180px] h-[180px] border ${
+                      className={`lg:w-[180px] w-[100px] lg:h-[185px] h-[105px] border ${
                         selectedCard === card.id
-                          ? "border-blue-500 shadow-inner shadow-blue-300"
+                          ? "border-blue-500 ring-2"
                           : "border-gray-300"
                       } ${
                         index >= 4 ? "hidden" : ""
@@ -476,12 +471,13 @@ const LoyaltyCard = () => {
                           src={card.imgURL}
                           width={180}
                           height={180}
+                          className="lg:w-[180px] w-[100px] lg:h-[180px] h-[100px]"
                         />
                       )}
                     </div>
                   ))}
                   {hiddenCardsCount > 0 && (
-                    <div className="absolute w-[180px] h-[180px] bg-black/[0.5] border flex items-center justify-center text-white font-bold right-0">
+                    <div className="absolute z-10 lg:w-[180px] w-[101px] lg:h-[180px] h-[106px] bg-black/[0.5] border flex items-center justify-center text-white font-bold lg:right-0 right-[2px]">
                       +{hiddenCardsCount} MORE
                     </div>
                   )}

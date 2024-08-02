@@ -29,15 +29,10 @@ const PaymentComponent: React.FC<PaymentComponentProps> = ({
   }, [currentStep]);
 
   const handleCopyClick = () => {
-    navigator.clipboard
-      .writeText(link)
-      .then(() => {
-        setIsCopied(true);
-        setTimeout(() => setIsCopied(false), 2000);
-      })
-      .catch((err) => {
-        console.error("Failed to copy the link: ", err);
-      });
+    navigator.clipboard.writeText(link).then(() => {
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    });
   };
 
   const handlePaymentClick = () => {

@@ -1,3 +1,5 @@
+import exp from "constants";
+
 declare global {
   interface Window {
     initMap: () => void;
@@ -43,10 +45,16 @@ interface AboutType {
   text1: string;
   text2: string;
 }
+export interface imgURLType {
+  imgURL1: string;
+  imgURL2: string;
+  imgURL3: string;
+  imgURL4: string;
+}
 
 export interface CardType {
   id: number;
-  imgURL?: string;
+  imgURL?: imgURLType;
   logoImgURL?: string;
   title: string;
   content: string;
@@ -73,14 +81,22 @@ export const CardList: CardListType = {
     {
       id: 1,
       logoImgURL: "/image/chinggis-khaan-museum-logo.png",
-      imgURL: "/image/chinggis-khaan-museum.png",
+      imgURL: {
+        imgURL1: "/image/chinggis-khaan-museum.png",
+        imgURL2: "/image/nomin-chain.png",
+        imgURL3: "/image/chinggis-khaan-museum.png",
+        imgURL4: "/image/nomin-chain.png",
+      },
       title: "Museum",
       content:
         "Opening Date: The museum was inaugurated in 2020, Location: Ulaanbaatar, Mongolia, Purpose: To showcase the rich history and culture of Mongolia, with a special emphasis on Chinggis Khaan and the Mongol Empire.",
-      cuponContent: "Discount coupon book for over 10 brands...",
+      cuponContent:
+        "Discount coupon book for over 10 brands (outlet price + up to 10% additional discount, 1 coffee coupon)",
       about: {
-        text1: "Nomin Supermarket first started its operations in 1997...",
-        text2: "We deliver quality guaranteed and hygienic food...",
+        text1:
+          "Nomin Supermarket first started its operations in 1997 in the Nomin Plaza branch in the 14th district of Bayangol district. In the 30 years since its opening, it has 19 branches in Ulaanbaatar city and 3 branches in the local area, totaling 22 branches. and wholesale trade.",
+        text2:
+          "We deliver quality guaranteed and hygienic food, household, and electronic goods to more than 20,000 customers. In 2022, Nomin Supermarket Nomunvillage and in July 2023, Nomin Supermarket Belh Branch are successfully opened.",
       },
       mapURL:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11626.14657166165!2d106.9148724!3d47.9226227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d9693c7c74617c3%3A0xf69f7d1336167c9f!2sChinggis%20Khaan%20National%20Museum!5e0!3m2!1sen!2sus!4v1626274008177!5m2!1sen!2sus",
@@ -119,10 +135,17 @@ export const CardList: CardListType = {
     {
       id: 2,
       logoImgURL: "/image/cu-logo.png",
+      imgURL: {
+        imgURL1: "/image/chinggis-khaan-museum.png",
+        imgURL2: "/image/chinggis-khaan-museum.png",
+        imgURL3: "/image/chinggis-khaan-museum.png",
+        imgURL4: "/image/chinggis-khaan-museum.png",
+      },
       title: "Museum 2",
       content:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ipsum voluptas fuga perferendis molestias quidem cum illum. Rerum, a modi.",
-      cuponContent: "Discount coupon book for over 10 brands...",
+      cuponContent:
+        "Discount coupon book for over 10 brands (outlet price + up to 10% additional discount, 1 coffee coupon)",
       about: {
         text1: "Nomin Supermarket first started its operations in 1997...",
         text2: "We deliver quality guaranteed and hygienic food...",
@@ -166,7 +189,12 @@ export const CardList: CardListType = {
     {
       id: 1,
       logoImgURL: "/image/nomin-logo.png",
-      imgURL: "/image/nomin-chain.png",
+      imgURL: {
+        imgURL1: "/image/nomin-chain.png",
+        imgURL2: "/image/chinggis-khaan-museum.png",
+        imgURL3: "/image/nomin-chain.png",
+        imgURL4: "/image/chinggis-khaan-museum.png",
+      },
       title: "Culture",
       content:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ipsum voluptas fuga perferendis molestias quidem cum illum. Rerum, a modi.",
@@ -258,7 +286,12 @@ export const CardList: CardListType = {
     {
       id: 1,
       logoImgURL: "/image/nomin-logo.png",
-      imgURL: "/image/nomin-chain.png",
+      imgURL: {
+        imgURL1: "/image/nomin-chain.png",
+        imgURL2: "/image/chinggis-khaan-museum.png",
+        imgURL3: "/image/nomin-chain.png",
+        imgURL4: "/image/chinggis-khaan-museum.png",
+      },
       title: '"Nomin" chain supermarkets',
       content:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ipsum voluptas fuga perferendis molestias quidem cum illum. Rerum, a modi.",
@@ -349,7 +382,12 @@ export const CardList: CardListType = {
     {
       id: 1,
       logoImgURL: "/image/nomin-logo.png",
-      imgURL: "/image/nomin-chain.png",
+      imgURL: {
+        imgURL1: "/image/nomin-chain.png",
+        imgURL2: "/image/chinggis-khaan-museum.png",
+        imgURL3: "/image/nomin-chain.png",
+        imgURL4: "/image/chinggis-khaan-museum.png",
+      },
       title: '"Nomin" chain supermarkets',
       content:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ipsum voluptas fuga perferendis molestias quidem cum illum. Rerum, a modi.",
@@ -440,7 +478,12 @@ export const CardList: CardListType = {
     {
       id: 1,
       logoImgURL: "/image/nomin-logo.png",
-      imgURL: "/image/nomin-chain.png",
+      imgURL: {
+        imgURL1: "/image/nomin-chain.png",
+        imgURL2: "/image/chinggis-khaan-museum.png",
+        imgURL3: "/image/nomin-chain.png",
+        imgURL4: "/image/chinggis-khaan-museum.png",
+      },
       title: '"Nomin" chain supermarkets',
       content: "Nomin Supermarket first started its operations in 1997...",
       cuponContent: "Discount coupon book for over 10 brands...",

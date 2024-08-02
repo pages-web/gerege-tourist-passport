@@ -31,7 +31,7 @@ const Carousel = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(intervalId);
   }, [slides.length]);
@@ -41,9 +41,9 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative lg:w-full w-[389px] overflow-hidden">
       <div
-        className="flex transition-transform duration-1000 ease-in-out"
+        className={`flex transition-transform duration-1000 ease-in-out`}
         style={{
           transform: `translateX(-${currentIndex * 25}%)`,
           width: `${slides.length * 100}%`,
@@ -52,30 +52,31 @@ const Carousel = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="w-full flex justify-center pt-[300px]"
+            className="w-full lg:h-[620px] h-[300px] flex justify-center lg:pt-[300px] pt-[115px]"
             style={{
               backgroundImage: `url(${slide.backgroundImage})`,
               backgroundPositionY: "55%",
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
-              height: "620px",
             }}
           >
-            <div className="w-[1200px] h-[278px] rounded-[16px] p-[24px] flex flex-col justify-between bg-black/[.7]">
-              <div className="w-[780px] text-[48px] text-white font-bold">
-                {slide.title}
+            <div className="lg:w-[1200px] w-11/12 lg:h-fit h-fit lg:rounded-[16px] rounded-xl lg:p-[24px] p-3 flex flex-col lg:gap-[25px] gap-5 bg-black/[.7]">
+              <div>
+                <div className="lg:w-[780px] lg:text-[48px] text-[20px] text-white font-bold">
+                  {slide.title}
+                </div>
+                <div className="lg:text-base text-[12px] font-normal text-white">
+                  {slide.description}
+                </div>
               </div>
-              <div className="text-base font-normal text-white">
-                {slide.description}
-              </div>
-              <button className="w-[127px] h-[43px] rounded-[8px] bg-[#0087FF] text-white text-[16px] font-semibold flex items-center justify-center">
+              <button className="lg:w-[127px] w-[110px] lg:h-[43px] h-[30px] lg:rounded-[8px] rounded-[5px] bg-[#0087FF] text-white lg:text-[16px] text-[13px] font-semibold flex items-center justify-center">
                 Buying now
               </button>
             </div>
           </div>
         ))}
       </div>
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex `lg:space-x-2 space-x-1">
         {slides.map((_, index) => (
           <button
             key={index}

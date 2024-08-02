@@ -71,15 +71,6 @@ const countries = [
     bgImage: "/image/Canada.png",
   },
   {
-    name: "Germany",
-    code: "DEU",
-    bgColor: "#815E7F",
-    flagImg: "",
-    bgImage: "",
-  },
-  { name: "France", code: "FRA", bgColor: "#815E7F", flagImg: "", bgImage: "" },
-  { name: "Japan", code: "JPN", bgColor: "#815E7F", flagImg: "", bgImage: "" },
-  {
     name: "Italy",
     code: "ITA",
     bgColor: "#296200",
@@ -152,24 +143,33 @@ export default function Review() {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024, // lg breakpoint
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <div className="w-full h-fit bg-gray-200 mb-[60px] pt-6 flex flex-col gap-8">
+    <div className="lg:w-full w-[389px] h-fit bg-gray-200 py-6 flex flex-col gap-8">
       <div className="text-center flex flex-col gap-3">
-        <div className="text-gray-800 text-[22px] font-bold">
+        <div className="text-gray-800 lg:text-[22px] text-[16px] font-bold">
           We’ve helped hundreds of global companies
         </div>
-        <div className="text-[12px] text-gray-600 font-normal">
+        <div className="lg:text-[12px] text-[10px] text-gray-600 font-normal">
           Case studies from some of our amazing customers who are building
           faster.
         </div>
       </div>
 
-      <div className="w-fit h-[352px] m-auto flex items-center gap-8">
+      <div className="lg:w-fit w-[210px] lg:h-[352px] h-fit lg:m-auto ml-[20%] lg:flex lg:items-center lg:gap-8">
+        {/* Start review */}
         <div className="flex items-center gap-6">
-          <div className="w-[1030px] relative">
-            <div className="absolute z-10 right-0 w-[200px] h-[352px] bg-gradient-to-r from-white/0 to-white"></div>
+          <div className="lg:w-[1030px] w-full relative">
+            <div className="lg:block hidden absolute z-10 right-0 w-[200px] h-[352px] bg-gradient-to-r from-white/0 to-white"></div>
             <Slider ref={sliderRef} {...settings}>
               {reviews.map((review) => {
                 const country = countries.find(
@@ -179,7 +179,7 @@ export default function Review() {
                 return (
                   <div key={review.id} className="">
                     <div
-                      className={`review w-fit h-[350px] py-3 px-1 flex flex-col justify-between `}
+                      className={`review w-fit lg:h-[350px] h-[250px] lg:py-3 py-1 px-1 flex flex-col justify-between`}
                       style={{
                         backgroundImage: `url(${country?.bgImage || ""})`,
                         backgroundRepeat: "no-repeat",
@@ -201,12 +201,12 @@ export default function Review() {
                           </div>
                         )}
                         {country && (
-                          <div className="text-white text-[24px] font-bold">
+                          <div className="text-white lg:text-[24px] text-[18px] font-bold">
                             {country.name.toUpperCase()}
                           </div>
                         )}
                       </div>
-                      <div className="w-[238px] h-[176px] bg-black/30 border flex flex-col justify-between p-4">
+                      <div className="lg:w-[238px] w-[200px] lg:h-[176px] h-[150px] bg-white/30 border flex flex-col justify-between lg:p-4 p-2">
                         <div className="w-[204px] h-fit flex flex-col gap-3">
                           <div className="flex w-fit h-fit gap-2 items-center">
                             <div className="w-[33px] h-[33px] rounded-full bg-gray-100 flex items-center justify-center">
@@ -218,17 +218,26 @@ export default function Review() {
                               />
                             </div>
                             <div className="w-fit h-fit">
-                              <div className="text-white text-[14px] font-medium">
+                              <div className="text-white lg:text-[14px] text-[12px] font-medium">
                                 {review.username}
                               </div>
-                              <div className="text-gray-200 text-[13px] font-normal">
+                              <div className="text-gray-200 lg:text-[13px] text-[10px] font-normal">
                                 {review.type}
                               </div>
                             </div>
                           </div>
-                          <p className="w-full h-[45px] text-white text-xs">
+                          <div
+                            className="lg:w-[200px] lg:h-[50px] w-[180px] h-[40px] text-white lg:text-xs text-[10px]"
+                            style={{
+                              display: "-webkit-box",
+                              WebkitBoxOrient: "vertical",
+                              WebkitLineClamp: 3,
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                            }}
+                          >
                             {review.content}
-                          </p>
+                          </div>
                         </div>
                         <Rating
                           name="read-only"
@@ -244,20 +253,29 @@ export default function Review() {
           </div>
         </div>
 
-        <div className="w-[265px] h-[345px] bg-blue-600 px-[12px] py-[16px] flex flex-col gap-3">
+        {/* Start Add review */}
+        <div className="lg:w-[265px] w-[212px] lg:h-[345px] h-[310px] bg-blue-600 lg:px-[12px] px-[8px] lg:py-[16px] py-[12px] flex flex-col gap-3 lg:mt-0 mt-3">
           <div>
-            <div className="text-white font-bold text-[18px]">Add review</div>
-            <div className="text-white text-[12px] font-normal">
+            <div className="text-white font-bold lg:text-[18px] text-[14px]">
+              Add review
+            </div>
+            <div className="text-white lg:text-[12px] text-[10px] font-normal">
               Fill your information below
             </div>
           </div>
 
-          <div className="w-[232px] h-[218px] bg-blue-400 flex flex-col p-[11px] gap-[11px] border rounded-xl">
-            <div className="w-[209px] h-[40px] flex justify-between items-center">
-              <div className="w-[33px] h-[33px] rounded-full bg-gray-100 flex items-center justify-center">
-                <Image alt="" src="/image/user-01.png" width={19} height={19} />
+          <div className="lg:w-[232px] w-[195px] lg:h-[218px] h-[210px] bg-blue-400 flex flex-col p-[11px] gap-[11px] border rounded-xl">
+            <div className="lg:w-[209px] w-[175px] h-[40px] flex justify-between items-center">
+              <div className="lg:w-[33px] w-[26px] lg:h-[33px] h-[26px] rounded-full bg-gray-100 flex items-center justify-center">
+                <Image
+                  alt=""
+                  src="/image/user-01.png"
+                  width={19}
+                  height={19}
+                  className="lg:w-[19px] w-[16px] lg:h-[19px] h-[16px]"
+                />
               </div>
-              <div className="w-[168px] h-[40px] flex flex-col justify-between">
+              <div className="lg:w-[168px] w-[140px] h-[40px] flex flex-col justify-between">
                 <Input
                   id="username"
                   type="text"
@@ -265,13 +283,13 @@ export default function Review() {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required
-                  className="w-full h-[15px] bg-blue-400 text-[#FCFCFD] text-[11px] border-b border-white"
+                  className="w-full h-[15px] bg-blue-400 text-[#FCFCFD] lg:text-[11px] text-[9px] border-b border-white"
                 />
                 <div className="w-full h-[15px] flex items-center justify-between">
                   {reviewButton.map((item) => (
                     <div
                       key={item}
-                      className={`w-[45px] h-full rounded-[8px] text-center text-[11px] cursor-pointer ${
+                      className={`lg:w-[45px] w-[40px] h-full rounded-[8px] text-center lg:text-[11px] text-[9px] cursor-pointer ${
                         selectedButton === item
                           ? "bg-blue-600 text-white"
                           : "bg-white text-gray-600"
@@ -285,13 +303,13 @@ export default function Review() {
               </div>
             </div>
 
-            <div className="w-[209px] h-[24px] flex items-center justify-between">
-              <div className="text-[12px] text-white font-bold">
+            <div className="lg:w-[209px] w-[175px] h-[24px] flex items-center lg:justify-between gap-4">
+              <div className="lg:text-[12px] text-[9px] text-white font-bold">
                 Where are you from?
               </div>
-              <div className="w-[80px] h-[24px] bg-white rounded-[6px] flex items-center">
+              <div className="lg:w-[80px] w-[60px] h-[24px] bg-white rounded-[6px] flex items-center">
                 <Flag
-                  className="w-[24px] h-[24px] rounded-full"
+                  className="w-[24px] h-[24px]"
                   code={selectedCountry.code}
                 />
                 <select
@@ -310,7 +328,7 @@ export default function Review() {
 
             <Textarea
               id="content"
-              className="w-[209px] h-[75px] bg-blue-400 border border-white rounded-xl text-[#FCFCFD] text-[12px]"
+              className="lg:w-[209px] w-[175px] lg:h-[75px] h-[45px] bg-blue-400 border border-white lg:rounded-xl rounded-[8px] text-[#FCFCFD] lg:text-[12px] text-[10px]"
               placeholder="Tell us what you think about us?"
               value={content}
               onChange={(e) => setContent(e.target.value)}
@@ -321,12 +339,13 @@ export default function Review() {
               name="simple-controlled"
               value={rating}
               onChange={handleRatingChange}
+              size="medium"
             />
           </div>
 
           <button
             onClick={handleAddReview}
-            className="w-[232px] h-[43px] rounded-[6px] bg-white text-center text-gray-800 font-semibold text-[17px]"
+            className="lg:w-[232px] w-[195px] lg:h-[43px] h-[30px] rounded-[6px] bg-white text-center text-gray-800 font-semibold lg:text-[17px] text-[13px]"
           >
             SEND
           </button>

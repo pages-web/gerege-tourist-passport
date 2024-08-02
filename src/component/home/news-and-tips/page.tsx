@@ -53,6 +53,14 @@ export default function NewsAndTips() {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024, // lg breakpoint
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   const handleNext = () => {
@@ -66,39 +74,43 @@ export default function NewsAndTips() {
   return (
     <div
       id="news-and-tips"
-      className="w-full h-[450px] mb-[80px] flex flex-col justify-between"
+      className="lg:w-full w-[389px] lg:h-[450px] h-[300px] mb-[80px] flex flex-col justify-between"
     >
       <div className="w-fit h-fit flex flex-col gap-2 items-center justify-between m-auto">
-        <div className="text-gray-800 text-[26px] font-bold">NEWS AND TIPS</div>
-        <div className="text-gray-600 text-[16px] font-normal">
+        <div className="text-gray-800 lg:text-[26px] text-[16px] font-bold">
+          NEWS AND TIPS
+        </div>
+        <div className="text-gray-600 lg:text-[16px] text-[12px] font-normal">
           Here’s many things you can do in Ulaanbaatar for free and others
         </div>
       </div>
+
       <div className="w-full relative">
         <div
-          className="w-[32px] h-[32px] border rounded-full flex items-center justify-center cursor-pointer absolute left-[3%] top-[45%]"
+          className="lg:w-[32px] w-[26px] lg:h-[32px] h-[26px] border rounded-full flex items-center justify-center cursor-pointer absolute left-[3%] top-[45%]"
           onClick={handlePrevious}
         >
-          <KeyboardArrowLeft />
+          <KeyboardArrowLeft className="lg:w-[30px] w-[20px] lg:h-[30px] h-[20px]" />
         </div>
 
-        <div className="w-[1220px] mx-auto">
-          <div className="absolute right-[1%] z-10 w-[400px] h-[310px] bg-gradient-to-r from-white/0 to-white"></div>
+        <div className="lg:w-[1220px] w-full lg:mx-auto ml-[15%]">
+          <div className="lg:block hidden absolute right-[1%] z-10 w-[400px] h-[310px] bg-gradient-to-r from-white/0 to-white"></div>
           <Slider ref={sliderRef} {...settings}>
             {cardList.map((card) => (
               <div key={card.id}>
-                <div className="w-[285px] h-[310px] flex flex-col items-center justify-between">
+                <div className="lg:w-[285px] w-[270px] lg:h-[310px] h-[220px] flex flex-col items-center justify-between">
                   <Image
                     alt={card.title}
                     src={card.imageUrl}
                     width={185}
                     height={185}
+                    className="lg:w-[185px] lg:h-[185px] w-[130px] h-[130px]"
                   />
-                  <div className="text-[20px] text-gray-800 font-bold">
+                  <div className="lg:text-[20px] text-[16px] text-gray-800 font-bold">
                     {card.title}
                   </div>
                   <div
-                    className="w-full h-[50px] text-xs overflow-hidden"
+                    className="w-full lg:h-[50px] h-[45px] lg:text-xs text-[10px] overflow-hidden"
                     style={{
                       display: "-webkit-box",
                       WebkitBoxOrient: "vertical",
@@ -115,10 +127,10 @@ export default function NewsAndTips() {
           </Slider>
         </div>
         <div
-          className="w-[32px] h-[32px] border rounded-full flex items-center justify-center cursor-pointer absolute right-[3%] top-[45%] z-20"
+          className="lg:w-[32px] w-[26px] lg:h-[32px] h-[26px] border rounded-full flex items-center justify-center cursor-pointer absolute right-[3%] top-[45%] z-20"
           onClick={handleNext}
         >
-          <KeyboardArrowRight />
+          <KeyboardArrowRight className="lg:w-[30px] w-[20px] lg:h-[30px] h-[20px]" />
         </div>
       </div>
     </div>
