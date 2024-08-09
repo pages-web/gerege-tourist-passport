@@ -1,0 +1,273 @@
+{
+  "Header": {
+    "GEREGE TOURIST PASSPORT LLC": "게레게 관광 여권 LLC",
+    "Home": "홈",
+    "About": "정보",
+    "Gerege Benefit": "Gerege 혜택",
+    "Store Information": "상점 정보",
+    "News And Tips": "뉴스 및 팁",
+    "FAQ": "자주 묻는 질문",
+    "suggestResult": "추천 검색 결과",
+    "National Museum": "국립 박물관",
+    "Air port": "공항"
+  },
+  "Carousel": {
+    "slide1_title": "GEREGE 패스를 통해 최대 49% 절약하세요",
+    "slide1_description": "런던의 최고의 명소와 액티비티를 저렴한 가격에 즐기세요.",
+    "slide2_title": "런던을 발견하세요",
+    "slide2_description": "런던의 상징적인 랜드마크의 매력을 경험하세요.",
+    "slide3_title": "독점 제안",
+    "slide3_description": "최고의 명소에서 특별 거래를 받으세요.",
+    "slide4_title": "여행 계획",
+    "slide4_description": "런던에서의 모험을 계획하세요.",
+    "Buying now": "지금 구매하기"
+  },
+
+  "WhyUs": {
+    "title": "왜 우리를 선택해야 하나요",
+    "description": "호텔, 레스토랑 등 우리의 서비스",
+    "cards": {
+      "0": {
+        "description": "모든 것이 포함된",
+        "title": "쉬운"
+      },
+      "1": {
+        "description": "몽골에서 유일한",
+        "title": "특별한"
+      },
+      "2": {
+        "description": "돈을 절약해줍니다",
+        "title": "도움이 되는"
+      },
+      "3": {
+        "description": "여행을 더욱 풍성하게 해줍니다",
+        "title": "진보적인"
+      }
+    }
+  },
+
+  "Gerege Tour Card Benefits": {
+    "title": "게레게 투어 카드 혜택",
+    "subtitle": "쇼핑, 명소, 공연 등의 할인 혜택이 있는 교통 카드",
+    "Culture": "문화",
+    "Museum": "박물관",
+    "Hotel": "호텔",
+    "Restaurant": "레스토랑",
+    "ABOUT": "정보",
+    "CultureDescription": "이 광장은 \"이흐 초로\"라는 이름으로 알려졌으며, 1921년 인민 혁명 이후 \"인드린 광장\"으로 이름이 바뀌었고, 1946년 아이흐의 결의에 따라 담딘 수흐바타르 광장으로 공식 명명되어 동상이 세워졌습니다.",
+    "MuseumDescription": "박물관은 다양한 유물과 역사를 보여주는 장소로, 방문객들에게 몽골의 풍부한 문화와 전통을 체험할 수 있는 기회를 제공합니다.",
+    "HotelDescription": "우리 호텔은 편안한 숙박과 최고급 서비스를 제공하며, 고객님께서 집처럼 편안한 시간을 보내실 수 있도록 최선을 다하고 있습니다.",
+    "RestaurantDescription": "레스토랑은 현지 특산물과 신선한 재료로 준비된 요리를 선보이며, 고객님께 맛있는 식사를 제공하기 위해 항상 최선을 다합니다."
+  },
+  "WhyChooseGeregeTouristPassport": {
+    "title": "왜 게레게 관광 여권을 선택해야 하나요?",
+    "description": "쇼핑, 관광지, 공연 등에서 할인 혜택을 받을 수 있는 교통카드",
+    "buyButton": "지금 55달러에 구매하세요",
+    "buyTitle": "구매",
+    "buyDescription": "여행 일정에 맞는 1, 2, 3, 4, 5, 6, 7 또는 10일 크레딧 패키지를 선택하세요.",
+    "scanTitle": "스캔",
+    "scanDescription": "각 관광지에서 스캔할 수 있는 앱을 다운로드하세요.",
+    "saveTitle": "저장",
+    "saveDescription": "보장된 할인 혜택을 즐기세요 (차액을 환불해드립니다!) 그것이 우리의 보장입니다!"
+  },
+  "NewsAndTips": {
+    "title": "뉴스 및 팁",
+    "description": "울란바토르에서 무료로 할 수 있는 것들과 기타 많은 것들",
+    "cards": [
+      {
+        "title": "칭기즈 칸 광장",
+        "content": "“이흐 초лөө”라는 이름을 가지고 있던 이 광장은 1921년 인민 혁명 이후 “인드린 광장”이라는 이름으로 불리다가 1946년 AIC의 결의로 담디노 수흐바트르 광장으로 공식 명명되고 동상이 세워졌습니다."
+      },
+      {
+        "title": "칭기즈 칸 광장",
+        "content": "“이흐 초лöö”라는 이름을 가지고 있던 이 광장은 1921년 인민 혁명 이후 “인드린 광장”이라는 이름으로 불리다가 1946년 AIC의 결의로 담디노 수흐바트르 광장으로 공식 명명되고 동상이 세워졌습니다."
+      },
+      {
+        "title": "칭기즈 칸 광장",
+        "content": "“이흐 초лöö”라는 이름을 가지고 있던 이 광장은 1921년 인민 혁명 이후 “인드린 광장”이라는 이름으로 불리다가 1946년 AIC의 결의로 담디노 수흐바트르 광장으로 공식 명명되고 동상이 세워졌습니다."
+      },
+      {
+        "title": "칭기즈 칸 광장",
+        "content": "“이흐 초лöö”라는 이름을 가지고 있던 이 광장은 1921년 인민 혁명 이후 “인드린 광장”이라는 이름으로 불리다가 1946년 AIC의 결의로 담디노 수흐바트르 광장으로 공식 명명되고 동상이 세워졌습니다."
+      },
+      {
+        "title": "칭기즈 칸 광장",
+        "content": "“이흐 초лöö”라는 이름을 가지고 있던 이 광장은 1921년 인민 혁명 이후 “인드린 광장”이라는 이름으로 불리다가 1946년 AIC의 결의로 담디노 수흐바트르 광장으로 공식 명명되고 동상이 세워졌습니다."
+      }
+    ]
+  },
+  "LoyaltyCard": {
+    "title": "특별 오퍼를 받을 수 있는 'U POINT' 로열티 카드",
+    "subtitle": "60개 이상의 몽골 최고의 브랜드와 제휴"
+  },
+  "FAQ": {
+    "title": "자주 묻는 질문",
+    "tabs": {
+      "common_questions": "자주 묻는 질문",
+      "about_product": "제품 정보",
+      "about_service": "서비스 정보"
+    },
+    "questions": [
+      {
+        "id": 1,
+        "title": "Gerege Passport를 어떻게 사용하나요?",
+        "content": "Gerege Passport를 사용하여 협력 기관의 특성에 따라 Gerege Passport를 제시하거나, QR 코드를 스캔하거나, 필요한 경우 부속 SIM 카드의 전화번호를 등록하여 서비스를 이용합니다."
+      },
+      {
+        "id": 2,
+        "title": "데이터 SIM을 어떻게 활성화하나요?",
+        "content": "데이터 SIM을 활성화하는 방법에 대한 설명입니다."
+      },
+      {
+        "id": 3,
+        "title": "결제 조건은 무엇인가요?",
+        "content": "결제 조건에 대한 자세한 설명입니다."
+      },
+      {
+        "id": 4,
+        "title": "Gerege Passport를 반환하고 싶으면 어떻게 하나요?",
+        "content": "Gerege Passport를 반환하는 방법에 대한 설명입니다."
+      },
+      {
+        "id": 5,
+        "title": "환불을 얼마나 기다려야 하나요?",
+        "content": "환불 소요 시간에 대한 설명입니다."
+      }
+    ],
+    "aboutProduct": [
+      {
+        "id": 1,
+        "title": "제품에 대한 설명입니다.",
+        "content": "제품에 대한 자세한 설명이 여기에 들어갑니다."
+      },
+      {
+        "id": 2,
+        "title": "데이터 SIM 활성화 방법",
+        "content": "데이터 SIM 활성화 방법에 대한 설명입니다."
+      },
+      {
+        "id": 3,
+        "title": "Төлбөрийн ямар нөхцөлүүд байгаа вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      },
+      {
+        "id": 4,
+        "title": "Би гэрэгээ пасспортоо ямар нэг шалтгаанаар буцаах хүсэлтэй бол яах вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      },
+      {
+        "id": 5,
+        "title": "Би буцаалтаа хэр хугацааны дараа авах вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      }
+    ],
+    "aboutService": [
+      {
+        "id": 1,
+        "title": "서비스에 대한 설명입니다.",
+        "content": "서비스에 대한 자세한 설명이 여기에 들어갑니다."
+      },
+      {
+        "id": 2,
+        "title": "데이터 SIM 활성화 방법",
+        "content": "데이터 SIM 활성화 방법에 대한 설명입니다."
+      },
+      {
+        "id": 3,
+        "title": "Төлбөрийн ямар нөхцөлүүд байгаа вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      },
+      {
+        "id": 4,
+        "title": "Би гэрэгээ пасспортоо ямар нэг шалтгаанаар буцаах хүсэлтэй бол яах вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      },
+      {
+        "id": 5,
+        "title": "Би буцаалтаа хэр хугацааны дараа авах вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      }
+    ]
+  },
+  "reviews": {
+    "title": "우리는 수백 개의 글로벌 기업을 도왔습니다",
+    "subtitle": "더 빠르게 성장하고 있는 놀라운 고객들로부터의 사례 연구"
+  },
+
+  "footer": {
+    "about": "정보",
+    "about_us": "우리에 대해",
+    "cultural_experience": "문화 체험",
+    "restaurant": "레스토랑",
+    "hotel": "호텔",
+    "our_contacts": "우리의 연락처",
+    "our_address": "우리의 주소",
+    "our_social": "우리의 소셜",
+    "copyright": "저작권 2024. ⓒ GEREGE TOURIST PASSPORT. 모든 권리 보유."
+  },
+  "AboutGeregePassport": {
+    "title": "GEREGE 투어리스트 패스포트",
+    "subtitle": "몽골 여행 필수 아이템",
+    "today": "게레게 오늘",
+    "description": "오늘날에도 고대 게레게의 정신은 게레게 패스포트를 통해 살아 숨쉬며, 몽골에서 특별한 혜택과 독점적인 이점을 제공합니다. 게레게 패스포트를 단 $55에 구매하고 이 역사적인 전통의 일부분을 소유하세요.",
+    "buttonDescription": "모든 구매에서 $1씩 제10 유치원의 특별한 도움이 필요한 아이들을 지원하는 데 기부됩니다."
+  },
+  "AboutGeregeHistory": {
+    "title": "역사 속의 Gerege",
+    "description": "13세기, 칭기즈 칸의 통치 기간 동안 게레게 황금 배지는 여행자와 왕실 사신들에게 여권 역할을 했습니다. 배지를 소지한 사람은 방해받지 않고 여행할 수 있었으며, 지역 공동체에서 물품과 서비스를 쉽게 이용할 수 있었습니다."
+  },
+  "AboutHowToUse": {
+    "title": "사용 방법:",
+    "subtitle": "당신의 게레게를 보여주세요",
+    "freeToursTitle": "무료 제공 투어:",
+    "museums": {
+      "title": "몽골의 박물관:",
+      "list": [
+        "Chinggis Khaan National Museum",
+        "National Museum of Mongolia",
+        "Choijin Lama Temple Museum",
+        "Bogd Khaan Palace Museum",
+        "The Fine Arts Zanabazar Museum",
+        "The Natural History Museum of Mongolia"
+      ]
+    },
+    "culturalExperiences": {
+      "title": "문화 체험:",
+      "list": [
+        "Tumen Ekh Folk Song and Dance Ensemble Performance",
+        "Gandantegchilen Monastery",
+        "Genghis Khan Equestrian Statue"
+      ]
+    },
+    "exclusiveOffers": {
+      "title": "독점 혜택:",
+      "list": [
+        "Mongolian Traditional Costume Rental at Mongolia Last King’s Palace Museum",
+        "Unlimited Data SIM with 20GB 7000₮ units",
+        "Multiple free entries to \"ZU\" Nightclub, UB’s premier nightlife spot *entry fee required at all nightclubs in UB",
+        "5000₮ voucher for Jet Scooter rental",
+        "Complimentary YANMAL Mongolian Camel Wool Socks",
+        "Free coffee (1) at CU convenience stores",
+        "Complimentary HUSHKHAN Mongolian Natural Pine Nuts"
+      ]
+    }
+  },
+  "AboutDiscounts": {
+    "title": "독점 할인",
+    "discover": "자세히 보기",
+    "discounts": [
+      {
+        "description": "\"Modern Nomads\" 몽골 체인 레스토랑"
+      },
+      {
+        "description": "\"Yuna\" 한국 체인 레스토랑"
+      },
+      {
+        "description": "\"Evseg Mongolian Premium Cashmere\" 매장"
+      }
+    ]
+  },
+  "aboutUs": {
+    "description": "모든 구매에서 $1씩 제10 유치원의 특별한 도움이 필요한 아이들을 지원하는 데 기부됩니다."
+  }
+}

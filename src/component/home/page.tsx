@@ -3,6 +3,7 @@ import WhyUs from "./why-us/page";
 import Benefits from "./gerege-benefits/page";
 import WhyGeregePassport from "./why-choose-gerege-tourist-passport/page";
 import NewsAndTips from "./news-and-tips/page";
+import WeatherAndCurrency from "../weather-and-currency/page";
 
 import FAQ from "./faq/page";
 import Review from "./review/page";
@@ -10,7 +11,8 @@ import LoyaltyCard from "./loyalty-card/page";
 
 export default function HomePage() {
   return (
-    <main className="w-full lg:max-w-screen-2xl h-fit flex flex-col items-center m-auto">
+    <main className="relative lg:max-w-screen-2xl lg:w-full w-[389px] lg:h-fit h-fit flex flex-col items-center m-auto">
+      <WeatherAndCurrency />
       <Carousel />
       <WhyUs />
       <Benefits />

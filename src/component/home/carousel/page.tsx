@@ -1,30 +1,31 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const t = useTranslations("Carousel");
 
   const slides = [
     {
       backgroundImage: "/image/home-bg.png",
-      title: "SAVE UP 49% WITH THE GEREGE PASS",
-      description:
-        "Explore all the best London attractions and activities, all for one low price.",
+      titleKey: "slide1_title",
+      descriptionKey: "slide1_description",
     },
     {
       backgroundImage: "/image/about-1.png",
-      title: "Discover London",
-      description: "Experience the charm of London's iconic landmarks.",
+      titleKey: "slide2_title",
+      descriptionKey: "slide2_description",
     },
     {
       backgroundImage: "/image/about-1.png",
-      title: "Exclusive Offers",
-      description: "Get special deals on top attractions.",
+      titleKey: "slide3_title",
+      descriptionKey: "slide3_description",
     },
     {
       backgroundImage: "/image/about-1.png",
-      title: "Plan Your Trip",
-      description: "Organize your adventures in London.",
+      titleKey: "slide4_title",
+      descriptionKey: "slide4_description",
     },
   ];
 
@@ -63,14 +64,14 @@ const Carousel = () => {
             <div className="lg:w-[1200px] w-11/12 lg:h-fit h-fit lg:rounded-[16px] rounded-xl lg:p-[24px] p-3 flex flex-col lg:gap-[25px] gap-5 bg-black/[.7]">
               <div>
                 <div className="lg:w-[780px] lg:text-[48px] text-[20px] text-white font-bold">
-                  {slide.title}
+                  {t(slide.titleKey)}
                 </div>
                 <div className="lg:text-base text-[12px] font-normal text-white">
-                  {slide.description}
+                  {t(slide.descriptionKey)}
                 </div>
               </div>
               <button className="lg:w-[127px] w-[110px] lg:h-[43px] h-[30px] lg:rounded-[8px] rounded-[5px] bg-[#0087FF] text-white lg:text-[16px] text-[13px] font-semibold flex items-center justify-center">
-                Buying now
+                {t("Buying now")}
               </button>
             </div>
           </div>

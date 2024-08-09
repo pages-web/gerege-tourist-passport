@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import Rating from "@mui/material/Rating";
 import Slider from "react-slick";
+import { useTranslations } from "next-intl";
 
 const initialReviews = [
   {
@@ -89,9 +90,9 @@ const countries = [
 
 export default function Review() {
   const reviewButton = ["Travel", "Client", "Trave"];
-
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
   const [selectedButton, setSelectedButton] = useState<string | null>(null);
+  const t = useTranslations("reviews");
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedCode = event.target.value;
@@ -157,19 +158,18 @@ export default function Review() {
     <div className="lg:w-full w-[389px] h-fit bg-gray-200 py-6 flex flex-col gap-8">
       <div className="text-center flex flex-col gap-3">
         <div className="text-gray-800 lg:text-[22px] text-[16px] font-bold">
-          We’ve helped hundreds of global companies
+          {t("title")}
         </div>
         <div className="lg:text-[12px] text-[10px] text-gray-600 font-normal">
-          Case studies from some of our amazing customers who are building
-          faster.
+          {t("subtitle")}
         </div>
       </div>
 
-      <div className="lg:w-fit w-[210px] lg:h-[352px] h-fit lg:m-auto ml-[20%] lg:flex lg:items-center lg:gap-8">
+      <div className="lg:w-fit w-[210px] lg:h-[345px] h-fit lg:m-auto ml-[20%] lg:flex lg:items-center lg:gap-8">
         {/* Start review */}
         <div className="flex items-center gap-6">
-          <div className="lg:w-[1030px] w-full relative">
-            <div className="lg:block hidden absolute z-10 right-0 w-[200px] h-[352px] bg-gradient-to-r from-white/0 to-white"></div>
+          <div className="lg:w-[930px] w-full relative">
+            <div className="lg:block hidden absolute z-10 right-0 w-[205px] h-[335px] bg-gradient-to-r from-white/0 to-white"></div>
             <Slider ref={sliderRef} {...settings}>
               {reviews.map((review) => {
                 const country = countries.find(
@@ -179,17 +179,17 @@ export default function Review() {
                 return (
                   <div key={review.id} className="">
                     <div
-                      className={`review w-fit lg:h-[350px] h-[250px] lg:py-3 py-1 px-1 flex flex-col justify-between`}
+                      className={`review w-fit lg:h-[335px] h-[250px] lg:py-3 py-1 px-1 flex flex-col justify-between`}
                       style={{
                         backgroundImage: `url(${country?.bgImage || ""})`,
                         backgroundRepeat: "no-repeat",
                         backgroundPositionX: "50%",
                         overflow: "hidden",
-                        backgroundSize: "270px 270px",
+                        backgroundSize: "250px 270px",
                         backgroundColor: `${country?.bgColor || ""}`,
                       }}
                     >
-                      <div className="w-full flex gap-[10px] items-center">
+                      <div className="w-full flex gap-2 items-center">
                         {country?.flagImg && (
                           <div className="review-image">
                             <Image
@@ -201,12 +201,12 @@ export default function Review() {
                           </div>
                         )}
                         {country && (
-                          <div className="text-white lg:text-[24px] text-[18px] font-bold">
+                          <div className="text-white lg:text-[20px] text-[17px] font-bold">
                             {country.name.toUpperCase()}
                           </div>
                         )}
                       </div>
-                      <div className="lg:w-[238px] w-[200px] lg:h-[176px] h-[150px] bg-white/30 border flex flex-col justify-between lg:p-4 p-2">
+                      <div className="lg:w-[210px] w-[200px] lg:h-[170px] h-[150px] bg-white/30 border flex flex-col justify-between lg:p-3 p-2">
                         <div className="w-[204px] h-fit flex flex-col gap-3">
                           <div className="flex w-fit h-fit gap-2 items-center">
                             <div className="w-[33px] h-[33px] rounded-full bg-gray-100 flex items-center justify-center">
@@ -254,9 +254,9 @@ export default function Review() {
         </div>
 
         {/* Start Add review */}
-        <div className="lg:w-[265px] w-[212px] lg:h-[345px] h-[310px] bg-blue-600 lg:px-[12px] px-[8px] lg:py-[16px] py-[12px] flex flex-col gap-3 lg:mt-0 mt-3">
+        <div className="lg:w-[250px] w-[212px] lg:h-[335px] h-[310px] bg-blue-600 lg:px-[10px] px-[8px] lg:py-[16px] py-[12px] flex flex-col gap-3 lg:mt-0 mt-3">
           <div>
-            <div className="text-white font-bold lg:text-[18px] text-[14px]">
+            <div className="text-white font-bold lg:text-[17px] text-[14px]">
               Add review
             </div>
             <div className="text-white lg:text-[12px] text-[10px] font-normal">
@@ -264,7 +264,7 @@ export default function Review() {
             </div>
           </div>
 
-          <div className="lg:w-[232px] w-[195px] lg:h-[218px] h-[210px] bg-blue-400 flex flex-col p-[11px] gap-[11px] border rounded-xl">
+          <div className="lg:w-[228px] w-[195px] lg:h-[218px] h-[210px] bg-blue-400 flex flex-col p-[11px] gap-[11px] border rounded-xl">
             <div className="lg:w-[209px] w-[175px] h-[40px] flex justify-between items-center">
               <div className="lg:w-[33px] w-[26px] lg:h-[33px] h-[26px] rounded-full bg-gray-100 flex items-center justify-center">
                 <Image
@@ -345,7 +345,7 @@ export default function Review() {
 
           <button
             onClick={handleAddReview}
-            className="lg:w-[232px] w-[195px] lg:h-[43px] h-[30px] rounded-[6px] bg-white text-center text-gray-800 font-semibold lg:text-[17px] text-[13px]"
+            className="lg:w-[228px] w-[195px] lg:h-[43px] h-[30px] rounded-[6px] bg-white text-center text-gray-800 font-semibold lg:text-[17px] text-[13px]"
           >
             SEND
           </button>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
 import PayemntBasicPage from "../payment/page";
+import { useTranslations } from "next-intl";
 
 interface NavItem {
   name: string;
@@ -15,6 +16,7 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ navItems, onClose }) => {
+  const t = useTranslations("Header");
   return (
     <motion.div
       initial={{ x: "100%" }}
@@ -23,7 +25,7 @@ const Sidebar: React.FC<SidebarProps> = ({ navItems, onClose }) => {
       className="fixed top-[83px] left-0 w-[230px] h-fit bg-white shadow-lg z-20"
     >
       <button
-        className="absolute top-4 right-4 text-gray-600 text-2xl"
+        className="absolute top-4 right-4 text-gray-600 text-2xl flex items-center"
         onClick={onClose}
       >
         <CloseIcon className="w-5 h-5" />
@@ -35,11 +37,11 @@ const Sidebar: React.FC<SidebarProps> = ({ navItems, onClose }) => {
               className="py-2 text-gray-800 text-[13px] font-semibold hover:text-blue-600"
               onClick={onClose}
             >
-              {item.name}
+              {t(item.name)}
             </div>
           </Link>
         ))}
-        <PayemntBasicPage />
+        {/* <PayemntBasicPage /> */}
       </div>
     </motion.div>
   );

@@ -1,0 +1,272 @@
+{
+  "Header": {
+    "GEREGE TOURIST PASSPORT LLC": "GEREGE TOURIST PASSPORT LLC",
+    "Home": "Home",
+    "About": "About",
+    "Gerege Benefit": "Gerege Benefit",
+    "Store Information": "Store Information",
+    "News And Tips": "News And Tips",
+    "FAQ": "FAQ",
+    "suggestResult": "Suggest result.",
+    "National Museum": "National Museum",
+    "Air port": "Air port"
+  },
+  "Carousel": {
+    "slide1_title": "SAVE UP 49% WITH THE GEREGE PASS",
+    "slide1_description": "Explore all the best London attractions and activities, all for one low price.",
+    "slide2_title": "Discover London",
+    "slide2_description": "Experience the charm of London's iconic landmarks.",
+    "slide3_title": "Exclusive Offers",
+    "slide3_description": "Get special deals on top attractions.",
+    "slide4_title": "Plan Your Trip",
+    "slide4_description": "Organize your adventures in London.",
+    "Buying now": "Buying now"
+  },
+
+  "WhyUs": {
+    "title": "WHY US",
+    "description": "Our services about Hotel, Restaurant and more",
+    "cards": {
+      "0": {
+        "description": "Бүгдийг багтаасан",
+        "title": "ЭНГИЙН"
+      },
+      "1": {
+        "description": "Монголд цор ганц",
+        "title": "ОНЦГОЙ"
+      },
+      "2": {
+        "description": "Мөнгийг таньд хэмнэнэ",
+        "title": "ТУСЧ"
+      },
+      "3": {
+        "description": "Аялалыг тань улам баяжуулна",
+        "title": "ХӨГЖИЛТЭЙ"
+      }
+    }
+  },
+  "Gerege Tour Card Benefits": {
+    "title": "GEREGE TOUR CARD Benefits",
+    "subtitle": "Transportation card with discounts for shopping, attractions, performances and more",
+    "Culture": "Culture",
+    "Museum": "Museum",
+    "Hotel": "Hotel",
+    "Restaurant": "Restaurant",
+    "ABOUT": "ABOUT",
+    "CultureDescription": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна.",
+    "MuseumDescription": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна.",
+    "HotelDescription": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна.",
+    "RestaurantDescription": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна."
+  },
+  "WhyChooseGeregeTouristPassport": {
+    "title": "Why Choose Gerege Tours Passport",
+    "description": " Transportation card with discounts for shopping, attractions, performances and more",
+    "buyButton": " Buy now for 55$",
+    "buyTitle": "Buy",
+    "buyDescription": " Pick a 1, 2, 3, 4, 5, 6, 7 or 10-day credits package, whichever works for your trip.",
+    "scanTitle": "Scan",
+    "scanDescription": "Download our highly-rated app to scan in at each attraction.",
+    "saveTitle": "Save",
+    "saveDescription": " Enjoy guaranteed savings (or we'll refund you thedifference!) That's our guarantee!"
+  },
+  "NewsAndTips": {
+    "title": "NEWS AND TIPS",
+    "description": "Here’s many things you can do in Ulaanbaatar for free and others",
+    "cards": [
+      {
+        "title": "Чингис хааны талбай",
+        "content": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна."
+      },
+      {
+        "title": "Чингис хааны талбай",
+        "content": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна."
+      },
+      {
+        "title": "Чингис хааны талбай",
+        "content": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна."
+      },
+      {
+        "title": "Чингис хааны талбай",
+        "content": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна."
+      },
+      {
+        "title": "Чингис хааны талбай",
+        "content": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна."
+      }
+    ]
+  },
+  "LoyaltyCard": {
+    "title": "RECEIVE SPECIAL OFFERS WITH OUR 'U POINT' LOYALTY CARD.",
+    "subtitle": "In partnership with over 60 Mongolian top brands"
+  },
+  "FAQ": {
+    "title": "Түгээмэл асуулт хариулт",
+    "tabs": {
+      "common_questions": "Нийтлэг асуултууд",
+      "about_product": "Бүтээгдэхүүний тухай",
+      "about_service": "Үйлчилгээний тухай"
+    },
+    "questions": [
+      {
+        "id": 1,
+        "title": "Би гэрэгэ пасспортоо хэрхэн ашиглах вэ?",
+        "content": "Та Гэрэгэ пасспортын хамтрагч байгууллагуудын онцлогоос хамаарч Гэрэгэ пасспортоо үзүүлэх, Гэрэгэ пасспортын ард хэсгийн QR кодыг уншуулах, зарим шаардлагатай тохиолдолд гэрэгэ пасспорттой дагалдаж ирсэн сим картны утасны дугаарыг бүртгүүлэн үйлчлүүлнэ."
+      },
+      {
+        "id": 2,
+        "title": "Дата симээ хэрхэн идвэхжүүлэх вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      },
+      {
+        "id": 3,
+        "title": "Төлбөрийн ямар нөхцөлүүд байгаа вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      },
+      {
+        "id": 4,
+        "title": "Би гэрэгээ пасспортоо ямар нэг шалтгаанаар буцаах хүсэлтэй бол яах вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      },
+      {
+        "id": 5,
+        "title": "Би буцаалтаа хэр хугацааны дараа авах вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      }
+    ],
+    "aboutProduct": [
+      {
+        "id": 1,
+        "title": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "content": "2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      },
+      {
+        "id": 2,
+        "title": "Дата симээ хэрхэн идвэхжүүлэх вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      },
+      {
+        "id": 3,
+        "title": "Төлбөрийн ямар нөхцөлүүд байгаа вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      },
+      {
+        "id": 4,
+        "title": "Би гэрэгээ пасспортоо ямар нэг шалтгаанаар буцаах хүсэлтэй бол яах вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      },
+      {
+        "id": 5,
+        "title": "Би буцаалтаа хэр хугацааны дараа авах вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      }
+    ],
+    "aboutService": [
+      {
+        "id": 1,
+        "title": "Saepe autem veniam mollitia nobis ullam",
+        "content": "3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      },
+      {
+        "id": 2,
+        "title": "Дата симээ хэрхэн идвэхжүүлэх вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      },
+      {
+        "id": 3,
+        "title": "Төлбөрийн ямар нөхцөлүүд байгаа вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      },
+      {
+        "id": 4,
+        "title": "Би гэрэгээ пасспортоо ямар нэг шалтгаанаар буцаах хүсэлтэй бол яах вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      },
+      {
+        "id": 5,
+        "title": "Би буцаалтаа хэр хугацааны дараа авах вэ?",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+      }
+    ]
+  },
+  "reviews": {
+    "title": "We’ve helped hundreds of global companies",
+    "subtitle": "Case studies from some of our amazing customers who are building faster."
+  },
+
+  "footer": {
+    "about": "About",
+    "about_us": "About us",
+    "cultural_experience": "Cultural Experience",
+    "restaurant": "Restaurant",
+    "hotel": "Hotel",
+    "our_contacts": "Our contacts",
+    "our_address": "Our address",
+    "our_social": "Our social",
+    "copyright": "Copyright 2024. ⓒ GEREGE TOURIST PASSPORT. All Rights Reserved."
+  },
+  "AboutGeregePassport": {
+    "title": "GEREGE TOURIST PASSPORT",
+    "subtitle": "Must-have item for travel Mongolia",
+    "today": "GEREGE Today",
+    "description": "Even today, the spirit of the ancient Gerege lives on through the Gerege Passport, offering special privileges and exclusive benefits in Mongolia. Own a piece of this historical tradition by purchasing your Gerege Passport for just $55 and enjoy its modern-day advantages.",
+    "buttonDescription": "$1 from every purchase is donated to support children with special needs at the 10th Kindergarten."
+  },
+  "AboutGeregeHistory": {
+    "title": "GEREGE in History",
+    "description": "In the 13th century, during the reign of Genghis Khan, the Gerege gold badge served as a passport for travelers and royal messengers. Holding the badge ensured them unhindered travel and facilitated access to goods and services from local communities."
+  },
+  "AboutHowToUse": {
+    "title": "How to use:",
+    "subtitle": "Just show your GEREGE",
+    "freeToursTitle": "Free Featured Tours Include:",
+    "museums": {
+      "title": "Museums in Mongolia:",
+      "list": [
+        "Chinggis Khaan National Museum",
+        "National Museum of Mongolia",
+        "Choijin Lama Temple Museum",
+        "Bogd Khaan Palace Museum",
+        "The Fine Arts Zanabazar Museum",
+        "The Natural History Museum of Mongolia"
+      ]
+    },
+    "culturalExperiences": {
+      "title": "Cultural Experiences:",
+      "list": [
+        "Tumen Ekh Folk Song and Dance Ensemble Performance",
+        "Gandantegchilen Monastery",
+        "Genghis Khan Equestrian Statue"
+      ]
+    },
+    "exclusiveOffers": {
+      "title": "Exclusive Offers:",
+      "list": [
+        "Mongolian Traditional Costume Rental at Mongolia Last King’s Palace Museum",
+        "Unlimited Data SIM with 20GB 7000₮ units",
+        "Multiple free entries to \"ZU\" Nightclub, UB’s premier nightlife spot *entry fee required at all nightclubs in UB",
+        "5000₮ voucher for Jet Scooter rental",
+        "Complimentary YANMAL Mongolian Camel Wool Socks",
+        "Free coffee (1) at CU convenience stores",
+        "Complimentary HUSHKHAN Mongolian Natural Pine Nuts"
+      ]
+    }
+  },
+  "AboutDiscounts": {
+    "title": "Exclusive Discounts",
+    "discover": "Discover",
+    "discounts": [
+      {
+        "description": "\"Modern Nomads\" Mongolian chain restaurants"
+      },
+      {
+        "description": "\"Yuna\" Korean chain restaurants"
+      },
+      {
+        "description": "\"Evseg Mongolian Premium Cashmere\" stores"
+      }
+    ]
+  },
+  "aboutUs": {
+    "description": "$1 from every purchase is donated to support children with special needs at the 10th Kindergarten."
+  }
+}

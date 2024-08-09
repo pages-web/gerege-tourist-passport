@@ -7,6 +7,8 @@ import PayemntBasicPage from "../payment/page";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import MenuIcon from "@mui/icons-material/Menu";
 import Sidebar from "./Sidebar";
+import { useTranslations } from "next-intl";
+import { useParams, usePathname } from "next/navigation";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -45,7 +47,6 @@ const searchSuggest = [
 ];
 
 export default function Header() {
-  const [selectedLanguage, setSelectedLanguage] = useState("EN US");
   const [clickedItem, setClickedItem] = useState(null);
   const [buttonClick, setButtonClick] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -54,12 +55,13 @@ export default function Header() {
     setClickedItem(index === clickedItem ? null : index);
   };
 
-  const handleLanguageClick = (language: string) => {
-    setSelectedLanguage(language);
-  };
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
+
+  const t = useTranslations("Header");
+  const params = useParams();
+  const pathname = usePathname();
 
   return (
     <div className="lg:w-full w-[389px] lg:max-w-screen-2xl lg:h-[155px] h-fit mx-auto">
@@ -68,9 +70,9 @@ export default function Header() {
         <div className="w-fit h-[20px] flex lg:gap-[10px] gap-[5px] items-center">
           <div
             className={`w-fit font-bold lg:text-base text-[10px] flex gap-1 cursor-pointer ${
-              selectedLanguage === "EN US" ? "text-blue-600" : ""
+              pathname === "/en-us" ? "text-blue-600" : "text-black"
             }`}
-            onClick={() => handleLanguageClick("EN US")}
+            onClick={() => pathname}
           >
             <Image
               alt=""
@@ -79,7 +81,13 @@ export default function Header() {
               height={22}
               className="lg:w-[22px] w-[14px] lg:h-[22px] h-[14px]"
             />
-            <div>EN US</div>
+            <Link
+              href={`/en-us/${pathname.split("/").slice(2).join("/")}`}
+              rel="en"
+              className="lang active noajax"
+            >
+              EN US
+            </Link>
           </div>
           <Image
             alt=""
@@ -90,9 +98,9 @@ export default function Header() {
           />
           <div
             className={`w-fit font-bold lg:text-base text-[10px] flex gap-1 cursor-pointer ${
-              selectedLanguage === "KR" ? "text-blue-600" : ""
+              pathname === "/kr" ? "text-blue-600" : "text-black"
             }`}
-            onClick={() => handleLanguageClick("KR")}
+            onClick={() => pathname}
           >
             <Image
               alt=""
@@ -101,7 +109,13 @@ export default function Header() {
               height={22}
               className="lg:w-[22px] w-[14px] lg:h-[22px] h-[14px]"
             />
-            <div>KR</div>
+            <Link
+              href={`/kr/${pathname.split("/").slice(2).join("/")}`}
+              rel="kr"
+              className="lang noajax"
+            >
+              KR
+            </Link>
           </div>
         </div>
         <div className="relative">
@@ -120,11 +134,11 @@ export default function Header() {
           ) : (
             <div className="absolute z-10 right-0 lg:top-11 top-8 lg:w-[440px] w-[250px] h-fit flex flex-col lg:gap-4 gap-2 border bg-white p-3">
               <div className="font-bold text-gray-800 lg:text-[15px] text-[13px] ml-[2px]">
-                Suggest results.
+                {t("suggestResult")}
               </div>
               {searchSuggest.map((suggest) => (
                 <Link
-                  href={suggest.href}
+                  href={`${params.locale}${suggest.href}`}
                   className="flex justify-between items-center p-1 w-full h-fit border"
                   key={suggest.id}
                   onClick={() => setButtonClick(!buttonClick)}
@@ -135,7 +149,7 @@ export default function Header() {
                     </div>
 
                     <div className="font-medium text-gray-600 lg:text-[14px] text-[10px]">
-                      {suggest.name}
+                      {t(suggest.name)}
                     </div>
                   </div>
                   <KeyboardArrowRightIcon className="lg:w-[22px] w-[14px] lg:h-[22px] h-[14px]" />
@@ -147,7 +161,7 @@ export default function Header() {
       </div>
       {/* End language and search */}
 
-      {/* Start menu */}
+      {/* Start navItems */}
 
       <div className="w-full lg:h-[100px] h-[45px] lg:px-[40px] px-[10px] flex justify-between items-center border">
         <Link
@@ -155,7 +169,7 @@ export default function Header() {
           className="logo-text lg:text-[20px] text-[12px] lg:font-semibold text-[#034EA2]"
           onClick={() => setClickedItem(null)}
         >
-          GEREGE TOURIST PASSPORT LLC
+          {t("GEREGE TOURIST PASSPORT LLC")}
         </Link>
 
         <div className="lg:w-[840px] lg:h-[100px] lg:flex lg:justify-between lg:items-center lg:gap-[18px] hidden">
@@ -167,7 +181,7 @@ export default function Header() {
                 }`}
                 onClick={() => handleItemClick(index)}
               >
-                {item.name}
+                {t(item.name)}
               </div>
             </Link>
           ))}

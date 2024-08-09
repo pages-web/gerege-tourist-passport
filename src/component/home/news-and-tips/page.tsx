@@ -6,47 +6,43 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
-
-const cardList = [
-  {
-    id: 1,
-    imageUrl: "/image/321.png",
-    title: "Чингис хааны талбай",
-    content:
-      "“Их Чөлөө” гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсsгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна.",
-  },
-  {
-    id: 2,
-    imageUrl: "/image/321.png",
-    title: "Чингис хааны талбай",
-    content:
-      "“Их Чөлөө” гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсsгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна.",
-  },
-  {
-    id: 3,
-    imageUrl: "/image/321.png",
-    title: "Чингис хааны талбай",
-    content:
-      "“Их Чөлөө” гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсsгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна.",
-  },
-  {
-    id: 4,
-    imageUrl: "/image/321.png",
-    title: "Чингис хааны талбай",
-    content:
-      "“Их Чөлөө” гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсsгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна.",
-  },
-  {
-    id: 5,
-    imageUrl: "/image/321.png",
-    title: "Чингис хааны талбай",
-    content:
-      "“Их Чөлөө” гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсsгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна.",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function NewsAndTips() {
   const sliderRef = useRef<Slider | null>(null);
+  const t = useTranslations("NewsAndTips");
+  const cardList = [
+    {
+      id: 1,
+      imageUrl: "/image/321.png",
+      title: t("cards.0.title"),
+      content: t("cards.0.content"),
+    },
+    {
+      id: 2,
+      imageUrl: "/image/321.png",
+      title: t("cards.1.title"),
+      content: t("cards.1.content"),
+    },
+    {
+      id: 3,
+      imageUrl: "/image/321.png",
+      title: t("cards.2.title"),
+      content: t("cards.2.content"),
+    },
+    {
+      id: 4,
+      imageUrl: "/image/321.png",
+      title: t("cards.3.title"),
+      content: t("cards.3.content"),
+    },
+    {
+      id: 5,
+      imageUrl: "/image/321.png",
+      title: t("cards.4.title"),
+      content: t("cards.4.content"),
+    },
+  ];
 
   const settings = {
     infinite: true,
@@ -78,10 +74,10 @@ export default function NewsAndTips() {
     >
       <div className="w-fit h-fit flex flex-col gap-2 items-center justify-between m-auto">
         <div className="text-gray-800 lg:text-[26px] text-[16px] font-bold">
-          NEWS AND TIPS
+          {t("title")}
         </div>
         <div className="text-gray-600 lg:text-[16px] text-[12px] font-normal">
-          Here’s many things you can do in Ulaanbaatar for free and others
+          {t("description")}
         </div>
       </div>
 

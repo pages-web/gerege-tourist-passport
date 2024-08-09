@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import PayemntBasicPage from "@/component/payment/page";
-import BuyButton from "@/component/payment/buy-button/page";
+import { useTranslations } from "next-intl";
 
 const imageList = [
   {
@@ -23,6 +23,7 @@ const imageList = [
 export default function AboutGeregePassport() {
   const [selected3DAnd2D, setSelected3DAnd2D] = useState("2D");
   const [currentIndex, setCurrentIndex] = useState(0);
+  const t = useTranslations("AboutGeregePassport");
 
   const handle3DAnd2DClick = (items: string) => {
     setSelected3DAnd2D(items);
@@ -42,35 +43,32 @@ export default function AboutGeregePassport() {
 
   return (
     <div className="lg:w-[1000px] w-[389px] lg:h-[900px] h-[540px] flex flex-col justify-between">
-      <div
-        className="lg:w-full w-[389px] lg:h-[450px] h-[200px]"
-        style={{
-          backgroundImage: "url(image/about-1.png)",
-          backgroundSize: "cover",
-          backgroundPositionY: "30%",
-        }}
-      ></div>
+      <div>
+        <Image
+          alt=""
+          width={1000}
+          height={450}
+          src="/image/about-1.png"
+          className="lg:w-full w-[389px] lg:h-[450px] h-[200px]"
+        />
+      </div>
 
       <div className="lg:w-full w-[389px] lg:h-[390px] h-fit flex justify-between">
         <div className="lg:w-[580px] w-[240px] lg:h-[340px] h-[330px] flex flex-col justify-between lg:pl-0 pl-2">
           <div>
             <div className="text-[#0087FF] font-bold lg:text-[30px] text-[16px]">
-              GEREGE TOURIS PASSPORT
+              {t("title")}
             </div>
-            <div className="text-[#1D2939] l:text-[22px] text-[12px] font-medium">
-              Must-have item for travel Mongolia
+            <div className="text-[#1D2939] lg:text-[22px] text-[12px] font-medium">
+              {t("subtitle")}
             </div>
           </div>
           <div>
             <div className="text-[#1D2939] lg:text-[20px] text-[14px] font-bold">
-              GEREGE Today
+              {t("today")}
             </div>
             <div className="lg:text-[14px] text-[11px] leading-5 text-[#475467]">
-              Even today, the spirit of the ancient Gerege lives on through the
-              Gerege Passport, offering special privileges and exclusive
-              benefits in Mongolia. Own a piece of this historical tradition by
-              purchasing your Gerege Passport for just $55 and enjoy its
-              modern-day advantages.
+              {t("description")}
             </div>
           </div>
           <div className="w-full lg:h-[100px] h-[80px] flex flex-col justify-between">
@@ -79,8 +77,7 @@ export default function AboutGeregePassport() {
             </div>
 
             <div className="lg:text-[14px] text-[9px] text-[#475467] font-normal">
-              $1 from every purchase is donated to support children with special
-              needs at the 10th Kindergarten.
+              {t("buttonDescription")}
             </div>
           </div>
         </div>

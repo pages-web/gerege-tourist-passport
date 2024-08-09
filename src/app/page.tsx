@@ -1,10 +1,7 @@
-import Image from "next/image";
-import HomePage from "@/component/home/page";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <main className="w-full h-fit">
-      <HomePage />
-    </main>
-  );
-}
+const DefaultPage = () => {
+  redirect("/en-us");
+};
+
+export default DefaultPage;

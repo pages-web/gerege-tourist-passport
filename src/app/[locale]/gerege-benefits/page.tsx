@@ -4,12 +4,26 @@ import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import SearchIcon from "@mui/icons-material/Search";
 import { Input } from "@/components/ui/input";
-import PayemntBasicPage from "@/component/payment/page";
+// import PayemntBasicPage from "@/component/payment/page";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { CardList, CardType, CardListType, imgURLType } from "./CardList";
+// import WeatherAndCurrency from "@/component/weather-and-currency/page";
+import { useMemo } from "react";
+
+import dynamic from "next/dynamic";
+
+const PayemntBasicPage = dynamic(() => import("@/component/payment/page"), {
+  ssr: false,
+});
+const WeatherAndCurrency = dynamic(
+  () => import("@/component/weather-and-currency/page"),
+  {
+    ssr: false,
+  }
+);
 
 const navItems = [
   { name: "ALL", icon: null, category: "ALL" },
@@ -86,12 +100,12 @@ function BenefitsContent() {
   const filteredCards = getAllCards().filter((card: CardType) =>
     card.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
   const handleReload = () => {
     window.location.reload();
   };
 
   // Carousel
-
   useEffect(() => {
     if (selectedCard && selectedCard.imgURL) {
       const imagesArray = convertImgURLToArray(selectedCard.imgURL);
@@ -108,7 +122,8 @@ function BenefitsContent() {
   };
 
   return (
-    <div className="lg:w-[1200px] w-[389px] h-fit mx-auto lg:mt-12 mt-6 lg:mb-12 mb-4">
+    <div className="lg:w-[1200px] w-[389px] h-fit mx-auto lg:mt-12 mt-6 lg:mb-12 mb-4 relative">
+      <WeatherAndCurrency />
       <div className="text-center mb-10">
         <div className="text-[#1D2939] font-bold lg:text-[26px] text-[18px]">
           GEREGE TOUR CARD Benefits

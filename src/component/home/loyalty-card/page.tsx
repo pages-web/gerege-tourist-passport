@@ -8,6 +8,7 @@ import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { hotelCardList, museumCardList, restaurantCardList } from "./CardList";
+import { useTranslations } from "next-intl";
 
 const menuItems = ["HOTEL", "RESTAURANT", "MUSEUM"];
 
@@ -16,6 +17,7 @@ const LoyaltyCard = () => {
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
   const [showHowToBuy, setShowHowToBuy] = useState(false);
   const [selectedListAndMap, setSelectedListAndMap] = useState("LIST");
+  const t = useTranslations("LoyaltyCard");
 
   useEffect(() => {
     if (selectedMenu === "HOTEL" && hotelCardList.length > 0) {
@@ -134,10 +136,10 @@ const LoyaltyCard = () => {
     <div className="lg:w-[1200px] w-[389px] h-fit flex flex-col justify-between gap-6 m-auto lg:mb-[60px] mb-[40px]">
       <div className="text-center">
         <div className="text-gray-800 lg:text-[22px] text-[16px] font-bold">
-          RECEIVE SPECIAL OFFERS WITH OUR &quot;U POINT&quot; LOYALTY CARD.
+          {t("title")}
         </div>
         <div className="lg:text-[18px] text-[14px] text-gray-600 font-normal">
-          In partnership with over 60 Mongolian top brands
+          {t("subtitle")}
         </div>
       </div>
 
