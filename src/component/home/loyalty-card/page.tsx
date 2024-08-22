@@ -229,9 +229,9 @@ const LoyaltyCard = () => {
                             ?.address
                         }
                       </div>
-                      <button className="lg:w-[169px] w-[100px] lg:h-[37px] h-[25px] text-center bg-[#0087FF] text-white font-semibold lg:text-sm text-[9px]">
+                      {/* <button className="lg:w-[169px] w-[100px] lg:h-[37px] h-[25px] text-center bg-[#0087FF] text-white font-semibold lg:text-sm text-[9px]">
                         CHECK FOR DETAILS
-                      </button>
+                      </button> */}
                     </div>
                   )}
                 </div>
@@ -446,9 +446,9 @@ const LoyaltyCard = () => {
                             ?.address
                         }
                       </div>
-                      <button className="lg:w-[169px] w-[100px] lg:h-[37px] h-[20px] text-center bg-[#0087FF] text-white font-semibold lg:text-sm text-[8px]">
+                      {/* <button className="lg:w-[169px] w-[100px] lg:h-[37px] h-[20px] text-center bg-[#0087FF] text-white font-semibold lg:text-sm text-[8px]">
                         CHECK FOR DETAILS
-                      </button>
+                      </button> */}
                     </div>
                   )}
                 </div>

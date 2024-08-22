@@ -8,13 +8,13 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isVisible, onClose, children }) => {
-  const modalRef = useRef<HTMLDivElement>(null);
+  const modalContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
-        modalRef.current &&
-        !modalRef.current.contains(event.target as Node)
+        modalContentRef.current &&
+        !modalContentRef.current.contains(event.target as Node)
       ) {
         onClose();
       }
@@ -35,9 +35,10 @@ const Modal: React.FC<ModalProps> = ({ isVisible, onClose, children }) => {
     <div
       className="w-full h-full fixed inset-0 flex items-center justify-center bg-black bg-opacity-70"
       style={{ zIndex: 9999 }}
-      ref={modalRef}
     >
-      {children}
+      <div className="bg-white p-4 rounded-lg" ref={modalContentRef}>
+        {children}
+      </div>
     </div>
   );
 };

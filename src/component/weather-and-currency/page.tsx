@@ -1,6 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
 interface WeatherData {
@@ -39,6 +38,8 @@ const WeatherAndCurrency: React.FC = () => {
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [currency, setCurrency] = useState<CurrencyData | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  // const y = useParallax(scrollYProgress, 300);
 
   // useEffect(() => {
   //   const fetchWeatherData = async () => {
@@ -81,7 +82,7 @@ const WeatherAndCurrency: React.FC = () => {
   // const currencyRate = currency.conversion_rates.MNT;
 
   return (
-    <div className="lg:w-[57px] w-fit h-fit flex flex-col gap-2 fixed z-50 -right-px lg:top-[520px] top-[335px]">
+    <div className="lg:w-[57px] w-fit h-fit flex flex-col gap-2 fixed z-50 right-0 lg:top-[520px] top-[335px]">
       <div className="lg:w-[57px] w-10 lg:h-[57px] h-10 border lg:rounded-2xl rounded-xl border-white bg-black flex flex-col items-center justify-center">
         <Image
           alt="Weather icon"

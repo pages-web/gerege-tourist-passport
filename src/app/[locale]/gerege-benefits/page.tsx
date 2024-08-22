@@ -4,26 +4,15 @@ import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import SearchIcon from "@mui/icons-material/Search";
 import { Input } from "@/components/ui/input";
-// import PayemntBasicPage from "@/component/payment/page";
+import PayemntBasicPage from "@/component/payment/page";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { CardList, CardType, CardListType, imgURLType } from "./CardList";
-// import WeatherAndCurrency from "@/component/weather-and-currency/page";
+import WeatherAndCurrency from "@/component/weather-and-currency/page";
 import { useMemo } from "react";
-
 import dynamic from "next/dynamic";
-
-const PayemntBasicPage = dynamic(() => import("@/component/payment/page"), {
-  ssr: false,
-});
-const WeatherAndCurrency = dynamic(
-  () => import("@/component/weather-and-currency/page"),
-  {
-    ssr: false,
-  }
-);
 
 const navItems = [
   { name: "ALL", icon: null, category: "ALL" },
@@ -193,6 +182,7 @@ function BenefitsContent() {
                 handleSearchSubmit();
               }
             }}
+            className="border-none"
           />
         </div>
       </div>

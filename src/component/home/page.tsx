@@ -11,8 +11,7 @@ import LoyaltyCard from "./loyalty-card/page";
 
 export default function HomePage() {
   return (
-    <main className="relative lg:max-w-screen-2xl lg:w-full w-[389px] lg:h-fit h-fit flex flex-col items-center m-auto">
-      <WeatherAndCurrency />
+    <main className="lg:max-w-screen-2xl lg:w-full w-[389px] lg:h-fit h-fit flex flex-col items-center m-auto relative">
       <Carousel />
       <WhyUs />
       <Benefits />
@@ -21,6 +20,7 @@ export default function HomePage() {
       <LoyaltyCard />
       <FAQ />
       <Review />
+      {/* <WeatherAndCurrency /> */}
     </main>
   );
 }

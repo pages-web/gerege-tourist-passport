@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Flag from "react-world-flags";
-import { Textarea } from "@/components/ui/textarea";
+import { Textarea } from "@/components/ui/Textarea";
 import { Input } from "@/components/ui/input";
 import Rating from "@mui/material/Rating";
 import Slider from "react-slick";
@@ -283,7 +283,7 @@ export default function Review() {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required
-                  className="w-full h-[15px] bg-blue-400 text-[#FCFCFD] lg:text-[11px] text-[9px] border-b border-white"
+                  className="w-full h-[15px] bg-blue-400 text-gray-200 lg:text-[11px] text-[9px] border-l-0 border-t-0 border-r-0 border-white"
                 />
                 <div className="w-full h-[15px] flex items-center justify-between">
                   {reviewButton.map((item) => (

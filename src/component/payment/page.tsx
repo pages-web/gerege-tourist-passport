@@ -1,11 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useTransition } from "react";
 import Modal from "./modal/page";
 import PaymentComponent from "./payment-component/page";
 import BuyButton from "./buy-button/page";
 
 const PayemntBasicPage: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   const handleOpenModal = () => setIsModalVisible(true);
   const handleCloseModal = () => setIsModalVisible(false);

@@ -14,13 +14,13 @@ export default function AboutGeregeHistory() {
           {t("description")}
         </div>
       </div>
-      <div className="w-full lg:h-[550px] h-[290px]">
+      <div className="w-full lg:h-[550px] h-[290px] flex items-center justify-center">
         <Image
           alt=""
           width={1200}
           height={600}
           src="/image/about-1.png"
-          className="lg:w-full w-[389px] lg:h-[550px] h-[290px]"
+          className="lg:w-[1200px] w-[389px] lg:h-[550px] h-[290px]"
         />
       </div>
     </div>
