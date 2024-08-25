@@ -20,7 +20,7 @@ export default function HomePage() {
       <LoyaltyCard />
       <FAQ />
       <Review />
-      {/* <WeatherAndCurrency /> */}
+      <WeatherAndCurrency />
     </main>
   );
 }

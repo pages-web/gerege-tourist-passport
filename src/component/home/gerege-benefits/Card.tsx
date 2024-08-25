@@ -41,7 +41,7 @@ const Card: React.FC<CardProps> = ({
           {t(title)}
         </div>
         <div
-          className="lg:w-[204px] w-[160px] h-[47px] text-xs text-gray-600"
+          className="lg:w-[204px] w-[160px] h-[47px] text-xs text-gray-600 lg:px-3"
           style={{
             display: "-webkit-box",
             WebkitBoxOrient: "vertical",
