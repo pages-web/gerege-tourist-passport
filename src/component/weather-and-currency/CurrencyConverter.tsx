@@ -43,7 +43,7 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({ onClose }) => {
   const fetchCurrencyData = async () => {
     try {
       const response = await fetch(
-        "https://monxansh.appspot.com/xansh.json?currency=USD|EUR|JPY|CHF|SEK|GBP|INR|HKD|RUB|CNY|KRW|CAD|NZD"
+        "https://monxansh.appspot.com/xansh.json?currency=USD|EUR|JPY|CHF|SEK|GBP|INR|HKD|RUB|CNY|KRW|CAD"
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -56,8 +56,6 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({ onClose }) => {
         rate_float: 1,
       });
 
-      console.log(data, "asd");
-
       setCurrencyData(data);
     } catch (error) {
       console.error("Error fetching currency data:", error);
@@ -66,18 +64,25 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({ onClose }) => {
 
   const handleConversion = () => {
     const selectedCurrencyRate = currencyData?.find(
-      (item: any) => item?.code === selectedCurrency
+      (item) => item?.code === selectedCurrency
       // @ts-ignore
     )?.rate_float;
     const selectedConvertedCurrencyRate = currencyData?.find(
-      (item: any) => item?.code === selectedConvertedCurrency
+      (item) => item?.code === selectedConvertedCurrency
       // @ts-ignore
     )?.rate_float;
+
+    if (
+      selectedCurrencyRate === undefined ||
+      selectedConvertedCurrencyRate === undefined
+    ) {
+      console.error("Currency rate is undefined");
+      return;
+    }
+
     const convertedAmount =
       (amount / selectedConvertedCurrencyRate) * selectedCurrencyRate;
-
-    // @ts-ignore
-    setConvertedAmount(convertedAmount.toFixed(2));
+    setConvertedAmount(convertedAmount);
   };
 
   useEffect(() => {
@@ -127,19 +132,19 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({ onClose }) => {
               Your currency
             </div>
             <div className="w-full h-[30px] flex items-center justify-between px-5 bg-gray-200 ">
-              <div className="relative w-[100px] h-fit">
+              <div className="w-[100px] h-fit flex items-center gap-[2px]">
+                <span className="text-[#005AD3] font-bold text-[14px]">
+                  {getCurrencySymbol(selectedCurrency)}
+                </span>
                 <input
-                  className="w-full font-bold text-[#005AD3] text-[14px] bg-gray-200 pl-[10px]"
+                  className="w-full font-bold text-[#005AD3] text-[14px] bg-gray-200 border-none"
                   type="number"
                   value={amount}
                   min={0}
-                  onChange={(e) => setAmount(Number(e.target.value))}
+                  onChange={(e) => setAmount(parseFloat(e.target.value))}
                 />
-                <div className="absolute left-0 top-[51%] z-10 transform -translate-y-1/2 font-bold text-[14px] text-[#005AD3]">
-                  {getCurrencySymbol(selectedCurrency)}
-                </div>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 <Flag
                   code={currencyCountryMapping[selectedCurrency].country}
                   alt={selectedCurrency}
@@ -166,13 +171,13 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({ onClose }) => {
               Converted currency
             </div>
             <div className="w-full h-[30px] flex items-center justify-between px-5 bg-gray-200">
-              <div className="font-bold text-[#005AD3] text-[14px]">
+              <div className="lg:w-[155px] overflow-hidden font-bold text-[#005AD3] text-[14px]">
                 {formatCurrency(
                   convertedAmount,
                   currencyCountryMapping[selectedConvertedCurrency].symbol
                 )}
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 <Flag
                   code={
                     currencyCountryMapping[selectedConvertedCurrency].country
