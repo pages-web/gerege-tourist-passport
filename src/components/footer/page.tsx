@@ -13,7 +13,7 @@ export default function Footer() {
   const t = useTranslations("footer");
   return (
     <div
-      className="w-full lg:max-w-screen-2xl lg:h-[390px] h-fit bg-[#034EA2] flex flex-col items-center justify-between lg:pt-[50px] bg-no-repeat lg:bg-right bg-center lg:bg-[length:70%_100%] bg-[length:90%_50%]"
+      className="mx-auto w-full lg:max-w-screen-2xl lg:h-[390px] h-fit bg-[#034EA2] flex flex-col items-center justify-between lg:pt-[50px] bg-no-repeat lg:bg-right bg-center lg:bg-[length:70%_100%] bg-[length:90%_50%]"
       style={{
         backgroundImage: "url(/image/footer-bg-logo.png)",
       }}

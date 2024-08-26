@@ -146,7 +146,7 @@ export default function Review() {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024, // lg breakpoint
+        breakpoint: 1024, // responsive lg
         settings: {
           slidesToShow: 1,
         },
