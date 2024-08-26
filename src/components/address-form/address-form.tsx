@@ -1,0 +1,103 @@
+"use client";
+
+import { Form } from "../ui/form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import OrderSummary from "../order-summary/order-summary";
+import { Button } from "../ui/button";
+import { currentUserAtom } from "@/store/auth.store";
+import { useAtom, useAtomValue } from "jotai";
+import {
+  billTypeAtom,
+  deliveryInfoAtom,
+  registerNumberAtom,
+} from "@/store/order.store";
+import { changeDeliveryInfoAtom } from "@/store/order.store";
+import { LoadingIcon } from "../ui/loading";
+import { useRouter } from "next/navigation";
+import { phoneZod } from "@/lib/zod";
+import PersonalInfo from "./personal-info";
+import BuyButton from "@/containers/payment/buy-button";
+import CancelOrder from "@/containers/orders/cancel-order";
+import VerifyButton from "../verify/verifyButton";
+// import { useDetail } from "../order-detail/order-detail";
+
+export const formSchema = z
+  .object({
+    firstName: z.string().min(1, { message: "First name is required" }),
+    lastName: z.string(),
+    email: z.string().email().min(1, { message: "Email is required" }),
+    phone: phoneZod,
+    billType: z.enum(["1", "3", "9"], {
+      required_error: "You need to select a notification type.",
+    }),
+    registerNumber: z.string().optional(),
+    companyName: z.string().optional(),
+  })
+  .refine((data) => (data.billType === "3" ? !!data.registerNumber : true), {
+    message: "Register number is required",
+    path: ["registerNumber"], // path of error
+  })
+  .refine(
+    (data) =>
+      data.billType === "3" && data.registerNumber ? !!data.companyName : true,
+    {
+      message: "Register number is incorrect",
+      path: ["companyName"], // path of error
+    }
+  );
+
+const AddressForm = ({ ...product }) => {
+  // const { status, paidDate } = useDetail();
+  const {
+    firstName = "",
+    lastName = "",
+    email = "",
+    phone = "",
+  } = useAtomValue(currentUserAtom) || {};
+  const deliveryInfo = useAtomValue(deliveryInfoAtom);
+  const billType = useAtomValue(billTypeAtom);
+  const registerNumber = useAtomValue(registerNumberAtom);
+  const [loading, changeDeliveryInfo] = useAtom(changeDeliveryInfoAtom);
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    values: {
+      firstName,
+      lastName,
+      email,
+      phone,
+      billType: billType || "1",
+      registerNumber: registerNumber || "",
+      ...deliveryInfo,
+    },
+  });
+
+  function onSubmit(v: z.infer<typeof formSchema>) {
+    changeDeliveryInfo(v);
+  }
+
+  return (
+    <Form {...form}>
+      <form
+        className="md:grid md:grid-cols-12 md:gap-x-6"
+        onSubmit={form.handleSubmit(onSubmit)}
+      >
+        <div className="col-span-7">
+          <div className="mb-10 md:mb-0 space-y-4 md:space-y-4 gap-x-4 gap-y-3 ">
+            <PersonalInfo form={form} />
+          </div>
+        </div>
+        <OrderSummary className="col-span-5 md:sticky md:top-20 h-fit">
+          {/* <CancelOrder /> */}
+          {/* <BuyButton /> */}
+          <VerifyButton product={product} />
+          {/* {!paidDate ? : ""} */}
+        </OrderSummary>
+      </form>
+    </Form>
+  );
+};
+
+export default AddressForm;

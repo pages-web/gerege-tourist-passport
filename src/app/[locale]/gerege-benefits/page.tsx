@@ -4,13 +4,13 @@ import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import SearchIcon from "@mui/icons-material/Search";
 import { Input } from "@/components/ui/input";
-import PayemntBasicPage from "@/component/payment/page";
+import PayemntBasicPage from "@/components/payment/page";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { CardList, CardType, CardListType, imgURLType } from "./CardList";
-import WeatherAndCurrency from "@/component/weather-and-currency/page";
+import WeatherAndCurrency from "@/components/weather-and-currency/page";
 import { useMemo } from "react";
 import dynamic from "next/dynamic";
 
@@ -392,7 +392,7 @@ function BenefitsContent() {
               className="w-full lg:h-[200px] h-[150px] flex lg:gap-8 gap-4 bg-gray-50 pt-2 cursor-pointer"
               onClick={() => handleCardClick(card)}
             >
-              <div className="lg:w-[200px] w-[150px] lg:h-[180px] h-[135px] border border-gray-200 flex items-center justify-center">
+              <div className="lg:w-[200px] w-[150px] lg:h-[180px] px-4 h-[135px] border border-gray-200 flex items-center justify-center">
                 {card.logoImgURL && (
                   <Image
                     alt=""

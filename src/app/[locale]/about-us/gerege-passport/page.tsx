@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
-import PayemntBasicPage from "@/component/payment/page";
+import PayemntBasicPage from "@/components/payment/page";
 import { useTranslations } from "next-intl";
 
 const imageList = [

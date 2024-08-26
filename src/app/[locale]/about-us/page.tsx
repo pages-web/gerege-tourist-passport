@@ -3,8 +3,8 @@ import AboutGeregePassport from "./gerege-passport/page";
 import AboutGeregeHistory from "./gerege-history/page";
 import AboutHowToUse from "./how-to-use/page";
 import AboutDiscounts from "./discounts/page";
-import PayemntBasicPage from "@/component/payment/page";
-import WeatherAndCurrency from "@/component/weather-and-currency/page";
+import PayemntBasicPage from "@/components/payment/page";
+import WeatherAndCurrency from "@/components/weather-and-currency/page";
 import { useTranslations } from "next-intl";
 
 export default function AboutUs() {
