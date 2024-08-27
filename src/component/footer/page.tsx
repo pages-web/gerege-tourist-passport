@@ -186,9 +186,6 @@ export default function Footer() {
         className="lg:w-full w-[389px] lg:h-[106px] h-[70px] flex justify-between items-center lg:px-[165px] px-4"
         style={{
           borderTop: "2px solid #006EFF",
-          borderLeft: "1px solid #0163E0",
-          borderRight: "1px solid #0163E0",
-          borderBottom: "1px solid #0163E0",
         }}
       >
         <Image
