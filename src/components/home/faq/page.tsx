@@ -159,7 +159,7 @@ export default function FAQ() {
       <Accordion type="single" collapsible className="w-full">
         {getQuestions().map((item, index) => {
           return (
-            <AccordionItem value={`item-${index}`}>
+            <AccordionItem value={`item-${index}`} key={index}>
               <AccordionTrigger>{item.title}</AccordionTrigger>
               <AccordionContent>{item.content}</AccordionContent>
             </AccordionItem>

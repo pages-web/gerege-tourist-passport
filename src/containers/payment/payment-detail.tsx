@@ -61,7 +61,7 @@ const PaymentDetail = () => {
     <>
       <DialogHeader className="flex-row gap-4 items-center justify-between my-2 md:mt-0">
         <h3 className="text-[#D92D20] text-[18px] font-medium">
-          Don't close until pay
+          {"Don't"} close until pay
         </h3>
       </DialogHeader>
       {isQr &&

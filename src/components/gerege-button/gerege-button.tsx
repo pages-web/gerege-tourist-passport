@@ -17,6 +17,7 @@ const GeregeButton = async ({
       categoryId: "",
     },
   });
+  // console.log(products)
   // const { product } = await getProductDetail({
   //   // variables: { _id: "S9H3yIbYzxnla8o8pJ0M3" },
   // });

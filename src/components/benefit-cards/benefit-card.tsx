@@ -13,7 +13,13 @@ const BenefitCard = (benefit: IArticle) => {
       onClick={() => router.push(`/info/${_id}`)}
     >
       <div className="min-w-[194px] min-h-[194px] bg-white flex justify-center items-center border">
-        <Image src={image?.url || ""} width={300} height={300} quality={100} />
+        <Image
+          src={image?.url || ""}
+          alt=""
+          width={300}
+          height={300}
+          quality={100}
+        />
       </div>
       <div className="space-y-6">
         <h3 className="text-[24px] font-semibold text-[#1D2939]">{title}</h3>

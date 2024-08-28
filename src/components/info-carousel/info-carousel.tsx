@@ -19,7 +19,13 @@ const InfoCarousel = ({ attachments }: InfoCarouselProps) => {
           {attachments?.map((img, index) => (
             <CarouselItem key={index}>
               <div className="max-w-[1000px] overflow-hidden rounded-md">
-                <Image src={img?.url} width={1000} height={700} quality={100} />
+                <Image
+                  src={img?.url}
+                  alt=""
+                  width={1000}
+                  height={700}
+                  quality={100}
+                />
               </div>
             </CarouselItem>
           ))}

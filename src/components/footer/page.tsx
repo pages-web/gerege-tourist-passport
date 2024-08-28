@@ -21,17 +21,19 @@ type Lists = {
   lists: List[];
 };
 
-export const TitleLists = ({ children }: { children: Lists }) => {
+export const TitleLists = ({ data }: { data: Lists }) => {
   return (
     <div className="space-y-4 max-w-[340px]">
-      <h3 className="font-bold text-[16px] md:text-[24px]">{children.title}</h3>
+      <h3 className="font-bold text-[16px] md:text-[24px]">{data.title}</h3>
       <div className="flex flex-col gap-y-3">
-        {children.lists.map((list, index) => {
+        {data.lists.map((list, index) => {
           return (
             <Link href={list.link || ""} key={index}>
               <div className="flex gap-x-1 md:gap-x-2">
                 {list.icon && (
-                  <span className="md:w-6 md:h-6 flex items-start">{list.icon}</span>
+                  <span className="md:w-6 md:h-6 flex items-start">
+                    {list.icon}
+                  </span>
                 )}
                 <p className="text-[12px] md:text-[18px]">{list.name}</p>
               </div>
@@ -109,7 +111,7 @@ export default function Footer() {
       <div className="container">
         <div className="md:flex md:justify-between grid grid-cols-2 gap-8 flex-wrap">
           {FooterData.map((data, index) => {
-            return <TitleLists children={data} key={index} />;
+            return <TitleLists data={data} key={index} />;
           })}
         </div>
       </div>
