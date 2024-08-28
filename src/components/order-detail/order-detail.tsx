@@ -35,8 +35,6 @@ const OrderDetail = ({ id }: { id: string }) => {
       <OrderHeader />
       <OrderGeneral />
       <OrderProducts />
-      <OrderUser />
-      <OrderAddress />
     </OrderDetailContext.Provider>
   );
 };

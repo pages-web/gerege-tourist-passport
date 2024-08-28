@@ -23,14 +23,11 @@ function CancelOrder() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button
-          variant="outline"
-          className="md:h-12 py-[10px]  md:px-8 md:text-[14px] text-[12px]"
-        >
+        <Button className="md:h-12 py-[10px] md:px-8 md:text-[14px] text-[12px]">
           Захиалга цуцлах
         </Button>
       </AlertDialogTrigger>
-      <AlertDialogContent>
+      <AlertDialogContent className="bg-white">
         <AlertDialogHeader>
           <AlertDialogTitle>
             Та {number} дугаартай захиалгыг цуцлахдаа итгэлтэй байна уу?

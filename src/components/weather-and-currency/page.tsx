@@ -22,7 +22,7 @@ const WeatherAndCurrency: React.FC = () => {
   };
 
   return (
-    <div className="w-fit h-fit flex gap-2 fixed z-20 right-0 lg:top-[520px] top-[335px">
+    <div className="w-fit h-fit flex gap-2 sticky z-20 right-4 lg:top-[520px] top-[335px]">
       {activeView === "weather" && (
         <div className="absolute -top-6 right-[65px] z-40">
           <WeatherCarousel />

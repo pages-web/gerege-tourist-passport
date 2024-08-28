@@ -19,13 +19,13 @@ const OrderHeader = () => {
     <Card>
       <CardHeader className="justify-between flex-row items-center md:py-5 gap-1 md:gap-0">
         <h3 className="text-base text-nowrap md:text-xl font-semibold mb-2">
-          Захиалгын мэдээлэл
+          Payment detail
         </h3>
         <div className="text-sm font-medium w-full md:w-auto text-right"></div>
       </CardHeader>
       <Separator />
       <CardContent className="px-2">
-        <h4 className="text-lg md:text-xl font-medium text-center md:mt-0">
+        <h4 className="text-lg md:text-xl font-medium text-center md:mt-5">
           <OrderStatus />
         </h4>
         {status === ORDER_STATUSES.NEW && !paidDate && (

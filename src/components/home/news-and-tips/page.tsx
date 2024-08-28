@@ -51,7 +51,13 @@ export default function NewsAndTips() {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024, // lg breakpoint
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 320,
         settings: {
           slidesToShow: 1,
         },
@@ -70,64 +76,59 @@ export default function NewsAndTips() {
   return (
     <div
       id="news-and-tips"
-      className="lg:w-full w-[389px] lg:h-[450px] h-[300px] mb-[80px] flex flex-col justify-between"
+      className="w-full overflow-hidden flex flex-col justify-between gap-14"
     >
-      <div className="w-fit h-fit flex flex-col gap-2 items-center justify-between m-auto">
-        <div className="text-gray-800 lg:text-[26px] text-[16px] font-bold">
+      <div className="flex flex-col gap-2 items-center justify-between m-auto">
+        <div className="text-gray-800 md:text-[30px] text-[20px] font-bold">
           {t("title")}
         </div>
-        <div className="text-gray-600 lg:text-[16px] text-[12px] font-normal">
+        <div className="text-gray-600 md:text-[18px] text-[14px] font-normal">
           {t("description")}
         </div>
       </div>
 
       <div className="w-full relative">
-        <div
-          className="lg:w-[32px] w-[26px] lg:h-[32px] h-[26px] border rounded-full flex items-center justify-center cursor-pointer absolute left-[3%] top-[45%]"
+        <button
+          className="bg-white p-1 border rounded-full flex items-center justify-center absolute left-0 top-[45%] z-40"
           onClick={handlePrevious}
         >
           <KeyboardArrowLeft className="lg:w-[30px] w-[20px] lg:h-[30px] h-[20px]" />
-        </div>
+        </button>
 
-        <div className="lg:w-[1220px] w-full lg:mx-auto ml-[15%]">
-          <div className="lg:block hidden absolute right-[1%] z-10 w-[400px] h-[310px] bg-gradient-to-r from-white/0 to-white"></div>
-          <Slider ref={sliderRef} {...settings}>
-            {cardList.map((card) => (
-              <div key={card.id}>
-                <div className="lg:w-[285px] w-[270px] lg:h-[310px] h-[220px] flex flex-col items-center justify-between">
-                  <Image
-                    alt={card.title}
-                    src={card.imageUrl}
-                    width={185}
-                    height={185}
-                    className="lg:w-[185px] lg:h-[185px] w-[130px] h-[130px]"
-                  />
-                  <div className="lg:text-[20px] text-[16px] text-gray-800 font-bold">
-                    {card.title}
-                  </div>
-                  <div
-                    className="w-full lg:h-[50px] h-[45px] lg:text-xs text-[10px] overflow-hidden"
-                    style={{
-                      display: "-webkit-box",
-                      WebkitBoxOrient: "vertical",
-                      WebkitLineClamp: 3,
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                    }}
-                  >
-                    {card.content}
-                  </div>
-                </div>
+        <div className="lg:block hidden absolute right-0 z-10 w-[400px] h-[310px] bg-gradient-to-r from-white/0 to-white"></div>
+        <div className="lg:block hidden absolute left-0 z-10 w-[400px] h-[310px] bg-gradient-to-l from-white/0 to-white"></div>
+
+        <Slider ref={sliderRef} {...settings} className="mx-[5%]">
+          {cardList.map((card) => (
+            <div
+              className="flex space-y-4 max-w-[200px] lg:max-w-[250px] text-center xl:ml-10 max-[320px]:ml-8"
+              key={card.id}
+            >
+              <div className="flex justify-center">
+                <Image
+                  alt={card.title}
+                  src={card.imageUrl}
+                  width={185}
+                  height={185}
+                  className="lg:w-[185px] lg:h-[185px] w-[130px] h-[130px]"
+                />
               </div>
-            ))}
-          </Slider>
-        </div>
-        <div
-          className="lg:w-[32px] w-[26px] lg:h-[32px] h-[26px] border rounded-full flex items-center justify-center cursor-pointer absolute right-[3%] top-[45%] z-20"
+              <h3 className="lg:text-[20px] text-[16px] text-gray-800 font-bold xl:mx-0 mx-3">
+                {card.title}
+              </h3>
+              <p className="lg:text-xs text-[10px] overflow-hidden line-clamp-3 xl:mx-0 mx-6">
+                {card.content}
+              </p>
+            </div>
+          ))}
+        </Slider>
+
+        <button
+          className="bg-white p-1 border rounded-full flex items-center justify-center absolute right-0 top-[45%] z-40"
           onClick={handleNext}
         >
           <KeyboardArrowRight className="lg:w-[30px] w-[20px] lg:h-[30px] h-[20px]" />
-        </div>
+        </button>
       </div>
     </div>
   );

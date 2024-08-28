@@ -21,11 +21,10 @@ export default async function RootLayout({
   params: { locale: string };
 }) {
   const messages = await getMessages();
+
   return (
     <NextIntlClientProvider messages={messages}>
-      <Header />
       {children}
-      <Footer />
     </NextIntlClientProvider>
   );
 }

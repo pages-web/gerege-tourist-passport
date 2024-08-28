@@ -42,7 +42,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative lg:w-full w-[389px] overflow-hidden">
+    <div className="relative w-full overflow-hidden">
       <div
         className={`flex transition-transform duration-1000 ease-in-out`}
         style={{
@@ -53,15 +53,16 @@ const Carousel = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="w-full lg:h-[620px] h-[300px] flex justify-center lg:pt-[300px] pt-[115px]"
+            className="w-full lg:h-[700px] md:h-[500px] h-[300px] flex justify-center items-end p-2 md:px-32 md:py-10"
             style={{
               backgroundImage: `url(${slide.backgroundImage})`,
-              backgroundPositionY: "55%",
+              backgroundPositionX: "50%",
+              backgroundPositionY: "20%",
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
             }}
           >
-            <div className="lg:w-[1200px] w-11/12 lg:h-fit h-fit lg:rounded-[16px] rounded-xl lg:p-[24px] p-3 flex flex-col lg:gap-[25px] gap-5 bg-black/[.7]">
+            <div className="w-full lg:rounded-[16px] rounded-xl lg:p-[24px] p-3 flex flex-col lg:gap-[25px] gap-5 bg-black/[.7]">
               <div>
                 <div className="lg:w-[780px] lg:text-[48px] text-[20px] text-white font-bold">
                   {t(slide.titleKey)}
@@ -70,7 +71,7 @@ const Carousel = () => {
                   {t(slide.descriptionKey)}
                 </div>
               </div>
-              <button className="lg:w-[127px] w-[110px] lg:h-[43px] h-[30px] lg:rounded-[8px] rounded-[5px] bg-[#0087FF] text-white lg:text-[16px] text-[13px] font-semibold flex items-center justify-center">
+              <button className="w-fit px-4 py-2 lg:rounded-[8px] rounded-[5px] bg-[#0087FF] text-white lg:text-[16px] text-[13px] font-semibold flex items-center justify-center">
                 {t("Buying now")}
               </button>
             </div>

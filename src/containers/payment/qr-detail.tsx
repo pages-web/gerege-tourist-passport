@@ -40,7 +40,7 @@ const QrDetail = ({
               height={256}
               width={256}
               alt=""
-            /> 
+            />
           ) : (
             <BanIcon
               className="h-20 w-20 text-input absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 "
@@ -48,14 +48,12 @@ const QrDetail = ({
             />
           )}
         </QrContainer>
-        
+
         {!!urls?.length && (
           <div className="pt-4 grid grid-cols-3 gap-4 md:hidden">
             {urls.map((url) => (
               <Button
-                className="text-xs flex flex-col gap-1 items-center justify-center px-2 py-3 shadow border border-border/10 h-auto rounded-md"
-                variant={"ghost"}
-                size="sm"
+                className="text-xs bg-white flex flex-col gap-1 items-center justify-center px-2 py-3 shadow border border-border/10 h-auto rounded-md"
                 asChild
                 key={url.name}
               >
@@ -105,19 +103,26 @@ export const QrContainer = ({
         <AlertDescription className="text-xs">{error}</AlertDescription>
       </Alert>
     ) : (
-      <Alert variant={"warning"}>
+      <Alert
+        variant={"warning"}
+        className="bg-yellow-300/50 text-orange-400 border-none"
+      >
         <InfoIcon className="h-4 w-4" />
         <AlertDescription className="text-xs">
-          Төлбөр төлөгдсөний дараа таны захиалга идэвхждэг болохыг анхаараарай!
-          Та өөрийн банкны аппликейшныг ашиглан QR кодыг уншуулж төлбөр төлөх
-          боломжтой.
+          Note that your order is activated after payment! You can pay by
+          scanning the QR code using your banking app.
+          <p>
+            Төлбөр төлөгдсөний дараа таны захиалга идэвхждэг болохыг
+            анхаараарай! Та өөрийн банкны аппликейшныг ашиглан QR кодыг уншуулж
+            төлбөр төлөх боломжтой.
+          </p>
         </AlertDescription>
       </Alert>
     )}
     {loading && (
       <DialogFooter className="sm:justify-center gap-2 pt-4 block md:flex space-y-2 md:space-y-0">
         <BackButton disabled />
-        <Button size="lg" className="flex-1 w-full" disabled>
+        <Button className="flex-1 w-full" disabled>
           Төлбөр шалгах
         </Button>
       </DialogFooter>

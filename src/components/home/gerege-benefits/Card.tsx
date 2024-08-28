@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 
 interface CardProps {
   imageSrc: string;
@@ -19,43 +20,63 @@ const Card: React.FC<CardProps> = ({
   link,
   bgImage,
 }) => {
+  const variant = [
+    {
+      hover: {
+        color: "white",
+        x: -5,
+        transition: {
+          duration: 0.3,
+        },
+      },
+    },
+    {
+      hover: {
+        color: "white",
+        x: 5,
+        transition: {
+          duration: 0.3,
+        },
+      },
+    },
+  ];
   const t = useTranslations("Gerege Tour Card Benefits");
   return (
-    <div className="lg:w-[210px] w-[180px] lg:h-[215px] h-[180px] bg-gray-100">
-      <div className="w-full lg:h-[200px] h-[180px] p-[24px] flex flex-col items-center gap-3">
-        <Image alt="" src={imageSrc} width={32} height={32} />
-        <div
-          className={`text-gray-800 text-[16px] font-semibold 
+    <div className="max-w-[220px] bg-gray-100 group z-20">
+      <Link href={link}>
+        <div className="w-full p-3 md:p-6 flex flex-col items-center gap-3">
+          <Image alt="" src={imageSrc} width={32} height={32} />
+          <div
+            className={`text-gray-800 text-[16px] font-semibold uppercase duration-200
             ${
               title === t("Culture")
-                ? "hover:text-blue-500"
+                ? "group-hover:text-blue-500"
                 : title === t("Hotel")
-                ? "hover:text-orange-300"
+                ? "group-hover:text-orange-300"
                 : title === t("Restaurant")
-                ? "hover:text-green-500"
+                ? "group-hover:text-green-500"
                 : title === t("Museum")
-                ? "hover:text-red-500"
-                : "hover:text-gray-800"
+                ? "group-hover:text-red-500"
+                : "group-hover:text-gray-800"
             }`}
-        >
-          {t(title)}
+          >
+            {t(title)}
+          </div>
+          <div
+            className="text-justify text-xs text-gray-600"
+            style={{
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: 3,
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+          >
+            {t(descriptionKey)}
+          </div>
         </div>
         <div
-          className="lg:w-[204px] px-4 text-justify w-[160px] h-[47px] text-xs text-gray-600"
-          style={{
-            display: "-webkit-box",
-            WebkitBoxOrient: "vertical",
-            WebkitLineClamp: 3,
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-          }}
-        >
-          {t(descriptionKey)}
-        </div>
-      </div>
-      <Link href={link}>
-        <div
-          className="lg:w-[210px] w-[180px] lg:h-[42px] h-[32px] flex items-center justify-center"
+          className="flex items-center justify-center"
           style={{
             backgroundImage: `url(${bgImage})`,
             backgroundPositionY: "50%",
@@ -64,10 +85,17 @@ const Card: React.FC<CardProps> = ({
             backgroundSize: "cover",
           }}
         >
-          <div className="w-full h-full flex items-center justify-center text-xs text-gray-300 font-medium bg-black/[0.5] transition-all duration-700 ease-in-out hover:scale-105 hover:gap-[10px] hover:text-white hover:font-bold">
-            {t("ABOUT")} {t(title).toUpperCase()}
-            <ArrowForwardIosIcon className="lg:w-[22px] w-[18px] lg:h-[22px] h-[18px]" />
-          </div>
+          <motion.div
+            whileHover="hover"
+            className="w-full p-4 flex items-center justify-center text-[12px] text-white/60 bg-black/[0.5]"
+          >
+            <motion.span variants={variant[0]}>
+              {t("ABOUT")} {t(title).toUpperCase()}
+            </motion.span>
+            <motion.span variants={variant[1]}>
+              <ArrowForwardIosIcon className="lg:w-[22px] w-[18px] lg:h-[22px] h-[18px]" />
+            </motion.span>
+          </motion.div>
         </div>
       </Link>
     </div>

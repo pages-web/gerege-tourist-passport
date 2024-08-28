@@ -1,6 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/Separator";
-import GoogleLogin from "@/containers/auth/google-login";
 import LoginForm from "@/containers/auth/login-form";
 import { Metadata } from "next/types";
 import Link from "next/link";

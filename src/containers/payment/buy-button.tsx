@@ -50,7 +50,6 @@ const BuyButton = () => {
   return (
     <>
       <Button
-        size="lg"
         className="md:h-12 px-6 md:px-8 md:text-[14px] text-[12px]"
         onClick={() => {
           handleCreateInvoice();

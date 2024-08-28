@@ -12,7 +12,7 @@ const PaymentDetailDialog = () => {
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="sm:max-w-xl sm:rounded-2xl">
+        <DialogContent className="sm:max-w-xl sm:rounded-2xl bg-white">
           <PaymentDetail />
         </DialogContent>
       </Dialog>
@@ -21,7 +21,7 @@ const PaymentDetailDialog = () => {
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerContent className="p-4 pt-0">
+      <DrawerContent className="p-4 pt-0 bg-white">
         <PaymentDetail />
       </DrawerContent>
     </Drawer>

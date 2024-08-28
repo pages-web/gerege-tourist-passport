@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Password } from "@/components/ui/password";
 import Link from "next/link";
 import { useLogin } from "@/sdk/hooks/auth";
+import { useRouter } from "next/router";
 
 const formSchema = z.object({
   login: z

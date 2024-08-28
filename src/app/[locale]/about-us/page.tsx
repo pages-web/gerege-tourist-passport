@@ -21,7 +21,6 @@ export default function AboutUs() {
           {t("description")}
         </div>
       </div>
-      <WeatherAndCurrency />
     </div>
   );
 }

@@ -1,15 +1,16 @@
 "use client";
-import { useAtomValue } from "jotai";
+import { useAtomValue, useStore } from "jotai";
 import Price from "../price/price";
 import { deliveryItemAtom } from "@/store/order.store";
+import { getProductDetail } from "@/sdk/queries/products";
 
 const DeliveryFee = () => {
   const deliveryProduct = useAtomValue(deliveryItemAtom);
   return (
     <>
       <div className="flex justify-between items-start">
-        <span>Захиалгын төлбөр</span>
-        <Price amount={55} />
+        <span>GEREGE TOUR CARD</span>
+        <Price amount={186000} />
       </div>
     </>
   );

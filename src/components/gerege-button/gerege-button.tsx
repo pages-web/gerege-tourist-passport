@@ -1,22 +1,38 @@
-import { getProducts } from "@/sdk/queries/products";
+import {
+  getCategories,
+  getProductDetail,
+  getProducts,
+} from "@/sdk/queries/products";
 import GeregeButtonAdd from "./gerege-button-add.client";
 
-const GeregeButton = async () => {
+const GeregeButton = async ({
+  className,
+  title,
+}: {
+  className?: string;
+  title?: string;
+}) => {
   const { products } = await getProducts({
     variables: {
-      perPage: 12,
-      isKiosk: true,
-      groupedSimilarity: "config",
+      categoryId: "",
     },
   });
+  // const { product } = await getProductDetail({
+  //   // variables: { _id: "S9H3yIbYzxnla8o8pJ0M3" },
+  // });
+
+  console.log(products);
+
   const geregeproduct = products.filter(
     (product) => product.name === "GEREGE TOUR CARD"
   );
 
   return (
-    <div>
-      <GeregeButtonAdd {...geregeproduct[0]} />
-    </div>
+    <GeregeButtonAdd
+      geregeproduct={geregeproduct[0]}
+      className={className}
+      title={title}
+    />
   );
 };
 

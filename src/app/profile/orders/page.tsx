@@ -1,6 +1,6 @@
-import FullOrders from '@/containers/orders/full-orders';
-import ProfileLayout from '../profile-layout';
-import { Suspense } from 'react';
+import FullOrders from "@/containers/orders/full-orders";
+import ProfileLayout from "../profile-layout";
+import { Suspense } from "react";
 
 const Orders = () => {
   return (

@@ -12,17 +12,19 @@ import GeregeButton from "../gerege-button/gerege-button";
 
 export default function HomePage() {
   return (
-    <main className="lg:max-w-screen-2xl lg:w-full w-[389px] lg:h-fit h-fit flex flex-col items-center m-auto relative">
-      <GeregeButton />
+    <main className="min-h-screen flex flex-col items-center gap-y-24">
       <Carousel />
-      <WhyUs />
-      <Benefits />
+      <div className="container space-y-16">
+        <WhyUs />
+        <Benefits />
+      </div>
       <WhyGeregePassport />
-      <NewsAndTips />
-      <LoyaltyCard />
-      <FAQ />
-      <Review />
-      <WeatherAndCurrency />
+      <div className="container space-y-24">
+        <NewsAndTips />
+        {/* <LoyaltyCard /> */}
+        <FAQ />
+      </div>
+      {/* <Review /> */}
     </main>
   );
 }

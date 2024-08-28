@@ -9,7 +9,6 @@ import {
 import { Input } from "../ui/input";
 import { z } from "zod";
 import { formSchema } from "./address-form";
-import { Separator } from "../ui/Separator";
 
 const PersonalInfo = ({
   form,
@@ -18,7 +17,6 @@ const PersonalInfo = ({
 }) => {
   return (
     <>
-      <h2 className="col-span-6 text-lg font-bold">Захиалагчийн мэдээлэл</h2>
       <FormField
         control={form.control}
         name="firstName"
@@ -80,7 +78,6 @@ const PersonalInfo = ({
         )}
       />
       <div />
-      <Separator className="col-span-6" />
     </>
   );
 };

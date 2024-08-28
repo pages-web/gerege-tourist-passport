@@ -18,10 +18,9 @@ import { LoadingIcon } from "../ui/loading";
 import { useRouter } from "next/navigation";
 import { phoneZod } from "@/lib/zod";
 import PersonalInfo from "./personal-info";
-import BuyButton from "@/containers/payment/buy-button";
-import CancelOrder from "@/containers/orders/cancel-order";
+import Ebarimt from "./ebarimt";
+import AddressInfo from "./address-info";
 import VerifyButton from "../verify/verifyButton";
-// import { useDetail } from "../order-detail/order-detail";
 
 export const formSchema = z
   .object({
@@ -29,6 +28,13 @@ export const formSchema = z
     lastName: z.string(),
     email: z.string().email().min(1, { message: "Email is required" }),
     phone: phoneZod,
+    city: z.string().min(1, { message: "City is required" }),
+    district: z.string().min(1, { message: "District is required" }),
+    street: z.string().min(1, { message: "Street is required" }),
+    detail: z.string().min(1, { message: "Detailed address is required" }),
+    haveBaby: z.boolean(),
+    callBefore: z.boolean(),
+    onlyAfternoon: z.boolean(),
     billType: z.enum(["1", "3", "9"], {
       required_error: "You need to select a notification type.",
     }),
@@ -48,8 +54,7 @@ export const formSchema = z
     }
   );
 
-const AddressForm = ({ ...product }) => {
-  // const { status, paidDate } = useDetail();
+const AddressForm = () => {
   const {
     firstName = "",
     lastName = "",
@@ -60,6 +65,7 @@ const AddressForm = ({ ...product }) => {
   const billType = useAtomValue(billTypeAtom);
   const registerNumber = useAtomValue(registerNumberAtom);
   const [loading, changeDeliveryInfo] = useAtom(changeDeliveryInfoAtom);
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -68,6 +74,13 @@ const AddressForm = ({ ...product }) => {
       lastName,
       email,
       phone,
+      city: "2",
+      district: "2",
+      street: "2",
+      detail: "2",
+      haveBaby: false,
+      callBefore: false,
+      onlyAfternoon: false,
       billType: billType || "1",
       registerNumber: registerNumber || "",
       ...deliveryInfo,
@@ -76,6 +89,7 @@ const AddressForm = ({ ...product }) => {
 
   function onSubmit(v: z.infer<typeof formSchema>) {
     changeDeliveryInfo(v);
+    router.push("/verify");
   }
 
   return (
@@ -85,15 +99,12 @@ const AddressForm = ({ ...product }) => {
         onSubmit={form.handleSubmit(onSubmit)}
       >
         <div className="col-span-7">
-          <div className="mb-10 md:mb-0 space-y-4 md:space-y-4 gap-x-4 gap-y-3 ">
+          <div className="md:grid grid-cols-6 mb-10 md:mb-0 space-y-4 md:space-y-0 gap-x-4 gap-y-3 ">
             <PersonalInfo form={form} />
           </div>
         </div>
         <OrderSummary className="col-span-5 md:sticky md:top-20 h-fit">
-          {/* <CancelOrder /> */}
-          {/* <BuyButton /> */}
-          <VerifyButton product={product} />
-          {/* {!paidDate ? : ""} */}
+          <VerifyButton />
         </OrderSummary>
       </form>
     </Form>

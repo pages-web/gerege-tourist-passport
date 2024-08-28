@@ -11,7 +11,6 @@ import ConfigProvider from "@/components/layouts/config";
 import { Metadata } from "next/types";
 import Header from "@/components/header/page";
 import DefaultLayout from "@/components/layouts";
-import GeregeButton from "@/components/gerege-button/gerege-button";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -65,7 +64,9 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <Providers>
-          <ConfigProvider config={config}>{children}</ConfigProvider>
+          <ConfigProvider config={config}>
+            <DefaultLayout>{children}</DefaultLayout>
+          </ConfigProvider>
           <CurrentOrder />
           <OrderCRUD />
         </Providers>

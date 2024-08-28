@@ -26,7 +26,10 @@ const CurrentUser = () => {
     const { firstName, avatar, lastName } = currentUser;
     return (
       <Avatar asChild>
-        <Link href="/profile" className="md:h-[49px] md:w-[49px]">
+        <Link
+          href="/profile"
+          className="md:h-[40px] md:w-[40px] border shadow-sm text-[#0087FF] border-[#0087FF]"
+        >
           <AvatarImage src={avatar} alt={currentUser.firstName} />
           <AvatarFallback>
             {(firstName || "P")[0]}
@@ -38,16 +41,14 @@ const CurrentUser = () => {
   }
 
   return (
-    <Button
-      size="icon"
-      variant={"outline"}
-      className="hover:bg-background/10 hover:text-white h-full md:h-[49px] md:w-[49px]"
+    <Avatar
+      className="md:h-[40px] md:w-[40px] flex justify-center items-center hover:bg-background/10 hover:text-[#0087FF] border hover:border-[#0087FF] duration-200 rounded-full "
       asChild
     >
       <Link href="/login">
         <UserIcon className="h-4 w-4 md:h-5 md:w-5" />
       </Link>
-    </Button>
+    </Avatar>
   );
 };
 

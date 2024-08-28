@@ -5,6 +5,7 @@ import { loadingUserAtom, refetchCurrentUserAtom } from "@/store/auth.store";
 import { toast } from "sonner";
 import { useRouter, useSearchParams } from "next/navigation";
 import { onError } from "@/lib/utils";
+import { fbLogout } from "@/lib/facebook";
 
 const clientPortalId = process.env.NEXT_PUBLIC_CP_ID;
 
@@ -51,6 +52,28 @@ export const useLogin = (onCompleted?: () => void) => {
   });
 
   return { login, loading, clientPortalId };
+};
+
+export const useGoogleLogin = () => {
+  const { loginCallback } = useLoginCallback();
+  const [googleLogin, { loading }] = useMutation(mutations.googleLogin, {
+    onCompleted({ clientPortalGoogleAuthentication }) {
+      loginCallback(clientPortalGoogleAuthentication);
+    },
+    onError,
+  });
+  return { googleLogin, loading, clientPortalId };
+};
+
+export const useFacebookLogin = () => {
+  const { loginCallback } = useLoginCallback();
+  const [facebookLogin, { loading }] = useMutation(mutations.fbLogin, {
+    onCompleted({ clientPortalFacebookAuthentication }) {
+      loginCallback(clientPortalFacebookAuthentication);
+    },
+    onError,
+  });
+  return { facebookLogin, loading, clientPortalId };
 };
 
 export const useRegister = (
@@ -130,6 +153,7 @@ export const useLogout = () => {
   const handleLogout = () => {
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("refetchToken");
+    fbLogout();
     logout();
   };
 

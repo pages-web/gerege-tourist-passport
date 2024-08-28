@@ -37,11 +37,10 @@ const OrderSummary = ({
       </CardContent>
       <CardFooter className="flex-col gap-4 md:pb-6 md:pt-3">
         <Separator />
-        <div className="text-lg md:text-xl font-bold flex justify-between w-full">
-          <p>Нийт төлөх дүн</p>
-          <Price amount={55} />
+        <div className="text-lg md:text-xl font-bold flex justify-end gap-x-2 w-full">
+          <p>Total: </p>
+          <Price amount={186000} />
         </div>
-        <Separator />
         {children}
       </CardFooter>
     </Card>

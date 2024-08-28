@@ -60,32 +60,9 @@ const PaymentDetail = () => {
   return (
     <>
       <DialogHeader className="flex-row gap-4 items-center justify-between my-2 md:mt-0">
-        <div className="flex items-center gap-4">
-          <Image
-            src={`/images/payments/${kind}.png`}
-            className="object-contain rounded-lg flex-none"
-            height={36}
-            width={36}
-          />
-          <div className="text-left">
-            <div className="font-medium capitalize leading-none mb-0.5">
-              {kind}
-            </div>
-            <div className="text-neutral-500 text-xs md:text-md">
-              {isQr
-                ? "Qr кодыг уншуулж төлбөрөө төлнө үү"
-                : "Бүртгэлтэй утасны дугаараа оруулна уу"}
-            </div>
-          </div>
-        </div>
-        {!addingTransaction && !!status && (
-          <Badge
-            variant="outline"
-            className="p-2 px-4 rounded-xl bg-yellow-100, border-primary text-primary bg-primary/30"
-          >
-            {status}
-          </Badge>
-        )}
+        <h3 className="text-[#D92D20] text-[18px] font-medium">
+          Don't close until pay
+        </h3>
       </DialogHeader>
       {isQr &&
         (addingTransaction ? (
