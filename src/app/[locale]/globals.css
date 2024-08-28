@@ -5,13 +5,10 @@
 .logo-text {
   font-family: "Lucida Sans", sans-serif;
 }
-.font-lato {
-  font-family: "Lato";
-}
 
-/* body {
+body {
   font-family: "Lato", sans-serif;
-} */
+}
 
 /* @layer base {
     :root {

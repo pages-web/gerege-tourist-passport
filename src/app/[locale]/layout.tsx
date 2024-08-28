@@ -5,6 +5,7 @@ import Header from "@/components/header/page";
 import Footer from "@/components/footer/page";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { Providers } from "@/provider/page";
 
 const inter = Inter({ subsets: ["latin"] });
 
