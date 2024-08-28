@@ -40,7 +40,7 @@ const WeatherAndCurrency: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-fit h-fit flex gap-2 sticky z-20 right-4 lg:top-[520px] top-[335px]">
+    <div className="w-fit h-fit flex gap-2 fixed z-50 right-2 lg:top-[520px] top-[335px]">
       {activeView === "weather" && (
         <div
           ref={weatherRef}

@@ -1,13 +1,14 @@
-'use client';
+"use client";
 
 import {
   type Atom,
   Provider as JotaiProvider,
   atom,
-  useAtomValue
-} from 'jotai';
-import Apollo from '@/app/ApolloClient';
-import { selectAtom } from 'jotai/utils';
+  useAtomValue,
+} from "jotai";
+import Apollo from "@/app/ApolloClient";
+import { selectAtom } from "jotai/utils";
+import { WeatherProvider } from "@/provider/WeatherProvider";
 
 export const categorySheetAtom = atom<boolean>(false);
 export const cartSheetAtom = atom<boolean>(false);
@@ -22,7 +23,9 @@ export function useSelectAtom(
 const Providers = ({ children }: React.PropsWithChildren) => {
   return (
     <JotaiProvider>
-      <Apollo>{children}</Apollo>
+      <Apollo>
+        <WeatherProvider>{children}</WeatherProvider>
+      </Apollo>
     </JotaiProvider>
   );
 };

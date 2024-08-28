@@ -21,8 +21,6 @@ const GeregeButton = async ({
   //   // variables: { _id: "S9H3yIbYzxnla8o8pJ0M3" },
   // });
 
-  console.log(products);
-
   const geregeproduct = products.filter(
     (product) => product.name === "GEREGE TOUR CARD"
   );
