@@ -3,14 +3,15 @@ import { useAtomValue, useStore } from "jotai";
 import Price from "../price/price";
 import { deliveryItemAtom } from "@/store/order.store";
 import { getProductDetail } from "@/sdk/queries/products";
+import { cartTotalAtom } from "@/store/cart.store";
 
 const DeliveryFee = () => {
-  const deliveryProduct = useAtomValue(deliveryItemAtom);
+  const totalAmount = useAtomValue(cartTotalAtom);
   return (
     <>
       <div className="flex justify-between items-start">
         <span>GEREGE TOUR CARD</span>
-        <Price amount={186000} />
+        <Price amount={totalAmount || 0} />
       </div>
     </>
   );

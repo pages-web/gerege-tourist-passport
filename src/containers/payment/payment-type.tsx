@@ -37,7 +37,7 @@ const PaymentType = ({
           />
 
           <Image
-            src={`/images/payments/${kind}.png`}
+            src={`/image/payments/${kind}.png`}
             alt={kind}
             className="object-contain rounded-lg mb-0.5"
             height={36}

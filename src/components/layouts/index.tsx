@@ -12,7 +12,7 @@ const DefaultLayout = ({ children }: React.PropsWithChildren) => {
     <>
       <Header />
       {children}
-      <WeatherAndCurrency />
+      {/* <WeatherAndCurrency /> */}
       <Footer />
     </>
   );

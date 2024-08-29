@@ -10,7 +10,7 @@ const Success = () => {
   return (
     <Dialog open={showSuccess}>
       <DialogContent>
-        <div className="flex flex-col items-center py-6">
+        <div className="bg-white flex flex-col items-center py-6">
           <div className="h-16 w-16 rounded-full bg-green-700 flex items-center justify-center">
             <CheckIcon className="h-10 w-10 stroke-white " strokeWidth={2.5} />
           </div>

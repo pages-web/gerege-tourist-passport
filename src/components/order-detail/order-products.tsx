@@ -7,7 +7,7 @@ import { deliveryItemIdAtom } from "@/store/auth.store";
 import { filterDeliveryProduct } from "@/store/order.store";
 
 const OrderProducts = () => {
-  const { items } = useDetail();
+  const { number, createdAt, totalAmount, items } = useDetail();
   const deliveryProductId = useAtomValue(deliveryItemIdAtom);
   return (
     <Card>

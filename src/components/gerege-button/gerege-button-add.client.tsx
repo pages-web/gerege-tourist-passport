@@ -2,10 +2,15 @@
 
 import { IProduct } from "@/types/product.types";
 import { Button } from "../ui/button";
-import { useAtom, useSetAtom } from "jotai";
+import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import { useEffect, useState } from "react";
 import { cartSheetAtom } from "@/store";
-import { addToCartAtom, cartTotalAtom } from "@/store/cart.store";
+import {
+  addToCartAtom,
+  cartItemAtomAtoms,
+  cartTotalAtom,
+  changeCartItem,
+} from "@/store/cart.store";
 import { usePossibleQuantity } from "@/sdk/hooks/cart";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
@@ -50,11 +55,7 @@ const GeregeButtonAdd = ({
 
   const handleClick = () => {
     if (!checkRemainder || possibleQuantity > 0) {
-      if (total < 186957) {
-        addToCart({ ...geregeproduct, count: 1 });
-      } else {
-        addToCart({ ...geregeproduct, count: 0 });
-      }
+      addToCart({ ...geregeproduct, count: 1 });
       setClicked(true);
     }
     router.push("/cart");

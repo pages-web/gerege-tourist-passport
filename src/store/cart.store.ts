@@ -38,7 +38,10 @@ export const addToCart = (
 
   if (prevItem) {
     const { _id, count } = prevItem;
-    return changeCartItem({ _id, count: count + product.count }, cart);
+    return changeCartItem(
+      { _id, count: count < 1 ? count + product.count : count },
+      cart
+    );
   }
 
   const { unitPrice, _id, name, attachment, count } = product;

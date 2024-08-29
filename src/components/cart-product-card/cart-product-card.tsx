@@ -8,6 +8,7 @@ import { OrderItem } from "@/types/order.types";
 import Price from "../price/price";
 import { Counter, CounterButton, CounterInput } from "../counter/counter";
 import { updateCartAtom } from "@/store/cart.store";
+import { useEffect } from "react";
 
 const CartProductCard = ({
   cartItemAtom,

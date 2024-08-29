@@ -7,6 +7,7 @@ import {
   DialogTrigger,
   DialogHeader,
   DialogClose,
+  DialogTitle,
 } from "@/components/ui/Dialog";
 import { XIcon } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";

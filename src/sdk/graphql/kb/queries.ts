@@ -100,6 +100,71 @@ const kbCategoryId = gql`
   }
 `;
 
-const queries = { articleDetail, articles, kbCategory, kbCategoryId };
+// const kbTopicDetail = gql`
+//   query knowledgeBaseTopicDetail($_id: String!) {
+//     clientPortalKnowledgeBaseTopicDetail(_id: $_id) {
+//       _id
+//       title
+//       description
+//       color
+//       backgroundImage
+//       languageCode
+//       categories {
+//         _id
+//         title
+//         description
+//         icon
+//         numOfArticles
+//         authors {
+//           _id
+//           details {
+//             fullName
+//             avatar
+//           }
+//         }
+//       }
+//       parentCategories {
+//         _id
+//         title
+//         description
+//         icon
+//         numOfArticles
+//         authors {
+//           _id
+//           details {
+//             fullName
+//             avatar
+//           }
+//         }
+//         childrens {
+//           _id
+//           title
+//           description
+//           icon
+//           numOfArticles
+//           authors {
+//             _id
+//             details {
+//               fullName
+//               avatar
+//             }
+//           }
+//         }
+//         articles {
+//           _id
+//           title
+//         }
+//       }
+//     }
+//   }
+// `;
+
+const queries = {
+  articleDetail,
+  articles,
+  kbCategory,
+  kbCategoryId,
+  // kbTopicDetail,
+};
 
 export default queries;

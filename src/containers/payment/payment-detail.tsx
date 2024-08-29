@@ -1,4 +1,4 @@
-import { DialogHeader } from "@/components/ui/Dialog";
+import { DialogHeader, DialogTitle } from "@/components/ui/Dialog";
 import { handleMethodAtom, invoiceDetailAtom } from "@/store/payment.store";
 import { useAtomValue } from "jotai";
 import Image from "@/components/ui/image";
@@ -60,9 +60,9 @@ const PaymentDetail = () => {
   return (
     <>
       <DialogHeader className="flex-row gap-4 items-center justify-between my-2 md:mt-0">
-        <h3 className="text-[#D92D20] text-[18px] font-medium">
+        <DialogTitle className="text-[#D92D20] text-[18px] font-medium">
           {"Don't"} close until pay
-        </h3>
+        </DialogTitle>
       </DialogHeader>
       {isQr &&
         (addingTransaction ? (

@@ -1,8 +1,8 @@
 "use client";
 
 import { IArticle } from "@/types/kb.types";
-import Image from "../ui/image";
 import { useRouter } from "next/navigation";
+import Image from "../ui/image";
 
 const BenefitCard = (benefit: IArticle) => {
   const { _id, image, title, summary } = benefit;
@@ -12,13 +12,14 @@ const BenefitCard = (benefit: IArticle) => {
       className="w-full p-3 flex gap-x-8 bg-[#FCFCFD] border cursor-pointer hover:scale-105 duration-200"
       onClick={() => router.push(`/info/${_id}`)}
     >
-      <div className="min-w-[194px] min-h-[194px] bg-white flex justify-center items-center border">
+      <div className="max-w-[194px] min-h-[194px] bg-white flex justify-center items-center border">
         <Image
-          src={image?.url || ""}
+          src={`${image?.url}` || ""}
           alt=""
+          key={image?.url}
           width={300}
           height={300}
-          quality={100}
+          // quality={100}
         />
       </div>
       <div className="space-y-6">

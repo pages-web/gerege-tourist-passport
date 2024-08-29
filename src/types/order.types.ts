@@ -1,6 +1,7 @@
-import { Customer, CustomerType } from "./auth.types";
+import { Customer, CustomerType } from './auth.types';
+import { IProduct } from './product.types';
 
-export type IOrderItemStatus = "new" | "done" | "confirm";
+export type IOrderItemStatus = 'new' | 'done' | 'confirm';
 export interface OrderItemInput {
   _id: string;
   productId: string;
@@ -10,6 +11,10 @@ export interface OrderItemInput {
   isTake?: boolean;
   status?: IOrderItemStatus;
   manufacturedDate?: string;
+}
+
+export interface IAddToCartInput extends IProduct {
+  manufactureDate?: string;
 }
 
 export interface OrderItem extends OrderItemInput {
@@ -24,24 +29,24 @@ export interface OrderItem extends OrderItemInput {
 }
 
 export type IOrderStatus =
-  | "new"
-  | "doing"
-  | "done"
-  | "complete"
-  | "reDoing"
-  | "pending";
+  | 'new'
+  | 'doing'
+  | 'done'
+  | 'complete'
+  | 'reDoing'
+  | 'pending';
 
 export type IOrderType =
-  | "eat"
-  | "take"
-  | "delivery"
-  | "loss"
-  | "spend"
-  | "reject";
+  | 'eat'
+  | 'take'
+  | 'delivery'
+  | 'loss'
+  | 'spend'
+  | 'reject';
 
-export type IBillType = "1" | "3" | "9" | null;
+export type IBillType = '1' | '3' | '9' | null;
 
-export type IOrigin = "" | "kiosk";
+export type IOrigin = '' | 'kiosk';
 
 export interface IOrderCommon {
   totalAmount: number;
@@ -93,6 +98,14 @@ export interface IDeliveryInfo {
   lastName: string;
   email: string;
   phone: string;
+  city: string;
+  district: string;
+  street: string;
+  detail: string;
+  haveBaby: boolean;
+  callBefore: boolean;
+  onlyAfternoon: boolean;
+  companyName?: string;
 }
 
 export interface IOrder extends IOrderCommon {
@@ -129,7 +142,7 @@ export interface IOrderHistory {
   paidDate: string;
 }
 
-export type IPaymentAmountType = "amount" | "percent" | "items";
+export type IPaymentAmountType = 'amount' | 'percent' | 'items';
 export type PayByProductItem = {
   _id: string;
   count: number;

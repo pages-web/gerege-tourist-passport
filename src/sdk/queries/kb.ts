@@ -23,6 +23,11 @@ export type GetKbCategoryDetail = (params?: CommonParams) => Promise<{
   category: IKBCategoryDetail;
 }>;
 
+// export type GetKbTopicDetail = (params?: CommonParams) => Promise<{
+//   error_msg: string | undefined;
+//   topic: IKbTopicDetail;
+// }>;
+
 export const getKbArticleDetail: GetKbArticleDetail = cache(async (params) => {
   const { config } = await getConfig();
   const { data, error } = await getClient().query({
@@ -97,3 +102,23 @@ export const kbCategoryDetail: GetKbCategoryDetail = cache(async (params) => {
     error_msg: error?.message,
   };
 });
+
+// export const getKbTopicDetail: GetKbTopicDetail = cache(async (params) => {
+//   const { config } = await getConfig();
+//   const { data, error } = await getClient().query({
+//     query: queries.kbTopicDetail,
+//     variables: params?.variables,
+//     context: {
+//       headers: {
+//         "erxes-app-token": config?.erxesAppToken,
+//       },
+//     },
+//   });
+
+//   const { clientPortalKnowledgeBaseTopicDetail: topic } = data || {};
+
+//   return {
+//     topic,
+//     error_msg: error?.message,
+//   };
+// });

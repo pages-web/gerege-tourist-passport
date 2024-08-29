@@ -9,6 +9,7 @@ import OrderUser from "./order-user";
 import { Loading } from "../ui/loading";
 import { IOrder } from "@/types/order.types";
 import { createContext, useContext, useEffect } from "react";
+import OrderContent from "./order-content";
 
 const OrderDetailContext = createContext<IOrder | null>(null);
 
@@ -33,7 +34,7 @@ const OrderDetail = ({ id }: { id: string }) => {
   return (
     <OrderDetailContext.Provider value={orderDetail}>
       <OrderHeader />
-      <OrderGeneral />
+      <OrderContent />
       <OrderProducts />
     </OrderDetailContext.Provider>
   );

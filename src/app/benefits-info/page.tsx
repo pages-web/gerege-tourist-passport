@@ -9,7 +9,8 @@ import { IPageProps } from "@/types";
 const BenefitsInfo = async ({ searchParams }: IPageProps) => {
   const { category } = await kbCategoryDetail({
     variables: {
-      _id: "vouchers",
+      _id:
+        searchParams.cg === "all" ? "vouchers" : searchParams.cg || "vouchers",
     },
   });
 

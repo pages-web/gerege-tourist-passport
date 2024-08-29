@@ -15,6 +15,7 @@ import GetEbarimt from "@/containers/payment/get-ebarimt";
 
 const OrderHeader = () => {
   const { status, paidDate } = useDetail();
+  console.log(paidDate);
   return (
     <Card>
       <CardHeader className="justify-between flex-row items-center md:py-5 gap-1 md:gap-0">
@@ -45,16 +46,5 @@ const OrderHeader = () => {
     </Card>
   );
 };
-
-{
-  /* <div className="text-black/60 md:mb-1 md:text-right">
-            Төлбөр төлөх хугацаа
-          </div>
-          <div>
-            <span className="font-bold text-sm">01</span> өдөр:
-            <span className="font-bold text-sm ml-1">23</span> цаг:
-            <span className="font-bold text-sm ml-1">54</span> минут
-          </div> */
-}
 
 export default OrderHeader;

@@ -17,10 +17,6 @@ const GeregeButton = async ({
       categoryId: "",
     },
   });
-  // console.log(products)
-  // const { product } = await getProductDetail({
-  //   // variables: { _id: "S9H3yIbYzxnla8o8pJ0M3" },
-  // });
 
   const geregeproduct = products.filter(
     (product) => product.name === "GEREGE TOUR CARD"
