@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 
 export default function AboutDiscounts() {
   const t = useTranslations("AboutDiscounts");
+  //
   return (
     <div className="lg:w-full w-[389px] lg:h-[300px] h-fit bg-gray-50 flex items-center justify-center">
       <div className="lg:w-[800px] w-[389px] lg:h-[250px] h-[220px] flex flex-col items-center lg:justify-between justify-around">
