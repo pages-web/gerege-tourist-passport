@@ -99,7 +99,7 @@ export const QrContainer = ({
     {error ? (
       <Alert variant="destructive">
         <InfoIcon className="h-4 w-4 rotate-180" />
-        <AlertTitle>Алдаа гарлаа</AlertTitle>
+        <AlertTitle>Error</AlertTitle>
         <AlertDescription className="text-xs">{error}</AlertDescription>
       </Alert>
     ) : (
@@ -111,11 +111,11 @@ export const QrContainer = ({
         <AlertDescription className="text-xs">
           Note that your order is activated after payment! You can pay by
           scanning the QR code using your banking app.
-          <p>
+          {/* <p>
             Төлбөр төлөгдсөний дараа таны захиалга идэвхждэг болохыг
             анхаараарай! Та өөрийн банкны аппликейшныг ашиглан QR кодыг уншуулж
             төлбөр төлөх боломжтой.
-          </p>
+          </p> */}
         </AlertDescription>
       </Alert>
     )}
@@ -123,7 +123,7 @@ export const QrContainer = ({
       <DialogFooter className="sm:justify-center gap-2 pt-4 block md:flex space-y-2 md:space-y-0">
         <BackButton disabled />
         <Button className="flex-1 w-full" disabled>
-          Төлбөр шалгах
+          Check payment
         </Button>
       </DialogFooter>
     )}

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import { LoadingIcon } from '@/components/ui/loading';
-import { useLogout } from '@/sdk/hooks/auth';
+import { Button } from "@/components/ui/button";
+import { LoadingIcon } from "@/components/ui/loading";
+import { useLogout } from "@/sdk/hooks/auth";
 
 const Logout = () => {
   const { logout, loading } = useLogout();
@@ -13,7 +13,7 @@ const Logout = () => {
       disabled={loading}
       onClick={logout}
     >
-      {loading && <LoadingIcon />} Гарах
+      {loading && <LoadingIcon />} Log out
     </Button>
   );
 };

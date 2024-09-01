@@ -69,7 +69,7 @@ const ChangeEmail = () => {
 
         <Button size="lg" disabled={loading}>
           {loading && <LoadingIcon />}
-          Цахим хаяг солих
+          Change email
         </Button>
       </form>
     </Form>

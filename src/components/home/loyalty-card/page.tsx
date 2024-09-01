@@ -12,7 +12,7 @@ const LoyaltyCard = async () => {
   });
 
   return (
-    <div className="w-full border">
+    <div className="w-full border ">
       <div className="flex justify-between">
         <div className="flex">
           {categories.map((category, index) => {

@@ -1,5 +1,5 @@
-import Redirector from '@/containers/auth/redirector';
-import { Suspense } from 'react';
+import Redirector from "@/containers/auth/redirector";
+import { Suspense } from "react";
 
 const AuthLayout = ({ children }: React.PropsWithChildren) => {
   return (

@@ -7,7 +7,7 @@ import cloudflareLoader from "@/lib/image-loader";
 import { useState } from "react";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
-const PLACEHOLDER = "/images/placeholder-1.png";
+const PLACEHOLDER = "/image/placeholder-1.png";
 
 const Image = ({
   src,

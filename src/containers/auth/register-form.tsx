@@ -146,31 +146,30 @@ const RegisterForm = () => {
         />
         <Button className="w-full col-span-2" size="lg" disabled={loading}>
           {loading && <LoadingIcon />}
-          Бүртгүүлэх
+          Sign up
         </Button>
         <Alert className="col-span-2">
           <InfoIcon className="h-4 w-4" />
-          <AlertTitle className="text-sm">Санамж!</AlertTitle>
+          <AlertTitle className="text-sm">Warning!</AlertTitle>
           <AlertDescription className="text-xs">
-            Та бүртгүүлэх товчийг дарснаар таныг тус вебсайтын
+            By clicking Sign up, you agree to our
             <Button
               variant="link"
               asChild
-              className="h-auto px-0 py-0 font-bold mx-1 text-foreground min-h-6"
+              className="px-1 font-bold text-foreground"
               size="sm"
             >
-              <Link href="/terms-of-service">үйлчилгээний нөхцөл</Link>
+              <Link href="/terms-of-service">Terms,</Link>
             </Button>
-            болон{" "}
+            and
             <Button
               variant="link"
               asChild
-              className="h-auto px-0 py-0 mx-1 font-bold text-foreground min-h-6"
+              className="px-1 font-bold text-foreground"
               size="sm"
             >
-              <Link href="/terms-of-service">нууцлалын бодлогыг</Link>
+              <Link href="/terms-of-service">Privacy Policy.</Link>
             </Button>
-            хүлээн зөвшөөрсөнд тооцно.
           </AlertDescription>
         </Alert>
       </form>

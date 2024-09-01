@@ -11,7 +11,9 @@ const CurrentUser = () => {
 
   useEffect(() => {
     if (!sessionStorage.getItem("token")) {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
     }
   }, []);
 

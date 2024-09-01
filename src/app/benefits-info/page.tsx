@@ -43,7 +43,7 @@ const BenefitsInfo = async ({ searchParams }: IPageProps) => {
             return <BenefitCard {...article} key={index} />;
           })
         ) : (
-          <div className="text-center">Таны хайлт байхгүй байна.</div>
+          <div className="text-center">Search not found...</div>
         )}
       </div>
     </div>

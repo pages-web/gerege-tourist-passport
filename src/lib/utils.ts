@@ -58,7 +58,7 @@ export const getLabel = (status: string) =>
   statusLabel[status as keyof typeof statusLabel] || status;
 
 export const getOrderStatus = (status: string, paidDate?: string) => {
-  if (!paidDate) return "Төлбөр хүлээгдэж байна";
+  if (!paidDate) return "Pending";
   switch (status) {
     case ORDER_STATUSES.DOING:
       return "Захиалга бэлтгэгдэж байна";
@@ -67,9 +67,9 @@ export const getOrderStatus = (status: string, paidDate?: string) => {
     case ORDER_STATUSES.DONE:
       return "Захиалга хүргэлтэнд гарсан";
     case ORDER_STATUSES.COMPLETE:
-      return "Захиалга хүргэгдсэн";
+      return "Order delivered";
     default:
-      return "Захиалга баталгаажсан";
+      return "Order confirmed";
   }
 };
 

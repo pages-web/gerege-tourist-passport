@@ -51,10 +51,10 @@ const ChangePhone = () => {
       >
         <SmartphoneIcon className="h-8 w-8 text-black/60" strokeWidth={1.7} />
         <div className="text-center space-y-1 mb-4">
-          <h3 className="font-medium">Дугаар оруулах</h3>
+          <h3 className="font-medium">Change phone</h3>
           <div className="text-sm text-black/50">
-            Та зөвхөн өөрийн нэр дээрх гар утасны дугаараас хүсэлт илгээх
-            шаардлагатай.
+            You need to be able to send requests only from the mobile number in
+            your name.
           </div>
         </div>
         <FormField
@@ -90,7 +90,7 @@ const ChangePhone = () => {
 
         <Button disabled={loading}>
           {loading && <LoadingIcon />}
-          Дугаараа солих
+          Change phone
         </Button>
       </form>
     </Form>

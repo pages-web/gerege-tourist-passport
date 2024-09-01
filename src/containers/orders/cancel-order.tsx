@@ -23,8 +23,8 @@ function CancelOrder() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button className="md:h-12 py-[10px] md:px-8 md:text-[14px] text-[12px]">
-          Захиалга цуцлах
+        <Button className="md:text-[14px] text-[12px]">
+          Cancel order
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent className="bg-white">

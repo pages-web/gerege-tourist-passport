@@ -58,7 +58,7 @@ const ChangePassword = () => {
           name="currentPassword"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Одоогийн нууц үг</FormLabel>
+              <FormLabel>Current password</FormLabel>
               <FormControl>
                 <Password {...field} autoComplete="current-password" />
               </FormControl>
@@ -73,7 +73,7 @@ const ChangePassword = () => {
           name="newPassword"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Шинэ нууц үг</FormLabel>
+              <FormLabel>New password</FormLabel>
               <FormControl>
                 <Password {...field} autoComplete="new-password" />
               </FormControl>
@@ -86,7 +86,7 @@ const ChangePassword = () => {
           name="verifyPassword"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Шинэ нууц үг баталгаажуулах</FormLabel>
+              <FormLabel>Verify new password</FormLabel>
               <FormControl>
                 <Password {...field} autoComplete="new-password" />
               </FormControl>
@@ -96,7 +96,7 @@ const ChangePassword = () => {
         />
         <div className="border border-transparent flex items-end ">
           <Button className="mt-auto w-full" size="lg" disabled={loading}>
-            {loading && <LoadingIcon />} Нууц үг солих
+            {loading && <LoadingIcon />} Change password
           </Button>
         </div>
       </form>

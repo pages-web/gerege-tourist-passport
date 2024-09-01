@@ -31,15 +31,15 @@ const ProfileLayout = ({
 
 const sidebarNavItems = [
   {
-    title: "Хувийн мэдээлэл",
+    title: "Personal info",
     href: "/profile",
   },
   {
-    title: "Захиалгууд",
+    title: "Orders",
     href: "/profile/orders",
   },
   {
-    title: "Гарах",
+    title: "Log out",
     href: "/logout",
   },
 ];

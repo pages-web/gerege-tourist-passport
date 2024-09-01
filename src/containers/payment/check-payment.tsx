@@ -20,7 +20,7 @@ const CheckPayment = ({ id, disabled }: { id: string; disabled?: boolean }) => {
       }
     >
       {loading && <LoadingIcon />}
-      Төлбөр шалгах
+      Check payment
     </Button>
   );
 };

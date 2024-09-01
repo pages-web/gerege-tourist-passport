@@ -13,9 +13,10 @@ import { deliveryItemIdAtom } from "@/store/auth.store";
 import { getDeliveryProduct } from "@/store/order.store";
 import { title } from "process";
 import { ReactNode } from "react";
+import { transaction } from "@/sdk/graphql/payment/subscriptions";
 
 const OrderContent = () => {
-  const { number, createdAt, totalAmount, items } = useDetail();
+  const { number, createdAt, totalAmount, items, paidDate } = useDetail();
   const deliveryProductId = useAtomValue(deliveryItemIdAtom);
   const deliveryProduct = getDeliveryProduct(items, deliveryProductId);
 
@@ -30,7 +31,7 @@ const OrderContent = () => {
 
   return (
     <div className="space-y-4">
-      <div className="flex justify-between items-center py-3">
+      <div className="flex justify-between items-center">
         <h2 className="text-[#1D2939] text-[20px] font-semibold">
           Payment detail
         </h2>
@@ -49,13 +50,19 @@ const OrderContent = () => {
           <Title title="Price:" />
           <Content text={<Price amount={totalAmount} />} />
         </div>
+        {paidDate && (
+          <div className="flex justify-between items-center">
+            <Title title="Link:" />
+            <Content text="i'm code" />
+          </div>
+        )}
       </div>
 
-      <Separator />
+      {/* <Separator />
       <CardFooter className="justify-between py-3 md:py-4 font-bold text-base md:text-lg text-nowrap">
         <div>Нийт төлөх дүн</div>
         <Price amount={totalAmount} />
-      </CardFooter>
+      </CardFooter> */}
     </div>
   );
 };

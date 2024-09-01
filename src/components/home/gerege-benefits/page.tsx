@@ -30,14 +30,12 @@ export default function Benefits() {
                 title="Culture"
                 descriptionKey="CultureDescription"
                 link={`/benefits-info`}
-                bgImage="/image/culture-bg.png"
               />
               <Card
                 imageSrc="/image/museum.png"
                 title="Museum"
                 descriptionKey="MuseumDescription"
                 link={`/benefits-info`}
-                bgImage="/image/musuem-bg.png"
               />
             </div>
 
@@ -47,14 +45,12 @@ export default function Benefits() {
                 title="Museum"
                 descriptionKey="MuseumDescription"
                 link={`/benefits-info`}
-                bgImage="/image/musuem-bg.png"
               />
               <Card
                 imageSrc="/image/museum.png"
                 title="Museum"
                 descriptionKey="MuseumDescription"
                 link={`/benefits-info`}
-                bgImage="/image/musuem-bg.png"
               />
             </div>
           </div>
@@ -87,14 +83,12 @@ export default function Benefits() {
                 title="Hotel"
                 descriptionKey="HotelDescription"
                 link={`/benefits-info`}
-                bgImage="/image/musuem-bg.png"
               />
               <Card
                 imageSrc="/image/restaurant-icon.png"
                 title="Restaurant"
                 descriptionKey="RestaurantDescription"
                 link={`/benefits-info`}
-                bgImage="/image/musuem-bg.png"
               />
             </div>
 
@@ -104,14 +98,12 @@ export default function Benefits() {
                 title="Museum"
                 descriptionKey="MuseumDescription"
                 link={`/benefits-info`}
-                bgImage="/image/musuem-bg.png"
               />
               <Card
                 imageSrc="/image/museum.png"
                 title="Museum"
                 descriptionKey="MuseumDescription"
                 link={`/benefits-info`}
-                bgImage="/image/musuem-bg.png"
               />
             </div>
           </div>

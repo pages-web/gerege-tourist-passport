@@ -49,7 +49,7 @@ export const LoadingWrapper = ({
 };
 
 export const LoadingText = () => {
-  return <span className="text-sm">Уншиж байна...</span>;
+  return <span className="text-sm">Loading...</span>;
 };
 
 export { Loading, LoadingOverlay };

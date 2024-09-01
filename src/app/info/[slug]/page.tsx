@@ -44,7 +44,7 @@ const Info = async ({ params }: IPageProps) => {
         />
 
         <InfoDetail {...article} />
-        {/* <InfoDetailFooter {...article} /> */}
+        <InfoDetailFooter {...article} />
 
         <div className="space-y-4">
           <h2 className="text-[20px] font-semibold text-[#475467]">

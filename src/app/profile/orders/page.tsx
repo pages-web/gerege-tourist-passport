@@ -4,7 +4,7 @@ import { Suspense } from "react";
 
 const Orders = () => {
   return (
-    <ProfileLayout title="Таны захиалгууд" description="">
+    <ProfileLayout title="Your orders" description="">
       <div className="space-y-3">
         <Suspense>
           <FullOrders />

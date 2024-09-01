@@ -10,7 +10,6 @@ interface CardProps {
   title: string;
   descriptionKey: string;
   link: string;
-  bgImage: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -18,7 +17,6 @@ const Card: React.FC<CardProps> = ({
   title,
   descriptionKey,
   link,
-  bgImage,
 }) => {
   const variant = [
     {
@@ -42,7 +40,10 @@ const Card: React.FC<CardProps> = ({
   ];
   const t = useTranslations("Gerege Tour Card Benefits");
   return (
-    <div className="max-w-[220px] bg-gray-100 group z-20">
+    <motion.div
+      className="max-w-[220px] bg-gray-100 group z-20"
+      whileHover="hover"
+    >
       <Link href={link}>
         <div className="w-full p-3 md:p-6 flex flex-col items-center gap-3">
           <Image alt="" src={imageSrc} width={32} height={32} />
@@ -78,27 +79,24 @@ const Card: React.FC<CardProps> = ({
         <div
           className="flex items-center justify-center"
           style={{
-            backgroundImage: `url(${bgImage})`,
+            backgroundImage: `url(/image/culture-bg.jpg)`,
             backgroundPositionY: "50%",
             backgroundRepeat: "no-repeat",
             overflow: "hidden",
             backgroundSize: "cover",
           }}
         >
-          <motion.div
-            whileHover="hover"
-            className="w-full p-4 flex items-center justify-center text-[12px] text-white/60 bg-black/[0.5]"
-          >
+          <div className="w-full p-4 flex items-center justify-center text-[12px] text-white/60 bg-black/[0.5]">
             <motion.span variants={variant[0]}>
               {t("ABOUT")} {t(title).toUpperCase()}
             </motion.span>
             <motion.span variants={variant[1]}>
               <ArrowForwardIosIcon className="lg:w-[22px] w-[18px] lg:h-[22px] h-[18px]" />
             </motion.span>
-          </motion.div>
+          </div>
         </div>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

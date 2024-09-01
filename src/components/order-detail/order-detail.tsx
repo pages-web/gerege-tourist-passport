@@ -34,8 +34,8 @@ const OrderDetail = ({ id }: { id: string }) => {
   return (
     <OrderDetailContext.Provider value={orderDetail}>
       <OrderHeader />
-      <OrderContent />
-      <OrderProducts />
+      {/* <OrderContent /> */}
+      {/* <OrderProducts /> */}
     </OrderDetailContext.Provider>
   );
 };

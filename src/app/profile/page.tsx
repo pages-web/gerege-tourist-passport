@@ -9,7 +9,7 @@ import Email from '@/components/profile/profile-edit/email';
 
 const Profile = () => {
   return (
-    <ProfileLayout title="Хувийн мэдээлэл" description="Мэдээлэл засах">
+    <ProfileLayout title="Personal info" description="Edit profile">
       <Tabs defaultValue="info" className="w-full">
         <ProfileTabsList />
         <TabsContent value="info">

@@ -48,7 +48,7 @@ const ProfileEdit = () => {
           name="firstName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Нэр</FormLabel>
+              <FormLabel>Firstname</FormLabel>
               <FormControl>
                 <Input
                   placeholder="John"
@@ -65,7 +65,7 @@ const ProfileEdit = () => {
           name="lastName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Овог</FormLabel>
+              <FormLabel>Lastname</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Doe"
@@ -78,7 +78,7 @@ const ProfileEdit = () => {
           )}
         />
 
-        <Button disabled={loading}>Өөрчлөлт хадгалах</Button>
+        <Button disabled={loading}>Apply change</Button>
       </form>
     </Form>
   );

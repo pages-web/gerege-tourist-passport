@@ -8,22 +8,22 @@ const Carousel = () => {
 
   const slides = [
     {
-      backgroundImage: "/image/home-bg.png",
+      backgroundImage: "/image/home-bg.jpg",
       titleKey: "slide1_title",
       descriptionKey: "slide1_description",
     },
     {
-      backgroundImage: "/image/about-1.png",
+      backgroundImage: "/image/about-1.jpg",
       titleKey: "slide2_title",
       descriptionKey: "slide2_description",
     },
     {
-      backgroundImage: "/image/about-1.png",
+      backgroundImage: "/image/about-1.jpg",
       titleKey: "slide3_title",
       descriptionKey: "slide3_description",
     },
     {
-      backgroundImage: "/image/about-1.png",
+      backgroundImage: "/image/about-1.jpg",
       titleKey: "slide4_title",
       descriptionKey: "slide4_description",
     },

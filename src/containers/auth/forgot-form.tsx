@@ -47,9 +47,9 @@ const ForgotForm = () => {
           strokeWidth={1.5}
         />
         <p className="text-base font-medium my-1 text-center">
-          Танд нууц үг солих холбоос бүхий имэйл илгээлээ.
+          We have sent you an email to change your password
         </p>
-        <p className="text-sm text-neutral-500">Та имэйл хаяг aa шалгана уу.</p>
+        <p className="text-sm text-neutral-500">Check your email</p>
       </div>
     );
   }
@@ -65,7 +65,7 @@ const ForgotForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Цахим хаяг</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input
                   placeholder="john@doe.com"
@@ -80,7 +80,7 @@ const ForgotForm = () => {
         />
         <Button className="w-full col-span-2" size="lg" disabled={loading}>
           {loading && <LoadingIcon />}
-          Нууц үг сэргээх
+          Reset my password
         </Button>
       </form>
     </Form>

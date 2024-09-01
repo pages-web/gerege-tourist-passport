@@ -19,7 +19,7 @@ const GeregeButton = async ({
   });
 
   const geregeproduct = products.filter(
-    (product) => product.name === "GEREGE TOUR CARD"
+    (product) => product.name === "test4"
   );
 
   return (

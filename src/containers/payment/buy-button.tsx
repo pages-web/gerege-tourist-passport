@@ -25,6 +25,7 @@ const BuyButton = () => {
   const onCompleted = useSetAtom(handleCompleteAtom);
   const { _id } = useAtomValue(invoiceDetailAtom) || {};
   const { erxesAppToken, name } = useAtomValue(configAtom) || {};
+  console.log(_id);
 
   const handlePay = () => {
     if (selectedMethod) return setOpenDetails(true);
@@ -50,13 +51,13 @@ const BuyButton = () => {
   return (
     <>
       <Button
-        className="md:h-12 px-6 md:px-8 md:text-[14px] text-[12px]"
+        className="md:text-[14px] text-[12px]"
         onClick={() => {
           handleCreateInvoice();
           handlePay();
         }}
       >
-        Төлбөр төлөх
+        Buy
       </Button>
       <PaymentMethods />
       <PaymentDetail />

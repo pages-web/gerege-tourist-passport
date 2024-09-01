@@ -6,6 +6,7 @@ import Image from "../ui/image";
 import Link from "next/link";
 import { SearchIcon } from "lucide-react";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { Separator } from "../ui/Separator";
 
 const searchSuggest = [
   {
@@ -38,7 +39,7 @@ const LanguageAndSearch = () => {
   const [buttonClick, setButtonClick] = useState(false);
   const params = useParams();
   const pathname = usePathname();
-  
+
   return (
     <div className="w-full py-2 bg-gray-300">
       <div className="container flex justify-between items-center">
@@ -64,13 +65,7 @@ const LanguageAndSearch = () => {
               EN US
             </Link>
           </div>
-          <Image
-            alt=""
-            src="/image/Line-5.png"
-            width={1}
-            height={20}
-            className="lg:h-[20px] h-[15px]"
-          />
+          <Separator orientation={"vertical"} className="h-[20px] bg-[#475467]"/>
           <div
             className={`w-fit font-bold lg:text-base text-[10px] flex gap-1 cursor-pointer ${
               pathname === "/kr" ? "text-blue-600" : "text-black"

@@ -19,7 +19,7 @@ const VerifyButton = () => {
   return (
     <Button className="w-full" disabled={loading} onClick={handleClick}>
       {loading && <LoadingIcon />}
-      Төлбөр төлөх
+      Pay
     </Button>
   );
 };

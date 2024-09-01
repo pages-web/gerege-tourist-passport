@@ -55,10 +55,10 @@ const LoginForm = () => {
           name="login"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Нэвтрэх нэр</FormLabel>
+              <FormLabel>Email or Phone</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Цахим хаяг эсвэл утас"
+                  placeholder="Email address or phone number"
                   {...field}
                   autoComplete="username"
                 />
@@ -73,14 +73,14 @@ const LoginForm = () => {
           render={({ field }) => (
             <FormItem>
               <div className="flex items-center justify-between mb-1">
-                <FormLabel>Нууц үг</FormLabel>
+                <FormLabel>Password</FormLabel>
                 <Button
                   asChild
                   variant="link"
                   className="py-1 h-auto font-normal px-0"
                   tabIndex={-1}
                 >
-                  <Link href="/forgot">Mартсан?</Link>
+                  <Link href="/forgot">Forgot?</Link>
                 </Button>
               </div>
 
@@ -96,7 +96,7 @@ const LoginForm = () => {
           className="w-full text-[18px] py-[8px]"
           disabled={loading}
         >
-          Нэвтрэх
+          Sign in
         </Button>
       </form>
     </Form>
