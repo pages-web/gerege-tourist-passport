@@ -19,9 +19,11 @@ const NewsAndTips = async () => {
     >
       <div className="flex flex-col gap-2 items-center justify-between m-auto">
         <div className="text-gray-800 md:text-[30px] text-[20px] font-bold">
+          News and Tips
           {/* {t("title")} */}
         </div>
         <div className="text-gray-600 md:text-[18px] text-[14px] font-normal">
+         {` Here's many things you can do in Ulaanbaatar for free and others`}
           {/* {t("description")} */}
         </div>
       </div>
