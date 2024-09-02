@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
 import Flag from "react-world-flags";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Separator } from "../ui/Separator";
 
 interface CurrencyConverterProps {
   onClose: () => void;
@@ -125,7 +127,7 @@ const Currency: React.FC<CurrencyConverterProps> = ({ onClose }) => {
   return (
     <div
       ref={currencyRef}
-      className="lg:w-[340px] w-[290px] lg:h-[170px] h-[150px] bg-gray-100 rounded-xl lg:px-3 px-2 py-2 flex flex-col justify-between"
+      className="lg:w-[340px] w-[255px] lg:h-[170px] h-[145px] bg-gray-100 rounded-xl lg:px-3 px-2 lg:py-2 py-1 flex flex-col justify-between"
     >
       <div className="w-full h-fit flex items-center justify-between">
         <div className="w-fit h-fit flex gap-2 items-center">
@@ -150,17 +152,17 @@ const Currency: React.FC<CurrencyConverterProps> = ({ onClose }) => {
           className="lg:w-4 w-3 lg:h-[100px] h-[90px]"
         />
         <div className="w-full h-fit flex flex-col gap-3">
-          <div className="w-full h-[50px] border rounded-[8px] overflow-hidden">
-            <div className="w-full h-[20px] bg-white flex items-center pl-3 font-semibold text-[13px]">
+          <div className="w-full lg:h-[50px] h-[45px] border rounded-[8px] overflow-hidden">
+            <div className="w-full h-[20px] bg-white flex items-center lg:pl-3 pl-2 font-semibold text-[13px]">
               Your currency
             </div>
-            <div className="w-full h-[30px] flex items-center justify-between px-5 bg-gray-200">
+            <div className="w-full lg:h-[30px] h-[25px] flex items-center justify-between lg:px-5 px-2 bg-gray-200">
               <div className="w-[100px] h-fit flex items-center gap-[2px]">
                 <span className="text-[#005AD3] font-bold text-[14px]">
                   {getCurrencySymbol(selectedCurrency)}
                 </span>
                 <input
-                  className="w-full font-bold text-[#005AD3] text-[14px] bg-gray-200 border-none"
+                  className="lg:w-[100px] w-[80px] lg:h-5 h-4 overflow-hidden font-bold text-[#005AD3] lg:text-[14px] text-[12px] bg-gray-200 border-none"
                   type="number"
                   value={amount}
                   min={0}
@@ -174,12 +176,13 @@ const Currency: React.FC<CurrencyConverterProps> = ({ onClose }) => {
                   width="20"
                   className="lg:w-6 w-5 lg:h-6 h-5 rounded-full"
                 />
+
                 <select
                   value={selectedCurrency}
                   onChange={(e) => {
                     setSelectedCurrency(e.target.value);
                   }}
-                  className="lg:text-[13px] text-[11px] font-bold bg-transparent outline-none"
+                  className="lg:text-[13px] text-[11px] font-bold bg-transparent outline-none lg:max-h-[100px] max-h-[80px] overflow-y-auto"
                 >
                   {currencyData.map((currency, index) => (
                     <option key={index} value={currency.code}>
@@ -191,12 +194,12 @@ const Currency: React.FC<CurrencyConverterProps> = ({ onClose }) => {
             </div>
           </div>
 
-          <div className="w-full h-[50px] border rounded-[8px] overflow-hidden">
-            <div className="w-full h-[20px] bg-white flex items-center pl-3 font-semibold text-[13px]">
+          <div className="w-full lg:h-[50px] h-[45px] border rounded-[8px] overflow-hidden">
+            <div className="w-full h-[20px] bg-white flex items-center lg:pl-3 p-2 font-semibold text-[13px]">
               Converted currency
             </div>
-            <div className="w-full h-[30px] flex items-center justify-between px-5 bg-gray-200">
-              <div className="lg:w-[155px] overflow-hidden font-bold text-[#005AD3] text-[14px]">
+            <div className="w-full lg:h-[30px] h-[25px] flex items-center justify-between lg:px-5 px-2 bg-gray-200">
+              <div className="lg:w-[155px] w-[90px] overflow-hidden font-bold text-[#005AD3] lg:text-[14px] text-[12px]">
                 {formatCurrency(
                   convertedAmount,
                   currencyCountryMapping[selectedConvertedCurrency].symbol
@@ -213,8 +216,10 @@ const Currency: React.FC<CurrencyConverterProps> = ({ onClose }) => {
                 />
                 <select
                   value={selectedConvertedCurrency}
-                  onChange={(e) => setSelectedConvertedCurrency(e.target.value)}
-                  className="lg:text-[13px] text-[11px] font-bold bg-transparent outline-none"
+                  onChange={(e) => {
+                    setSelectedConvertedCurrency(e.target.value);
+                  }}
+                  className="lg:text-[13px] text-[11px] font-bold bg-transparent outline-none lg:max-h-[100px] max-h-[80px] overflow-y-auto"
                 >
                   {currencyData.map((currency, index) => (
                     <option key={index} value={currency.code}>

@@ -40,36 +40,36 @@ const WeatherAndCurrency: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-fit h-fit flex gap-2 fixed z-50 right-2 lg:top-[520px] top-[335px]">
+    <div className="w-fit h-fit flex gap-2 fixed z-50 right-2 md:top-[76%] top-[50%]">
       {activeView === "weather" && (
         <div
           ref={weatherRef}
-          className="absolute -top-6 lg:right-[65px] right-12 z-40"
+          className="absolute -top-6 md:right-[65px] right-11 z-40"
         >
           <Weather />
         </div>
       )}
       {activeView === "currency" && (
-        <div className="absolute -top-6 lg:right-[65px] right-12 z-40">
+        <div className="absolute -top-6 md:right-[65px] right-11 z-40">
           <Currency onClose={handleClose} />
         </div>
       )}
 
-      <div className="lg:w-[57px] w-fit h-fit flex flex-col gap-2">
+      <div className="md:w-[57px] w-fit h-fit flex flex-col gap-2">
         {/* Weather */}
         <div
           onClick={handleWeatherClick}
-          className="lg:w-[57px] w-10 lg:h-[57px] h-10 border lg:rounded-2xl rounded-xl border-white bg-black flex flex-col items-center justify-center cursor-pointer"
+          className="md:w-[57px] w-10 md:h-[57px] h-10 border md:rounded-2xl rounded-xl border-white bg-black flex flex-col items-center justify-center cursor-pointer"
         >
           <div
-            className="lg:w-[33px] w-5 lg:h-[25px] h-5 bg-contain bg-center bg-no-repeat overflow-hidden"
+            className="md:w-[33px] w-5 md:h-[25px] h-5 bg-contain bg-center bg-no-repeat overflow-hidden"
             style={{
               backgroundImage: `url(${
                 weatherNow?.weatherIcon || "/weather-icons/default.png"
               })`,
             }}
           ></div>
-          <div className="text-white lg:text-base text-[11px] font-bold">
+          <div className="text-white md:text-base text-[11px] font-bold">
             {weatherNow?.weatherNow}
           </div>
         </div>
@@ -77,7 +77,7 @@ const WeatherAndCurrency: React.FC = () => {
         {/* Currency */}
         <div
           onClick={handleCurrencyClick}
-          className="lg:w-[57px] w-10 lg:h-[57px] h-10 border lg:rounded-2xl rounded-xl border-[#EAECF0] bg-[#D1FADF] flex flex-col items-center justify-center relative cursor-pointer"
+          className="md:w-[57px] w-10 md:h-[57px] h-10 border md:rounded-2xl rounded-xl border-[#EAECF0] bg-[#D1FADF] flex flex-col items-center justify-center relative cursor-pointer"
         >
           <div className="w-full h-fit flex items-center justify-center">
             <CurrencyExchangeIcon className="text-gray-800 font-bold" />
