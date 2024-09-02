@@ -23,7 +23,7 @@ const BenefitCategory = () => {
   }, []);
 
   return (
-    <div className="flex gap-x-3">
+    <div className="flex gap-x-3 md:overflow-visible overflow-x-scroll">
       {categories.map((item, index) => {
         return <CategoryItem title={item} key={index} />;
       })}

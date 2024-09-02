@@ -23,7 +23,7 @@ const MobileMenu = () => {
   return (
     <Sheet>
       <SheetTrigger>
-        <MenuIcon />
+        <MenuIcon className="min-w-8 min-h-8"/>
       </SheetTrigger>
       <SheetContent className="w-[90%] sm:w-[540px] bg-white ">
         <SheetTitle>

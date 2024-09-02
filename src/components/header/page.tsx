@@ -22,7 +22,7 @@ export default function Header() {
             <GeregeButton className="text-[16px]" />
             <CurrentUser />
           </div>
-          <div className="md:hidden flex gap-3">
+          <div className="lg:hidden flex gap-3">
             <CurrentUser />
             <MobileMenu />
           </div>

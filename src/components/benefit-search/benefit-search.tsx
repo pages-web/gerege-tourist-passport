@@ -22,7 +22,7 @@ const BenefitSearch = (category: IKBCategoryDetail) => {
   );
 
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between gap-10">
       {currentArticle ? (
         <Breadcrumb>
           <BreadcrumbList className="text-[16px]">
@@ -47,7 +47,7 @@ const BenefitSearch = (category: IKBCategoryDetail) => {
 
       {!currentArticle && (
         <div className="relative flex">
-          <div className="px-2 h-full border border-r-0 flex items-center">
+          <div className="px-2 h-10 border border-r-0 flex items-center">
             <Search className="w-5 h-5" />
           </div>
           <Input
