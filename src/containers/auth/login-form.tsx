@@ -3,7 +3,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -17,7 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Password } from "@/components/ui/password";
 import Link from "next/link";
 import { useLogin } from "@/sdk/hooks/auth";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   login: z
@@ -38,6 +37,7 @@ const LoginForm = () => {
       password: "",
     },
   });
+  const router = useRouter();
 
   const { login, loading, clientPortalId } = useLogin();
 

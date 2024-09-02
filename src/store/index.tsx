@@ -12,6 +12,7 @@ import { WeatherProvider } from "@/provider/WeatherProvider";
 
 export const categorySheetAtom = atom<boolean>(false);
 export const cartSheetAtom = atom<boolean>(false);
+export const listMapAtom = atom<boolean>(false);
 
 export function useSelectAtom(
   anAtom: Atom<unknown>,

@@ -68,6 +68,9 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "spin-slow": "spin 5s linear infinite",
       },
+      boxShadow: {
+        "inner-custom": "inset 0 0 5px 1px rgba(0, 0, 0, 0.3)",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Card from "./Card";
 import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
+import Heading from "@/components/heading/heading";
 
 export default function Benefits() {
   const params = useParams();
@@ -11,14 +12,7 @@ export default function Benefits() {
   return (
     <>
       <div id="gerege-benefit" className="w-full flex flex-col gap-8">
-        <div className="h-fit flex flex-col items-center text-center justify-between gap-3">
-          <div className="text-black md:text-[30px] text-[20px] font-bold ">
-            {t("title")}
-          </div>
-          <div className="text-[#475467] md:text-[18px] text-[14px] font-normal">
-            {t("subtitle")}
-          </div>
-        </div>
+        <Heading title={t("title")} desc={t("subtitle")} />
 
         {/* Start responsive desktop */}
         <div className="w-full lg:flex items-center justify-between gap-10 relative overflow-hidden">
@@ -57,21 +51,23 @@ export default function Benefits() {
 
           {/* End left cards */}
 
-          <div className="flex justify-center items-center lg:mx-20 my-10 lg:my-0">
+          <div className="flex justify-center items-center lg:mx-20 my-20 lg:my-0">
             <Image
               alt=""
               src="/image/benefit-spin-1.png"
-              height={450}
-              width={400}
+              height={550}
+              width={500}
               className="h-fit absolute animate-spin-slow z-10"
             />
-            <Image
-              alt=""
-              src="/image/paiz-1.png"
-              width={160}
-              height={300}
-              className="w-[100px] h-[240px] md:w-[160px] md:h-[320px]"
-            />
+            <div className="w-[100px] md:w-[160px] "> 
+              <Image
+                alt=""
+                src="/image/paiz-1.png"
+                width={160}
+                height={300}
+                className="w-[100px] md:w-[160px] "
+              />
+            </div>
           </div>
 
           {/* Start right cards */}

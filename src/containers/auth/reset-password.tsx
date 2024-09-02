@@ -49,8 +49,8 @@ const ResetPasswordForm = () => {
           className="text-red-500 h-12 w-12 animate-pulse"
           strokeWidth={1.5}
         />
-        <p className="text-base font-medium my-1 text-center">Wrong link</p>
-        <p className="text-sm text-neutral-500">Check your email</p>
+        <p className="text-base font-medium my-1 text-center">Буруу холбоос</p>
+        <p className="text-sm text-neutral-500">Та имэйл хаяг aa шалгана уу.</p>
       </div>
     );
   }
@@ -63,9 +63,11 @@ const ResetPasswordForm = () => {
           strokeWidth={1.5}
         />
         <p className="text-base font-medium my-1 text-center">
-          Your password has been changed successfully
+          Таны нууц үг амжилттай шинэчлэгдлээ
         </p>
-        <p className="text-sm text-neutral-500">Sign in and continue</p>
+        <p className="text-sm text-neutral-500">
+          Та нэвтэрч ороод үргэлжлүүлнэ үү.
+        </p>
       </div>
     );
   }
@@ -91,7 +93,7 @@ const ResetPasswordForm = () => {
         />
         <Button className="w-full col-span-2" size="lg" disabled={loading}>
           {loading && <LoadingIcon />}
-          Reset password
+          Нууц үг шинэчлэх
         </Button>
       </form>
     </Form>

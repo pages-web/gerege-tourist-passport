@@ -18,7 +18,7 @@ export default function WhyGeregePassport() {
     icon: ReactNode;
   }) => {
     return (
-      <div className="max-w-[220px] flex flex-col items-center gap-2">
+      <div className="max-w-[220px] flex flex-col items-center gap-2 ">
         <div className="rounded-full bg-white flex items-center justify-center p-3">
           {icon}
         </div>

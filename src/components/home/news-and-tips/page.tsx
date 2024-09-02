@@ -1,6 +1,7 @@
 import { kbCategoryDetail } from "@/sdk/queries/kb";
 import { useTranslations } from "next-intl";
 import NewsCarousel from "./news-carousel";
+import Heading from "@/components/heading/heading";
 
 const NewsAndTips = async () => {
   // const t = useTranslations("NewsAndTips");
@@ -17,16 +18,12 @@ const NewsAndTips = async () => {
       id="news-and-tips"
       className="w-full overflow-hidden flex flex-col justify-between gap-14"
     >
-      <div className="flex flex-col gap-2 items-center justify-between m-auto">
-        <div className="text-gray-800 md:text-[30px] text-[20px] font-bold">
-          News and Tips
-          {/* {t("title")} */}
-        </div>
-        <div className="text-gray-600 md:text-[18px] text-[14px] font-normal">
-         {` Here's many things you can do in Ulaanbaatar for free and others`}
-          {/* {t("description")} */}
-        </div>
-      </div>
+      <Heading
+        title="News and Tips"
+        desc="Here's many things you can do in Ulaanbaatar for free and others"
+      />
+      {/* {t("title")} */}
+      {/* {t("description")} */}
       <NewsCarousel {...category} />
     </div>
   );

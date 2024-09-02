@@ -109,7 +109,7 @@ export default function Footer() {
       />
 
       <div className="container">
-        <div className="md:flex md:justify-between grid grid-cols-2 gap-8 flex-wrap">
+        <div className="xl:flex xl:justify-between grid grid-cols-2 gap-8 flex-wrap">
           {FooterData.map((data, index) => {
             return <TitleLists data={data} key={index} />;
           })}

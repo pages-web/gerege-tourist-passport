@@ -1,9 +1,8 @@
 "use client";
-import { useCurrentUser } from "@/sdk/queries/auth.client";
+import { hexToHsl } from "@/lib/utils";
 import { configAtom } from "@/store/auth.store";
 import { IConfig } from "@/types/auth.types";
 import { useSetAtom } from "jotai";
-import { redirect } from "next/navigation";
 import { useLayoutEffect } from "react";
 
 const ConfigProvider = ({
@@ -11,7 +10,6 @@ const ConfigProvider = ({
   config,
 }: React.PropsWithChildren & { config: IConfig }) => {
   const setConfig = useSetAtom(configAtom);
-  const user = useCurrentUser();
   const { deliveryConfig, erxesAppToken, paymentIds, name, isCheckRemainder } =
     config || {};
 
@@ -23,10 +21,6 @@ const ConfigProvider = ({
       name,
       isCheckRemainder,
     });
-
-    if (!user) {
-      redirect("/");
-    }
   }, []);
 
   return <>{children}</>;

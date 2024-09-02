@@ -2,20 +2,14 @@
 import React from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import Heading from "@/components/heading/heading";
 
 export default function WhyUs() {
   const t = useTranslations("WhyUs");
 
   return (
     <div id="about" className="space-y-10">
-      <div className="flex flex-col items-center lg:gap-3 gap-1">
-        <div className="text-[#1D2939] md:text-[30px] text-[20px] font-bold">
-          {t("title")}
-        </div>
-        <div className="text-[#475467] md:text-[18px] text-[14px] font-normal text-center lg:text-left">
-          {t("description")}
-        </div>
-      </div>
+      <Heading title={t("title")} desc={t("description")} />
 
       {/* Cards desktop screen */}
       <div className="w-full grid md:grid-cols-4 gap-4">

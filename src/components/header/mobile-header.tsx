@@ -1,20 +1,14 @@
-"use client";
-
 import { MenuIcon } from "lucide-react";
-import Sidebar from "./Sidebar";
-import { useState } from "react";
 import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "../ui/Sheet";
 import Link from "next/link";
 import { Separator } from "../ui/Separator";
+import GeregeButton from "../gerege-button/gerege-button";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -28,7 +22,7 @@ const navItems = [
 const MobileMenu = () => {
   return (
     <Sheet>
-      <SheetTrigger className="lg:hidden"> 
+      <SheetTrigger>
         <MenuIcon />
       </SheetTrigger>
       <SheetContent className="w-[90%] sm:w-[540px] bg-white ">
@@ -54,6 +48,9 @@ const MobileMenu = () => {
               </SheetClose>
             );
           })}
+          <SheetClose>
+            <GeregeButton />
+          </SheetClose>
         </div>
       </SheetContent>
     </Sheet>
