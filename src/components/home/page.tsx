@@ -25,6 +25,8 @@ export default function HomePage() {
         <FAQ />
       </div>
       {/* <Review /> */}
+
+      <WeatherAndCurrency />
     </main>
   );
 }

@@ -36,7 +36,7 @@ const iconMapping: { [key: string]: string } = {
   "13d": "/weather-icons/Snowy.png",
   "13n": "/weather-icons/Snowy.png",
 };
-const key = "ffc74c9e41d3cd99bf6bb25a7f582a7a";
+const key = "YOUR_API_KEY_HERE"; // Move API key to environment variable for security
 
 const Weather: React.FC = () => {
   const { setWeatherNow } = useWeather();
@@ -52,11 +52,10 @@ const Weather: React.FC = () => {
         );
 
         const now = new Date();
-        now.setUTCHours(now.getUTCHours() + 8);
+        now.setUTCHours(now.getUTCHours() + 8); // Adjust for timezone
         const today = now.toISOString().slice(0, 10);
         const currentHour = now.getUTCHours();
 
-        // Get the sunrise and sunset times from the API response
         const sunriseUTC = new Date(
           response.data.city.sunrise * 1000
         ).getUTCHours();
@@ -64,7 +63,6 @@ const Weather: React.FC = () => {
           response.data.city.sunset * 1000
         ).getUTCHours();
 
-        // Convert to local time (UTC+8)
         const sunriseLocal = (sunriseUTC + 8) % 24;
         const sunsetLocal = (sunsetUTC + 8) % 24;
 
@@ -107,9 +105,7 @@ const Weather: React.FC = () => {
           .map((weather: any) => {
             const weatherDate = new Date(weather.dt_txt);
             const weatherHourUTC = weatherDate.getUTCHours();
-
             const weatherHourLocal = (weatherHourUTC + 8) % 24;
-
             const isDaytime = weatherHourLocal >= 6 && weatherHourLocal <= 21;
 
             return {
@@ -198,18 +194,18 @@ const Weather: React.FC = () => {
   };
 
   return (
-    <div className="relative lg:w-[360px] w-[290px] lg:h-[170px] h-[140px] rounded-xl overflow-hidden">
+    <div className="relative md:w-[360px] w-[255px] md:h-[170px] h-[140px] rounded-xl overflow-hidden">
       <div
         className="flex transition-transform duration-1000 ease-in-out"
         style={{
-          transform: `translateX(-${currentIndex * 33.34}%)`,
+          transform: `translateX(-${(currentIndex * 100) / slides.length}%)`,
           width: `${slides.length * 100}%`,
         }}
       >
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`lg:w-[360px] w-[290px] lg:h-[170px] h-[140px] flex-shrink-0 flex items-center justify-center ${
+            className={`md:w-[360px] w-[255px] md:h-[170px] h-[140px] flex-shrink-0 flex items-center justify-center ${
               index === 0
                 ? isDayTime
                   ? "bg-gradient-to-r from-white to-[#FFF3B1]"
@@ -219,75 +215,67 @@ const Weather: React.FC = () => {
           >
             {slide.weatherNow && (
               <div className="flex items-center justify-between w-full h-full text-center p-4">
-                <div className="flex flex-col lg:gap-3">
-                  <p className="lg:text-4xl text-xl font-bold text-gray-800">
+                <div className="flex flex-col md:gap-3">
+                  <p className="md:text-4xl text-xl font-bold text-gray-800">
                     {slide.weatherNow.weatherNow}
                   </p>
-                  <p className="lg:text-[14px] text-[12px] font-medium text-gray-600">
+                  <p className="md:text-[14px] text-[12px] font-medium text-gray-600">
                     {slide.weatherNow.location}
                   </p>
                 </div>
                 <div
-                  className="lg:w-[75px] w-12 lg:h-[75px] h-12 bg-contain bg-center bg-no-repeat overflow-hidden"
+                  className="md:w-[75px] w-12 md:h-[75px] h-12 bg-contain bg-no-repeat"
                   style={{
-                    backgroundImage: `url(${
-                      slide.weatherNow.weatherIcon ||
-                      "/weather-icons/default.png"
-                    })`,
+                    backgroundImage: `url(${slide.weatherNow.weatherIcon})`,
                   }}
-                ></div>
+                />
               </div>
             )}
-
             {slide.dailyForecast && (
-              <div className="flex items-center justify-between bg-[#EAECF0] w-full h-full text-center lg:p-4 p-2">
-                {slide.dailyForecast.slice(0, 5).map((forecast, i) => (
+              <div className="flex flex-col w-full h-full overflow-auto">
+                {slide.dailyForecast.map((day, index) => (
                   <div
-                    key={i}
-                    className="flex flex-col items-center lg:gap-3 gap-1"
+                    key={index}
+                    className="flex items-center justify-between p-2 border-b border-gray-300"
                   >
-                    <p className="lg:text-[14px] text-[12px] font-bold">
-                      {forecast.temp}
-                    </p>
-                    <div
-                      className="lg:w-[25px] w-5 lg:h-[25px] h-5 bg-contain bg-center bg-no-repeat overflow-hidden"
-                      style={{
-                        backgroundImage: `url(${
-                          iconMapping[forecast.weatherIcon] ||
-                          "/weather-icons/default.png"
-                        })`,
-                      }}
-                    ></div>
-                    <p className="text-[11px] lg:font-bold font-medium">
-                      {forecast.date}
-                    </p>
-                    <p className="text-[11px] lg:font-bold font-medium">
-                      {forecast.day}
-                    </p>
+                    <div className="flex flex-col">
+                      <span className="font-semibold text-gray-700">
+                        {day.day}
+                      </span>
+                      <span className="text-gray-500">{day.date}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <img
+                        src={day.weatherIcon}
+                        alt={day.weatherIcon}
+                        className="w-10 h-10 bg-contain"
+                      />
+                      <span className="ml-2 font-bold text-gray-800">
+                        {day.temp}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>
             )}
-
             {slide.hourlyForecast && (
-              <div className="flex items-center justify-between bg-[#EAECF0] w-full h-full text-center lg:p-4 p-2">
-                {slide.hourlyForecast.slice(0, 6).map((forecast, i) => (
+              <div className="flex flex-col w-full h-full overflow-auto">
+                {slide.hourlyForecast.map((hour, index) => (
                   <div
-                    key={i}
-                    className="flex flex-col items-center lg:gap-3 gap-1"
+                    key={index}
+                    className="flex items-center justify-between p-2 border-b border-gray-300"
                   >
-                    <p className="lg:text-[14px] text-[12px] font-bold">
-                      {forecast.temp}
-                    </p>
-
-                    <div
-                      className="w-[25px] h-[25px] bg-contain bg-center bg-no-repeat overflow-hidden"
-                      style={{
-                        backgroundImage: `url(${forecast.weatherIcon})`,
-                      }}
-                    ></div>
-
-                    <p className="text-[12px] font-bold">{forecast.time}</p>
+                    <span className="text-gray-700">{hour.time}</span>
+                    <div className="flex items-center">
+                      <img
+                        src={hour.weatherIcon}
+                        alt={hour.weatherIcon}
+                        className="w-8 h-8 bg-contain"
+                      />
+                      <span className="ml-2 font-bold text-gray-800">
+                        {hour.temp}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -295,16 +283,15 @@ const Weather: React.FC = () => {
           </div>
         ))}
       </div>
-
-      <div className="absolute bottom-2 w-full flex justify-center gap-2">
+      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-2">
         {slides.map((_, index) => (
-          <button
+          <div
             key={index}
-            className={`w-2 h-2 rounded-full ${
-              index === currentIndex ? "bg-blue-600" : "bg-gray-400"
+            className={`w-3 h-3 rounded-full cursor-pointer ${
+              index === currentIndex ? "bg-blue-500" : "bg-gray-400"
             }`}
             onClick={() => goToSlide(index)}
-          ></button>
+          />
         ))}
       </div>
     </div>
