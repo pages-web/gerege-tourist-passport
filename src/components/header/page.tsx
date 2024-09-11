@@ -8,7 +8,7 @@ import MobileMenu from "./mobile-header";
 export default function Header() {
   return (
     <div className="w-full mx-auto sticky top-0 z-50 shadow-md">
-      {/* <LanguageAndSearch /> */}
+      <LanguageAndSearch />
       <div className="bg-white w-full py-5 ">
         <div className="container flex justify-between items-center gap-10">
           <Link

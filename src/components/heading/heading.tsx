@@ -3,7 +3,7 @@ const Heading = ({
   desc,
   className,
 }: {
-  title: string;
+  title?: string;
   desc?: string;
   className?: string;
 }) => {
