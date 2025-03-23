@@ -32,7 +32,21 @@ export const TitleLists = ({ data }: { data: Lists }) => {
               <div className="flex gap-x-1 md:gap-x-2">
                 {list.icon && (
                   <span className="md:w-6 md:h-6 flex items-start">
-                    {list.icon}
+                    {list.icon === "phone" && (
+                      <Phone className="w-4 h-4 md:w-6 md:h-6" />
+                    )}
+                    {list.icon === "mail" && (
+                      <Mail className="w-4 h-4 md:w-6 md:h-6" />
+                    )}
+                    {list.icon === "mapPin" && (
+                      <MapPin className="w-4 h-4 md:w-6 md:h-6" />
+                    )}
+                    {list.icon === "facebook" && (
+                      <Facebook className="w-4 h-4 md:w-6 md:h-6" />
+                    )}
+                    {list.icon === "instagram" && (
+                      <Instagram className="w-4 h-4 md:w-6 md:h-6" />
+                    )}
                   </span>
                 )}
                 <p className="text-[12px] md:text-[18px]">{list.name}</p>
@@ -45,58 +59,8 @@ export const TitleLists = ({ data }: { data: Lists }) => {
   );
 };
 
-const FooterData = [
-  {
-    title: "About",
-    lists: [
-      { name: "About us", link: "/#about" },
-      { name: "Cultural experience", link: "/" },
-      { name: "Restaurant", link: "/" },
-      { name: "Hotel", link: "/" },
-    ],
-  },
-  {
-    title: "Our Contacts",
-    lists: [
-      {
-        name: "+976 7777-1214",
-        icon: <Phone className="w-4 h-4 md:w-6 md:h-6" />,
-      },
-      {
-        name: "info@gerege-passport.mn",
-        icon: <Mail className="w-4 h-4 md:w-6 md:h-6" />,
-      },
-    ],
-  },
-  {
-    title: "Our Address",
-    lists: [
-      {
-        name: "1406, Pro One Office, 11th khoroo, Sukhbaata District, Ulaanbaatar, Mongolia",
-        icon: <MapPin className="w-4 h-4 md:w-6 md:h-6" />,
-      },
-    ],
-  },
-  {
-    title: "Our social",
-    lists: [
-      {
-        name: "Gerege Tourist Passport Mongolia",
-        link: "https://www.facebook.com/profile.php?id=61559305625217",
-        icon: <Facebook className="w-4 h-4 md:w-6 md:h-6" />,
-      },
-      {
-        name: "@gerege.mn",
-        link: "https://www.instagram.com/gerege.mn/",
-        icon: <Instagram className="w-4 h-4 md:w-6 md:h-6" />,
-      },
-    ],
-  },
-];
-
 export default function Footer() {
-  const params = useParams();
-  // const t = useTranslations("footer");
+  const t = useTranslations("footer").raw;
   return (
     <div className="bg-[#034EA2] pt-10 md:pt-20 mt-40 text-white relative overflow-hidden">
       <Image
@@ -110,7 +74,7 @@ export default function Footer() {
 
       <div className="container">
         <div className="xl:flex xl:justify-between grid grid-cols-2 gap-8 flex-wrap">
-          {FooterData.map((data, index) => {
+          {t("content").map((data: any, index: number) => {
             return <TitleLists data={data} key={index} />;
           })}
         </div>
@@ -127,9 +91,7 @@ export default function Footer() {
           quality={100}
           className="hidden md:block"
         />
-        <p className="text-[10px] md:text-[14px]">
-          Copyright 2024. ⓒ GEREGE TOURIST PASSPORT. All Rights Reserved.
-        </p>
+        <p className="text-[10px] md:text-[14px]">{t("description")}</p>
       </div>
     </div>
   );

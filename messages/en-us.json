@@ -1,18 +1,18 @@
 {
   "Header": {
-    "GEREGE TOURIST PASSPORT LLC": "GEREGE TOURIST PASSPORT LLC",
-    "Home": "Home",
-    "About": "About",
-    "Gerege Benefit": "Gerege Benefit",
-    "Store Information": "Store Information",
-    "News And Tips": "News And Tips",
-    "FAQ": "FAQ",
-    "suggestResult": "Suggest result.",
-    "National Museum": "National Museum",
-    "Air port": "Air port"
+    "title": "GEREGE TOURIST PASSPORT LLC",
+    "texts": [
+      { "name": "Home", "href": "/" },
+      { "name": "About", "href": "/#about" },
+      { "name": "Gerege Benefit", "href": "/#gerege-benefit" },
+      { "name": "News And Tips", "href": "/#news-and-tips" },
+      { "name": "FAQ", "href": "/#faq" }
+    ]
   },
+
   "Carousel": {
-    "slide1_title": "SAVE UP 49% WITH THE GEREGE PASS",
+    "slide1_title": "+1$ from every purchase will be donated to support children’s charity.",
+
     "slide1_description": "Explore all the best London attractions and activities, all for one low price.",
     "slide2_title": "Discover London",
     "slide2_description": "Experience the charm of London's iconic landmarks.",
@@ -23,187 +23,405 @@
     "Buying now": "Buying now"
   },
 
-  "WhyUs": {
-    "title": "WHY US",
-    "description": "Our services about Hotel, Restaurant and more",
-    "cards": {
-      "0": {
-        "description": "Бүгдийг багтаасан",
-        "title": "ЭНГИЙН"
+  "aboutUs": {
+    "title": "About us",
+    "description": "The <b>Gerege Tourist Passport</b> is a modern travel document and travel log inspired by the <b>Gerege</b>, a diplomatic pass used during the Mongol Empire. It serves as a symbol for promoting Mongolia’s history and culture while enhancing tourism. The Gerege Tourist Passport offers the following benefits:",
+    "benefits": [
+      {
+        "title": "Opportunity to Explore Mongolia’s History and Culture",
+        "description": "Travelers can gain a deeper understanding of Mongolia’s rich historical and cultural heritage by learning about the significance of the Gerege used during the Mongol Empire."
       },
-      "1": {
-        "description": "Монголд цор ганц",
-        "title": "ОНЦГОЙ"
+      {
+        "title": "Comprehensive and Convenient Services",
+        "description": "The Gerege Passport provides all essential travel information, recommendations, locations, emergency contact numbers, tourism support centers, discounts, and promotions. It is available in English and Korean as a <b>digital solution</b> that allows online purchases, saving travelers time, money, and eliminating language barriers."
       },
-      "2": {
-        "description": "Мөнгийг таньд хэмнэнэ",
-        "title": "ТУСЧ"
+      {
+        "title": "Access to Discounts and Benefits",
+        "description": "Holders of the Gerege Passport can enjoy exclusive discounts on hotels, tourist camps, museums, transportation, entertainment, and various other services, making their travel more affordable and enjoyable."
       },
-      "3": {
-        "description": "Аялалыг тань улам баяжуулна",
-        "title": "ХӨГЖИЛТЭЙ"
+      {
+        "title": "A Memorable Travel Souvenir",
+        "description": "The Gerege Passport serves as a keepsake that brings back warm travel memories every time you see it. It is not only a practical daily-use item but also a unique addition to any travel collection."
       }
-    }
+    ]
   },
+
   "Gerege Tour Card Benefits": {
     "title": "GEREGE TOUR CARD Benefits",
     "subtitle": "Transportation card with discounts for shopping, attractions, performances and more",
+
     "Culture": "Culture",
     "Museum": "Museum",
     "Hotel": "Hotel",
     "Restaurant": "Restaurant",
     "ABOUT": "ABOUT",
-    "CultureDescription": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна.",
-    "MuseumDescription": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна.",
-    "HotelDescription": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна.",
-    "RestaurantDescription": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна."
+
+    "frees": [
+      {
+        "title": "museums",
+        "list": [
+          {
+            "title": "Chinggis Khaan National Museum",
+            "description": "A state-of-the-art museum showcasing the history of Chinggis Khaan and the Mongol Empire. Features six floors of exhibitions, original artifacts, and AR/VR experiences. <br/>Hours: Summer 09:00-20:00, Winter 09:00-17:00 (Closed Tuesdays) <br/>Location: J Sambuu Street, Ulaanbaatar <br/>Phone: +976-7021-2222",
+            "path": "https://chinggismuseum.com/en/greetings"
+          },
+          {
+            "title": "National Museum of Mongolia",
+            "description": "Preserves Mongolia’s rich history, attracting 100,000+ visitors annually. Exhibits traditional lifestyles, historical artifacts, and research presentations. <br/>Hours: Summer 09:00-21:00 (Winter TBD) <br/>Location: Ulaanbaatar <br/>Phone: +976-70110911",
+            "path": "http://en.nationalmuseum.mn/"
+          },
+          {
+            "title": "Bogd Khaan Palace Museum",
+            "description": "Former winter palace of Mongolia’s last king, featuring religious artifacts, royal collections, and historical items from the 17th-20th centuries. <br/>Hours: Summer 09:00-20:00, Winter 10:00-17:00 <br/>Location: Khan-Uul District, Ulaanbaatar <br/>Phone: +976-7011-0913",
+            "path": ""
+          },
+          {
+            "title": "Choijin Lama Temple Museum",
+            "description": "A Buddhist temple complex housing 6,000+ artifacts, including 77 national treasures. <br/>Hours: Summer 09:00-18:00, Winter Tue-Sat 10:00-17:00 <br/>Location: Sukhbaatar District, Ulaanbaatar <br/>Phone: +976-7010-3232",
+            "linkText": "Choijin Lama Temple Museum",
+            "path": "https://templemuseum.mn/en"
+          },
+          {
+            "title": "Fine Arts Zanabazar Museum",
+            "description": "Displays Mongolian masterpieces, including sculptures, paintings, and cultural artifacts. <br/>Hours: Winter Mon-Fri 09:00-17:00, Sat-Sun 10:00-17:00 <br/>Location: Chingeltei District, Ulaanbaatar <br/>Phone: +976-11-323986",
+            "path": "https://www.facebook.com/zanabazarfam"
+          },
+          {
+            "title": "Natural History Museum",
+            "description": "Showcases Mongolia’s geological and paleontological wonders, including a Tarbosaurus skeleton. <br/>Hours: Summer 09:00-18:00, Winter Tue-Sun 09:00-18:00 (Closed Mondays) <br/>Location: Independence Square, Ulaanbaatar <br/>Phone: +976-7000-0171",
+            "path": "https://nhm.gov.mn/client/mn"
+          }
+        ]
+      },
+      {
+        "title": "sim",
+        "list": [
+          {
+            "title": "Data sim card",
+            "description": "The national operator G-Mobile, provides a physical SIM card with reliable high-speed internet service across Ulaanbaatar, 21 provinces, and 316 towns, making it the ideal choice for travelers.",
+            "content": "Offer Details: <br />Data Package: 16GB + unlimited data (up to 1Mbps speed) <br />Duration: 14 days <br />Extra Credit: 7000 MNT = 100 minutes of talk time <br/>The duration starts from the day you activate the SIM card on your phone. If the data or duration runs out, you can easily recharge for extra credit. <br/>Enjoy seamless travel with G-Mobile, your reliable companion in Mongolia!",
+            "path": "https://gmobile.mn/"
+          }
+        ]
+      },
+      {
+        "title": "HushKhan - Mongolian Natural Pine nuts",
+        "list": [
+          {
+            "title": "HushKhan - Mongolian Natural Pine nuts",
+            "description": "Receive a 10g package of Hushhan pine nuts as a complimentary gift when purchasing from Gerege Passport.",
+            "content": "<b>About the Pine Nuts:</b> The pine nuts are sourced from wild pine trees in Mongolia's untouched forests. These pine nuts thrive in Mongolia's harsh and extreme climate, which allows them to develop high concentrations of essential nutrients and proteins. <br/><b>Harvesting and Processing:</b> The pine nuts are harvested in accordance with legal timelines, processed at a facility that meets ISO 9001:2015, ISO 22000:2018, and HACCP standards. They undergo 20 stages of cleaning and sorting in a factory across three production lines before being packaged and delivered to customers. <br/><b>Organic Certification:</b> Hushhan brand pine nuts are certified organic under Mongolia's organic standards and have also become the first in Mongolia to meet the European Union organic certification standards.",
+            "path": "https://hushkhan.mn/"
+          }
+        ]
+      },
+      {
+        "title": "Free Coffee or Water at All CU Branches",
+        "list": [
+          {
+            "title": "Free Coffee or Water at All CU Branches",
+            "description": "Enjoy a free drink at any CU store near you! You can choose from any variety of Get coffee (one time only) or receive a 500ml bottled water for free.",
+            "content": "",
+            "path": ""
+          }
+        ]
+      },
+      {
+        "title": "Mongolian traditional costume rental service",
+        "list": [
+          {
+            "title": "Mongolian traditional costume rental service",
+            "description": "The Mongolian Costume Rental Service has been operating in a specially designed Mongolian ger. Offering both traditional and modern Mongolian attire, including hats, shoes, and accessories, customers can dress up in full outfits and record their experience with a 360-degree rotating camera inside the ger.",
+            "content": "The Mongolian Costume Rental Service has been operating in a specially designed Mongolian ger. Offering both traditional and modern Mongolian attire, including hats, shoes, and accessories, customers can dress up in full outfits and record their experience with a 360-degree rotating camera inside the ger. <br/>Additionally, enjoy free entry to the Bogd Khaan Palace Museum and the chance to take photos around the museum grounds. <br/>Unique Advantage: To ensure comfort, hygiene, and safety, each customer is provided with a single-use thin garment before wearing the traditional attire. </br>Address: The front square of Evseg Cashmere Factory Store,Bogd Khaan Palace Museum Street, Ulaanbaatar 17040 </br>Phone: +976 7777-1214",
+            "path": ""
+          }
+        ]
+      },
+      {
+        "title": "Jet Scooter 5000 MNT Credit",
+        "list": [
+          {
+            "title": "Jet Scooter 5000 MNT Credit",
+            "description": "Jet Sharing Mongolia is the first and largest scooter rental service in Mongolia, offering scooters at a rate of  350 MNT per minute.",
+            "content": "How to Use the Scooter: <br/> 1. Download the App: Install the Jet Scooter app from Appstore or Playstore. </br> 2. Register: Sign up as a user in the app. <br/>3. Top-Up Your Wallet: Tap on the Wallet section in the menu (bottom left) and add credit (minimum 4000 MNT). <br/>4. Scan the QR Code: Scan the QR code on the scooter with the Jet app to begin your ride. <br /> 5. Choose Your Tariff: Select your preferred tariff and press the Start button to begin your journey.<br/>6. End Your Ride: You can end your ride at any scooter station marked with the letter \"P\" on the map.Rules:\\nFollow Traffic Rules: Park your scooter in a way that does not block others and always comply with road regulations.</br>Restricted Areas: Do not enter areas marked in red on the map.</br>Age Limit: Only individuals aged 18 or older are permitted to rent scooters.</br>One Rider Per Scooter: It is prohibited to have more than one person riding a scooter.</br>Safety First: Always walk your scooter safely when crossing streets.</br>Important Note: Violating the usage rules may result in your account being suspended.",
+            "path": ""
+          }
+        ]
+      },
+      {
+        "title": "UB Cab 10,000 Credit",
+        "list": [
+          {
+            "title": "UB Cab 10,000 Credit",
+            "description": "UB Cab is an online taxi service operating in Ulaanbaatar and some provinces. The company provides services based on advanced GPS and smart payment systems. (ubcab.mn)",
+            "content": "UB Cab Services:<br/>Taxi Service: Customers can book a taxi through the UBCab application.<br/>Call Driver Service: If you prefer to use your own car, you can request a call driver.<br/>Express Delivery: Fast and reliable delivery of goods and other items. (ubcab.mn)<br/>Car Rental: Short-term vehicle rental options are available.<br/>You can download the UB Cab app from the following link: UBCab - Apps on Google Play",
+            "path": ""
+          }
+        ]
+      },
+      {
+        "title": "50% Off on Mongolian Scratch Map",
+        "list": [
+          {
+            "title": "50% Off on Mongolian Scratch Map",
+            "description": "Get a 50% discount on the highly educational Mongolian Scratch Map, which allows you to scratch off and mark the provinces and towns you have visited in Mongolia.",
+            "content": "This map is perfect for travelers to document their journeys and discover the diverse regions of Mongolia.<br/>You can purchase the map directly from the Mongolian Traditional Costume Rental location.<br/>Address: The front square of Evseg Cashmere Factory Store,Bogd Khaan Palace Museum Street, Ulaanbaatar 17040<br/>Phone: +976 7777-1214",
+            "path": ""
+          }
+        ]
+      },
+      {
+        "title": "Free Gerege Keychain and Card Holder Gift",
+        "list": [
+          {
+            "title": "Free Gerege Keychain and Card Holder Gift",
+            "description": "Receive a Gerege keychain and a high-quality leather card holder as a special gift!",
+            "content": "The Gerge, once used, can be repurposed as a souvenir or keychain strap, making it a smart and cost-effective choice. We are confident that this practical and versatile gift will be a valuable addition for any recipient.",
+            "path": ""
+          }
+        ]
+      }
+    ],
+
+    "discounts": [
+      {
+        "title": "restaurants",
+        "list": [
+          {
+            "title": "Modern Nomads",
+            "description": "Established in 2003, renowned for blending modern food technology with authentic Mongolian cuisine. Popular among locals and international visitors.",
+            "path": "https://modernnomads.mn"
+          },
+          {
+            "title": "Yuna Korean Restaurant",
+            "description": "YUNA offers a unique blend of traditional Korean cuisine with modern global trends in a family-friendly setting.",
+            "path": "https://yuna.mn"
+          }
+        ]
+      },
+      {
+        "title": "hotels",
+        "list": [
+          {
+            "title": "Blue Sky Hotel & Tower",
+            "description": "A luxury hotel with 200 elegantly designed rooms, an Executive Club Lounge, and premium dining experiences.",
+            "path": "https://blueskyhotel.mn"
+          },
+          {
+            "title": "Ramada UB City Center Hotel",
+            "description": "A 4-star international hotel offering panoramic views of Bogd Khan Mountain and the city.",
+            "path": "https://ramadaub.mn"
+          },
+          {
+            "title": "Bayangol Hotel",
+            "description": "A 4-star business hotel with 211 rooms, multiple restaurants, and event spaces in central Ulaanbaatar.",
+            "path": "https://bayangolhotel.mn"
+          }
+        ]
+      },
+      {
+        "title": "camps",
+        "list": [
+          {
+            "title": "Bayangol Resort",
+            "description": "Located in Tsonjin Boldog, near the Chinggis Statue Complex, Bayangol Resort offers wellness, outdoor adventures, and hospitality.",
+            "path": "https://bayangolresort.mn"
+          },
+          {
+            "title": "Red Rock Resort Mongolia",
+            "description": "Located in Gorkhi-Terelj National Park, featuring a conference center, leisure activities, and modern accommodations.",
+            "path": "https://redrockresort.mn"
+          },
+          {
+            "title": "Ar Davhar Peninsula Eco Tourist Camp",
+            "description": "Situated on the east shore of Lake Khuvsgul, offering a tranquil escape surrounded by nature and wildlife.",
+            "path": "https://ardavharecocamp.mn"
+          }
+        ]
+      },
+      {
+        "title": "shops",
+        "list": [
+          {
+            "title": "Nomin Holding / Nomin Supermarket /",
+            "description": "One of Mongolia’s largest retail chains, offering a variety of products at competitive prices.",
+            "path": "https://nomin.mn"
+          },
+          {
+            "title": "Emart",
+            "description": "A leading international supermarket chain providing groceries, electronics, and household goods.",
+            "path": "https://emart.mn"
+          },
+          {
+            "title": "CU Mongolia",
+            "description": "A convenience store chain offering food, beverages, and daily necessities across Mongolia.",
+            "path": "https://cu.mn"
+          },
+          {
+            "title": "GS25",
+            "description": "A well-known South Korean convenience store chain now available in Mongolia.",
+            "path": "https://gs25.mn"
+          },
+          {
+            "title": "Evseg Cashmere",
+            "description": "Premium Mongolian cashmere brand offering high-quality garments and accessories.",
+            "path": "https://evsegcashmere.mn"
+          },
+          {
+            "title": "Urban Jeans",
+            "description": "A popular Mongolian denim brand specializing in stylish and durable jeans.",
+            "path": "https://urbanjeans.mn"
+          }
+        ]
+      }
+    ]
   },
-  "WhyChooseGeregeTouristPassport": {
-    "title": "Why Choose Gerege Tours Passport",
-    "description": " Transportation card with discounts for shopping, attractions, performances and more",
-    "buyButton": " Buy now for 55$",
-    "buyTitle": "Buy",
-    "buyDescription": " Pick a 1, 2, 3, 4, 5, 6, 7 or 10-day credits package, whichever works for your trip.",
-    "scanTitle": "Scan",
-    "scanDescription": "Download our highly-rated app to scan in at each attraction.",
-    "saveTitle": "Save",
-    "saveDescription": " Enjoy guaranteed savings (or we'll refund you thedifference!) That's our guarantee!"
-  },
+
   "NewsAndTips": {
     "title": "NEWS AND TIPS",
     "description": "Here’s many things you can do in Ulaanbaatar for free and others",
-    "cards": [
+    "news": [
       {
-        "title": "Чингис хааны талбай",
-        "content": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна."
+        "title": "Khuvsgul Lake",
+        "description": "Often referred to as the 'Switzerland of Mongolia,' Khuvsgul Lake boasts crystal-clear waters surrounded by majestic mountains and dense forests. It is a popular destination for nature lovers and outdoor enthusiasts."
       },
       {
-        "title": "Чингис хааны талбай",
-        "content": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна."
+        "title": "Orkhon Valley",
+        "description": "A UNESCO World Heritage site, the Orkhon Valley is rich in history and culture. It features notable landmarks such as the Orkhon Waterfall, the ancient city of Kharkhorin, and the Erdene Zuu Monastery, offering a glimpse into Mongolia's past."
       },
       {
-        "title": "Чингис хааны талбай",
-        "content": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна."
+        "title": "Gobi Three Beauties",
+        "description": "Located in Umnugobi Province, this stunning natural area includes breathtaking attractions like Yolyn Am, the Dungenee Rock, and the Khongoryn Els sand dunes, showcasing the unique beauty of the Gobi Desert."
       },
       {
-        "title": "Чингис хааны талбай",
-        "content": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна."
+        "title": "Khorgo and Terkhiin Tsagaan Lake",
+        "description": "This region in Arkhangai Province features a volcanic crater, unique geological formations, and pristine freshwater lakes, making it an ideal spot for hiking and exploring nature."
       },
       {
-        "title": "Чингис хааны талбай",
-        "content": "'Их Чөлөө' гэдэг нэртэй байсан тус талбайг 1921 оны Ардын хувьсгалын дараагаас “Индрийн талбай” хэмээн нэрлэж байгаад 1946 оны АИХ-ын тогтоолоор Дамдины Сүхбаатарын талбай гэж албан ёсоор нэрийдэж хөшөө босгосон байна."
+        "title": "Altai Tavan Bogd",
+        "description": "Situated in western Mongolia, Altai Tavan Bogd is known for its majestic mountains, glacial rivers, and the rich cultural heritage of the nomadic Kazakh people, making it a stunning destination for adventure seekers."
+      },
+      {
+        "title": "Amarbayasgalant Monastery",
+        "description": "As one of the largest and oldest monasteries in Mongolia, Amarbayasgalant is a remarkable architectural site that preserves cultural heritage and offers a serene atmosphere for visitors."
+      },
+      {
+        "title": "Uvs Lake",
+        "description": "A UNESCO-listed area, the Uvs Lake Basin features a unique landscape that combines steppes, desert, and mountainous regions, providing diverse habitats for wildlife."
+      },
+      {
+        "title": "Khustain Nuruu",
+        "description": "Home to the endangered Przewalski's horse, Khustain Nuruu is a protected area dedicated to the conservation and breeding of this rare species in its natural habitat."
+      },
+      {
+        "title": "Burkan Khaldun Mountain",
+        "description": "Known as the birthplace of Genghis Khan, Burkan Khaldun Mountain is one of Mongolia's most sacred sites, rich in historical significance and natural beauty."
+      },
+      {
+        "title": "Ogii Lake",
+        "description": "Located in Arkhangai Province, Ogii Lake is a picturesque destination ideal for fishing and birdwatching, featuring clear waters and a tranquil environment."
       }
     ]
   },
-  "LoyaltyCard": {
-    "title": "RECEIVE SPECIAL OFFERS WITH OUR 'U POINT' LOYALTY CARD.",
-    "subtitle": "In partnership with over 60 Mongolian top brands"
-  },
+
   "FAQ": {
-    "title": "Түгээмэл асуулт хариулт",
-    "tabs": {
-      "common_questions": "Нийтлэг асуултууд",
-      "about_product": "Бүтээгдэхүүний тухай",
-      "about_service": "Үйлчилгээний тухай"
-    },
+    "title": "FAQ",
     "questions": [
       {
-        "id": 1,
-        "title": "Би гэрэгэ пасспортоо хэрхэн ашиглах вэ?",
-        "content": "Та Гэрэгэ пасспортын хамтрагч байгууллагуудын онцлогоос хамаарч Гэрэгэ пасспортоо үзүүлэх, Гэрэгэ пасспортын ард хэсгийн QR кодыг уншуулах, зарим шаардлагатай тохиолдолд гэрэгэ пасспорттой дагалдаж ирсэн сим картны утасны дугаарыг бүртгүүлэн үйлчлүүлнэ."
+        "title": "How to Use the Gerege Passport?",
+        "description": "You can use your Gerege Passport by presenting it to partner organizations, scanning the QR code located on the back of the passport, or registering the phone number of the SIM card that accompanies the passport to access services."
       },
       {
-        "id": 2,
-        "title": "Дата симээ хэрхэн идвэхжүүлэх вэ?",
-        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+        "title": "What to Do If You Lose Your Gerege Passport?",
+        "description": "If you lose your Gerege Passport, you will need to purchase a new one to continue using the services."
       },
       {
-        "id": 3,
-        "title": "Төлбөрийн ямар нөхцөлүүд байгаа вэ?",
-        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+        "title": "How to Activate Your Data SIM?",
+        "description": "To activate your data SIM, remove it from the package, insert it into your phone, and enter the PIN code provided on the SIM card. The SIM will be activated and usable for 14 days from the activation date."
       },
       {
-        "id": 4,
-        "title": "Би гэрэгээ пасспортоо ямар нэг шалтгаанаар буцаах хүсэлтэй бол яах вэ?",
-        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+        "title": "Can You Extend Your Data and Days?",
+        "description": "Yes, you can extend your data and usage days. You can access suitable services through the following link. <b><a href=\"https://gmobile.mn/\" target=\"_blank\">Жимобайл ХХК - Үндэсний оператор.</a></b>"
       },
       {
-        "id": 5,
-        "title": "Би буцаалтаа хэр хугацааны дараа авах вэ?",
-        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
-      }
-    ],
-    "aboutProduct": [
-      {
-        "id": 1,
-        "title": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "content": "2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+        "title": "Where Can You Purchase a Removable Map?",
+        "description": "You can purchase a removable map at the Mongolian Costume Rental location. You can check their Facebook page for more information. <b><a href=\"https://www.facebook.com/mongolianscratchmap\" target=\"_blank\">Mongolian Costume Rental</a></b>"
       },
       {
-        "id": 2,
-        "title": "Дата симээ хэрхэн идвэхжүүлэх вэ?",
-        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+        "title": "Where Can You Buy Hushkhan Nuts?",
+        "description": "Hushkhan nuts are available for purchase at all selling points across the country. You can check local stores or visit the website: <b><a href=\"https://hushkhan.mn/\" target=\"_blank\"> hushkhan.mn – Хушхан БРЭНД</a></b> for more details."
       },
       {
-        "id": 3,
-        "title": "Төлбөрийн ямар нөхцөлүүд байгаа вэ?",
-        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+        "title": "What Payment Options Are Available?",
+        "description": "You can make payments using international cards or through the Korean banking app."
       },
       {
-        "id": 4,
-        "title": "Би гэрэгээ пасспортоо ямар нэг шалтгаанаар буцаах хүсэлтэй бол яах вэ?",
-        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+        "title": "What Should You Do If You Want to Return Your Gerege Passport for Any Reason?",
+        "description": "If there are errors or duplicate transactions during payment, you can request a refund for the difference. Returns are not possible in other cases."
       },
       {
-        "id": 5,
-        "title": "Би буцаалтаа хэр хугацааны дараа авах вэ?",
-        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
-      }
-    ],
-    "aboutService": [
-      {
-        "id": 1,
-        "title": "Saepe autem veniam mollitia nobis ullam",
-        "content": "3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+        "title": "How Long Will It Take to Receive a Refund?",
+        "description": "Refunds will be processed within 7-14 days and will be credited to your account."
       },
       {
-        "id": 2,
-        "title": "Дата симээ хэрхэн идвэхжүүлэх вэ?",
-        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
-      },
-      {
-        "id": 3,
-        "title": "Төлбөрийн ямар нөхцөлүүд байгаа вэ?",
-        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
-      },
-      {
-        "id": 4,
-        "title": "Би гэрэгээ пасспортоо ямар нэг шалтгаанаар буцаах хүсэлтэй бол яах вэ?",
-        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
-      },
-      {
-        "id": 5,
-        "title": "Би буцаалтаа хэр хугацааны дараа авах вэ?",
-        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem veniam mollitia nobis ullam, facilis eaque quidem dolor, suscipit impedit libero quae magnam, dignissimos dicta aliquid numquam dolorem ducimus ratione."
+        "title": "Can You Transfer Your Gerege Passport to Someone Else?",
+        "description": "The Gerege Passport is non-transferable and cannot be used by others."
       }
     ]
-  },
-  "reviews": {
-    "title": "We’ve helped hundreds of global companies",
-    "subtitle": "Case studies from some of our amazing customers who are building faster."
   },
 
   "footer": {
-    "about": "About",
-    "about_us": "About us",
-    "cultural_experience": "Cultural Experience",
-    "restaurant": "Restaurant",
-    "hotel": "Hotel",
-    "our_contacts": "Our contacts",
-    "our_address": "Our address",
-    "our_social": "Our social",
-    "copyright": "Copyright 2024. ⓒ GEREGE TOURIST PASSPORT. All Rights Reserved."
+    "description": "Copyright 2025. ⓒ GEREGE TOURIST PASSPORT. All Rights Reserved.",
+    "content": [
+      {
+        "title": "About",
+        "lists": [
+          { "name": "About us", "link": "/#about" },
+          { "name": "Cultural experience", "link": "/" },
+          { "name": "Restaurant", "link": "/" },
+          { "name": "Hotel", "link": "/" }
+        ]
+      },
+      {
+        "title": "Our Contacts",
+        "lists": [
+          {
+            "name": "+976 7777-1214",
+            "icon": "phone"
+          },
+          {
+            "name": "info@gerege-passport.mn",
+            "icon": "mail"
+          }
+        ]
+      },
+      {
+        "title": "Our Address",
+        "lists": [
+          {
+            "name": "1003, Minister Tower, 1st khoroo, Sukhbaatar district, Ulaanbaatar, Mongolia",
+            "icon": "mapPin"
+          }
+        ]
+      },
+      {
+        "title": "Our social",
+        "lists": [
+          {
+            "name": "Gerege Tourist Passport Mongolia",
+            "link": "https://www.facebook.com/profile.php?id=61559305625217",
+            "icon": "facebook"
+          },
+          {
+            "name": "@gerege.mn",
+            "link": "https://www.instagram.com/gerege.mn/",
+            "icon": "instagram"
+          }
+        ]
+      }
+    ]
   },
+
   "AboutGeregePassport": {
     "title": "GEREGE TOURIST PASSPORT",
     "subtitle": "Must-have item for travel Mongolia",
@@ -265,8 +483,5 @@
         "description": "\"Evseg Mongolian Premium Cashmere\" stores"
       }
     ]
-  },
-  "aboutUs": {
-    "description": "$1 from every purchase is donated to support children with special needs at the 10th Kindergarten."
   }
 }

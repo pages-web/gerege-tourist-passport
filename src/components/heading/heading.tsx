@@ -12,7 +12,10 @@ const Heading = ({
       <h1 className="text-[30px] font-bold uppercase text-[#1D2939]">
         {title}
       </h1>
-      <p className="text-[#475467] text-[18px]">{desc}</p>
+      <p
+        className="text-[#475467] text-[18px]"
+        dangerouslySetInnerHTML={{ __html: desc || "" }}
+      ></p>
     </div>
   );
 };

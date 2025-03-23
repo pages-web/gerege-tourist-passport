@@ -3,8 +3,11 @@ import CheckoutLayout from "../checkout-layout";
 import OrderSummary from "@/components/order-summary/order-summary";
 import Link from "next/link";
 import CartPageContent from "./cart-page-content";
+import { useLocale } from "next-intl";
 
 const Cart = () => {
+  const locale = useLocale();
+  console.log(locale);
   return (
     <CheckoutLayout title="Your cart">
       <div className="md:grid md:grid-cols-12 md:gap-x-6">

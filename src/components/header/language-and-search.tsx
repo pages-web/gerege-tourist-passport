@@ -65,7 +65,10 @@ const LanguageAndSearch = () => {
               EN US
             </Link>
           </div>
-          <Separator orientation={"vertical"} className="h-[20px] bg-[#475467]"/>
+          <Separator
+            orientation={"vertical"}
+            className="h-[20px] bg-[#475467]"
+          />
           <div
             className={`w-fit font-bold lg:text-base text-[10px] flex gap-1 cursor-pointer ${
               pathname === "/kr" ? "text-blue-600" : "text-black"
@@ -87,46 +90,6 @@ const LanguageAndSearch = () => {
               KR
             </Link>
           </div>
-        </div>
-        <div className="relative">
-          <button
-            className="lg:w-[267px] w-[130px] lg:h-[35px] h-[20px] flex lg:gap-4 gap-2 items-center lg:pl-[12px] pl-[8px] bg-white"
-            onClick={() => setButtonClick(!buttonClick)}
-          >
-            <SearchIcon className="lg:w-[24px] w-[17px] lg:h-[24px] h-[17px] text-gray-600" />
-            <div className="text-gray-600 font-bold lg:text-[15px] text-[11px]">
-              Search...
-            </div>
-          </button>
-
-          {!buttonClick ? (
-            ""
-          ) : (
-            <div className="absolute z-10 right-0 lg:top-11 top-8 lg:w-[440px] w-[250px] h-fit flex flex-col lg:gap-4 gap-2 border bg-white p-3">
-              <div className="font-bold text-gray-800 lg:text-[15px] text-[13px] ml-[2px]">
-                {/* {t("suggestResult")} */}
-              </div>
-              {searchSuggest.map((suggest) => (
-                <Link
-                  href={`${params.locale}${suggest.href}`}
-                  className="flex justify-between items-center p-1 w-full h-fit border"
-                  key={suggest.id}
-                  onClick={() => setButtonClick(!buttonClick)}
-                >
-                  <div className="w-full flex lg:gap-2 gap-1 items-center">
-                    <div className="lg:font-bold font-semibold text-gray-800 lg:text-[16px] text-[12px]">
-                      {/* {suggest.title} */}
-                    </div>
-
-                    <div className="font-medium text-gray-600 lg:text-[14px] text-[10px]">
-                      {/* {t(suggest.name)} */}
-                    </div>
-                  </div>
-                  <KeyboardArrowRightIcon className="lg:w-[22px] w-[14px] lg:h-[22px] h-[14px]" />
-                </Link>
-              ))}
-            </div>
-          )}
         </div>
       </div>
     </div>

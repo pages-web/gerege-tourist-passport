@@ -1,96 +1,119 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import Image from "@/components/ui/image";
+import useEmblaCarousel from "embla-carousel-react";
+import {
+  DotButton,
+  useDotButton,
+} from "@/components/ui/EmblaCarouselDotButton";
+import { EmblaCarouselType } from "embla-carousel";
 
-const Carousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const slides = [
+  {
+    backgroundImage: "/image/home-bg.jpg",
+    titleKey: "slide1_title",
+    descriptionKey: "slide1_description",
+  },
+  {
+    backgroundImage: "/image/about-1.jpg",
+    titleKey: "",
+    descriptionKey: "",
+  },
+  {
+    backgroundImage: "/image/about-1.jpg",
+    titleKey: "",
+    descriptionKey: "",
+  },
+  {
+    backgroundImage: "/image/about-1.jpg",
+    titleKey: "",
+    descriptionKey: "",
+  },
+];
+
+const CarouselSection = () => {
   const t = useTranslations("Carousel");
+  const [api, setApi] = React.useState<CarouselApi>();
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: false }) as any
+  );
 
-  const slides = [
-    {
-      backgroundImage: "/image/home-bg.jpg",
-      titleKey: "slide1_title",
-      descriptionKey: "slide1_description",
-    },
-    {
-      backgroundImage: "/image/about-1.jpg",
-      titleKey: "slide2_title",
-      descriptionKey: "slide2_description",
-    },
-    {
-      backgroundImage: "/image/about-1.jpg",
-      titleKey: "slide3_title",
-      descriptionKey: "slide3_description",
-    },
-    {
-      backgroundImage: "/image/about-1.jpg",
-      titleKey: "slide4_title",
-      descriptionKey: "slide4_description",
-    },
-  ];
+  const onNavButtonClick = useCallback((emblaApi: any) => {
+    const autoplay = emblaApi?.plugins()?.autoplay;
+    if (!autoplay) return;
+
+    const resetOrStop =
+      autoplay.options.stopOnInteraction === false
+        ? autoplay.reset
+        : autoplay.stop;
+
+    resetOrStop();
+  }, []);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 5000);
+    if (!api) {
+      return;
+    }
+  }, [api]);
 
-    return () => clearInterval(intervalId);
-  }, [slides.length]);
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
+  const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
+    api as any
+  );
 
   return (
-    <div className="relative w-full overflow-hidden">
-      <div
-        className={`flex transition-transform duration-1000 ease-in-out`}
-        style={{
-          transform: `translateX(-${currentIndex * 25}%)`,
-          width: `${slides.length * 100}%`,
-        }}
-      >
+    <Carousel
+      className="w-full"
+      opts={{ loop: true }}
+      plugins={[plugin.current]}
+      onMouseEnter={plugin.current.stop}
+      onMouseLeave={plugin.current.reset}
+      setApi={setApi}
+    >
+      <CarouselContent>
         {slides.map((slide, index) => (
-          <div
+          <CarouselItem
             key={index}
-            className="w-full lg:h-[700px] md:h-[500px] h-[300px] flex justify-center items-end p-2 md:px-32 md:py-10"
-            style={{
-              backgroundImage: `url(${slide.backgroundImage})`,
-              backgroundPositionX: "50%",
-              backgroundPositionY: "20%",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
+            className="relative w-full -z-10 overflow-hidden max-h-[800px]"
           >
-            <div className="w-full lg:rounded-[16px] rounded-xl lg:p-[24px] p-3 flex flex-col lg:gap-[25px] gap-5 bg-black/[.7]">
-              <div>
-                <div className="lg:w-[780px] lg:text-[48px] text-[20px] text-white font-bold">
-                  {t(slide.titleKey)}
-                </div>
-                <div className="lg:text-base text-[12px] font-normal text-white">
-                  {t(slide.descriptionKey)}
-                </div>
+            <Image
+              src={slide.backgroundImage}
+              alt={slide.titleKey}
+              width={1000}
+              height={700}
+              quality={100}
+              className="w-full"
+            />
+
+            <div className="w-full flex justify-center absolute bottom-0 left-0 py-10">
+              <div className="bg-black/50 w-[80%] z-10 text-white p-6 rounded-2xl">
+                <h3 className="text-5xl font-bold">{t(slide.titleKey)}</h3>
               </div>
-              <button className="w-fit px-4 py-2 lg:rounded-[8px] rounded-[5px] bg-[#0087FF] text-white lg:text-[16px] text-[13px] font-semibold flex items-center justify-center">
-                {t("Buying now")}
-              </button>
             </div>
-          </div>
+          </CarouselItem>
         ))}
-      </div>
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex `lg:space-x-2 space-x-1">
-        {slides.map((_, index) => (
-          <button
+      </CarouselContent>
+      <div className="w-full absolute bottom-5 flex justify-center gap-[10px]">
+        {scrollSnaps.map((_, index) => (
+          <DotButton
             key={index}
-            className={`w-3 h-3 rounded-full ${
-              index === currentIndex ? "bg-blue-700" : "bg-gray-400"
-            }`}
-            onClick={() => goToSlide(index)}
-          ></button>
+            onClick={() => onDotButtonClick(index)}
+            className={`w-3 h-3 rounded-full
+            ${index === selectedIndex ? " bg-white" : "bg-white/30"}`}
+          />
         ))}
       </div>
-    </div>
+    </Carousel>
   );
 };
 
-export default Carousel;
+export default CarouselSection;

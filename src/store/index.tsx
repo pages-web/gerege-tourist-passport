@@ -6,7 +6,7 @@ import {
   atom,
   useAtomValue,
 } from "jotai";
-import Apollo from "@/app/ApolloClient";
+import Apollo from "@/app/[locale]/ApolloClient";
 import { selectAtom } from "jotai/utils";
 import { WeatherProvider } from "@/provider/WeatherProvider";
 

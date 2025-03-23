@@ -2,21 +2,23 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 interface CardProps {
   imageSrc: string;
   title: string;
-  descriptionKey: string;
+  description: string;
   link: string;
+  parentTitle: string;
 }
 
 const Card: React.FC<CardProps> = ({
   imageSrc,
   title,
-  descriptionKey,
+  description,
   link,
+  parentTitle,
 }) => {
   const variant = [
     {
@@ -39,16 +41,14 @@ const Card: React.FC<CardProps> = ({
     },
   ];
   const t = useTranslations("Gerege Tour Card Benefits");
+  const locale = useLocale();
   return (
-    <motion.div
-      className="max-w-[220px] bg-gray-100 group z-20"
-      whileHover="hover"
-    >
-      <Link href={link}>
+    <motion.div className="bg-gray-100 group z-20" whileHover="hover">
+      <Link href={`/${locale}/benefits/${link}`} className="h-full">
         <div className="w-full p-3 md:p-6 flex flex-col items-center gap-3">
           <Image alt="" src={imageSrc} width={32} height={32} />
           <div
-            className={`text-gray-800 text-[16px] font-semibold uppercase duration-200
+            className={`text-gray-800 text-[16px] font-semibold uppercase duration-200 line-clamp-1
             ${
               title === t("Culture")
                 ? "group-hover:text-blue-500"
@@ -60,9 +60,8 @@ const Card: React.FC<CardProps> = ({
                 ? "group-hover:text-red-500"
                 : "group-hover:text-gray-800"
             }`}
-          >
-            {t(title)}
-          </div>
+            dangerouslySetInnerHTML={{ __html: title }}
+          ></div>
           <div
             className="text-justify text-xs text-gray-600"
             style={{
@@ -72,9 +71,8 @@ const Card: React.FC<CardProps> = ({
               overflow: "hidden",
               textOverflow: "ellipsis",
             }}
-          >
-            {t(descriptionKey)}
-          </div>
+            dangerouslySetInnerHTML={{ __html: description }}
+          ></div>
         </div>
         <div
           className="flex items-center justify-center"
@@ -87,8 +85,8 @@ const Card: React.FC<CardProps> = ({
           }}
         >
           <div className="w-full p-4 flex items-center justify-center text-[12px] text-white/60 bg-black/[0.5]">
-            <motion.span variants={variant[0]}>
-              {t("ABOUT")} {t(title).toUpperCase()}
+            <motion.span variants={variant[0]} className="line-clamp-1">
+              {t("ABOUT")} {title.toUpperCase()}
             </motion.span>
             <motion.span variants={variant[1]}>
               <ArrowForwardIosIcon className="lg:w-[22px] w-[18px] lg:h-[22px] h-[18px]" />

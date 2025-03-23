@@ -1,22 +1,80 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Card from "./Card";
 import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import Heading from "@/components/heading/heading";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import FaqTab from "../faq/faq-tab";
+
+const tabs = ["Free", "Discount"];
 
 export default function Benefits() {
   const params = useParams();
-  const t = useTranslations("Gerege Tour Card Benefits");
+  const t = useTranslations("Gerege Tour Card Benefits").raw;
+  const [selectedTab, setSelectedTab] = useState(tabs[0]);
+
+  console.log(t("frees"), "frees");
   return (
     <>
       <div id="gerege-benefit" className="w-full flex flex-col gap-8">
         <Heading title={t("title")} desc={t("subtitle")} />
 
-        {/* Start responsive desktop */}
-        <div className="w-full lg:flex items-center justify-between gap-10 relative overflow-hidden">
-          {/* Start left cards */}
+        <div className="flex justify-center">
+          {tabs.map((tab, index) => {
+            return (
+              <FaqTab
+                title={tab}
+                key={index}
+                isActive={selectedTab === tab}
+                onClick={() => setSelectedTab(tab)}
+              />
+            );
+          })}
+        </div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 content-stretch">
+          {selectedTab === "Free" &&
+            t("frees").map((parentItem: any, index: number) =>
+              parentItem.list.map((item: any, index: number) => (
+                <Card
+                  imageSrc={
+                    parentItem.title === "museums"
+                      ? "/image/museum.png"
+                      : "/image/flag.png"
+                  }
+                  title={item.title}
+                  description={item.description}
+                  link={item.title}
+                  parentTitle={parentItem.title}
+                  key={index}
+                />
+              ))
+            )}
+          {selectedTab === "Discount" &&
+            t("discounts").map((parentItem: any, index: number) =>
+              parentItem.list.map((item: any, index: number) => (
+                <Card
+                  imageSrc={
+                    parentItem.title === "restaurants"
+                      ? "/image/restaurant-icon.png"
+                      : parentItem.title === "hotels" ||
+                        parentItem.title === "camps"
+                      ? "/image/hotel-icon.png"
+                      : "/image/flag.png"
+                  }
+                  title={item.title}
+                  description={item.description}
+                  link={item.title}
+                  parentTitle={parentItem.title}
+                  key={index}
+                />
+              ))
+            )}
+        </div>
+
+        {/* <div className="w-full lg:flex items-center justify-between gap-10 relative overflow-hidden">
           <div className="flex items-center justify-center gap-6">
             <div className="flex flex-col gap-6 lg:gap-y-10">
               <Card
@@ -49,7 +107,6 @@ export default function Benefits() {
             </div>
           </div>
 
-          {/* End left cards */}
 
           <div className="flex justify-center items-center lg:mx-20 my-20 lg:my-0">
             <Image
@@ -59,7 +116,7 @@ export default function Benefits() {
               width={500}
               className="h-fit absolute animate-spin-slow z-10"
             />
-            <div className="w-[100px] md:w-[160px] "> 
+            <div className="w-[100px] md:w-[160px] ">
               <Image
                 alt=""
                 src="/image/paiz-1.png"
@@ -70,7 +127,6 @@ export default function Benefits() {
             </div>
           </div>
 
-          {/* Start right cards */}
 
           <div className="flex items-center justify-center gap-6">
             <div className="flex flex-col gap-6 lg:gap-40">
@@ -103,9 +159,8 @@ export default function Benefits() {
               />
             </div>
           </div>
-          {/* End right cards */}
         </div>
-        {/* End responsive desktop */}
+        */}
       </div>
     </>
   );
