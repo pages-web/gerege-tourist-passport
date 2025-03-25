@@ -2,8 +2,7 @@ import { Button } from "@/components/ui/button";
 import RegisterForm from "@/containers/auth/register-form";
 import { getConfig } from "@/sdk/queries/auth";
 import { Metadata } from "next/types";
-import Link from "next/link";
-
+import { Link } from "@/navigation";
 export async function generateMetadata(): Promise<Metadata> {
   const { config } = await getConfig();
 

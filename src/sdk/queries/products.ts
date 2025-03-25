@@ -8,7 +8,6 @@ import {
   ICategory,
   ProductFields,
 } from "@/types/products.types";
-import type { LinkProps } from "next/link";
 import { cache } from "react";
 import { CommonParams } from "@/types";
 

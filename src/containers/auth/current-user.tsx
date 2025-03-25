@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { useCurrentUser } from "@/sdk/queries/auth.client";
 import { UserIcon, Loader2Icon } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { useEffect } from "react";
 
 const CurrentUser = () => {

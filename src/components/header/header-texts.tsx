@@ -1,11 +1,12 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
 const HeaderTexts = () => {
   const t = useTranslations("Header").raw;
+  const locale = useLocale();
   const [clickedItem, setClickedItem] = useState(null);
 
   const handleItemClick = (index: any) => {

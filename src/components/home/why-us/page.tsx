@@ -8,20 +8,20 @@ import { cn } from "@/lib/utils";
 export default function WhyUs() {
   const t = useTranslations("aboutUs").raw;
 
-  console.log(t("benefits"));
-
   return (
     <div id="about" className="space-y-10">
-      <Heading title={t("title")} desc={t("description")} />
+      <Heading title={t("title")} desc={t("description")} data-aos="fade-up" />
 
       {/* benefits desktop screen */}
-      <div className="w-full grid md:grid-cols-4 gap-4">
+      <div className="w-full grid md:grid-cols-2 xl:grid-cols-4 gap-4">
         {[1, 2, 3, 4].map((item, index) => (
           <div
             key={index}
             className={`py-6 px-4 bg-[#D2F3FF] flex flex-col items-center text-center gap-4 ${
               index === 3 ? "px-5" : ""
             }`}
+            data-aos="fade-up"
+            data-aos-delay={index * 200}
           >
             <div className="w-12 h-12 flex items-center justify-center">
               <Image

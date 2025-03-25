@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
 import PayemntBasicPage from "../payment/page";

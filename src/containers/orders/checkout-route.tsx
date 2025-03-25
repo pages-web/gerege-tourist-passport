@@ -5,7 +5,7 @@ import { LoadingIcon } from "@/components/ui/loading";
 import { initialLoadingOrderAtom } from "@/store/order.store";
 import { useAtomValue } from "jotai";
 import { ArrowLeftIcon } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/navigation";
 
 const CheckoutRoute = ({ children }: React.PropsWithChildren) => {
   const loadingOrder = useAtomValue(initialLoadingOrderAtom);

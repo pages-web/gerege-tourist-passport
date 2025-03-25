@@ -6,24 +6,17 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "../ui/Sheet";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { Separator } from "../ui/Separator";
 import GeregeButton from "../gerege-button/gerege-button";
-
-const navItems = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/#about" },
-  { name: "Gerege Benefit", href: "/#gerege-benefit" },
-  { name: "Store Information", href: "/#store-info" },
-  { name: "News And Tips", href: "/#news-and-tips" },
-  { name: "FAQ", href: "/#faq" },
-];
+import { useTranslations } from "next-intl";
 
 const MobileMenu = () => {
+  const t = useTranslations("Header").raw;
   return (
     <Sheet>
       <SheetTrigger>
-        <MenuIcon className="min-w-8 min-h-8"/>
+        <MenuIcon className="min-w-8 min-h-8" />
       </SheetTrigger>
       <SheetContent className="w-[90%] sm:w-[540px] bg-white ">
         <SheetTitle>
@@ -35,7 +28,7 @@ const MobileMenu = () => {
         <Separator className="my-3" />
 
         <div className="flex flex-col items-end gap-3">
-          {navItems.map((item, index) => {
+          {t("texts").map((item: any, index: number) => {
             return (
               <SheetClose key={index} asChild>
                 <Link
@@ -48,9 +41,9 @@ const MobileMenu = () => {
               </SheetClose>
             );
           })}
-          <SheetClose>
+          {/* <SheetClose>
             <GeregeButton />
-          </SheetClose>
+          </SheetClose> */}
         </div>
       </SheetContent>
     </Sheet>

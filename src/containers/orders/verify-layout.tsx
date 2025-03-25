@@ -4,7 +4,7 @@ import { useAtomValue } from "jotai";
 import { descriptionAtom } from "@/store/order.store";
 import { ArrowLeftIcon, MapPinOffIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Link } from "@/navigation";
 
 const VerifyLayout = ({ children }: React.PropsWithChildren) => {
   const description = useAtomValue(descriptionAtom);

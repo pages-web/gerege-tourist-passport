@@ -11,7 +11,7 @@ const FaqTab = ({
 }) => {
   return (
     <button
-      className={`px-[8px] py-2 md:px-4 md:py-[10px] text-[12px] md:text-[18px] ${
+      className={`px-[8px] py-2 md:px-4 md:py-[10px] text-[16px] lg:text-[18px] ${
         isActive
           ? "bg-[#006EFF] text-white"
           : "bg-white text-[#344054] first:border-r last:border-l"

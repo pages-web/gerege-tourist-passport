@@ -3,25 +3,24 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Card from "./Card";
 import { useParams } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Heading from "@/components/heading/heading";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import FaqTab from "../faq/faq-tab";
 
-const tabs = ["Free", "Discount"];
-
 export default function Benefits() {
+  const locale = useLocale();
+  const tabs = locale === "kr" ? ["무료", "할인"] : ["Free", "Discount"];
   const params = useParams();
   const t = useTranslations("Gerege Tour Card Benefits").raw;
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
-  console.log(t("frees"), "frees");
   return (
     <>
       <div id="gerege-benefit" className="w-full flex flex-col gap-8">
-        <Heading title={t("title")} desc={t("subtitle")} />
+        <Heading title={t("title")} desc={t("subtitle")} data-aos="fade-up" />
 
-        <div className="flex justify-center">
+        <div className="flex justify-center" data-aos="fade-up">
           {tabs.map((tab, index) => {
             return (
               <FaqTab
@@ -35,7 +34,7 @@ export default function Benefits() {
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 content-stretch">
-          {selectedTab === "Free" &&
+          {(selectedTab === "Free" || selectedTab === "무료") &&
             t("frees").map((parentItem: any, index: number) =>
               parentItem.list.map((item: any, index: number) => (
                 <Card
@@ -48,11 +47,13 @@ export default function Benefits() {
                   description={item.description}
                   link={item.title}
                   parentTitle={parentItem.title}
+                  bgImage={item.image}
                   key={index}
+                  data-aos="fade-up"
                 />
               ))
             )}
-          {selectedTab === "Discount" &&
+          {(selectedTab === "Discount" || selectedTab === "할인") &&
             t("discounts").map((parentItem: any, index: number) =>
               parentItem.list.map((item: any, index: number) => (
                 <Card
@@ -68,6 +69,7 @@ export default function Benefits() {
                   description={item.description}
                   link={item.title}
                   parentTitle={parentItem.title}
+                  bgImage={item.image}
                   key={index}
                 />
               ))

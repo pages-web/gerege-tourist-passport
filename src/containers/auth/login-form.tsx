@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Password } from "@/components/ui/password";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { useLogin } from "@/sdk/hooks/auth";
 import { useRouter } from "next/navigation";
 

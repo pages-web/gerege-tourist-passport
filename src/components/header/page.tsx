@@ -1,9 +1,9 @@
-import Link from "next/link";
 import CurrentUser from "@/containers/auth/current-user";
 import GeregeButton from "../gerege-button/gerege-button";
 import LanguageAndSearch from "./language-and-search";
 import HeaderTexts from "./header-texts";
 import MobileMenu from "./mobile-header";
+import { Link } from "@/navigation";
 
 export default function Header() {
   return (
@@ -23,7 +23,7 @@ export default function Header() {
             {/* <CurrentUser /> */}
           </div>
           <div className="lg:hidden flex gap-3">
-            <CurrentUser />
+            {/* <CurrentUser /> */}
             <MobileMenu />
           </div>
         </div>

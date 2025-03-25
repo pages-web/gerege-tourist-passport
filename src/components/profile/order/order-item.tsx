@@ -2,7 +2,7 @@ import Price from "@/components/price/price";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { IOrder } from "@/types/order.types";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { format } from "date-fns";
 import { cn, getOrderStatus, readFile } from "@/lib/utils";
 import cloudflareLoader from "@/lib/image-loader";

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
@@ -11,6 +11,7 @@ interface CardProps {
   description: string;
   link: string;
   parentTitle: string;
+  bgImage: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -19,6 +20,8 @@ const Card: React.FC<CardProps> = ({
   description,
   link,
   parentTitle,
+  bgImage,
+  ...props
 }) => {
   const variant = [
     {
@@ -43,8 +46,15 @@ const Card: React.FC<CardProps> = ({
   const t = useTranslations("Gerege Tour Card Benefits");
   const locale = useLocale();
   return (
-    <motion.div className="bg-gray-100 group z-20" whileHover="hover">
-      <Link href={`/${locale}/benefits/${link}`} className="h-full">
+    <motion.div
+      className="bg-gray-100 group z-20"
+      whileHover="hover"
+      {...props}
+    >
+      <Link
+        href={`/${locale}/benefits/${encodeURIComponent(link)}`}
+        className="h-full"
+      >
         <div className="w-full p-3 md:p-6 flex flex-col items-center gap-3">
           <Image alt="" src={imageSrc} width={32} height={32} />
           <div
@@ -77,7 +87,7 @@ const Card: React.FC<CardProps> = ({
         <div
           className="flex items-center justify-center"
           style={{
-            backgroundImage: `url(/image/culture-bg.jpg)`,
+            backgroundImage: `url(${bgImage || "/image/culture-bg.jpg"})`,
             backgroundPositionY: "50%",
             backgroundRepeat: "no-repeat",
             overflow: "hidden",

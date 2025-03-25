@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import LoginForm from "@/containers/auth/login-form";
 import { Metadata } from "next/types";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { Suspense } from "react";
 import { getConfig } from "@/sdk/queries/auth";
 

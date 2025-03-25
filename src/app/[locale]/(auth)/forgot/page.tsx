@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import ForgotForm from "@/containers/auth/forgot-form";
 import { getConfig } from "@/sdk/queries/auth";
 import { Metadata } from "next/types";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { Suspense } from "react";
 
 export async function generateMetadata(): Promise<Metadata> {

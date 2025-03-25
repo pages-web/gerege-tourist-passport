@@ -7,7 +7,7 @@ import { useSetAtom } from "jotai";
 import { handleMethodAtom } from "@/store/payment.store";
 import BackButton from "./back-button";
 import CheckPayment from "./check-payment";
-import Link from "next/link";
+import { Link } from "@/navigation";
 
 const getName = (name: string) => {
   if (name === "Trade and Development bank") return "TDB";

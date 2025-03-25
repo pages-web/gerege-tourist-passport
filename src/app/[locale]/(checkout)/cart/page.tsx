@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import CheckoutLayout from "../checkout-layout";
 import OrderSummary from "@/components/order-summary/order-summary";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import CartPageContent from "./cart-page-content";
 import { useLocale } from "next-intl";
 

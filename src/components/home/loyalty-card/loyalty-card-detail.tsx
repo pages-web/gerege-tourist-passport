@@ -2,7 +2,7 @@
 import { Separator } from "@/components/ui/Separator";
 import { Button } from "@/components/ui/button";
 import { IKBCategoryDetail } from "@/types/kb.types";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import LoyaltyCardImage from "./loyalty-card-image";
 import { useEffect } from "react";

@@ -2,6 +2,7 @@
 
 import Heading from "@/components/heading/heading";
 import NewsAuthor from "@/components/news-author/news-author";
+import Image from "@/components/ui/image";
 import { getKbArticleDetail } from "@/sdk/queries/kb";
 import { IPageProps } from "@/types";
 import { useTranslations } from "next-intl";
@@ -44,6 +45,16 @@ const News = ({ params }: IPageProps) => {
       {news && (
         <div className="space-y-6">
           <Heading title={news.title} />
+          <div className="">
+            <Image
+              src={news.image}
+              alt={news.title}
+              width={2000}
+              height={1000}
+              quality={100}
+              className="w-full"
+            />
+          </div>
           <div className="text-base">
             <div dangerouslySetInnerHTML={{ __html: news.description }}></div>
             <div dangerouslySetInnerHTML={{ __html: news.content }}></div>

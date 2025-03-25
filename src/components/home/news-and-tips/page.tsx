@@ -20,7 +20,7 @@ const NewsAndTips = () => {
       id="news-and-tips"
       className="w-full overflow-hidden flex flex-col justify-between gap-14"
     >
-      <Heading title={t("title")} desc={t("description")} />
+      <Heading title={t("title")} desc={t("description")} data-aos="fade-up" />
 
       <NewsCarousel news={t("news")} />
     </div>

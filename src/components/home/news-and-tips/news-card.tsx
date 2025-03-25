@@ -5,7 +5,11 @@ import { IArticle } from "@/types/kb.types";
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 
-const NewsCard = (article: { title: string; description: string }) => {
+const NewsCard = (article: {
+  title: string;
+  description: string;
+  image: string;
+}) => {
   // const { _id, image, title, summary } = article;
   const router = useRouter();
   const locale = useLocale();
@@ -14,10 +18,10 @@ const NewsCard = (article: { title: string; description: string }) => {
       className="flex flex-col items-center gap-y-4 text-center md:mx-2 cursor-pointer"
       onClick={() => router.push(`${locale}/news/${article.title}`)}
     >
-      <div className="overflow-hidden rounded-full max-w-[185px] max-h-[185px]">
+      <div className="overflow-hidden rounded-full max-w-[185px] h-[185px]">
         <Image
           alt=""
-          src={""}
+          src={article.image || ""}
           width={185}
           height={185}
           className="w-full h-full"

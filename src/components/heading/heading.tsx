@@ -2,13 +2,14 @@ const Heading = ({
   title,
   desc,
   className,
+  ...props
 }: {
   title?: string;
   desc?: string;
   className?: string;
 }) => {
   return (
-    <div className={`text-center ${className}`}>
+    <div className={`text-center ${className}`} {...props}>
       <h1 className="text-[30px] font-bold uppercase text-[#1D2939]">
         {title}
       </h1>

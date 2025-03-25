@@ -20,23 +20,23 @@ import { EmblaCarouselType } from "embla-carousel";
 
 const slides = [
   {
-    backgroundImage: "/image/home-bg.jpg",
+    backgroundImage: "/image/pictures/cover_1.jpg",
     titleKey: "slide1_title",
     descriptionKey: "slide1_description",
   },
   {
-    backgroundImage: "/image/about-1.jpg",
-    titleKey: "",
+    backgroundImage: "/image/pictures/cover_2.jpg",
+    titleKey: "slide2_title",
     descriptionKey: "",
   },
   {
-    backgroundImage: "/image/about-1.jpg",
-    titleKey: "",
+    backgroundImage: "/image/pictures/cover_3.jpg",
+    titleKey: "slide3_title",
     descriptionKey: "",
   },
   {
-    backgroundImage: "/image/about-1.jpg",
-    titleKey: "",
+    backgroundImage: "/image/pictures/cover_4.jpg",
+    titleKey: "slide4_title",
     descriptionKey: "",
   },
 ];
@@ -47,18 +47,6 @@ const CarouselSection = () => {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: false }) as any
   );
-
-  const onNavButtonClick = useCallback((emblaApi: any) => {
-    const autoplay = emblaApi?.plugins()?.autoplay;
-    if (!autoplay) return;
-
-    const resetOrStop =
-      autoplay.options.stopOnInteraction === false
-        ? autoplay.reset
-        : autoplay.stop;
-
-    resetOrStop();
-  }, []);
 
   useEffect(() => {
     if (!api) {
@@ -78,25 +66,28 @@ const CarouselSection = () => {
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
       setApi={setApi}
+      data-aos="fade-up"
     >
       <CarouselContent>
         {slides.map((slide, index) => (
           <CarouselItem
             key={index}
-            className="relative w-full -z-10 overflow-hidden max-h-[800px]"
+            className="relative w-full -z-10 overflow-hidden max-h-[400px] lg:max-h-[850px]"
           >
             <Image
               src={slide.backgroundImage}
               alt={slide.titleKey}
-              width={1000}
-              height={700}
+              width={2000}
+              height={1000}
               quality={100}
-              className="w-full"
+              className="h-full xl:h-fit w-full"
             />
 
             <div className="w-full flex justify-center absolute bottom-0 left-0 py-10">
               <div className="bg-black/50 w-[80%] z-10 text-white p-6 rounded-2xl">
-                <h3 className="text-5xl font-bold">{t(slide.titleKey)}</h3>
+                <h3 className="text-xl lg:text-5xl font-bold">
+                  {t(slide.titleKey)}
+                </h3>
               </div>
             </div>
           </CarouselItem>

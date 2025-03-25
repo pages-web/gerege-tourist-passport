@@ -60,6 +60,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       <head>
         <link rel="icon" href={"/favicon.ico"} />
       </head>
+
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased flex flex-col",

@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import ResetPasswordForm from "@/containers/auth/reset-password";
-import Link from "next/link";
-import { Suspense } from "react";
+import { Link } from "@/navigation";import { Suspense } from "react";
 
 const ResetPassword = () => {
   return (

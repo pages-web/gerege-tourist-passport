@@ -19,12 +19,17 @@ export default function FAQ() {
       className="lg:px-40 md:px-10 px-0 flex flex-col items-center gap-y-8 md:gap-y-16"
       id="faq"
     >
-      <div className="space-y-5">
+      <div className="space-y-5" data-aos="fade-up">
         <h2 className="text-center uppercase text-[20px] md:text-[30px] text-[#1D2939] font-semibold">
           {t("title")}
         </h2>
       </div>
-      <Accordion type="single" collapsible className="w-full">
+      <Accordion
+        type="single"
+        collapsible
+        className="w-full"
+        data-aos="fade-up"
+      >
         {t("questions").map((item: any, index: number) => {
           return (
             <AccordionItem value={`item-${index}`} key={index}>

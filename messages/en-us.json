@@ -3,10 +3,10 @@
     "title": "GEREGE TOURIST PASSPORT LLC",
     "texts": [
       { "name": "Home", "href": "/" },
-      { "name": "About", "href": "/#about" },
-      { "name": "Gerege Benefit", "href": "/#gerege-benefit" },
-      { "name": "News And Tips", "href": "/#news-and-tips" },
-      { "name": "FAQ", "href": "/#faq" }
+      { "name": "About", "href": "#about" },
+      { "name": "Gerege Benefit", "href": "#gerege-benefit" },
+      { "name": "News And Tips", "href": "#news-and-tips" },
+      { "name": "FAQ", "href": "#faq" }
     ]
   },
 
@@ -14,11 +14,11 @@
     "slide1_title": "+1$ from every purchase will be donated to support children’s charity.",
 
     "slide1_description": "Explore all the best London attractions and activities, all for one low price.",
-    "slide2_title": "Discover London",
+    "slide2_title": "+1$ from every purchase will be donated to support children’s charity.",
     "slide2_description": "Experience the charm of London's iconic landmarks.",
-    "slide3_title": "Exclusive Offers",
+    "slide3_title": "+1$ from every purchase will be donated to support children’s charity.",
     "slide3_description": "Get special deals on top attractions.",
-    "slide4_title": "Plan Your Trip",
+    "slide4_title": "+1$ from every purchase will be donated to support children’s charity.",
     "slide4_description": "Organize your adventures in London.",
     "Buying now": "Buying now"
   },
@@ -55,6 +55,7 @@
     "Hotel": "Hotel",
     "Restaurant": "Restaurant",
     "ABOUT": "ABOUT",
+    "visitButton": "Visit website",
 
     "frees": [
       {
@@ -63,33 +64,39 @@
           {
             "title": "Chinggis Khaan National Museum",
             "description": "A state-of-the-art museum showcasing the history of Chinggis Khaan and the Mongol Empire. Features six floors of exhibitions, original artifacts, and AR/VR experiences. <br/>Hours: Summer 09:00-20:00, Winter 09:00-17:00 (Closed Tuesdays) <br/>Location: J Sambuu Street, Ulaanbaatar <br/>Phone: +976-7021-2222",
-            "path": "https://chinggismuseum.com/en/greetings"
+            "path": "https://chinggismuseum.com/en/greetings",
+            "image": "/image/pictures/museum_chinggis.jpg"
           },
           {
             "title": "National Museum of Mongolia",
             "description": "Preserves Mongolia’s rich history, attracting 100,000+ visitors annually. Exhibits traditional lifestyles, historical artifacts, and research presentations. <br/>Hours: Summer 09:00-21:00 (Winter TBD) <br/>Location: Ulaanbaatar <br/>Phone: +976-70110911",
-            "path": "http://en.nationalmuseum.mn/"
+            "path": "http://en.nationalmuseum.mn/",
+            "image": "/image/pictures/museum_national.jpg"
           },
           {
             "title": "Bogd Khaan Palace Museum",
             "description": "Former winter palace of Mongolia’s last king, featuring religious artifacts, royal collections, and historical items from the 17th-20th centuries. <br/>Hours: Summer 09:00-20:00, Winter 10:00-17:00 <br/>Location: Khan-Uul District, Ulaanbaatar <br/>Phone: +976-7011-0913",
-            "path": ""
+            "path": "",
+            "image": "/image/pictures/museum_bogd.jpg"
           },
           {
             "title": "Choijin Lama Temple Museum",
             "description": "A Buddhist temple complex housing 6,000+ artifacts, including 77 national treasures. <br/>Hours: Summer 09:00-18:00, Winter Tue-Sat 10:00-17:00 <br/>Location: Sukhbaatar District, Ulaanbaatar <br/>Phone: +976-7010-3232",
             "linkText": "Choijin Lama Temple Museum",
-            "path": "https://templemuseum.mn/en"
+            "path": "https://templemuseum.mn/en",
+            "image": "/image/pictures/museum_choijin.jpg"
           },
           {
             "title": "Fine Arts Zanabazar Museum",
             "description": "Displays Mongolian masterpieces, including sculptures, paintings, and cultural artifacts. <br/>Hours: Winter Mon-Fri 09:00-17:00, Sat-Sun 10:00-17:00 <br/>Location: Chingeltei District, Ulaanbaatar <br/>Phone: +976-11-323986",
-            "path": "https://www.facebook.com/zanabazarfam"
+            "path": "https://www.facebook.com/zanabazarfam",
+            "image": "/image/pictures/museum_zanabazar.jpg"
           },
           {
             "title": "Natural History Museum",
             "description": "Showcases Mongolia’s geological and paleontological wonders, including a Tarbosaurus skeleton. <br/>Hours: Summer 09:00-18:00, Winter Tue-Sun 09:00-18:00 (Closed Mondays) <br/>Location: Independence Square, Ulaanbaatar <br/>Phone: +976-7000-0171",
-            "path": "https://nhm.gov.mn/client/mn"
+            "path": "https://nhm.gov.mn/client/mn",
+            "image": "/image/pictures/museum_natural.jpg"
           }
         ]
       },
@@ -100,7 +107,8 @@
             "title": "Data sim card",
             "description": "The national operator G-Mobile, provides a physical SIM card with reliable high-speed internet service across Ulaanbaatar, 21 provinces, and 316 towns, making it the ideal choice for travelers.",
             "content": "Offer Details: <br />Data Package: 16GB + unlimited data (up to 1Mbps speed) <br />Duration: 14 days <br />Extra Credit: 7000 MNT = 100 minutes of talk time <br/>The duration starts from the day you activate the SIM card on your phone. If the data or duration runs out, you can easily recharge for extra credit. <br/>Enjoy seamless travel with G-Mobile, your reliable companion in Mongolia!",
-            "path": "https://gmobile.mn/"
+            "path": "https://gmobile.mn/",
+            "image": "/image/pictures/data_sim.jpg"
           }
         ]
       },
@@ -111,7 +119,8 @@
             "title": "HushKhan - Mongolian Natural Pine nuts",
             "description": "Receive a 10g package of Hushhan pine nuts as a complimentary gift when purchasing from Gerege Passport.",
             "content": "<b>About the Pine Nuts:</b> The pine nuts are sourced from wild pine trees in Mongolia's untouched forests. These pine nuts thrive in Mongolia's harsh and extreme climate, which allows them to develop high concentrations of essential nutrients and proteins. <br/><b>Harvesting and Processing:</b> The pine nuts are harvested in accordance with legal timelines, processed at a facility that meets ISO 9001:2015, ISO 22000:2018, and HACCP standards. They undergo 20 stages of cleaning and sorting in a factory across three production lines before being packaged and delivered to customers. <br/><b>Organic Certification:</b> Hushhan brand pine nuts are certified organic under Mongolia's organic standards and have also become the first in Mongolia to meet the European Union organic certification standards.",
-            "path": "https://hushkhan.mn/"
+            "path": "https://hushkhan.mn/",
+            "image": "/image/pictures/khushkhan.jpg"
           }
         ]
       },
@@ -122,7 +131,8 @@
             "title": "Free Coffee or Water at All CU Branches",
             "description": "Enjoy a free drink at any CU store near you! You can choose from any variety of Get coffee (one time only) or receive a 500ml bottled water for free.",
             "content": "",
-            "path": ""
+            "path": "",
+            "image": "/image/pictures/cu_coffee_water.jpg"
           }
         ]
       },
@@ -133,7 +143,8 @@
             "title": "Mongolian traditional costume rental service",
             "description": "The Mongolian Costume Rental Service has been operating in a specially designed Mongolian ger. Offering both traditional and modern Mongolian attire, including hats, shoes, and accessories, customers can dress up in full outfits and record their experience with a 360-degree rotating camera inside the ger.",
             "content": "The Mongolian Costume Rental Service has been operating in a specially designed Mongolian ger. Offering both traditional and modern Mongolian attire, including hats, shoes, and accessories, customers can dress up in full outfits and record their experience with a 360-degree rotating camera inside the ger. <br/>Additionally, enjoy free entry to the Bogd Khaan Palace Museum and the chance to take photos around the museum grounds. <br/>Unique Advantage: To ensure comfort, hygiene, and safety, each customer is provided with a single-use thin garment before wearing the traditional attire. </br>Address: The front square of Evseg Cashmere Factory Store,Bogd Khaan Palace Museum Street, Ulaanbaatar 17040 </br>Phone: +976 7777-1214",
-            "path": ""
+            "path": "",
+            "image": "/image/pictures/mongolian_costume_rental.jpg"
           }
         ]
       },
@@ -144,7 +155,8 @@
             "title": "Jet Scooter 5000 MNT Credit",
             "description": "Jet Sharing Mongolia is the first and largest scooter rental service in Mongolia, offering scooters at a rate of  350 MNT per minute.",
             "content": "How to Use the Scooter: <br/> 1. Download the App: Install the Jet Scooter app from Appstore or Playstore. </br> 2. Register: Sign up as a user in the app. <br/>3. Top-Up Your Wallet: Tap on the Wallet section in the menu (bottom left) and add credit (minimum 4000 MNT). <br/>4. Scan the QR Code: Scan the QR code on the scooter with the Jet app to begin your ride. <br /> 5. Choose Your Tariff: Select your preferred tariff and press the Start button to begin your journey.<br/>6. End Your Ride: You can end your ride at any scooter station marked with the letter \"P\" on the map.Rules:\\nFollow Traffic Rules: Park your scooter in a way that does not block others and always comply with road regulations.</br>Restricted Areas: Do not enter areas marked in red on the map.</br>Age Limit: Only individuals aged 18 or older are permitted to rent scooters.</br>One Rider Per Scooter: It is prohibited to have more than one person riding a scooter.</br>Safety First: Always walk your scooter safely when crossing streets.</br>Important Note: Violating the usage rules may result in your account being suspended.",
-            "path": ""
+            "path": "",
+            "image": "/image/pictures/jet_scooter.jpg"
           }
         ]
       },
@@ -155,7 +167,8 @@
             "title": "UB Cab 10,000 Credit",
             "description": "UB Cab is an online taxi service operating in Ulaanbaatar and some provinces. The company provides services based on advanced GPS and smart payment systems. (ubcab.mn)",
             "content": "UB Cab Services:<br/>Taxi Service: Customers can book a taxi through the UBCab application.<br/>Call Driver Service: If you prefer to use your own car, you can request a call driver.<br/>Express Delivery: Fast and reliable delivery of goods and other items. (ubcab.mn)<br/>Car Rental: Short-term vehicle rental options are available.<br/>You can download the UB Cab app from the following link: UBCab - Apps on Google Play",
-            "path": ""
+            "path": "",
+            "image": "/image/pictures/ub_cab.jpeg"
           }
         ]
       },
@@ -166,7 +179,8 @@
             "title": "50% Off on Mongolian Scratch Map",
             "description": "Get a 50% discount on the highly educational Mongolian Scratch Map, which allows you to scratch off and mark the provinces and towns you have visited in Mongolia.",
             "content": "This map is perfect for travelers to document their journeys and discover the diverse regions of Mongolia.<br/>You can purchase the map directly from the Mongolian Traditional Costume Rental location.<br/>Address: The front square of Evseg Cashmere Factory Store,Bogd Khaan Palace Museum Street, Ulaanbaatar 17040<br/>Phone: +976 7777-1214",
-            "path": ""
+            "path": "",
+            "image": "/image/pictures/scratch_map.jpg"
           }
         ]
       },
@@ -177,7 +191,8 @@
             "title": "Free Gerege Keychain and Card Holder Gift",
             "description": "Receive a Gerege keychain and a high-quality leather card holder as a special gift!",
             "content": "The Gerge, once used, can be repurposed as a souvenir or keychain strap, making it a smart and cost-effective choice. We are confident that this practical and versatile gift will be a valuable addition for any recipient.",
-            "path": ""
+            "path": "",
+            "image": "/image/pictures/gerege_keychain.jpg"
           }
         ]
       }
@@ -190,12 +205,14 @@
           {
             "title": "Modern Nomads",
             "description": "Established in 2003, renowned for blending modern food technology with authentic Mongolian cuisine. Popular among locals and international visitors.",
-            "path": "https://modernnomads.mn"
+            "path": "https://modernnomads.mn",
+            "image": "/image/pictures/modern_nomads.gif"
           },
           {
             "title": "Yuna Korean Restaurant",
             "description": "YUNA offers a unique blend of traditional Korean cuisine with modern global trends in a family-friendly setting.",
-            "path": "https://yuna.mn"
+            "path": "https://yuna.mn",
+            "image": "/image/pictures/yuna.png"
           }
         ]
       },
@@ -205,17 +222,20 @@
           {
             "title": "Blue Sky Hotel & Tower",
             "description": "A luxury hotel with 200 elegantly designed rooms, an Executive Club Lounge, and premium dining experiences.",
-            "path": "https://blueskyhotel.mn"
+            "path": "https://blueskyhotel.mn",
+            "image": "/image/pictures/hotel_blue_sky.jpg"
           },
           {
             "title": "Ramada UB City Center Hotel",
             "description": "A 4-star international hotel offering panoramic views of Bogd Khan Mountain and the city.",
-            "path": "https://ramadaub.mn"
+            "path": "https://ramadaub.mn",
+            "image": "/image/pictures/hotel_ramada.jpg"
           },
           {
             "title": "Bayangol Hotel",
             "description": "A 4-star business hotel with 211 rooms, multiple restaurants, and event spaces in central Ulaanbaatar.",
-            "path": "https://bayangolhotel.mn"
+            "path": "https://bayangolhotel.mn",
+            "image": "/image/pictures/hotel_bayangol.jpg"
           }
         ]
       },
@@ -225,17 +245,20 @@
           {
             "title": "Bayangol Resort",
             "description": "Located in Tsonjin Boldog, near the Chinggis Statue Complex, Bayangol Resort offers wellness, outdoor adventures, and hospitality.",
-            "path": "https://bayangolresort.mn"
+            "path": "https://bayangolresort.mn",
+            "image": "/image/pictures/camp_bayangol.jpg"
           },
           {
             "title": "Red Rock Resort Mongolia",
             "description": "Located in Gorkhi-Terelj National Park, featuring a conference center, leisure activities, and modern accommodations.",
-            "path": "https://redrockresort.mn"
+            "path": "https://redrockresort.mn",
+            "image": "/image/pictures/resort_red_rock.jpg"
           },
           {
             "title": "Ar Davhar Peninsula Eco Tourist Camp",
             "description": "Situated on the east shore of Lake Khuvsgul, offering a tranquil escape surrounded by nature and wildlife.",
-            "path": "https://ardavharecocamp.mn"
+            "path": "https://ardavharecocamp.mn",
+            "image": "/image/pictures/resort_bayangol.jpg"
           }
         ]
       },
@@ -245,32 +268,38 @@
           {
             "title": "Nomin Holding / Nomin Supermarket /",
             "description": "One of Mongolia’s largest retail chains, offering a variety of products at competitive prices.",
-            "path": "https://nomin.mn"
+            "path": "https://nomin.mn",
+            "image": "/image/pictures/nomin.png"
           },
           {
             "title": "Emart",
             "description": "A leading international supermarket chain providing groceries, electronics, and household goods.",
-            "path": "https://emart.mn"
+            "path": "https://emart.mn",
+            "image": "/image/pictures/emart.png"
           },
           {
             "title": "CU Mongolia",
             "description": "A convenience store chain offering food, beverages, and daily necessities across Mongolia.",
-            "path": "https://cu.mn"
+            "path": "https://cu.mn",
+            "image": "/image/pictures/cu.jpg"
           },
           {
             "title": "GS25",
             "description": "A well-known South Korean convenience store chain now available in Mongolia.",
-            "path": "https://gs25.mn"
+            "path": "https://gs25.mn",
+            "image": "/image/pictures/gs.jfif"
           },
           {
             "title": "Evseg Cashmere",
             "description": "Premium Mongolian cashmere brand offering high-quality garments and accessories.",
-            "path": "https://evsegcashmere.mn"
+            "path": "https://evsegcashmere.mn",
+            "image": "/image/pictures/evseg.jpg"
           },
           {
             "title": "Urban Jeans",
             "description": "A popular Mongolian denim brand specializing in stylish and durable jeans.",
-            "path": "https://urbanjeans.mn"
+            "path": "https://urbanjeans.mn",
+            "image": "/image/pictures/urban.jpg"
           }
         ]
       }
@@ -283,43 +312,53 @@
     "news": [
       {
         "title": "Khuvsgul Lake",
-        "description": "Often referred to as the 'Switzerland of Mongolia,' Khuvsgul Lake boasts crystal-clear waters surrounded by majestic mountains and dense forests. It is a popular destination for nature lovers and outdoor enthusiasts."
+        "description": "Often referred to as the 'Switzerland of Mongolia,' Khuvsgul Lake boasts crystal-clear waters surrounded by majestic mountains and dense forests. It is a popular destination for nature lovers and outdoor enthusiasts.",
+        "image": "/image/pictures/khuvsgul.jpg"
       },
       {
         "title": "Orkhon Valley",
-        "description": "A UNESCO World Heritage site, the Orkhon Valley is rich in history and culture. It features notable landmarks such as the Orkhon Waterfall, the ancient city of Kharkhorin, and the Erdene Zuu Monastery, offering a glimpse into Mongolia's past."
+        "description": "A UNESCO World Heritage site, the Orkhon Valley is rich in history and culture. It features notable landmarks such as the Orkhon Waterfall, the ancient city of Kharkhorin, and the Erdene Zuu Monastery, offering a glimpse into Mongolia's past.",
+        "image": "/image/pictures/orkhonii_khundii.jpg"
       },
       {
         "title": "Gobi Three Beauties",
-        "description": "Located in Umnugobi Province, this stunning natural area includes breathtaking attractions like Yolyn Am, the Dungenee Rock, and the Khongoryn Els sand dunes, showcasing the unique beauty of the Gobi Desert."
+        "description": "Located in Umnugobi Province, this stunning natural area includes breathtaking attractions like Yolyn Am, the Dungenee Rock, and the Khongoryn Els sand dunes, showcasing the unique beauty of the Gobi Desert.",
+        "image": "/image/pictures/govi_gurvan_saikhan.jpg"
       },
       {
         "title": "Khorgo and Terkhiin Tsagaan Lake",
-        "description": "This region in Arkhangai Province features a volcanic crater, unique geological formations, and pristine freshwater lakes, making it an ideal spot for hiking and exploring nature."
+        "description": "This region in Arkhangai Province features a volcanic crater, unique geological formations, and pristine freshwater lakes, making it an ideal spot for hiking and exploring nature.",
+        "image": "/image/pictures/khorgiin_togoo.jpg"
       },
       {
         "title": "Altai Tavan Bogd",
-        "description": "Situated in western Mongolia, Altai Tavan Bogd is known for its majestic mountains, glacial rivers, and the rich cultural heritage of the nomadic Kazakh people, making it a stunning destination for adventure seekers."
+        "description": "Situated in western Mongolia, Altai Tavan Bogd is known for its majestic mountains, glacial rivers, and the rich cultural heritage of the nomadic Kazakh people, making it a stunning destination for adventure seekers.",
+        "image": "/image/pictures/altai_tavan_bogd.jpg"
       },
       {
         "title": "Amarbayasgalant Monastery",
-        "description": "As one of the largest and oldest monasteries in Mongolia, Amarbayasgalant is a remarkable architectural site that preserves cultural heritage and offers a serene atmosphere for visitors."
+        "description": "As one of the largest and oldest monasteries in Mongolia, Amarbayasgalant is a remarkable architectural site that preserves cultural heritage and offers a serene atmosphere for visitors.",
+        "image": "/image/pictures/amarbayasgalan_khiid.jpeg"
       },
       {
         "title": "Uvs Lake",
-        "description": "A UNESCO-listed area, the Uvs Lake Basin features a unique landscape that combines steppes, desert, and mountainous regions, providing diverse habitats for wildlife."
+        "description": "A UNESCO-listed area, the Uvs Lake Basin features a unique landscape that combines steppes, desert, and mountainous regions, providing diverse habitats for wildlife.",
+        "image": "/image/pictures/uvs_ai_sav.jpg"
       },
       {
         "title": "Khustain Nuruu",
-        "description": "Home to the endangered Przewalski's horse, Khustain Nuruu is a protected area dedicated to the conservation and breeding of this rare species in its natural habitat."
+        "description": "Home to the endangered Przewalski's horse, Khustain Nuruu is a protected area dedicated to the conservation and breeding of this rare species in its natural habitat.",
+        "image": "/image/pictures/khustain_nuruu.jpg"
       },
       {
         "title": "Burkan Khaldun Mountain",
-        "description": "Known as the birthplace of Genghis Khan, Burkan Khaldun Mountain is one of Mongolia's most sacred sites, rich in historical significance and natural beauty."
+        "description": "Known as the birthplace of Genghis Khan, Burkan Khaldun Mountain is one of Mongolia's most sacred sites, rich in historical significance and natural beauty.",
+        "image": "/image/pictures/burkhan_khaldun.jpg"
       },
       {
         "title": "Ogii Lake",
-        "description": "Located in Arkhangai Province, Ogii Lake is a picturesque destination ideal for fishing and birdwatching, featuring clear waters and a tranquil environment."
+        "description": "Located in Arkhangai Province, Ogii Lake is a picturesque destination ideal for fishing and birdwatching, featuring clear waters and a tranquil environment.",
+        "image": "/image/pictures/ugii_nuur.jpg"
       }
     ]
   },
@@ -418,69 +457,6 @@
             "icon": "instagram"
           }
         ]
-      }
-    ]
-  },
-
-  "AboutGeregePassport": {
-    "title": "GEREGE TOURIST PASSPORT",
-    "subtitle": "Must-have item for travel Mongolia",
-    "today": "GEREGE Today",
-    "description": "Even today, the spirit of the ancient Gerege lives on through the Gerege Passport, offering special privileges and exclusive benefits in Mongolia. Own a piece of this historical tradition by purchasing your Gerege Passport for just $55 and enjoy its modern-day advantages.",
-    "buttonDescription": "$1 from every purchase is donated to support children with special needs at the 10th Kindergarten."
-  },
-  "AboutGeregeHistory": {
-    "title": "GEREGE in History",
-    "description": "In the 13th century, during the reign of Genghis Khan, the Gerege gold badge served as a passport for travelers and royal messengers. Holding the badge ensured them unhindered travel and facilitated access to goods and services from local communities."
-  },
-  "AboutHowToUse": {
-    "title": "How to use:",
-    "subtitle": "Just show your GEREGE",
-    "freeToursTitle": "Free Featured Tours Include:",
-    "museums": {
-      "title": "Museums in Mongolia:",
-      "list": [
-        "Chinggis Khaan National Museum",
-        "National Museum of Mongolia",
-        "Choijin Lama Temple Museum",
-        "Bogd Khaan Palace Museum",
-        "The Fine Arts Zanabazar Museum",
-        "The Natural History Museum of Mongolia"
-      ]
-    },
-    "culturalExperiences": {
-      "title": "Cultural Experiences:",
-      "list": [
-        "Tumen Ekh Folk Song and Dance Ensemble Performance",
-        "Gandantegchilen Monastery",
-        "Genghis Khan Equestrian Statue"
-      ]
-    },
-    "exclusiveOffers": {
-      "title": "Exclusive Offers:",
-      "list": [
-        "Mongolian Traditional Costume Rental at Mongolia Last King’s Palace Museum",
-        "Unlimited Data SIM with 20GB 7000₮ units",
-        "Multiple free entries to \"ZU\" Nightclub, UB’s premier nightlife spot *entry fee required at all nightclubs in UB",
-        "5000₮ voucher for Jet Scooter rental",
-        "Complimentary YANMAL Mongolian Camel Wool Socks",
-        "Free coffee (1) at CU convenience stores",
-        "Complimentary HUSHKHAN Mongolian Natural Pine Nuts"
-      ]
-    }
-  },
-  "AboutDiscounts": {
-    "title": "Exclusive Discounts",
-    "discover": "Discover",
-    "discounts": [
-      {
-        "description": "\"Modern Nomads\" Mongolian chain restaurants"
-      },
-      {
-        "description": "\"Yuna\" Korean chain restaurants"
-      },
-      {
-        "description": "\"Evseg Mongolian Premium Cashmere\" stores"
       }
     ]
   }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import CheckIcon from "@mui/icons-material/Check";
 import { Input } from "@/components/ui/input";

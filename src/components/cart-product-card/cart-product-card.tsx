@@ -1,5 +1,4 @@
 import { IProduct } from "@/types/product.types";
-import Link from "next/link";
 import Image from "../ui/image";
 import { TagIcon } from "lucide-react";
 import { Button } from "../ui/button";

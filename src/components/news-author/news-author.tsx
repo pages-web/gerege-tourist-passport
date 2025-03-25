@@ -1,7 +1,7 @@
 import { IArticle } from "@/types/kb.types";
 import { Facebook, Instagram } from "@mui/icons-material";
 import { formatDate } from "date-fns";
-import Link from "next/link";
+import { Link } from "@/navigation";
 
 const NewsAuthor = (article: IArticle) => {
   const TitleText = ({ title, text }: { title: string; text: string }) => {

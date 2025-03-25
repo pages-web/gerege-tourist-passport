@@ -1,7 +1,7 @@
 "use client";
 import React, { ReactNode } from "react";
 import Image from "../ui/image";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MailIcon from "@mui/icons-material/Mail";
 import LocationOnIcon from "@mui/icons-material/LocationOn";

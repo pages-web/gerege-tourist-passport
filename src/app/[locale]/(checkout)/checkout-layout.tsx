@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import PrivateRoute from "@/containers/auth/private-route";
 import CheckoutRoute from "@/containers/orders/checkout-route";
 import { ArrowLeftIcon } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/navigation";
 
 const CheckoutLayout = ({
   children,

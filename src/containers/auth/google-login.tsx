@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { useEffect, useState } from "react";
 
 const GoogleLogin = () => {
