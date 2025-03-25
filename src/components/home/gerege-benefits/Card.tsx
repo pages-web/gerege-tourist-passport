@@ -51,10 +51,7 @@ const Card: React.FC<CardProps> = ({
       whileHover="hover"
       {...props}
     >
-      <Link
-        href={`/${locale}/benefits/${encodeURIComponent(link)}`}
-        className="h-full"
-      >
+      <Link href={`/benefits/${encodeURIComponent(link)}`} className="h-full">
         <div className="w-full p-3 md:p-6 flex flex-col items-center gap-3">
           <Image alt="" src={imageSrc} width={32} height={32} />
           <div
