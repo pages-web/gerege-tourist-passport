@@ -27,24 +27,26 @@ export const revalidate = 300;
 
 export async function generateMetadata(): Promise<Metadata> {
   const { config } = await getConfig();
-  const { pdomain, name, description, uiOptions } = config || {};
+  // const { pdomain, name, description, uiOptions } = config || {};
 
   return {
-    metadataBase: new URL(pdomain || "https://www.erxes.io"),
-    title: name,
-    description,
+    metadataBase: new URL("https://www.erxes.io"),
+    title: "Gerege Tourist Passport",
+    description:
+      "The Gerege Tourist Passport is a modern travel document and travel log inspired by the Gerege, a diplomatic pass used during the Mongol Empire.",
     openGraph: {
-      title: name,
-      description,
+      title: "Gerege Tourist Passport",
+      description:
+        "The Gerege Tourist Passport is a modern travel document and travel log inspired by the Gerege, a diplomatic pass used during the Mongol Empire.",
       images: [
         {
-          url: uiOptions?.logo,
+          url: "/image/pictures/cover_2.jpg",
           width: 800,
           height: 600,
-          alt: name,
+          alt: "Gerege Tourist Passport",
         },
       ],
-      url: pdomain,
+      // url: pdomain,
       type: "website",
     },
   };
@@ -58,7 +60,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href={"/favicon.ico"} />
+        <link rel="icon" href="/favicon.ico" />
       </head>
 
       <body
