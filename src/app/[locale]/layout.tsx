@@ -26,11 +26,7 @@ interface RootLayoutProps {
 export const revalidate = 300;
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { config } = await getConfig();
-  // const { pdomain, name, description, uiOptions } = config || {};
-
   return {
-    metadataBase: new URL("https://www.erxes.io"),
     title: "Gerege Tourist Passport",
     description:
       "The Gerege Tourist Passport is a modern travel document and travel log inspired by the Gerege, a diplomatic pass used during the Mongol Empire.",
@@ -40,14 +36,21 @@ export async function generateMetadata(): Promise<Metadata> {
         "The Gerege Tourist Passport is a modern travel document and travel log inspired by the Gerege, a diplomatic pass used during the Mongol Empire.",
       images: [
         {
-          url: "/image/pictures/cover_2.jpg",
+          url: "/image/pictures/cover_2.jpg", // Adjust the path if necessary
           width: 800,
           height: 600,
           alt: "Gerege Tourist Passport",
         },
       ],
-      // url: pdomain,
       type: "website",
+      siteName: "Gerege Tourist Passport", // Include site name for consistency
+    },
+    twitter: {
+      card: "summary_large_image", // Twitter card type
+      title: "Gerege Tourist Passport",
+      description:
+        "The Gerege Tourist Passport is a modern travel document and travel log inspired by the Gerege, a diplomatic pass used during the Mongol Empire.",
+      images: "/image/pictures/cover_2.jpg", // Twitter-specific image path
     },
   };
 }
