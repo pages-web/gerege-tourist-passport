@@ -19,8 +19,8 @@ export default function Header() {
           </Link>
           <div className="lg:flex justify-between items-center text-center gap-8 hidden">
             <HeaderTexts />
-            {/* <GeregeButton className="text-[16px]" /> */}
-            {/* <CurrentUser /> */}
+            <GeregeButton className="text-[16px]" />
+            <CurrentUser />
           </div>
           <div className="lg:hidden flex gap-3">
             {/* <CurrentUser /> */}

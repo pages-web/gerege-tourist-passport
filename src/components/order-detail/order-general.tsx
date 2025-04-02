@@ -22,7 +22,7 @@ const OrderGeneral = () => {
       <CardHeader className="justify-between flex-row items-center md:py-3 space-y-0 md:space-y-2 mb-2">
         <div>
           <div className="text-white/60 font-medium text-nowrap md:text-[14px] text-[12px]">
-            Захиалгын дугаар
+            Order number
           </div>
           <div className="font-semibold md:font-bold text-base md:text-lg">
             {number}

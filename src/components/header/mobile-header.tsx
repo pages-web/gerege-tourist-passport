@@ -10,9 +10,11 @@ import { Link } from "@/navigation";
 import { Separator } from "../ui/Separator";
 import GeregeButton from "../gerege-button/gerege-button";
 import { useTranslations } from "next-intl";
+import CurrentUser from "@/containers/auth/current-user";
 
 const MobileMenu = () => {
   const t = useTranslations("Header").raw;
+
   return (
     <Sheet>
       <SheetTrigger>
@@ -28,22 +30,23 @@ const MobileMenu = () => {
         <Separator className="my-3" />
 
         <div className="flex flex-col items-end gap-3">
-          {t("texts").map((item: any, index: number) => {
-            return (
-              <SheetClose key={index} asChild>
-                <Link
-                  href={item.href}
-                  className="text-[20px] font-semibold text-gray-600"
-                  type="submit"
-                >
-                  {item.name}
-                </Link>
-              </SheetClose>
-            );
-          })}
-          {/* <SheetClose>
+          {t("texts").map((item: any, index: number) => (
+            <SheetClose key={index}>
+              <Link
+                href={item.href}
+                className="text-[20px] font-semibold text-gray-600"
+              >
+                {item.name}
+              </Link>
+            </SheetClose>
+          ))}
+          <SheetClose>
             <GeregeButton />
-          </SheetClose> */}
+          </SheetClose>
+
+          <Separator />
+
+          <CurrentUser />
         </div>
       </SheetContent>
     </Sheet>

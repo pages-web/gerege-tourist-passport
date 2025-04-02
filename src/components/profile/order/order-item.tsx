@@ -29,7 +29,7 @@ const OrderItem = ({
         <div className="flex flex-1 items-start md:items-center">
           <div className="text-left space-y-0.5 w-5/12 ">
             <div className="text-black/60 group-hover:text-white/80">
-              Захиалгын дугаар
+              Order number
             </div>
             <h2 className="md:text-base group-hover:text-white">{number}</h2>
           </div>
@@ -64,8 +64,13 @@ const OrderItem = ({
             ))}
         </div>
         <div className="text-right md:w-2/12 md:mr-4">
-          <div className="text-black/60 group-hover:text-white/80">Захиалгын дүн</div>
-          <Price className="text-base group-hover:text-white" amount={totalAmount} />
+          <div className="text-black/60 group-hover:text-white/80">
+            Order amount
+          </div>
+          <Price
+            className="text-base group-hover:text-white"
+            amount={totalAmount}
+          />
         </div>
       </Link>
     </Button>
