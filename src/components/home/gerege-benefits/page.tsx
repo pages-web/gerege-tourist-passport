@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Card from "./Card";
 import { useParams } from "next/navigation";
@@ -7,13 +7,40 @@ import { useLocale, useTranslations } from "next-intl";
 import Heading from "@/components/heading/heading";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import FaqTab from "../faq/faq-tab";
+import CategoryCard from "./category-card";
+import { useQuery } from "@apollo/client";
+import { queries } from "@/sdk/graphql/cms";
+import { ICmsCategory } from "@/types/cms.types";
+import { useCmsCategories, useCmsTags } from "@/sdk/hooks/cms";
+import { Loading } from "@/components/ui/loading";
 
 export default function Benefits() {
   const locale = useLocale();
   const tabs = locale === "kr" ? ["무료", "할인"] : ["Free", "Discount"];
-  const params = useParams();
   const t = useTranslations("Gerege Tour Card Benefits").raw;
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
+  const [timestamp, setTimestamp] = useState(Date.now());
+
+  const { cmsCategories } = useCmsCategories();
+  const { cmsTags } = useCmsTags();
+
+  const freeCmsCategories = cmsCategories.filter(
+    (category) =>
+      category.slug === "transport" ||
+      category.slug === "traditional-costume-rental" ||
+      category.slug === "museum" ||
+      category.slug === "gift" ||
+      category.slug === "data-sim"
+  );
+
+  const discountCmsCategories = cmsCategories.filter(
+    (category) =>
+      category.slug !== "transport" &&
+      category.slug !== "traditional-costume-rental" &&
+      category.slug !== "museum" &&
+      category.slug !== "gift" &&
+      category.slug !== "data-sim"
+  );
 
   return (
     <>
@@ -21,148 +48,66 @@ export default function Benefits() {
         <Heading title={t("title")} desc={t("subtitle")} data-aos="fade-up" />
 
         <div className="flex justify-center" data-aos="fade-up">
-          {tabs.map((tab, index) => {
-            return (
-              <FaqTab
-                title={tab}
-                key={index}
-                isActive={selectedTab === tab}
-                onClick={() => setSelectedTab(tab)}
-              />
-            );
-          })}
+          <Tabs
+            value={selectedTab}
+            onValueChange={(value) => {
+              setSelectedTab(value), setTimestamp(Date.now());
+            }}
+            className="items-center"
+          >
+            <TabsList className="rounded-3xl">
+              {cmsTags?.map((tag, index) => {
+                return (
+                  <TabsTrigger
+                    key={index}
+                    value={tag.name}
+                    className="flex gap-2 rounded-3xl"
+                  >
+                    <div className="w-6 h-6">
+                      <Image
+                        src={
+                          tag.name === "Free"
+                            ? "/image/tabs/free.png"
+                            : "/image/tabs/discount.png"
+                        }
+                        width={100}
+                        height={100}
+                        quality={100}
+                        alt=""
+                        className="w-full h-full"
+                      />
+                    </div>
+
+                    {tag.name}
+                  </TabsTrigger>
+                );
+              })}
+            </TabsList>
+          </Tabs>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 content-stretch">
-          {(selectedTab === "Free" || selectedTab === "무료") &&
-            t("frees").map((parentItem: any, index: number) =>
-              parentItem.list.map((item: any, index: number) => (
-                <Card
-                  imageSrc={
-                    parentItem.title === "museums"
-                      ? "/image/museum.png"
-                      : "/image/flag.png"
-                  }
-                  title={item.title}
-                  description={item.description}
-                  link={item.title}
-                  parentTitle={parentItem.title}
-                  bgImage={item.image}
-                  key={index}
-                  data-aos="fade-up"
+        <div
+          className="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-10 content-stretch"
+          data-aos="fade-up"
+        >
+          {selectedTab === "Free"
+            ? [...freeCmsCategories, { _id: "", name: "", slug: "" }]?.map(
+                (category) => (
+                  <CategoryCard
+                    category={category}
+                    timestamp={timestamp}
+                    key={category.slug}
+                  />
+                )
+              )
+            : discountCmsCategories?.map((category) => (
+                <CategoryCard
+                  category={category}
+                  timestamp={timestamp}
+                  key={category.slug}
                 />
-              ))
-            )}
-          {(selectedTab === "Discount" || selectedTab === "할인") &&
-            t("discounts").map((parentItem: any, index: number) =>
-              parentItem.list.map((item: any, index: number) => (
-                <Card
-                  imageSrc={
-                    parentItem.title === "restaurants"
-                      ? "/image/restaurant-icon.png"
-                      : parentItem.title === "hotels" ||
-                        parentItem.title === "camps"
-                      ? "/image/hotel-icon.png"
-                      : "/image/flag.png"
-                  }
-                  title={item.title}
-                  description={item.description}
-                  link={item.title}
-                  parentTitle={parentItem.title}
-                  bgImage={item.image}
-                  key={index}
-                />
-              ))
-            )}
+              ))}
         </div>
-
-        {/* <div className="w-full lg:flex items-center justify-between gap-10 relative overflow-hidden">
-          <div className="flex items-center justify-center gap-6">
-            <div className="flex flex-col gap-6 lg:gap-y-10">
-              <Card
-                imageSrc="/image/flag.png"
-                title="Culture"
-                descriptionKey="CultureDescription"
-                link={`/benefits-info`}
-              />
-              <Card
-                imageSrc="/image/museum.png"
-                title="Museum"
-                descriptionKey="MuseumDescription"
-                link={`/benefits-info`}
-              />
-            </div>
-
-            <div className="flex flex-col gap-6 lg:gap-y-40">
-              <Card
-                imageSrc="/image/museum.png"
-                title="Museum"
-                descriptionKey="MuseumDescription"
-                link={`/benefits-info`}
-              />
-              <Card
-                imageSrc="/image/museum.png"
-                title="Museum"
-                descriptionKey="MuseumDescription"
-                link={`/benefits-info`}
-              />
-            </div>
-          </div>
-
-
-          <div className="flex justify-center items-center lg:mx-20 my-20 lg:my-0">
-            <Image
-              alt=""
-              src="/image/benefit-spin-1.png"
-              height={550}
-              width={500}
-              className="h-fit absolute animate-spin-slow z-10"
-            />
-            <div className="w-[100px] md:w-[160px] ">
-              <Image
-                alt=""
-                src="/image/paiz-1.png"
-                width={160}
-                height={300}
-                className="w-[100px] md:w-[160px] "
-              />
-            </div>
-          </div>
-
-
-          <div className="flex items-center justify-center gap-6">
-            <div className="flex flex-col gap-6 lg:gap-40">
-              <Card
-                imageSrc="/image/hotel-icon.png"
-                title="Hotel"
-                descriptionKey="HotelDescription"
-                link={`/benefits-info`}
-              />
-              <Card
-                imageSrc="/image/restaurant-icon.png"
-                title="Restaurant"
-                descriptionKey="RestaurantDescription"
-                link={`/benefits-info`}
-              />
-            </div>
-
-            <div className="flex flex-col gap-6 lg:gap-10">
-              <Card
-                imageSrc="/image/museum.png"
-                title="Museum"
-                descriptionKey="MuseumDescription"
-                link={`/benefits-info`}
-              />
-              <Card
-                imageSrc="/image/museum.png"
-                title="Museum"
-                descriptionKey="MuseumDescription"
-                link={`/benefits-info`}
-              />
-            </div>
-          </div>
-        </div>
-        */}
       </div>
     </>
   );

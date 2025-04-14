@@ -9,7 +9,7 @@ export interface CommonParams {
   variables?: QueryOptions["variables"];
 }
 
-export type IAttachment = { url?: string } | null;
+export type IAttachment = { url?: string; name: string } | null;
 export type ICreatedUser = {
   _id: string;
   username: string;

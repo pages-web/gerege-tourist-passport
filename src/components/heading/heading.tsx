@@ -14,7 +14,7 @@ const Heading = ({
         {title}
       </h1>
       <p
-        className="text-[#475467] text-[18px]"
+        className="text-[#6399CE] text-[18px]"
         dangerouslySetInnerHTML={{ __html: desc || "" }}
       ></p>
     </div>

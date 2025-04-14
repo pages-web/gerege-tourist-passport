@@ -1,4 +1,4 @@
-import { Inter as FontSans } from "next/font/google";
+import { Inter as FontSans, Monda } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { cn, getSimilarColorWithOpacity, hexToHsl } from "@/lib/utils";
@@ -13,11 +13,6 @@ import Header from "@/components/header/page";
 import DefaultLayout from "@/components/layouts";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-
-export const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -55,10 +50,15 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+const monda = Monda({
+  subsets: ["latin"],
+  weight: ["400", "700"], // Monda supports 400 and 700
+  display: "swap",
+});
+
 export default async function RootLayout({ children }: RootLayoutProps) {
   const messages = await getMessages();
   const { config } = await getConfig();
-  const { uiOptions } = config || {};
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -68,8 +68,8 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased flex flex-col",
-          fontSans.variable
+          "min-h-screen bg-background antialiased flex flex-col",
+          monda.className
         )}
       >
         <NextIntlClientProvider messages={messages}>

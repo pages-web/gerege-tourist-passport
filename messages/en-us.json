@@ -59,183 +59,388 @@
 
     "frees": [
       {
-        "title": "museums",
+        "title": "museum",
         "list": [
           {
             "title": "Chinggis Khaan National Museum",
-            "description": "A state-of-the-art museum showcasing the history of Chinggis Khaan and the Mongol Empire. Features six floors of exhibitions, original artifacts, and AR/VR experiences. <br/>Hours: Summer 09:00-20:00, Winter 09:00-17:00 (Closed Tuesdays) <br/>Location: J Sambuu Street, Ulaanbaatar <br/>Phone: +976-7021-2222",
-            "path": "https://chinggismuseum.com/en/greetings",
-            "image": "/image/pictures/museum_chinggis.jpg"
+            "location": "47.92252920434137,106.91471146318301",
+            "website": "https://chinggismuseum.com/en/greetings",
+            "facebook": "https://www.facebook.com/chinggiskhaanmuseum.mn",
+            "timeTables": [
+              {
+                "season": "summer",
+                "days": {
+                  "mon": "09:00-20:00",
+                  "tue": "closed",
+                  "wed": "09:00-20:00",
+                  "thu": "09:00-20:00",
+                  "fri": "09:00-20:00",
+                  "sat": "09:00-20:00",
+                  "sun": "09:00-20:00"
+                }
+              },
+              {
+                "season": "winter",
+                "days": {
+                  "mon": "09:00-17:00",
+                  "tue": "closed",
+                  "wed": "09:00-17:00",
+                  "thu": "09:00-17:00",
+                  "fri": "09:00-17:00",
+                  "sat": "09:00-17:00",
+                  "sun": "09:00-17:00"
+                }
+              }
+            ],
+            "phone": "+976 7021-2222"
           },
           {
             "title": "National Museum of Mongolia",
-            "description": "Preserves Mongolia’s rich history, attracting 100,000+ visitors annually. Exhibits traditional lifestyles, historical artifacts, and research presentations. <br/>Hours: Summer 09:00-21:00 (Winter TBD) <br/>Location: Ulaanbaatar <br/>Phone: +976-70110911",
-            "path": "http://en.nationalmuseum.mn/",
-            "image": "/image/pictures/museum_national.jpg"
+            "location": "47.920831631565065,106.91546856872448",
+            "website": "http://en.nationalmuseum.mn",
+            "facebook": "https://www.facebook.com/nationalmuseummongolia/",
+            "timeTables": [
+              {
+                "season": "summer",
+                "days": {
+                  "mon": "09:00-21:00",
+                  "tue": "09:00-21:00",
+                  "wed": "09:00-21:00",
+                  "thu": "09:00-21:00",
+                  "fri": "09:00-21:00",
+                  "sat": "09:00-21:00",
+                  "sun": "09:00-21:00"
+                }
+              },
+              {
+                "season": "summer",
+                "days": {
+                  "mon": "closed",
+                  "tue": "closed",
+                  "wed": "closed",
+                  "thu": "closed",
+                  "fri": "closed",
+                  "sat": "closed",
+                  "sun": "closed"
+                }
+              }
+            ],
+            "phone": "+976 7011-0911"
           },
           {
             "title": "Bogd Khaan Palace Museum",
-            "description": "Former winter palace of Mongolia’s last king, featuring religious artifacts, royal collections, and historical items from the 17th-20th centuries. <br/>Hours: Summer 09:00-20:00, Winter 10:00-17:00 <br/>Location: Khan-Uul District, Ulaanbaatar <br/>Phone: +976-7011-0913",
-            "path": "",
-            "image": "/image/pictures/museum_bogd.jpg"
+            "location": "47.89750837672229,106.90728148775841",
+            "facebook": "https://www.facebook.com/BogdKhaanPalaceMuseum/",
+            "timeTables": [
+              {
+                "season": "summer",
+                "days": {
+                  "mon": "09:00-20:00",
+                  "tue": "09:00-20:00",
+                  "wed": "09:00-20:00",
+                  "thu": "09:00-20:00",
+                  "fri": "09:00-20:00",
+                  "sat": "09:00-20:00",
+                  "sun": "09:00-20:00"
+                }
+              },
+              {
+                "season": "winter",
+                "days": {
+                  "mon": "10:00-17:00",
+                  "tue": "closed",
+                  "wed": "closed",
+                  "thu": "10:00-17:00",
+                  "fri": "10:00-17:00",
+                  "sat": "10:00-17:00",
+                  "sun": "10:00-17:00"
+                }
+              }
+            ],
+            "phone": "+976 7000-1926"
           },
           {
             "title": "Choijin Lama Temple Museum",
-            "description": "A Buddhist temple complex housing 6,000+ artifacts, including 77 national treasures. <br/>Hours: Summer 09:00-18:00, Winter Tue-Sat 10:00-17:00 <br/>Location: Sukhbaatar District, Ulaanbaatar <br/>Phone: +976-7010-3232",
-            "linkText": "Choijin Lama Temple Museum",
-            "path": "https://templemuseum.mn/en",
-            "image": "/image/pictures/museum_choijin.jpg"
+            "location": "47.91471893370666,106.91874494358314",
+            "website": "https://templemuseum.mn/en",
+            "facebook": "https://www.facebook.com/choijinlamatemplemuseum/",
+            "timeTables": [
+              {
+                "season": "summer",
+                "days": {
+                  "mon": "09:00-18:00",
+                  "tue": "09:00-18:00",
+                  "wed": "09:00-18:00",
+                  "thu": "09:00-18:00",
+                  "fri": "09:00-18:00",
+                  "sat": "09:00-18:00",
+                  "sun": "09:00-18:00"
+                }
+              },
+              {
+                "season": "winter",
+                "days": {
+                  "mon": "closed",
+                  "tue": "10:00-17:00",
+                  "wed": "10:00-17:00",
+                  "thu": "10:00-17:00",
+                  "fri": "10:00-17:00",
+                  "sat": "10:00-17:00",
+                  "sun": "closed"
+                }
+              }
+            ],
+            "phone": "+976 7010-3232"
           },
           {
-            "title": "Fine Arts Zanabazar Museum",
-            "description": "Displays Mongolian masterpieces, including sculptures, paintings, and cultural artifacts. <br/>Hours: Winter Mon-Fri 09:00-17:00, Sat-Sun 10:00-17:00 <br/>Location: Chingeltei District, Ulaanbaatar <br/>Phone: +976-11-323986",
-            "path": "https://www.facebook.com/zanabazarfam",
-            "image": "/image/pictures/museum_zanabazar.jpg"
+            "title": "Zanabazar Museum of fine Arts",
+            "location": "7.92029582248535,106.909331538042",
+            "website": "http://www.zanabazarmuseum.mn/",
+            "facebook": "https://www.facebook.com/zanabazarfam/",
+            "timeTables": [
+              {
+                "season": "summer",
+                "days": {
+                  "mon": "closed",
+                  "tue": "closed",
+                  "wed": "closed",
+                  "thu": "closed",
+                  "fri": "closed",
+                  "sat": "closed",
+                  "sun": "closed"
+                }
+              },
+              {
+                "season": "winter",
+                "days": {
+                  "mon": "09:00-17:00",
+                  "tue": "09:00-17:00",
+                  "wed": "09:00-17:00",
+                  "thu": "09:00-17:00",
+                  "fri": "09:00-17:00",
+                  "sat": "10:00-17:00",
+                  "sun": "10:00-17:00"
+                }
+              }
+            ],
+            "phone": "+976 11-323986"
           },
           {
-            "title": "Natural History Museum",
-            "description": "Showcases Mongolia’s geological and paleontological wonders, including a Tarbosaurus skeleton. <br/>Hours: Summer 09:00-18:00, Winter Tue-Sun 09:00-18:00 (Closed Mondays) <br/>Location: Independence Square, Ulaanbaatar <br/>Phone: +976-7000-0171",
-            "path": "https://nhm.gov.mn/client/mn",
-            "image": "/image/pictures/museum_natural.jpg"
+            "title": "The Natural History Museum",
+            "location": "47.92329894397032,106.90620407611355",
+            "website": "https://nhm.gov.mn/client/mn",
+            "facebook": "https://www.facebook.com/naturalmuseum",
+            "timeTables": [
+              {
+                "season": "winter",
+                "days": {
+                  "mon": "closed",
+                  "tue": "09:00-18:00",
+                  "wed": "09:00-18:00",
+                  "thu": "09:00-18:00",
+                  "fri": "09:00-18:00",
+                  "sat": "09:00-18:00",
+                  "sun": "09:00-18:00"
+                }
+              },
+              {
+                "season": "summer",
+                "days": {
+                  "mon": "closed",
+                  "tue": "09:00-18:00",
+                  "wed": "09:00-18:00",
+                  "thu": "09:00-18:00",
+                  "fri": "09:00-18:00",
+                  "sat": "09:00-18:00",
+                  "sun": "09:00-18:00"
+                }
+              }
+            ],
+            "phone": "+976 11-323986"
           }
         ]
       },
       {
-        "title": "sim",
+        "title": "data-sim",
         "list": [
           {
-            "title": "Data sim card",
-            "description": "The national operator G-Mobile, provides a physical SIM card with reliable high-speed internet service across Ulaanbaatar, 21 provinces, and 316 towns, making it the ideal choice for travelers.",
-            "content": "Offer Details: <br />Data Package: 16GB + unlimited data (up to 1Mbps speed) <br />Duration: 14 days <br />Extra Credit: 7000 MNT = 100 minutes of talk time <br/>The duration starts from the day you activate the SIM card on your phone. If the data or duration runs out, you can easily recharge for extra credit. <br/>Enjoy seamless travel with G-Mobile, your reliable companion in Mongolia!",
-            "path": "https://gmobile.mn/",
-            "image": "/image/pictures/data_sim.jpg"
+            "title": "Data eSIM card",
+            "website": "https://gmobile.mn/",
+            "phone": "+976 9810-3636"
           }
         ]
       },
       {
-        "title": "HushKhan - Mongolian Natural Pine nuts",
+        "title": "transport",
         "list": [
           {
-            "title": "HushKhan - Mongolian Natural Pine nuts",
-            "description": "Receive a 10g package of Hushhan pine nuts as a complimentary gift when purchasing from Gerege Passport.",
-            "content": "<b>About the Pine Nuts:</b> The pine nuts are sourced from wild pine trees in Mongolia's untouched forests. These pine nuts thrive in Mongolia's harsh and extreme climate, which allows them to develop high concentrations of essential nutrients and proteins. <br/><b>Harvesting and Processing:</b> The pine nuts are harvested in accordance with legal timelines, processed at a facility that meets ISO 9001:2015, ISO 22000:2018, and HACCP standards. They undergo 20 stages of cleaning and sorting in a factory across three production lines before being packaged and delivered to customers. <br/><b>Organic Certification:</b> Hushhan brand pine nuts are certified organic under Mongolia's organic standards and have also become the first in Mongolia to meet the European Union organic certification standards.",
-            "path": "https://hushkhan.mn/",
-            "image": "/image/pictures/khushkhan.jpg"
-          }
-        ]
-      },
-      {
-        "title": "Free Coffee or Water at All CU Branches",
-        "list": [
+            "title": "UB Cab 10.000 MNT Credit",
+            "app_store": "https://apps.apple.com/us/app/ubcab/id863109199",
+            "play_store": "https://play.google.com/store/apps/details?id=com.mezorn.ubcab.ubcab_passanger_v2"
+          },
           {
-            "title": "Free Coffee or Water at All CU Branches",
-            "description": "Enjoy a free drink at any CU store near you! You can choose from any variety of Get coffee (one time only) or receive a 500ml bottled water for free.",
-            "content": "",
-            "path": "",
-            "image": "/image/pictures/cu_coffee_water.jpg"
+            "title": "Jet Scooter 5000 MNT Credit",
+            "app_store": "https://apps.apple.com/us/app/jet-scooter-sharing/id1546127285",
+            "play_store": "https://play.google.com/store/apps/details?id=com.jetscooters"
           }
         ]
       },
       {
-        "title": "Mongolian traditional costume rental service",
+        "title": "traditional-costume-rental",
         "list": [
           {
             "title": "Mongolian traditional costume rental service",
-            "description": "The Mongolian Costume Rental Service has been operating in a specially designed Mongolian ger. Offering both traditional and modern Mongolian attire, including hats, shoes, and accessories, customers can dress up in full outfits and record their experience with a 360-degree rotating camera inside the ger.",
-            "content": "The Mongolian Costume Rental Service has been operating in a specially designed Mongolian ger. Offering both traditional and modern Mongolian attire, including hats, shoes, and accessories, customers can dress up in full outfits and record their experience with a 360-degree rotating camera inside the ger. <br/>Additionally, enjoy free entry to the Bogd Khaan Palace Museum and the chance to take photos around the museum grounds. <br/>Unique Advantage: To ensure comfort, hygiene, and safety, each customer is provided with a single-use thin garment before wearing the traditional attire. </br>Address: The front square of Evseg Cashmere Factory Store,Bogd Khaan Palace Museum Street, Ulaanbaatar 17040 </br>Phone: +976 7777-1214",
-            "path": "",
-            "image": "/image/pictures/mongolian_costume_rental.jpg"
+            "location": " 47.89750837672229,106.90728148775841",
+            "instagram": "https://www.instagram.com/mongolian_costume_rental/",
+            "timeTables": [
+              {
+                "season": "summer",
+                "days": {
+                  "mon": "09:00-20:00",
+                  "tue": "09:00-20:00",
+                  "wed": "09:00-20:00",
+                  "thu": "09:00-20:00",
+                  "fri": "09:00-20:00",
+                  "sat": "09:00-20:00",
+                  "sun": "09:00-20:00"
+                }
+              },
+              {
+                "season": "winter",
+                "days": {
+                  "mon": "09:00-17:00",
+                  "tue": "closed",
+                  "wed": "closed",
+                  "thu": "09:00-17:00",
+                  "fri": "09:00-17:00",
+                  "sat": "10:00-17:00",
+                  "sun": "10:00-17:00"
+                }
+              }
+            ],
+            "phone": "+976 7777-1214"
           }
         ]
       },
       {
-        "title": "Jet Scooter 5000 MNT Credit",
+        "title": "gift",
         "list": [
           {
-            "title": "Jet Scooter 5000 MNT Credit",
-            "description": "Jet Sharing Mongolia is the first and largest scooter rental service in Mongolia, offering scooters at a rate of  350 MNT per minute.",
-            "content": "How to Use the Scooter: <br/> 1. Download the App: Install the Jet Scooter app from Appstore or Playstore. </br> 2. Register: Sign up as a user in the app. <br/>3. Top-Up Your Wallet: Tap on the Wallet section in the menu (bottom left) and add credit (minimum 4000 MNT). <br/>4. Scan the QR Code: Scan the QR code on the scooter with the Jet app to begin your ride. <br /> 5. Choose Your Tariff: Select your preferred tariff and press the Start button to begin your journey.<br/>6. End Your Ride: You can end your ride at any scooter station marked with the letter \"P\" on the map.Rules:\\nFollow Traffic Rules: Park your scooter in a way that does not block others and always comply with road regulations.</br>Restricted Areas: Do not enter areas marked in red on the map.</br>Age Limit: Only individuals aged 18 or older are permitted to rent scooters.</br>One Rider Per Scooter: It is prohibited to have more than one person riding a scooter.</br>Safety First: Always walk your scooter safely when crossing streets.</br>Important Note: Violating the usage rules may result in your account being suspended.",
-            "path": "",
-            "image": "/image/pictures/jet_scooter.jpg"
-          }
-        ]
-      },
-      {
-        "title": "UB Cab 10,000 Credit",
-        "list": [
-          {
-            "title": "UB Cab 10,000 Credit",
-            "description": "UB Cab is an online taxi service operating in Ulaanbaatar and some provinces. The company provides services based on advanced GPS and smart payment systems. (ubcab.mn)",
-            "content": "UB Cab Services:<br/>Taxi Service: Customers can book a taxi through the UBCab application.<br/>Call Driver Service: If you prefer to use your own car, you can request a call driver.<br/>Express Delivery: Fast and reliable delivery of goods and other items. (ubcab.mn)<br/>Car Rental: Short-term vehicle rental options are available.<br/>You can download the UB Cab app from the following link: UBCab - Apps on Google Play",
-            "path": "",
-            "image": "/image/pictures/ub_cab.jpeg"
-          }
-        ]
-      },
-      {
-        "title": "50% Off on Mongolian Scratch Map",
-        "list": [
-          {
-            "title": "50% Off on Mongolian Scratch Map",
-            "description": "Get a 50% discount on the highly educational Mongolian Scratch Map, which allows you to scratch off and mark the provinces and towns you have visited in Mongolia.",
-            "content": "This map is perfect for travelers to document their journeys and discover the diverse regions of Mongolia.<br/>You can purchase the map directly from the Mongolian Traditional Costume Rental location.<br/>Address: The front square of Evseg Cashmere Factory Store,Bogd Khaan Palace Museum Street, Ulaanbaatar 17040<br/>Phone: +976 7777-1214",
-            "path": "",
-            "image": "/image/pictures/scratch_map.jpg"
-          }
-        ]
-      },
-      {
-        "title": "Free Gerege Keychain and Card Holder Gift",
-        "list": [
-          {
-            "title": "Free Gerege Keychain and Card Holder Gift",
-            "description": "Receive a Gerege keychain and a high-quality leather card holder as a special gift!",
-            "content": "The Gerge, once used, can be repurposed as a souvenir or keychain strap, making it a smart and cost-effective choice. We are confident that this practical and versatile gift will be a valuable addition for any recipient.",
-            "path": "",
-            "image": "/image/pictures/gerege_keychain.jpg"
+            "title": "Free Coffee or Water at All CU Branches",
+            "app_store": "https://apps.apple.com/us/app/cu-mongolia/id1481184124",
+            "play_store": "https://play.google.com/store/apps/details?id=central.express.cu"
           }
         ]
       }
     ],
 
-    "discounts": [
-      {
-        "title": "restaurants",
-        "list": [
-          {
-            "title": "Modern Nomads",
-            "description": "Established in 2003, renowned for blending modern food technology with authentic Mongolian cuisine. Popular among locals and international visitors.",
-            "path": "https://modernnomads.mn",
-            "image": "/image/pictures/modern_nomads.gif"
-          },
-          {
-            "title": "Yuna Korean Restaurant",
-            "description": "YUNA offers a unique blend of traditional Korean cuisine with modern global trends in a family-friendly setting.",
-            "path": "https://yuna.mn",
-            "image": "/image/pictures/yuna.png"
-          }
-        ]
-      },
+    "discount": [
       {
         "title": "hotels",
         "list": [
           {
             "title": "Blue Sky Hotel & Tower",
-            "description": "A luxury hotel with 200 elegantly designed rooms, an Executive Club Lounge, and premium dining experiences.",
-            "path": "https://blueskyhotel.mn",
-            "image": "/image/pictures/hotel_blue_sky.jpg"
+            "location": "47.91656144581299,106.91871838452576",
+            "website": "https://hotelbluesky.mn/about-us/",
+            "phone": "+976 7010-0505",
+            "discount": "10%"
           },
           {
             "title": "Ramada UB City Center Hotel",
-            "description": "A 4-star international hotel offering panoramic views of Bogd Khan Mountain and the city.",
-            "path": "https://ramadaub.mn",
-            "image": "/image/pictures/hotel_ramada.jpg"
+            "location": "47.91558836755038,106.89177491151034",
+            "website": "https://www.ramadaub.mn/",
+            "phone": "+976 7014-1111",
+            "discount": "10%"
           },
           {
             "title": "Bayangol Hotel",
-            "description": "A 4-star business hotel with 211 rooms, multiple restaurants, and event spaces in central Ulaanbaatar.",
-            "path": "https://bayangolhotel.mn",
-            "image": "/image/pictures/hotel_bayangol.jpg"
+            "location": "47.91261315015032,106.91410730357165",
+            "website": "https://bayangolhotel.mn/?fbclid=IwY2xjawIQaDZleHRuA2FlbQIxMAABHXIuiq45R1PaxpoBgZVlTC8BDTGPJ1EDqJ1MWPgEd-nwSZbkUuB9Rurflg_aem_94e2MObdB-mI4GJA9QIObA#/?_k=fzaqrh",
+            "phone": "+976 11-312255",
+            "discount": "10%"
+          }
+        ]
+      },
+      {
+        "title": "restaurants",
+        "list": [
+          {
+            "title": "Modern Nomads",
+            "locations": [
+              {
+                "name": "",
+                "location": "47.92673688067744,106.91548321533685"
+              },
+              {
+                "name": "",
+                "location": "47.92044604203747,106.92179438082348"
+              },
+              {
+                "name": "",
+                "location": "47.92321941731972,106.91548393981344"
+              },
+              {
+                "name": "",
+                "location": "47.92225112741947,106.91192425541017"
+              },
+              {
+                "name": "",
+                "location": "47.80347015202986,106.93130486087843"
+              },
+              {
+                "name": "",
+                "location": "47.926034292824674,106.91602310965973"
+              }
+            ],
+            "website": "http://modernnomads.mn",
+            "discount": "10%"
+          },
+          {
+            "title": "Yuna Korean Restaurant",
+            "locations": [
+              {
+                "name": "",
+                "location": "47.89685098514186,106.88969003363783"
+              },
+              {
+                "name": "",
+                "location": "47.898940549634176,106.89692509470696"
+              },
+              {
+                "name": "",
+                "location": "47.913483687167314,106.85295617261114"
+              },
+              {
+                "name": "",
+                "location": "47.92355014091698,106.87879121017043"
+              },
+              {
+                "name": "",
+                "location": "47.91555466054699,106.90960442730908"
+              },
+              {
+                "name": "",
+                "location": "47.91354121533297,106.92616975011053"
+              },
+              {
+                "name": "",
+                "location": "47.90427835837777,106.94230591930244"
+              },
+              {
+                "name": "",
+                "location": "47.92458543653939,106.93492448029659"
+              },
+              {
+                "name": "",
+                "location": "47.903818048768315,106.94204842755583"
+              },
+              {
+                "name": "",
+                "location": "47.87969773610556,106.85099449507615"
+              }
+            ],
+            "website": "https://www.yunarestaurant.com/",
+            "discount": "30%"
           }
         ]
       },
@@ -244,21 +449,24 @@
         "list": [
           {
             "title": "Bayangol Resort",
-            "description": "Located in Tsonjin Boldog, near the Chinggis Statue Complex, Bayangol Resort offers wellness, outdoor adventures, and hospitality.",
-            "path": "https://bayangolresort.mn",
-            "image": "/image/pictures/camp_bayangol.jpg"
+            "location": "47.82635392445848,107.53666648081719",
+            "website": "https://www.bayangolresort.mn/index.php",
+            "phone": "+976 7533-2255",
+            "discount": "10%"
           },
           {
             "title": "Red Rock Resort Mongolia",
-            "description": "Located in Gorkhi-Terelj National Park, featuring a conference center, leisure activities, and modern accommodations.",
-            "path": "https://redrockresort.mn",
-            "image": "/image/pictures/resort_red_rock.jpg"
+            "location": "47.851021066254916,107.403895524998280",
+            "website": "https://redrockresort.mn/",
+            "phone": "+976 77000111",
+            "discount": "20%"
           },
           {
-            "title": "Ar Davhar Peninsula Eco Tourist Camp",
-            "description": "Situated on the east shore of Lake Khuvsgul, offering a tranquil escape surrounded by nature and wildlife.",
-            "path": "https://ardavharecocamp.mn",
-            "image": "/image/pictures/resort_bayangol.jpg"
+            "title": "Ar Davhar Peninsula Eco Tourist Camp, Khuvsgul, Mongolia",
+            "location": "50.53523187685525,100.20182492333105",
+            "website": "https://ardavhareco.com/",
+            "phone": "+976 9586 4008",
+            "discount": "10%"
           }
         ]
       },
@@ -266,40 +474,196 @@
         "title": "shops",
         "list": [
           {
-            "title": "Nomin Holding / Nomin Supermarket /",
-            "description": "One of Mongolia’s largest retail chains, offering a variety of products at competitive prices.",
-            "path": "https://nomin.mn",
-            "image": "/image/pictures/nomin.png"
+            "title": "Nomin",
+            "locationText": "Loc- With a total of 60 branches (42 in Ulaanbaatar, 18 in locality areas). <br/>15 branch addresses have been randomly selected！<br/> Tap to map",
+            "locations": [
+              {
+                "name": "",
+                "location": "47.90625979964688,106.74138307355425"
+              },
+              {
+                "name": "",
+                "location": "47.86454362589061,106.78650855800532"
+              },
+              {
+                "name": "",
+                "location": "47.91231513259988,106.79554744063373"
+              },
+              {
+                "name": "",
+                "location": "47.8758847464138,106.8257596077173"
+              },
+              {
+                "name": "",
+                "location": "47.92054119550503,106.88880294868459"
+              },
+              {
+                "name": "",
+                "location": "47.97412237969328,106.9169554140832"
+              },
+              {
+                "name": "",
+                "location": "47.8999487987748,106.90193694082528"
+              },
+              {
+                "name": "",
+                "location": "47.91665842665339,106.98104948109909"
+              },
+              {
+                "name": "",
+                "location": "47.91517448041161,106.94433017724589"
+              },
+              {
+                "name": "",
+                "location": "47.925013208953864,106.88803683594027"
+              },
+              {
+                "name": "",
+                "location": "49.03517957909947,104.07997360077351"
+              },
+              {
+                "name": "",
+                "location": "49.46208951195273,105.97002504837475"
+              },
+              {
+                "name": "",
+                "location": "46.63152170364043,102.70156846659901"
+              },
+              {
+                "name": "",
+                "location": "49.89198028140066,100.37246695248056"
+              },
+              {
+                "name": "",
+                "location": "45.94476435409568,106.35738998604421"
+              }
+            ],
+            "website": "https://www.nomin.co/en",
+            "phone": "+976 1800-2888",
+            "discount": "10%"
           },
           {
             "title": "Emart",
-            "description": "A leading international supermarket chain providing groceries, electronics, and household goods.",
-            "path": "https://emart.mn",
-            "image": "/image/pictures/emart.png"
+            "locationText": "Tap to map",
+            "locations": [
+              {
+                "name": "",
+                "location": "47.9137953955696,106.82044125974865"
+              },
+              {
+                "name": "",
+                "location": "47.932504043099975,106.86716125659215"
+              },
+              {
+                "name": "",
+                "location": "47.919850946721304,106.87334106606991"
+              },
+              {
+                "name": "",
+                "location": "47.903972684617145,106.93101928880336"
+              },
+              {
+                "name": "",
+                "location": "47.927673226388684,106.9337658713283"
+              }
+            ],
+            "website": "https://www.emartmall.mn/?fbclid=IwY2xjawIUGQFleHRuA2FlbQIxMAABHURnMpVCBcxEld9dnSDkLdrC-kPzmT1i4nPlAWmwpR0DqwioyhDoU7GaHg_aem_OYUSHZLraDe6fvZ5mr2MvA",
+            "phone": "+976 7611-0101",
+            "discount": "10%"
           },
           {
-            "title": "CU Mongolia",
-            "description": "A convenience store chain offering food, beverages, and daily necessities across Mongolia.",
-            "path": "https://cu.mn",
-            "image": "/image/pictures/cu.jpg"
-          },
-          {
-            "title": "GS25",
-            "description": "A well-known South Korean convenience store chain now available in Mongolia.",
-            "path": "https://gs25.mn",
-            "image": "/image/pictures/gs.jfif"
+            "title": "CU",
+            "locationText": "With a total of +360 branches. 10 branch addresses have been randomly selected！Tap to map",
+            "locations": [
+              {
+                "name": "",
+                "location": "47.91628812979057,106.91657073916632"
+              },
+              {
+                "name": "",
+                "location": "47.9167411183783,106.90269427933285"
+              },
+              {
+                "name": "",
+                "location": "47.913404585922265,106.90625625265804"
+              },
+              {
+                "name": "",
+                "location": "47.91026200828961,106.91473156089573"
+              },
+              {
+                "name": "",
+                "location": "47.913512451306374,106.92146927027399"
+              },
+              {
+                "name": "",
+                "location": "47.92032908880615,106.92717701066255"
+              },
+              {
+                "name": "",
+                "location": "47.91868972639264,106.92043930205088"
+              },
+              {
+                "name": "",
+                "location": "47.913224809644085,106.92936569341768"
+              },
+              {
+                "name": "",
+                "location": "47.8612037287908,106.74918260108322"
+              },
+              {
+                "name": "",
+                "location": "47.92257618898714,106.92100948403193"
+              }
+            ],
+            "website": "https://cumongol.mn/",
+            "phone": "+976 7733-0101",
+            "discount": "10%"
           },
           {
             "title": "Evseg Cashmere",
-            "description": "Premium Mongolian cashmere brand offering high-quality garments and accessories.",
-            "path": "https://evsegcashmere.mn",
-            "image": "/image/pictures/evseg.jpg"
+            "locationText": "Tap to map",
+            "locations": [
+              {
+                "name": "",
+                "location": "47.92262626588839,106.9160699822813"
+              },
+              {
+                "name": "",
+                "location": "47.89823287502189,106.90508365432088"
+              }
+            ],
+            "website": "http://evsegcashmere.mn/",
+            "phone": "+976 11-343595",
+            "discount": "10%"
           },
           {
             "title": "Urban Jeans",
-            "description": "A popular Mongolian denim brand specializing in stylish and durable jeans.",
-            "path": "https://urbanjeans.mn",
-            "image": "/image/pictures/urban.jpg"
+            "locationText": "Tap to map",
+            "locations": [
+              {
+                "name": "",
+                "location": "47.92616592546861,106.88827535772208"
+              },
+              {
+                "name": "",
+                "location": "47.87082646808166,106.83049547896886"
+              }
+            ],
+            "website": "https://urbanshop.mn/",
+            "phone": "+976 8080-3636",
+            "discount": "10%"
+          }
+        ]
+      },
+      {
+        "title": "other",
+        "list": [
+          {
+            "title": "Mongolian Scratch Map",
+            "location": "47.89755153616952,106.90703472500138",
+            "phone": "+976 7777-1214",
+            "discount": "50%"
           }
         ]
       }
