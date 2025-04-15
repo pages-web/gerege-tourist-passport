@@ -13,7 +13,7 @@ export default function AboutDiscounts() {
         <div className="w-full lg:h-2/3 flex justify-evenly">
           <div className="lg:w-[180px] w-1/3 lg:h-fit h-[160px] flex flex-col items-center lg:gap-2 justify-between ">
             <Image alt="" src="/image/discount.png" width={40} height={40} />
-            <div className="text-[#0087FF] font-bold lg:text-[18px] text-[14px]">
+            <div className="text-[#6399CE] font-bold lg:text-[18px] text-[14px]">
               10%
             </div>
             <div className="text-gray-800 lg:text-[13px] text-[11px] text-center">
@@ -25,7 +25,7 @@ export default function AboutDiscounts() {
           </div>
           <div className="lg:w-[180px] w-1/3 lg:h-fit h-[160px] flex flex-col items-center lg:gap-2 justify-between">
             <Image alt="" src="/image/discount.png" width={40} height={40} />
-            <div className="text-[#0087FF] font-bold lg:text-[18px] text-[14px]">
+            <div className="text-[#6399CE] font-bold lg:text-[18px] text-[14px]">
               10%
             </div>
             <div className="text-gray-800 lg:text-[13px] text-[11px] text-center">
@@ -37,7 +37,7 @@ export default function AboutDiscounts() {
           </div>
           <div className="lg:w-[250px] w-1/3 lg:h-fit h-[160px] flex flex-col items-center lg:gap-2 justify-between">
             <Image alt="" src="/image/discount.png" width={40} height={40} />
-            <div className="text-[#0087FF] font-bold lg:text-[18px] text-[14px]">
+            <div className="text-[#6399CE] font-bold lg:text-[18px] text-[14px]">
               10%
             </div>
             <div className="text-gray-800 lg:text-[13px] text-[11px] text-center">

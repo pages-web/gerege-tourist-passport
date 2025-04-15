@@ -1,5 +1,5 @@
 export type Weekday = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
-export type Season = "autumn" | "winter" | "spring" | "summer";
+export type Season = "autumn" | "winter" | "spring" | "summer" | "all";
 
 export interface IBenefitListTimeTable {
   season: Season;
@@ -9,6 +9,7 @@ export interface IBenefitList {
   title: string;
   locations?: { name: string; location: string }[];
   location?: string;
+  locationText?: string;
   website?: string;
   facebook?: string;
   instagram?: string;
@@ -22,4 +23,13 @@ export interface IBenefitList {
 export interface IBenefit {
   title: string;
   list: IBenefitList[];
+}
+
+export interface IHelp extends IBenefitList {
+  title: string;
+  police?: string;
+  ambulance?: string;
+  fire_department?: string;
+  list: IBenefitList[];
+  locationText?: string;
 }

@@ -122,10 +122,11 @@ const Benefit = ({ params }: IPageProps) => {
       </Select>
 
       <div
-        className={`w-full lg:w-[80%] ${
+        className={`w-full h-full lg:w-[80%] ${
           cmsPosts[0].categories[0].slug === "entertainment" ||
-          cmsPosts[0].categories[0].slug === "beauty-healthy"
-            ? "grid grid-cols-2 gap-4"
+          cmsPosts[0].categories[0].slug === "beauty-healthy" ||
+          cmsPosts[0].tags[0].name === "Discount"
+            ? "grid lg:grid-cols-2 gap-24 lg:gap-4"
             : "space-y-24"
         }`}
       >
@@ -152,7 +153,7 @@ const Benefit = ({ params }: IPageProps) => {
                   <h1 className="text-2xl font-bold">{post.title}</h1>
                 )}
 
-              <div className="">
+              <div className="lg:h-[400px] overflow-hidden">
                 <Image
                   src={post.thumbnail?.url}
                   width={1000}

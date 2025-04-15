@@ -59,7 +59,7 @@ const LanguageAndSearch = () => {
               <button
                 key={code}
                 className={`w-fit font-bold lg:text-base text-[10px] flex gap-1 cursor-pointer ${
-                  locale === code ? "text-blue-600" : "text-black"
+                  locale === code ? "text-[#6399CE]" : "text-black"
                 }`}
                 onClick={() => switchLocale(code)}
               >

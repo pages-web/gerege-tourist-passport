@@ -11,12 +11,12 @@
   },
 
   "Carousel": {
-    "slide1_title": "+1$ from every purchase will be donated to support children’s charity.",
+    "slide1_title": "(The Gerege was an official diplomatic passport used in the Mongol Empire, allowing envoys, officials, and merchants to travel freely and receive assistance. It was typically a metal plaque inscribed with the Great Khan’s authority, ensuring the bearer’s safety and unrestricted movement. Notably, Marco Polo traveled from China to Persia with a golden Gerege issued by Khubilai Khan, highlighting its importance in diplomacy and trade.)",
 
     "slide1_description": "Explore all the best London attractions and activities, all for one low price.",
-    "slide2_title": "+1$ from every purchase will be donated to support children’s charity.",
+    "slide2_title": "",
     "slide2_description": "Experience the charm of London's iconic landmarks.",
-    "slide3_title": "+1$ from every purchase will be donated to support children’s charity.",
+    "slide3_title": "",
     "slide3_description": "Get special deals on top attractions.",
     "slide4_title": "+1$ from every purchase will be donated to support children’s charity.",
     "slide4_description": "Organize your adventures in London.",
@@ -773,13 +773,145 @@
     ]
   },
 
+  "HelpCenter": {
+    "title": "Help Center",
+    "helps": [
+      {
+        "title": "Emergency Numbers in Mongolia",
+        "police": "102",
+        "ambulance": "103",
+        "fire_department": "101"
+      },
+      {
+        "title": "Tourist Information Centers",
+        "list": [
+          {
+            "title": "Ulaanbaatar City Center",
+            "locationText": "1st floor, Building No.4 of the Capital City Administration <br/> Tap to map",
+            "location": "47.921933758274015,106.91168166503019",
+            "phone": "+976 70108687",
+            "timeTables": [
+              {
+                "season": "all",
+                "days": {
+                  "mon": "08:30–17:30",
+                  "tue": "08:30–17:30",
+                  "wed": "08:30–17:30",
+                  "thu": "08:30–17:30",
+                  "fri": "08:30–17:30",
+                  "sat": "closed",
+                  "sun": "closed"
+                }
+              }
+            ]
+          },
+          {
+            "title": "Chinggis Khaan International Airport",
+            "location": "47.659159203174944,106.82449706211038",
+            "phone": "+976 90228888, +976  99109012",
+            "timeTables": [
+              {
+                "season": "all",
+                "days": {
+                  "mon": "Open 24 hours",
+                  "tue": "Open 24 hours",
+                  "wed": "Open 24 hours",
+                  "thu": "Open 24 hours",
+                  "fri": "Open 24 hours",
+                  "sat": "closed",
+                  "sun": "closed"
+                }
+              }
+            ]
+          },
+          {
+            "title": "Seoul Street Center – “Mongol Olle”",
+            "location": "47.91369596886584,106.90359581164682",
+            "phone": "+976 91658011",
+            "timeTables": [
+              {
+                "season": "all",
+                "days": {
+                  "mon": "09:30–18:30",
+                  "tue": "09:30–18:30",
+                  "wed": "09:30–18:30",
+                  "thu": "09:30–18:30",
+                  "fri": "09:30–18:30",
+                  "sat": "closed",
+                  "sun": "closed"
+                }
+              }
+            ]
+          },
+          {
+            "title": "Terelj, Nalaikh District – “Mongol Olle”",
+            "locationText": "“Mongol Olle” Info Center, 6th khoroo, Nalaikh District, Terelj, Ulaanbaatar, Mongolia",
+            "phone": "+976 99779870",
+            "timeTables": [
+              {
+                "season": "all",
+                "days": {
+                  "mon": "09:30–18:30",
+                  "tue": "09:30–18:30",
+                  "wed": "09:30–18:30",
+                  "thu": "09:30–18:30",
+                  "fri": "09:30–18:30",
+                  "sat": "closed",
+                  "sun": "closed"
+                }
+              }
+            ]
+          },
+          {
+            "title": "Khoroo 11, Khnokhor Village – “Mongol Olle”",
+            "locationText": "“Mongol Olle” Info Center, 11th khoroo, Khonkhor Village, Bayanzurkh District, Ulaanbaatar, Mongolia",
+            "phone": "+976 96668076",
+            "timeTables": [
+              {
+                "season": "all",
+                "days": {
+                  "mon": "09:30–18:30",
+                  "tue": "09:30–18:30",
+                  "wed": "09:30–18:30",
+                  "thu": "09:30–18:30",
+                  "fri": "09:30–18:30",
+                  "sat": "closed",
+                  "sun": "closed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Ministry of Foreign Affairs (Hotline): 11-11",
+        "location": "47.9177210702787,106.9210269673856",
+        "phone": "1111, 11322127",
+        "timeTables": [
+          {
+            "season": "all",
+            "days": {
+              "mon": "08:00–17:30",
+              "tue": "08:00–17:30",
+              "wed": "08:00–17:30",
+              "thu": "08:00–17:30",
+              "fri": "08:00–17:30",
+              "sat": "closed",
+              "sun": "closed"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
   "footer": {
     "description": "Copyright 2025. ⓒ GEREGE TOURIST PASSPORT. All Rights Reserved.",
     "content": [
       {
         "title": "About",
         "lists": [
-          { "name": "About us", "link": "/#about" },
+          { "name": "About us", "link": "#about" },
           { "name": "Cultural experience", "link": "/" },
           { "name": "Restaurant", "link": "/" },
           { "name": "Hotel", "link": "/" }

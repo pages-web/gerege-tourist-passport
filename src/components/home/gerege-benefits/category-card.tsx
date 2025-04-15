@@ -61,7 +61,7 @@ const CategoryCard = ({
 
   return (
     <Link href={`/benefits/${category._id}`}>
-      <div className="relative cursor-pointer rounded-2xl shadow-[0_1px_8px_rgba(0,0,0,0.1)] flex justify-center items-center px-4 py-10 gap-2 group transition-all">
+      <div className="relative cursor-pointer rounded-2xl shadow-[0_1px_8px_rgba(0,0,0,0.1)] flex justify-center items-center px-4 py-10 gap-2 group transition-all h-full">
         <div className="flex flex-col gap-2 items-center group-hover:opacity-0 ease-in-out duration-300">
           <div className="w-12 h-12">
             <Image
@@ -74,11 +74,11 @@ const CategoryCard = ({
               unoptimized
             />
           </div>
-          <h3 className="font-bold">{category.name}</h3>
+          <h3 className="text-center font-bold">{category.name}</h3>
         </div>
 
-        <h3 className="w-full capitalize text-[#6399CE] justify-center flex items-center gap-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 ease-in-out duration-300">
-          About {category.name} <ArrowRight className="w-4 h-4" />
+        <h3 className="px-4 w-full capitalize text-center text-[#6399CE] justify-center flex items-center gap-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 ease-in-out duration-300">
+          About {category.name} <ArrowRight className="min-w-4 min-h-4" />
         </h3>
       </div>
     </Link>

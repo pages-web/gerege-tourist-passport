@@ -13,7 +13,7 @@ export default function Header() {
         <div className="container flex justify-between items-center gap-10">
           <Link
             href="/"
-            className="logo-text lg:text-[20px] text-[16px] font-semibold text-[#034EA2]"
+            className="logo-text lg:text-[20px] text-[16px] font-semibold text-[#6399CE]"
           >
             GEREGE TOURIST PASSPORT LLC
           </Link>

@@ -24,6 +24,10 @@ export default function Benefits() {
   const { cmsCategories } = useCmsCategories();
   const { cmsTags } = useCmsTags();
 
+  const fixedCmsTags = cmsTags.filter(
+    (tag) => tag.name === "Discount" || tag.name === "Free"
+  );
+
   const freeCmsCategories = cmsCategories.filter(
     (category) =>
       category.slug === "transport" ||
@@ -56,7 +60,7 @@ export default function Benefits() {
             className="items-center"
           >
             <TabsList className="rounded-3xl">
-              {cmsTags?.map((tag, index) => {
+              {fixedCmsTags?.map((tag, index) => {
                 return (
                   <TabsTrigger
                     key={index}

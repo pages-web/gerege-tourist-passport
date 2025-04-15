@@ -4,16 +4,15 @@ import { kbCategoryDetail } from "@/sdk/queries/kb";
 import { useTranslations } from "next-intl";
 import NewsCarousel from "./news-carousel";
 import Heading from "@/components/heading/heading";
+import { useCmsPosts, useCmsTags } from "@/sdk/hooks/cms";
 
 const NewsAndTips = () => {
   const t = useTranslations("NewsAndTips").raw;
-  // const { category } = await kbCategoryDetail({
-  //   variables: {
-  //     _id: "news",
-  //   },
-  // });
 
-  // if (!category) return null;
+  const { cmsTags } = useCmsTags();
+  const { cmsPosts } = useCmsPosts({
+    tagIds: [cmsTags.find((tag) => tag.name === "News")?._id],
+  });
 
   return (
     <div
@@ -22,7 +21,7 @@ const NewsAndTips = () => {
     >
       <Heading title={t("title")} desc={t("description")} data-aos="fade-up" />
 
-      <NewsCarousel news={t("news")} />
+      <NewsCarousel posts={cmsPosts} />
     </div>
   );
 };

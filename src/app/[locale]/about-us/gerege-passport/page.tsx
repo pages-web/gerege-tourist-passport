@@ -56,7 +56,7 @@ export default function AboutGeregePassport() {
       <div className="lg:w-full w-[389px] lg:h-[390px] h-fit flex justify-between">
         <div className="lg:w-[580px] w-[240px] lg:h-[340px] h-[330px] flex flex-col justify-between lg:pl-0 pl-2">
           <div>
-            <div className="text-[#0087FF] font-bold lg:text-[30px] text-[16px]">
+            <div className="text-[#6399CE] font-bold lg:text-[30px] text-[16px]">
               {t("title")}
             </div>
             <div className="text-[#1D2939] lg:text-[22px] text-[12px] font-medium">

@@ -64,6 +64,10 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
 
       <body

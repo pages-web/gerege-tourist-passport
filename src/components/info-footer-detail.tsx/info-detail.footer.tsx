@@ -28,15 +28,15 @@ const InfoDetailFooter = (article: IArticle) => {
       {contact && shopping && services ? (
         <div className="flex justify-between">
           <div>
-            <h2 className="text-[#0087FF]">Contact</h2>
+            <h2 className="text-[#6399CE]">Contact</h2>
             <div dangerouslySetInnerHTML={{ __html: contact! }}></div>
           </div>
           <div>
-            <h2 className="text-[#0087FF]">Contact</h2>
+            <h2 className="text-[#6399CE]">Contact</h2>
             <div dangerouslySetInnerHTML={{ __html: shopping! }}></div>
           </div>
           <div>
-            <h2 className="text-[#0087FF]">Contact</h2>
+            <h2 className="text-[#6399CE]">Contact</h2>
             <div dangerouslySetInnerHTML={{ __html: services! }}></div>
           </div>
         </div>

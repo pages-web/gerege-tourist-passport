@@ -16,7 +16,6 @@ import {
   DotButton,
   useDotButton,
 } from "@/components/ui/EmblaCarouselDotButton";
-import { EmblaCarouselType } from "embla-carousel";
 
 const slides = [
   {
@@ -72,7 +71,7 @@ const CarouselSection = () => {
         {slides.map((slide, index) => (
           <CarouselItem
             key={index}
-            className="relative w-full -z-10 overflow-hidden max-h-[400px] lg:max-h-[850px]"
+            className="p-0 relative w-full -z-10 overflow-hidden max-h-[600px] lg:max-h-[850px]"
           >
             <Image
               src={slide.backgroundImage}
@@ -83,17 +82,19 @@ const CarouselSection = () => {
               className="h-full xl:h-fit w-full"
             />
 
-            <div className="w-full flex justify-center absolute bottom-0 left-0 py-10">
-              <div className="bg-black/50 w-[80%] z-10 text-white p-6 rounded-2xl">
-                <h3 className="text-xl lg:text-5xl font-bold">
-                  {t(slide.titleKey)}
-                </h3>
+            {t(slide.titleKey) && (
+              <div className="w-full flex justify-center absolute bottom-0 left-0 py-6 lg:py-10">
+                <div className="bg-black/50 w-[90%] z-10 text-white p-3 lg:p-6 rounded-2xl">
+                  <h3 className="text-sm lg:text-4xl font-bold">
+                    {t(slide.titleKey)}
+                  </h3>
+                </div>
               </div>
-            </div>
+            )}
           </CarouselItem>
         ))}
       </CarouselContent>
-      <div className="w-full absolute bottom-5 flex justify-center gap-[10px]">
+      <div className="w-full absolute bottom-2 lg:bottom-5 flex justify-center gap-[10px]">
         {scrollSnaps.map((_, index) => (
           <DotButton
             key={index}

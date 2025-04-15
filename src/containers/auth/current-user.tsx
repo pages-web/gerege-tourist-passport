@@ -30,7 +30,7 @@ const CurrentUser = () => {
       <Avatar asChild>
         <Link
           href="/profile"
-          className="md:h-[40px] md:w-[40px] border shadow-sm text-[#0087FF] border-[#0087FF]"
+          className="md:h-[40px] md:w-[40px] border shadow-sm text-[#6399CE] border-[#6399CE]"
         >
           <AvatarImage src={avatar} alt={currentUser.firstName} />
           <AvatarFallback>
@@ -44,7 +44,7 @@ const CurrentUser = () => {
 
   return (
     <Avatar
-      className="md:h-[40px] md:w-[40px] flex justify-center items-center hover:bg-background/10 hover:text-[#0087FF] border hover:border-[#0087FF] duration-200 rounded-full "
+      className="md:h-[40px] md:w-[40px] flex justify-center items-center hover:bg-background/10 hover:text-[#6399CE] border hover:border-[#6399CE] duration-200 rounded-full "
       asChild
     >
       <Link href="/login">

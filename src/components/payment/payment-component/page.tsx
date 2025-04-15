@@ -78,7 +78,7 @@ const PaymentComponent: React.FC<PaymentComponentProps> = ({
           </button>
         </div>
 
-        <div className="bg-[#EBFAFF] text-[#0087FF] p-1 lg:text-[12px] text-[10px] border border-[#0087FF] rounded-[6px] font-medium">
+        <div className="bg-[#EBFAFF] text-[#6399CE] p-1 lg:text-[12px] text-[10px] border border-[#6399CE] rounded-[6px] font-medium">
           $1 from every purchase is donated to support children with special
           needs at the 10th Kindergarten.
         </div>
@@ -103,7 +103,7 @@ const PaymentComponent: React.FC<PaymentComponentProps> = ({
                     </div>
                   </div>
 
-                  <div className="text-[#0087FF] text-[15px] font-normal">
+                  <div className="text-[#6399CE] text-[15px] font-normal">
                     QPAY - Minepro Qpay
                   </div>
                 </div>
@@ -135,7 +135,7 @@ const PaymentComponent: React.FC<PaymentComponentProps> = ({
                       For international companies
                     </div>
                   </div>
-                  <div className="text-[#0087FF] text-[15px] font-normal">
+                  <div className="text-[#6399CE] text-[15px] font-normal">
                     VISA - Golomt bank
                   </div>
                 </div>
@@ -160,7 +160,7 @@ const PaymentComponent: React.FC<PaymentComponentProps> = ({
               <div className="spinner-box medium"></div>
               <div className="spinner-box fast"></div>
             </div>
-            <div className="text-[#0087FF] font-bold lg:text-[18px] text-[16px]">
+            <div className="text-[#6399CE] font-bold lg:text-[18px] text-[16px]">
               Processing your payment...
             </div>
 
@@ -315,7 +315,7 @@ const PaymentComponent: React.FC<PaymentComponentProps> = ({
                       <button
                         onClick={handleSendEmail}
                         disabled={isSending}
-                        className="text-white lg:text-[14px] text-[11px] w-fit h-fit lg:py-1 py-[2px] lg:px-3 px-1 bg-[#0087FF] rounded-[6px] font-normal"
+                        className="text-white lg:text-[14px] text-[11px] w-fit h-fit lg:py-1 py-[2px] lg:px-3 px-1 bg-[#6399CE] rounded-[6px] font-normal"
                       >
                         {isSending ? "Sending..." : "Send"}
                       </button>
@@ -339,7 +339,7 @@ const PaymentComponent: React.FC<PaymentComponentProps> = ({
                 </div>
                 <button
                   onClick={onClose}
-                  className="text-white text-[12px] w-full h-fit py-1 px-3 bg-[#0087FF] rounded-[6px] font-semibold"
+                  className="text-white text-[12px] w-full h-fit py-1 px-3 bg-[#6399CE] rounded-[6px] font-semibold"
                 >
                   Close
                 </button>
@@ -432,7 +432,7 @@ export default PaymentComponent;
 //                       For domestic companies
 //                     </div>
 //                   </div>
-//                   <div className="text-[#0087FF] text-[15px] font-normal">
+//                   <div className="text-[#6399CE] text-[15px] font-normal">
 //                     QPAY - Minepro Qpay
 //                   </div>
 //                 </div>
@@ -463,7 +463,7 @@ export default PaymentComponent;
 //                       For international companies
 //                     </div>
 //                   </div>
-//                   <div className="text-[#0087FF] text-[15px] font-normal">
+//                   <div className="text-[#6399CE] text-[15px] font-normal">
 //                     VISA - Golomt bank
 //                   </div>
 //                 </div>
@@ -488,7 +488,7 @@ export default PaymentComponent;
 //               <div className="spinner-box medium"></div>
 //               <div className="spinner-box fast"></div>
 //             </div>
-//             <div className="text-[#0087FF] font-bold lg:text-[18px] text-[16px]">
+//             <div className="text-[#6399CE] font-bold lg:text-[18px] text-[16px]">
 //               Processing your payment...
 //             </div>
 
@@ -646,7 +646,7 @@ export default PaymentComponent;
 //       {error && <div className="text-red-500 text-sm">{error}</div>}
 //       <button
 //         type="submit"
-//         className="text-white w-full h-fit py-2 px-3 bg-[#0087FF] rounded-[6px] font-semibold"
+//         className="text-white w-full h-fit py-2 px-3 bg-[#6399CE] rounded-[6px] font-semibold"
 //         disabled={!stripe || processing}
 //       >
 //         {processing ? "Processing..." : "Pay Now"}

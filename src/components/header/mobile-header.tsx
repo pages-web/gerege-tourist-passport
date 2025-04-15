@@ -22,7 +22,7 @@ const MobileMenu = () => {
       </SheetTrigger>
       <SheetContent className="w-[90%] sm:w-[540px] bg-white ">
         <SheetTitle>
-          <h3 className="w-[80%] logo-text text-[20px] font-semibold text-[#034EA2]">
+          <h3 className="w-[80%] logo-text text-[20px] font-semibold text-[#6399CE]">
             GEREGE TOURIST PASSPORT LLC
           </h3>
         </SheetTitle>

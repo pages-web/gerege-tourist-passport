@@ -15,13 +15,9 @@ import {
   DotButton,
   useDotButton,
 } from "@/components/ui/EmblaCarouselDotButton";
+import { ICmsPost } from "@/types/cms.types";
 
-const NewsCarousel = ({
-  news,
-}: {
-  news: { title: string; description: string; image: string }[];
-}) => {
-  // const articles = category.articles;
+const NewsCarousel = ({ posts }: { posts: ICmsPost[] }) => {
   const [api, setApi] = React.useState<CarouselApi>();
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: false }) as any
@@ -49,23 +45,12 @@ const NewsCarousel = ({
         setApi={setApi}
         data-aos="fade-up"
       >
-        <CarouselContent>
-          {news?.map((article, index) => (
-            <CarouselItem
-              key={index}
-              className="sm:basis-1/2 md:basis-1/3 xl:basis-1/4"
-            >
-              <NewsCard {...article} />
+        <CarouselContent className="gap-2">
+          {posts.map((post, index) => (
+            <CarouselItem className="lg:basis-1/3" key={index}>
+              <NewsCard {...post} />
             </CarouselItem>
           ))}
-          {/* {articles.map((article, index) => (
-            <CarouselItem
-              key={index}
-              className="sm:basis-1/2 md:basis-1/3 xl:basis-1/4"
-            >
-              <NewsCard {...article} />
-            </CarouselItem>
-          ))} */}
         </CarouselContent>
         <div className="w-full absolute bottom-0 flex justify-center gap-[10px]">
           {scrollSnaps.map((_, index) => (
@@ -73,7 +58,11 @@ const NewsCarousel = ({
               key={index}
               onClick={() => onDotButtonClick(index)}
               className={`w-3 h-3 rounded-full
-                    ${index === selectedIndex ? "bg-black/60" : "bg-black/30"}`}
+                    ${
+                      index === selectedIndex
+                        ? "bg-[#6399CE]"
+                        : "bg-[#6399CE]/40"
+                    }`}
             />
           ))}
         </div>

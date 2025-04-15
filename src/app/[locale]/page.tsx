@@ -6,6 +6,7 @@ import Benefits from "@/components/home/gerege-benefits/page";
 import WhyGeregePassport from "@/components/home/why-choose-gerege-tourist-passport/page";
 import NewsAndTips from "@/components/home/news-and-tips/page";
 import CarouselSection from "@/components/home/carousel/page";
+import HelpCenter from "@/components/home/help-center/help-center";
 
 const Home = ({ searchParams }: IPageProps) => {
   return (
@@ -19,6 +20,7 @@ const Home = ({ searchParams }: IPageProps) => {
         <NewsAndTips />
         {/* <LoyaltyCard searchParams={searchParams} /> */}
         <FAQ />
+        <HelpCenter />
       </div>
       {/* <Review /> */}
     </main>

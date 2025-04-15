@@ -36,12 +36,12 @@ const ToggleMapList = () => {
       <Item
         title={"List"}
         icon={<List className="w-4 h-4 md:w-5 md:h-5" />}
-        className={!isMap && "text-[#0087FF] bg-[#EBFAFF] border-[#AFEAFF]"}
+        className={!isMap && "text-[#6399CE] bg-[#EBFAFF] border-[#AFEAFF]"}
       />
       <Item
         title={"Map"}
         icon={<Map className="w-4 h-4 md:w-5 md:h-5" />}
-        className={isMap && "text-[#0087FF] bg-[#EBFAFF] border-[#AFEAFF]"}
+        className={isMap && "text-[#6399CE] bg-[#EBFAFF] border-[#AFEAFF]"}
       />
     </div>
   );

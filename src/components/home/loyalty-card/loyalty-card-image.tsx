@@ -20,7 +20,7 @@ const LoyaltyCardImage = ({
     <div
       className={`p-3 relative overflow-hidden border w-full h-full min-h-[150px] md:w-[200px] md:h-[200px] flex justify-center items-center z-40 ${
         articleSearch === _id &&
-        "shadow-inner-custom border-[#0087FF] shadow-[#0087FF]/50"
+        "shadow-inner-custom border-[#6399CE] shadow-[#6399CE]/50"
       }`}
     >
       <Image

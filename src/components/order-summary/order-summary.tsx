@@ -22,7 +22,7 @@ const OrderSummary = ({
   return (
     <Card className={className}>
       <CardHeader className="flex-row space-y-0 justify-between items-center md:py-4 mb-4">
-        <div className="font-semibold text-[12px] md:text-[16px] border border-[#AFEAFF] bg-[#AFEAFF]/30 text-[#0087FF] p-[10px] rounded-[12px]">
+        <div className="font-semibold text-[12px] md:text-[16px] border border-[#AFEAFF] bg-[#AFEAFF]/30 text-[#6399CE] p-[10px] rounded-[12px]">
           $1 from every purchase is donated to support children with special
           needs at the 10th Kindergarten.
         </div>

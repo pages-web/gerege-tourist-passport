@@ -36,7 +36,7 @@ export function SidebarNav({ className, items, ...props }: SidebarNavProps) {
               pathname === item.href ||
                 (pathname.includes("/profile/orders/") &&
                   item.href === "/profile/orders")
-                ? "bg-black/10 text-[#0087FF] hover:bg-black/10"
+                ? "bg-black/10 text-[#6399CE] hover:bg-black/10"
                 : "hover:underline",
               "justify-start"
             )}

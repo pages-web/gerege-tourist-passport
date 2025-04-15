@@ -81,7 +81,7 @@ const countries = [
   {
     name: "Korea",
     code: "KR",
-    bgColor: "#0087FF",
+    bgColor: "#6399CE",
     flagImg: "/image/KR.png",
     bgImage: "/image/Korea.png",
   },

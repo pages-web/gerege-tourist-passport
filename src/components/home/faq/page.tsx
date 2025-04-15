@@ -10,9 +10,15 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import FaqTab from "./faq-tab";
+import { useCmsPosts, useCmsTags } from "@/sdk/hooks/cms";
 
 export default function FAQ() {
   const t = useTranslations("FAQ").raw;
+
+  const { cmsTags } = useCmsTags();
+  const { cmsPosts } = useCmsPosts({
+    tagIds: [cmsTags.find((tag) => tag.name === "Faq")?._id],
+  });
 
   return (
     <div
@@ -30,14 +36,16 @@ export default function FAQ() {
         className="w-full"
         data-aos="fade-up"
       >
-        {t("questions").map((item: any, index: number) => {
+        {cmsPosts.map((post, index) => {
           return (
-            <AccordionItem value={`item-${index}`} key={index}>
-              <AccordionTrigger>{item.title}</AccordionTrigger>
-              <AccordionContent
-                asChild
-                dangerouslySetInnerHTML={{ __html: item.description }}
-              ></AccordionContent>
+            <AccordionItem value={post._id} key={index}>
+              <AccordionTrigger>{post.title}</AccordionTrigger>
+              <AccordionContent>
+                <div
+                  className="[&>u]:font-bold [&>u]:text-black"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                ></div>
+              </AccordionContent>
             </AccordionItem>
           );
         })}

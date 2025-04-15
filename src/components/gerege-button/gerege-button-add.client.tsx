@@ -64,7 +64,7 @@ const GeregeButtonAdd = ({
   return (
     <Button
       onClick={handleClick}
-      className={`bg-[#0087FF] text-white w-fit ${className}`}
+      className={`bg-[#6399CE] text-white w-fit ${className}`}
     >
       <Store className="mr-2 w-6 h-6" /> {title || "Gerege Buy for 55$"}
     </Button>

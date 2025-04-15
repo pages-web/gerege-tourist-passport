@@ -27,6 +27,7 @@ export const TitleLists = ({ data }: { data: Lists }) => {
       <h3 className="font-bold text-[16px] md:text-[24px]">{data.title}</h3>
       <div className="flex flex-col gap-y-3">
         {data.lists.map((list, index) => {
+          console.log(list.link, "list.link");
           return (
             <Link href={list.link || ""} key={index}>
               <div className="flex gap-x-1 md:gap-x-2">
@@ -62,7 +63,7 @@ export const TitleLists = ({ data }: { data: Lists }) => {
 export default function Footer() {
   const t = useTranslations("footer").raw;
   return (
-    <div className="bg-[#034EA2] pt-10 md:pt-20 mt-40 text-white relative overflow-hidden">
+    <div className="bg-[#6399CE] pt-10 md:pt-20 mt-40 text-white relative overflow-hidden">
       <Image
         src={"/image/footer-bg-logo.png"}
         alt=""
@@ -82,7 +83,7 @@ export default function Footer() {
 
       <div className="mt-10"></div>
 
-      <div className="container flex md:justify-between justify-center items-center border-t border-[#006EFF] py-4 md:py-8">
+      <div className="container flex md:justify-between justify-center items-center border-t border-[#6399CE] py-4 md:py-8">
         <Image
           src={"/image/footer-logo.png"}
           alt=""

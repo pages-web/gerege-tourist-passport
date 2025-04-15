@@ -64,7 +64,7 @@ export default function WhyGeregePassport() {
         </div>
       </div>
 
-      <div className="w-full bg-[#034EA2] py-16 md:py-32">
+      <div className="w-full bg-[#6399CE] py-16 md:py-32">
         <div className="container">
           <div className="xl:w-full lg:w-[55%] w-full flex relative gap-x-5 lg:gap-x-10 xl:gap-x-20">
             <TitleDesc

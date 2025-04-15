@@ -31,7 +31,7 @@ const BenefitSearch = (category: IKBCategoryDetail) => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="text-[#0087FF]">
+              <BreadcrumbPage className="text-[#6399CE]">
                 {currentArticle?.title}
               </BreadcrumbPage>
             </BreadcrumbItem>
@@ -40,7 +40,7 @@ const BenefitSearch = (category: IKBCategoryDetail) => {
       ) : (
         <p>
           Find out benefits from{" "}
-          <span className="text-[#0087FF]">{category?.articles.length}</span>{" "}
+          <span className="text-[#6399CE]">{category?.articles.length}</span>{" "}
           brands
         </p>
       )}

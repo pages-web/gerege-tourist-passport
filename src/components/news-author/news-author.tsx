@@ -8,7 +8,7 @@ const NewsAuthor = (article: IArticle) => {
     return (
       <div className="space-y-2">
         <h4 className="text-[#1D2939]">{title}</h4>
-        <span className="text-[#0087FF]">{text}</span>
+        <span className="text-[#6399CE]">{text}</span>
       </div>
     );
   };
@@ -28,7 +28,7 @@ const NewsAuthor = (article: IArticle) => {
       <p className="text-[#1D2939]">{FormatDate(article.modifiedDate)}</p>
       <div className="flex flex-col gap-2">
         <Link href={"https://www.facebook.com/profile.php?id=61559305625217"}>
-          <Facebook className="w-8 h-8 text-[#1D2939] hover:text-[#0087FF]" />
+          <Facebook className="w-8 h-8 text-[#1D2939] hover:text-[#6399CE]" />
         </Link>
         <Link href={"https://www.instagram.com/gerege.mn/"}>
           <Instagram className="w-8 h-8 text-[#1D2939] hover:text-[#dd2a7b]" />

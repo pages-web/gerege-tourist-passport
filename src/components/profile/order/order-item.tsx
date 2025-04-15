@@ -22,7 +22,7 @@ const OrderItem = ({
   return (
     <Button
       variant="outline"
-      className="group md:text-[14px] text-[12px] group hover:bg-[#0087FF] w-full h-auto md:h-24 justify-between gap-3 md:gap-6 shadow-none flex-wrap md:flex-nowrap py-6 px-6 md:px-6 md:py-0 rounded-md"
+      className="group md:text-[14px] text-[12px] group hover:bg-[#6399CE] w-full h-auto md:h-24 justify-between gap-3 md:gap-6 shadow-none flex-wrap md:flex-nowrap py-6 px-6 md:px-6 md:py-0 rounded-md"
       asChild
     >
       <Link href={`/profile/orders/${_id}`}>

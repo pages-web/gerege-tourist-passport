@@ -159,7 +159,7 @@ function BenefitsContent() {
             >
               Benefits <KeyboardArrowRightIcon />
             </div>
-            <div className="text-[#0087FF] lg:text-[18px] text-[16px] font-semibold">
+            <div className="text-[#6399CE] lg:text-[18px] text-[16px] font-semibold">
               {selectedCard.title}
             </div>
           </div>
@@ -267,7 +267,7 @@ function BenefitsContent() {
           <div className="lg:w-full w-[389px] h-fit flex lg:justify-between flex-wrap gap-5 lg:pl-0 pl-3">
             {/* Contact */}
             <div className="lg:w-fit w-[389px] h-fit flex flex-col gap-1">
-              <div className="text-[#0087FF] font-bold lg:text-[18px] text-[15px]">
+              <div className="text-[#6399CE] font-bold lg:text-[18px] text-[15px]">
                 Contact
               </div>
               <div className="flex items-center lg:gap-2 gap-1">
@@ -292,7 +292,7 @@ function BenefitsContent() {
 
             {/* Shopping */}
             <div className="lg:w-fit w-[389px] h-fit flex flex-col gap-1">
-              <div className="text-[#0087FF] font-bold lg:text-[18px] text-[15px]">
+              <div className="text-[#6399CE] font-bold lg:text-[18px] text-[15px]">
                 Shopping
               </div>
               <ul className="list-disc pl-5 text-gray-600 lg:text-[14px] text-[12px] font-normal leading-5">
@@ -306,7 +306,7 @@ function BenefitsContent() {
 
             {/* Service */}
             <div className="lg:w-fit w-[389px] h-fit flex flex-col gap-1">
-              <div className="text-[#0087FF] font-bold lg:text-[18px] text-[15px]">
+              <div className="text-[#6399CE] font-bold lg:text-[18px] text-[15px]">
                 Service
               </div>
               <ul className="list-disc pl-5 text-gray-600 lg:text-[14px] text-[12px] font-normal leading-5">

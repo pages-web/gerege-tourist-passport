@@ -8,7 +8,7 @@ export default function AboutHowToUse() {
     <div className="lg:w-[850px] w-[389px] h-fit flex justify-between">
       <div className="lg:w-[480px] w-3/5 lg:h-full h-fit flex flex-col lg:gap-5 gap-3 lg:pl-0 pl-1 justify-between">
         <div>
-          <div className="text-[#0087FF] font-bold lg:text-[30px] text-[20px]">
+          <div className="text-[#6399CE] font-bold lg:text-[30px] text-[20px]">
             {t("title")}
           </div>
           <div className="text-gray-800 lg:text-[21px] text-[14px] font-normal">
@@ -20,7 +20,7 @@ export default function AboutHowToUse() {
             {t("freeToursTitle")}
           </div>
           <ul className="list-disc pl-5 flex flex-col gap-[10px]">
-            <li className="text-[#0087FF] lg:text-base text-[14px] font-semibold">
+            <li className="text-[#6399CE] lg:text-base text-[14px] font-semibold">
               {t("museums.title")}
               <ul className="list-disc pl-5 text-gray-600 lg:text-[14px] text-[11px] lg:leading-[18px] leading-4 font-medium">
                 <li>Chinggis Khaan National Museum</li>
@@ -31,7 +31,7 @@ export default function AboutHowToUse() {
                 <li>The Natural History Museum of Mongolia</li>
               </ul>
             </li>
-            <li className="text-[#0087FF] lg:text-base text-[14px] font-semibold">
+            <li className="text-[#6399CE] lg:text-base text-[14px] font-semibold">
               {t("culturalExperiences.title")}
               <ul className="list-disc pl-5 text-gray-600 lg:text-[14px] text-[11px] lg:leading-[18px] leading-4 font-medium">
                 <li>{t("culturalExperiences.list.0")}</li>
@@ -39,7 +39,7 @@ export default function AboutHowToUse() {
                 <li>{t("culturalExperiences.list.2")}</li>
               </ul>
             </li>
-            <li className="text-[#0087FF] lg:text-base text-[14px] font-semibold">
+            <li className="text-[#6399CE] lg:text-base text-[14px] font-semibold">
               {t("exclusiveOffers.title")}
               <ul className="list-disc pl-5 text-gray-600 lg:text-[14px] text-[11px] lg:leading-[18px] leading-4 font-medium">
                 <li>{t("exclusiveOffers.list.0")}</li>
