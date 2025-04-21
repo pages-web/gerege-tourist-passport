@@ -13,8 +13,8 @@ const ScrollSection = ({
   return (
     <div
       id={id}
-      className={`lg:h-[110vh] scroll-mt-32 lg:scroll-mt-20  flex  ${
-        isFooter ? "items-end" : "items-center"
+      className={`lg:h-[110vh] flex  ${
+        isFooter ? "items-end" : "items-center scroll-mt-32 lg:scroll-mt-20"
       } ${pathname === "/" ? "min-[1200px]:snap-start" : ""}`}
     >
       {children}

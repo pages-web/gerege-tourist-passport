@@ -25,7 +25,10 @@ export const TitleLists = ({ data }: { data: Lists }) => {
       <div className="flex flex-col gap-y-3">
         {data.lists.map((list, index) => {
           return (
-            <div className="flex lg:items-start items-center gap-x-2" key={index}>
+            <div
+              className="flex lg:items-start items-center gap-x-2"
+              key={index}
+            >
               {list.icon && (
                 <span className="md:w-6 md:h-6 flex items-start">
                   {list.icon === "phone" && <Phone className="w-6 h-6" />}
