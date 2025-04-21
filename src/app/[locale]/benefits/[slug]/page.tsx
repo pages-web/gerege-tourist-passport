@@ -89,7 +89,7 @@ const Benefit = ({ params }: IPageProps) => {
     );
 
   return (
-    <div className="relative min-h-screen container flex flex-col lg:flex-row gap-10 pt-10 scroll-mt-40">
+    <div className="relative min-h-screen container mt-20 flex flex-col lg:flex-row gap-10 pt-10 scroll-mt-40">
       <div className="hidden lg:flex flex-col gap-6 font-semibold sticky top-40 h-full w-[20%]">
         <h2 className="text-xl text-[#64748B]">
           {cmsPosts[0].tags[0].name} {currentCategory?.name}
@@ -121,15 +121,7 @@ const Benefit = ({ params }: IPageProps) => {
         </SelectContent>
       </Select>
 
-      <div
-        className={`w-full h-full lg:w-[80%] ${
-          cmsPosts[0].categories[0].slug === "entertainment" ||
-          cmsPosts[0].categories[0].slug === "beauty-healthy" ||
-          cmsPosts[0].tags[0].name === "Discount"
-            ? "grid lg:grid-cols-2 gap-24 lg:gap-4"
-            : "space-y-24"
-        }`}
-      >
+      <div className={`w-full h-full lg:w-[80%] space-y-24`}>
         {cmsPosts?.map((post) => {
           const currentData = currentCategoryData?.list.find(
             (data) => data.title === post.title
@@ -137,21 +129,14 @@ const Benefit = ({ params }: IPageProps) => {
 
           return (
             <section
-              className={`scroll-mt-40 ${
-                cmsPosts[0].categories[0].slug !== "entertainment" &&
-                cmsPosts[0].categories[0].slug !== "beauty-healthy" &&
-                "space-y-4"
-              }`}
+              className={`scroll-mt-40 space-y-4`}
               id={post._id}
               ref={(el) => {
                 sectionRefs.current[post._id] = el;
               }}
               key={post._id}
             >
-              {cmsPosts[0].categories[0].slug !== "entertainment" &&
-                cmsPosts[0].categories[0].slug !== "beauty-healthy" && (
-                  <h1 className="text-2xl font-bold">{post.title}</h1>
-                )}
+              <h1 className="text-2xl font-bold">{post.title}</h1>
 
               <div className="lg:h-[400px] overflow-hidden">
                 <Image
@@ -192,19 +177,20 @@ const Benefit = ({ params }: IPageProps) => {
                   </Link>
                 )}
 
-                {currentData?.locations &&
-                  currentData.locations.map((locationData, index) => (
-                    <Link
-                      className="flex gap-2"
-                      href={`https://www.google.com/maps?q=${locationData.location}`}
-                      target="_blank"
-                      key={index}
-                    >
-                      <MapPin />
-                      {/* {locationData.name}  */}
-                      Department {index + 1}
-                    </Link>
-                  ))}
+                {currentData?.locations && (
+                  <Link
+                    className="flex gap-2"
+                    href={`https://www.google.com/maps/dir/${currentData.locations
+                      .map((location) => location.location)
+                      .join("/")}`}
+                    target="_blank"
+                  >
+                    <MapPin />
+                    {currentData.location
+                      ? currentData.locationText
+                      : "Tap to map"}
+                  </Link>
+                )}
 
                 {currentData?.timeTables && (
                   <Accordion type="single" collapsible>
@@ -212,14 +198,18 @@ const Benefit = ({ params }: IPageProps) => {
                       value="item-1"
                       className="border-none max-w-[500px]"
                     >
-                      <AccordionTrigger>
+                      <AccordionTrigger className="py-0">
                         <div className="flex gap-2 font-normal">
                           <Clock3 />
                           Open
                         </div>
                       </AccordionTrigger>
                       <AccordionContent
-                        className={`flex items-end justify-between gap-4 px-8`}
+                        className={`flex items-end justify-between gap-4 px-8 ${
+                          currentData.timeTables[0].season === "all"
+                            ? "mt-4"
+                            : ""
+                        }`}
                       >
                         <div className="flex flex-col gap-1 capitalize">
                           {Object.keys(currentData.timeTables[0].days).map(
@@ -231,7 +221,7 @@ const Benefit = ({ params }: IPageProps) => {
 
                         {currentData?.timeTables?.map((timeTable) => (
                           <div
-                            className="flex flex-col items-center gap-1 capitalize"
+                            className="flex flex-col items-center gap-1 capitalize "
                             key={timeTable.season}
                           >
                             {timeTable.season === "summer" && (

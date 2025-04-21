@@ -59,7 +59,7 @@ const CarouselSection = () => {
 
   return (
     <Carousel
-      className="w-full"
+      className="w-full h-full"
       opts={{ loop: true }}
       plugins={[plugin.current]}
       onMouseEnter={plugin.current.stop}
@@ -71,7 +71,7 @@ const CarouselSection = () => {
         {slides.map((slide, index) => (
           <CarouselItem
             key={index}
-            className="p-0 relative w-full -z-10 overflow-hidden max-h-[600px] lg:max-h-[850px]"
+            className="p-0 relative w-full -z-10 overflow-hidden h-[110vh]"
           >
             <Image
               src={slide.backgroundImage}

@@ -14,6 +14,7 @@ export interface IBenefitList {
   facebook?: string;
   instagram?: string;
   timeTables?: IBenefitListTimeTable[];
+  timeTableText?: string;
   phone?: string;
   discount?: string;
   app_store?: string;

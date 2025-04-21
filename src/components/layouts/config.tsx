@@ -29,6 +29,7 @@ const ConfigProvider = ({
       easing: "ease-in-out", // Easing options
       // once: true, // Whether animation should happen only once
       delay: 100,
+      offset: -400,
     });
   }, []);
 

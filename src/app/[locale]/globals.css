@@ -99,3 +99,8 @@
   scroll-behavior: smooth !important;
   font-family: "Monda", sans-serif !important;
 }
+html {
+  scroll-snap-type: y mandatory !important;
+  zoom: 90%;
+  height: 111.11vh;
+}

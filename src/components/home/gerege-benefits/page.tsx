@@ -39,16 +39,17 @@ export default function Benefits() {
 
   const discountCmsCategories = cmsCategories.filter(
     (category) =>
-      category.slug !== "transport" &&
-      category.slug !== "traditional-costume-rental" &&
-      category.slug !== "museum" &&
-      category.slug !== "gift" &&
-      category.slug !== "data-sim"
+      category.slug === "hotel-guest-house" ||
+      category.slug === "restaurant-lounge" ||
+      category.slug === "camps" ||
+      category.slug === "shops" ||
+      category.slug === "entertainment" ||
+      category.slug === "beauty-healthy"
   );
 
   return (
     <>
-      <div id="gerege-benefit" className="w-full flex flex-col gap-8">
+      <div className="container w-full flex flex-col gap-8 scroll-mt-40 ">
         <Heading title={t("title")} desc={t("subtitle")} data-aos="fade-up" />
 
         <div className="flex justify-center" data-aos="fade-up">
@@ -59,7 +60,7 @@ export default function Benefits() {
             }}
             className="items-center"
           >
-            <TabsList className="rounded-3xl">
+            <TabsList className="rounded-3xl px-0">
               {fixedCmsTags?.map((tag, index) => {
                 return (
                   <TabsTrigger
@@ -67,7 +68,7 @@ export default function Benefits() {
                     value={tag.name}
                     className="flex gap-2 rounded-3xl"
                   >
-                    <div className="w-6 h-6">
+                    <div className="w-8 h-8">
                       <Image
                         src={
                           tag.name === "Free"
@@ -104,13 +105,15 @@ export default function Benefits() {
                   />
                 )
               )
-            : discountCmsCategories?.map((category) => (
-                <CategoryCard
-                  category={category}
-                  timestamp={timestamp}
-                  key={category.slug}
-                />
-              ))}
+            : [...discountCmsCategories, { _id: "", name: "", slug: "" }]?.map(
+                (category) => (
+                  <CategoryCard
+                    category={category}
+                    timestamp={timestamp}
+                    key={category.slug}
+                  />
+                )
+              )}
         </div>
       </div>
     </>

@@ -4,16 +4,43 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import Heading from "@/components/heading/heading";
 import { cn } from "@/lib/utils";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import "./page.css";
 
 export default function WhyUs() {
   const t = useTranslations("aboutUs").raw;
 
   return (
-    <div id="about" className="space-y-10">
-      <Heading title={t("title")} desc={t("description")} data-aos="fade-up" />
+    <div className="container space-y-10 scroll-mt-40">
+      <Heading title={t("title")} data-aos="fade-up" />
 
-      {/* benefits desktop screen */}
-      <div className="w-full grid md:grid-cols-2 xl:grid-cols-4 gap-4">
+      <Accordion
+        type="single"
+        collapsible
+        defaultValue="item-0"
+        data-aos="fade-up"
+      >
+        {t("about").map((item: any, index: number) => (
+          <AccordionItem value={`item-${index}`} key={index}>
+            <AccordionTrigger className="font-semibold">
+              {item.title}
+            </AccordionTrigger>
+            <AccordionContent>
+              <div
+                className="text-[#1D2939] text-[14px] [&>*]:list-disc aboutUs"
+                dangerouslySetInnerHTML={{ __html: item.description }}
+              ></div>
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+
+      <div className="w-full grid md:grid-cols-4 gap-4">
         {[1, 2, 3, 4].map((item, index) => (
           <div
             key={index}
@@ -39,6 +66,7 @@ export default function WhyUs() {
                 __html: t(`benefits.${index}.title`),
               }}
             ></div>
+
             <div
               className="text-[#1D2939] text-[16px]"
               dangerouslySetInnerHTML={{

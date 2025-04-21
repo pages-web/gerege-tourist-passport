@@ -3,10 +3,11 @@
     "title": "GEREGE TOURIST PASSPORT LLC",
     "texts": [
       { "name": "Home", "href": "/" },
-      { "name": "About", "href": "#about" },
-      { "name": "Gerege Benefit", "href": "#gerege-benefit" },
-      { "name": "News And Tips", "href": "#news-and-tips" },
-      { "name": "FAQ", "href": "#faq" }
+      { "name": "About", "href": "/#about" },
+      { "name": "Gerege Benefit", "href": "/#gerege-benefit" },
+      { "name": "News And Tips", "href": "/#news-and-tips" },
+      { "name": "Help Center", "href": "/#help-center" },
+      { "name": "FAQ", "href": "/#faq" }
     ]
   },
 
@@ -25,23 +26,37 @@
 
   "aboutUs": {
     "title": "About us",
-    "description": "The <b>Gerege Tourist Passport</b> is a modern travel document and travel log inspired by the <b>Gerege</b>, a diplomatic pass used during the Mongol Empire. It serves as a symbol for promoting Mongolia’s history and culture while enhancing tourism. The Gerege Tourist Passport offers the following benefits:",
+    "about": [
+      {
+        "title": "What is the Gerege? — Our Historical Foundation",
+        "description": "During the time of the Mongol Empire, the “Gerege” was a diplomatic passport issued to emissaries and envoys. It granted them safe passage, food, horses, lodging, and guides across the vast territory of the empire. It was the world’s first form of a universal travel token—unparalleled in any other civilization, even the Roman Empire. The holder of a Gerege traveled freely and received honorable hospitality, symbolizing power, trust, and international authority."
+      },
+      {
+        "title": "Modern Rebirth – The Gerege Tourist Passport",
+        "description": "The Gerege Tourist Passport is a contemporary version of this historical legacy—reimagined for today’s travelers. Designed to promote Mongolia’s culture and history to international tourists, it combines educational value with real-world benefits: free access to 8 services, discounts at over 100 partner businesses, and contributions to charitable causes such as children’s welfare."
+      },
+      {
+        "title": "Safe, Simple, Smart, and Saving – The Four Pillars of the Gerege Tourist Passport",
+        "description": "These four keywords represent the core strengths of the Gerege Tourist Passport: <br></br> <ul><li>Safe: Officially registered and secure, your personal data is protected. The passport supports responsible and safe travel across Mongolia.</li><li>Simple: Easy to purchase, use, and redeem discounts. The experience is user-friendly and convenient for all travelers.</li><li>Smart: Enhanced with technology—QR codes, an online network of partners, and seamless integration to make your journey efficient and smooth.</li><li>Saving: Access discounts at over 100 establishments including hotels, restaurants, and attractions—helping you reduce travel costs without sacrificing quality.</li></ul><br/>The Gerege Tourist Passport is your trusted companion—bridging ancient Mongolian legacy with modern-day travel in a way that is educational, valuable, and inspiring."
+      }
+    ],
+
     "benefits": [
       {
-        "title": "Opportunity to Explore Mongolia’s History and Culture",
-        "description": "Travelers can gain a deeper understanding of Mongolia’s rich historical and cultural heritage by learning about the significance of the Gerege used during the Mongol Empire."
+        "title": "Safe",
+        "description": "Officially registered and secure, your personal data is protected. The passport supports responsible and safe travel across Mongolia."
       },
       {
-        "title": "Comprehensive and Convenient Services",
-        "description": "The Gerege Passport provides all essential travel information, recommendations, locations, emergency contact numbers, tourism support centers, discounts, and promotions. It is available in English and Korean as a <b>digital solution</b> that allows online purchases, saving travelers time, money, and eliminating language barriers."
+        "title": "Simple",
+        "description": "Easy to purchase, use, and redeem discounts. The experience is user-friendly and convenient for all travelers."
       },
       {
-        "title": "Access to Discounts and Benefits",
-        "description": "Holders of the Gerege Passport can enjoy exclusive discounts on hotels, tourist camps, museums, transportation, entertainment, and various other services, making their travel more affordable and enjoyable."
+        "title": "Smart",
+        "description": "Enhanced with technology—QR codes, an online network of partners, and seamless integration to make your journey efficient and smooth."
       },
       {
-        "title": "A Memorable Travel Souvenir",
-        "description": "The Gerege Passport serves as a keepsake that brings back warm travel memories every time you see it. It is not only a practical daily-use item but also a unique addition to any travel collection."
+        "title": "Saving",
+        "description": "Access discounts at over 100 establishments including hotels, restaurants, and attractions—helping you reduce travel costs without sacrificing quality."
       }
     ]
   },
@@ -279,7 +294,7 @@
             "play_store": "https://play.google.com/store/apps/details?id=com.mezorn.ubcab.ubcab_passanger_v2"
           },
           {
-            "title": "Jet Scooter 5000 MNT Credit",
+            "title": "Jet Scooter 5.000 MNT Credit",
             "app_store": "https://apps.apple.com/us/app/jet-scooter-sharing/id1546127285",
             "play_store": "https://play.google.com/store/apps/details?id=com.jetscooters"
           }
@@ -657,6 +672,55 @@
         ]
       },
       {
+        "title": "beauty-healthy",
+        "list": [
+          {
+            "title": "Siam Thai Massage Mongolia",
+            "location": "47.90549096847877,106.90422128922624",
+            "timeTables": [
+              {
+                "season": "all",
+                "days": {
+                  "mon": "12:00-22:00",
+                  "tue": "12:00-22:00",
+                  "wed": "12:00-22:00",
+                  "thu": "12:00-22:00",
+                  "fri": "12:00-22:00",
+                  "sat": "09:00-20:00",
+                  "sun": "09:00-20:00"
+                }
+              }
+            ],
+            "facebook": "https://www.facebook.com/profile.php?id=100065246552155",
+            "instagram": "https://www.instagram.com/siam_thai_massage_mongolia/",
+            "phone": "+976 8027-0789",
+            "discount": "10%"
+          },
+          {
+            "title": "ONEFIT All-Access Fitness Membership application",
+            "timeTables": [
+              {
+                "season": "all",
+                "days": {
+                  "mon": "12:00-22:00",
+                  "tue": "12:00-22:00",
+                  "wed": "12:00-22:00",
+                  "thu": "12:00-22:00",
+                  "fri": "12:00-22:00",
+                  "sat": "09:00-20:00",
+                  "sun": "09:00-20:00"
+                }
+              }
+            ],
+            "facebook": "https://www.facebook.com/onefitapp",
+            "website": "https://www.onefit.mn/en/",
+            "phone": "+976 7710-7700",
+            "discount": "10%",
+            "app_store": "https://apps.apple.com/mn/app/onefit-anytime-anywhere/id1130801699"
+          }
+        ]
+      },
+      {
         "title": "other",
         "list": [
           {
@@ -787,99 +851,33 @@
         "list": [
           {
             "title": "Ulaanbaatar City Center",
-            "locationText": "1st floor, Building No.4 of the Capital City Administration <br/> Tap to map",
             "location": "47.921933758274015,106.91168166503019",
             "phone": "+976 70108687",
-            "timeTables": [
-              {
-                "season": "all",
-                "days": {
-                  "mon": "08:30–17:30",
-                  "tue": "08:30–17:30",
-                  "wed": "08:30–17:30",
-                  "thu": "08:30–17:30",
-                  "fri": "08:30–17:30",
-                  "sat": "closed",
-                  "sun": "closed"
-                }
-              }
-            ]
+            "timeTableText": "Weekdays, 08:30–17:30"
           },
           {
             "title": "Chinggis Khaan International Airport",
             "location": "47.659159203174944,106.82449706211038",
             "phone": "+976 90228888, +976  99109012",
-            "timeTables": [
-              {
-                "season": "all",
-                "days": {
-                  "mon": "Open 24 hours",
-                  "tue": "Open 24 hours",
-                  "wed": "Open 24 hours",
-                  "thu": "Open 24 hours",
-                  "fri": "Open 24 hours",
-                  "sat": "closed",
-                  "sun": "closed"
-                }
-              }
-            ]
+            "timeTableText": "Open 24 hours on weekdays"
           },
           {
             "title": "Seoul Street Center – “Mongol Olle”",
             "location": "47.91369596886584,106.90359581164682",
             "phone": "+976 91658011",
-            "timeTables": [
-              {
-                "season": "all",
-                "days": {
-                  "mon": "09:30–18:30",
-                  "tue": "09:30–18:30",
-                  "wed": "09:30–18:30",
-                  "thu": "09:30–18:30",
-                  "fri": "09:30–18:30",
-                  "sat": "closed",
-                  "sun": "closed"
-                }
-              }
-            ]
+            "timeTableText": "Weekdays, 09:30–18:30"
           },
           {
             "title": "Terelj, Nalaikh District – “Mongol Olle”",
             "locationText": "“Mongol Olle” Info Center, 6th khoroo, Nalaikh District, Terelj, Ulaanbaatar, Mongolia",
             "phone": "+976 99779870",
-            "timeTables": [
-              {
-                "season": "all",
-                "days": {
-                  "mon": "09:30–18:30",
-                  "tue": "09:30–18:30",
-                  "wed": "09:30–18:30",
-                  "thu": "09:30–18:30",
-                  "fri": "09:30–18:30",
-                  "sat": "closed",
-                  "sun": "closed"
-                }
-              }
-            ]
+            "timeTableText": "Weekdays, 09:30–18:30"
           },
           {
             "title": "Khoroo 11, Khnokhor Village – “Mongol Olle”",
             "locationText": "“Mongol Olle” Info Center, 11th khoroo, Khonkhor Village, Bayanzurkh District, Ulaanbaatar, Mongolia",
             "phone": "+976 96668076",
-            "timeTables": [
-              {
-                "season": "all",
-                "days": {
-                  "mon": "09:30–18:30",
-                  "tue": "09:30–18:30",
-                  "wed": "09:30–18:30",
-                  "thu": "09:30–18:30",
-                  "fri": "09:30–18:30",
-                  "sat": "closed",
-                  "sun": "closed"
-                }
-              }
-            ]
+            "timeTableText": "Weekdays, 09:30–18:30"
           }
         ]
       },
@@ -887,20 +885,7 @@
         "title": "Ministry of Foreign Affairs (Hotline): 11-11",
         "location": "47.9177210702787,106.9210269673856",
         "phone": "1111, 11322127",
-        "timeTables": [
-          {
-            "season": "all",
-            "days": {
-              "mon": "08:00–17:30",
-              "tue": "08:00–17:30",
-              "wed": "08:00–17:30",
-              "thu": "08:00–17:30",
-              "fri": "08:00–17:30",
-              "sat": "closed",
-              "sun": "closed"
-            }
-          }
-        ]
+        "timeTableText": "Weekdays, 08:00–17:30"
       }
     ]
   },
@@ -909,16 +894,7 @@
     "description": "Copyright 2025. ⓒ GEREGE TOURIST PASSPORT. All Rights Reserved.",
     "content": [
       {
-        "title": "About",
-        "lists": [
-          { "name": "About us", "link": "#about" },
-          { "name": "Cultural experience", "link": "/" },
-          { "name": "Restaurant", "link": "/" },
-          { "name": "Hotel", "link": "/" }
-        ]
-      },
-      {
-        "title": "Our Contacts",
+        "title": "Contacts",
         "lists": [
           {
             "name": "+976 7777-1214",
@@ -931,26 +907,11 @@
         ]
       },
       {
-        "title": "Our Address",
+        "title": "Address",
         "lists": [
           {
             "name": "1003, Minister Tower, 1st khoroo, Sukhbaatar district, Ulaanbaatar, Mongolia",
             "icon": "mapPin"
-          }
-        ]
-      },
-      {
-        "title": "Our social",
-        "lists": [
-          {
-            "name": "Gerege Tourist Passport Mongolia",
-            "link": "https://www.facebook.com/profile.php?id=61559305625217",
-            "icon": "facebook"
-          },
-          {
-            "name": "@gerege.mn",
-            "link": "https://www.instagram.com/gerege.mn/",
-            "icon": "instagram"
           }
         ]
       }

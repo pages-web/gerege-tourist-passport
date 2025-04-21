@@ -1,13 +1,16 @@
 "use client";
 
-import { Link } from "@/navigation";
+import { Link, usePathname } from "@/navigation";
+import { scrolledAtom } from "@/store/framer.store";
+import { useAtomValue } from "jotai";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
 const HeaderTexts = () => {
   const t = useTranslations("Header").raw;
-  const locale = useLocale();
   const [clickedItem, setClickedItem] = useState(null);
+  const scrolled = useAtomValue(scrolledAtom);
+  const pathname = usePathname();
 
   const handleItemClick = (index: any) => {
     setClickedItem(index === clickedItem ? null : index);
@@ -19,7 +22,11 @@ const HeaderTexts = () => {
         <Link key={index} href={item.href}>
           <div
             className={`text-[16px] font-semibold ${
-              index === clickedItem ? "text-blue-600" : "text-gray-600"
+              pathname === "/"
+                ? scrolled
+                  ? "text-gray-600"
+                  : "text-white"
+                : "text-gray-600"
             }`}
             onClick={() => handleItemClick(index)}
           >

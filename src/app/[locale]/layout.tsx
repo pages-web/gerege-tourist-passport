@@ -9,7 +9,7 @@ import OrderCRUD from "@/containers/order-cud";
 import { getConfig } from "@/sdk/queries/auth";
 import ConfigProvider from "@/components/layouts/config";
 import { Metadata } from "next/types";
-import Header from "@/components/header/page";
+import Header from "@/components/header/header";
 import DefaultLayout from "@/components/layouts";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";

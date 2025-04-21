@@ -52,7 +52,7 @@ const LanguageAndSearch = () => {
 
   return (
     <div className="w-full py-2 bg-gray-300">
-      <div className="container flex justify-between items-center">
+      <div className="container flex justify-end items-center">
         <div className="flex lg:gap-[10px] gap-[5px] items-center">
           {locales.map(({ code, label, flag }, index) => (
             <>

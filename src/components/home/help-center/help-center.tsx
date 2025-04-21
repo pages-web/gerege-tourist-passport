@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-import { useState } from "react";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { useTranslations } from "next-intl";
 import {
   Accordion,
@@ -17,19 +15,19 @@ import { Link } from "@/navigation";
 export default function HelpCenter() {
   const t = useTranslations("HelpCenter").raw;
 
-  console.log(t("helps"), "tes");
-
   return (
-    <div
-      className="lg:px-40 md:px-10 px-0 flex flex-col items-center gap-y-8 md:gap-y-16"
-      id="HelpCenter"
-    >
+    <div className="container" >
       <div className="space-y-5" data-aos="fade-up">
-        <h2 className="text-center uppercase text-[20px] md:text-[30px] text-[#1D2939] font-semibold">
+        <h2 className="text-center uppercase text-[20px] md:text-[30px] text-[#1D2939] font-semibold scroll-mt-40 ">
           {t("title")}
         </h2>
       </div>
-      <Accordion type="multiple" className="w-full" data-aos="fade-up">
+      <Accordion
+        type="single"
+        collapsible
+        className="w-full"
+        data-aos="fade-up"
+      >
         {t("helps").map((help: IHelp, index: number) => {
           return (
             <AccordionItem value={`item-${index}`} key={index}>
@@ -51,43 +49,41 @@ export default function HelpCenter() {
                   </div>
                 )}
                 {help.list && (
-                  <Accordion type="multiple" className="pl-6">
+                  <Accordion type="single" collapsible className="pl-6">
                     {help.list.map((list, index) => (
                       <AccordionItem value={`multi-item-${index}`} key={index}>
                         <AccordionTrigger>{list.title}</AccordionTrigger>
                         <AccordionContent>
-                          <div className="space-y-4 px-10">
-                            <div className="flex items-start gap-10">
-                              {list.location && (
-                                <Link
-                                  className="flex items-center gap-2"
-                                  href={`https://www.google.com/maps?q=${list.location}`}
-                                  target="_blank"
-                                >
-                                  <MapPin />
-                                  <p
-                                    dangerouslySetInnerHTML={{
-                                      __html: list.locationText
-                                        ? list.locationText
-                                        : "Tap to map",
-                                    }}
-                                  ></p>
-                                </Link>
-                              )}
+                          <div className="flex gap-4 px-10">
+                            {list.location && (
+                              <Link
+                                className="flex items-center gap-2"
+                                href={`https://www.google.com/maps?q=${list.location}`}
+                                target="_blank"
+                              >
+                                <MapPin />
+                                <p
+                                  dangerouslySetInnerHTML={{
+                                    __html: list.locationText
+                                      ? list.locationText
+                                      : "Tap to map",
+                                  }}
+                                ></p>
+                              </Link>
+                            )}
 
-                              {list.locationText && !list.location && (
-                                <div className="flex items-center gap-2">
-                                  <MapPin />
-                                  {list.locationText}
-                                </div>
-                              )}
+                            {list.locationText && !list.location && (
+                              <div className="flex items-center gap-2">
+                                <MapPin />
+                                {list.locationText}
+                              </div>
+                            )}
 
-                              {list?.phone && (
-                                <div className="flex gap-2 items-center">
-                                  <Phone className="h-5 w-5"/> {list.phone}
-                                </div>
-                              )}
-                            </div>
+                            {list?.phone && (
+                              <div className="flex gap-2 items-center">
+                                <Phone className="h-5 w-5" /> {list.phone}
+                              </div>
+                            )}
 
                             {list?.timeTables && (
                               <div className="flex gap-2">
@@ -116,32 +112,37 @@ export default function HelpCenter() {
                                 </div>
                               </div>
                             )}
+
+                            {list?.timeTableText && (
+                              <div className="flex gap-2 font-normal items-center">
+                                <Clock3 />
+                                {list.timeTableText}
+                              </div>
+                            )}
                           </div>
                         </AccordionContent>
                       </AccordionItem>
                     ))}
                   </Accordion>
                 )}
-                {help.location && help.phone && help.timeTables && (
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-10">
-                      {help.location && (
-                        <Link
-                          className="flex items-center gap-2"
-                          href={`https://www.google.com/maps?q=${help.location}`}
-                          target="_blank"
-                        >
-                          <MapPin />
-                          Tap to map
-                        </Link>
-                      )}
+                {help.location && help.phone && help.timeTableText && (
+                  <div className="flex gap-4">
+                    {help.location && (
+                      <Link
+                        className="flex items-center gap-2"
+                        href={`https://www.google.com/maps?q=${help.location}`}
+                        target="_blank"
+                      >
+                        <MapPin />
+                        Tap to map
+                      </Link>
+                    )}
 
-                      {help.phone && (
-                        <div className="flex gap-2 items-center">
-                          <Phone className="h-5 w-5"/> {help.phone}
-                        </div>
-                      )}
-                    </div>
+                    {help.phone && (
+                      <div className="flex gap-2 items-center">
+                        <Phone className="h-5 w-5" /> {help.phone}
+                      </div>
+                    )}
 
                     {help?.timeTables && (
                       <div className="flex gap-2">
@@ -164,6 +165,13 @@ export default function HelpCenter() {
                             </div>
                           ))}
                         </div>
+                      </div>
+                    )}
+
+                    {help?.timeTableText && (
+                      <div className="flex gap-2 font-normal items-center">
+                        <Clock3 />
+                        {help.timeTableText}
                       </div>
                     )}
                   </div>

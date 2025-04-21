@@ -20,33 +20,32 @@ const MobileMenu = () => {
       <SheetTrigger>
         <MenuIcon className="min-w-8 min-h-8" />
       </SheetTrigger>
-      <SheetContent className="w-[90%] sm:w-[540px] bg-white ">
+      <SheetContent className="w-full bg-white">
         <SheetTitle>
           <h3 className="w-[80%] logo-text text-[20px] font-semibold text-[#6399CE]">
             GEREGE TOURIST PASSPORT LLC
           </h3>
         </SheetTitle>
 
-        <Separator className="my-3" />
+        <Separator className="my-6" />
 
-        <div className="flex flex-col items-end gap-3">
+        <div className="flex flex-col gap-6">
           {t("texts").map((item: any, index: number) => (
-            <SheetClose key={index}>
+            <>
               <Link
+                key={index}
                 href={item.href}
                 className="text-[20px] font-semibold text-gray-600"
               >
-                {item.name}
+                <SheetClose>{item.name}</SheetClose>
               </Link>
-            </SheetClose>
+
+              <Separator className="w-full" />
+            </>
           ))}
           <SheetClose>
             <GeregeButton />
           </SheetClose>
-
-          <Separator />
-
-          <CurrentUser />
         </div>
       </SheetContent>
     </Sheet>

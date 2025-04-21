@@ -1,14 +1,11 @@
 "use client";
 import React, { ReactNode } from "react";
 import Image from "../ui/image";
-import { Link } from "@/navigation";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import MailIcon from "@mui/icons-material/Mail";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { useParams } from "next/navigation";
+
 import { useTranslations } from "next-intl";
-import { Mail, MapPin, Phone } from "lucide-react";
-import { Facebook, Instagram } from "@mui/icons-material";
+import { Facebook, Mail, MapPin, Phone } from "lucide-react";
+import { Instagram } from "@mui/icons-material";
+import { Link } from "@/navigation";
 
 type List = {
   name: string;
@@ -24,35 +21,20 @@ type Lists = {
 export const TitleLists = ({ data }: { data: Lists }) => {
   return (
     <div className="space-y-4 max-w-[340px]">
-      <h3 className="font-bold text-[16px] md:text-[24px]">{data.title}</h3>
+      <h3 className="font-bold text-[20px] lg:text-[24px]">{data.title}</h3>
       <div className="flex flex-col gap-y-3">
         {data.lists.map((list, index) => {
-          console.log(list.link, "list.link");
           return (
-            <Link href={list.link || ""} key={index}>
-              <div className="flex gap-x-1 md:gap-x-2">
-                {list.icon && (
-                  <span className="md:w-6 md:h-6 flex items-start">
-                    {list.icon === "phone" && (
-                      <Phone className="w-4 h-4 md:w-6 md:h-6" />
-                    )}
-                    {list.icon === "mail" && (
-                      <Mail className="w-4 h-4 md:w-6 md:h-6" />
-                    )}
-                    {list.icon === "mapPin" && (
-                      <MapPin className="w-4 h-4 md:w-6 md:h-6" />
-                    )}
-                    {list.icon === "facebook" && (
-                      <Facebook className="w-4 h-4 md:w-6 md:h-6" />
-                    )}
-                    {list.icon === "instagram" && (
-                      <Instagram className="w-4 h-4 md:w-6 md:h-6" />
-                    )}
-                  </span>
-                )}
-                <p className="text-[12px] md:text-[18px]">{list.name}</p>
-              </div>
-            </Link>
+            <div className="flex lg:items-start items-center gap-x-2" key={index}>
+              {list.icon && (
+                <span className="md:w-6 md:h-6 flex items-start">
+                  {list.icon === "phone" && <Phone className="w-6 h-6" />}
+                  {list.icon === "mail" && <Mail className="w-6 h-6" />}
+                  {list.icon === "mapPin" && <MapPin className="w-6 h-6" />}
+                </span>
+              )}
+              <p className="text-[18px]">{list.name}</p>
+            </div>
           );
         })}
       </div>
@@ -63,22 +45,52 @@ export const TitleLists = ({ data }: { data: Lists }) => {
 export default function Footer() {
   const t = useTranslations("footer").raw;
   return (
-    <div className="bg-[#6399CE] pt-10 md:pt-20 mt-40 text-white relative overflow-hidden">
-      <Image
-        src={"/image/footer-bg-logo.png"}
-        alt=""
-        width={1400}
-        height={600}
-        quality={100}
-        className="absolute right-0 top-10 md:top-0 opacity-15"
-      />
-
+    <div className="w-full bg-[#6399CE] pt-10 md:pt-10 mt-40 text-white relative overflow-hidden">
       <div className="container">
-        <div className="xl:flex xl:justify-between grid grid-cols-2 gap-8 flex-wrap">
+        <div className="flex justify-between lg:flex-row flex-col gap-8 flex-wrap">
           {t("content").map((data: any, index: number) => {
             return <TitleLists data={data} key={index} />;
           })}
+
+          <div className="space-y-4 w-[475px]">
+            <h3 className="font-bold text-[20px] lg:text-[24px]">Social</h3>
+            <div className="flex flex-col gap-y-3">
+              <div className="flex flex-wrap gap-x-1 md:gap-x-2">
+                <Link
+                  href={
+                    "https://www.facebook.com/profile.php?id=61559305625217"
+                  }
+                  target="_blank"
+                >
+                  <div className="lg:w-14 lg:h-14 w-10 h-10 flex justify-center items-center rounded-full bg-[#5585b6]">
+                    <Facebook className="w-5 h-5 md:w-7 md:h-7" />
+                  </div>
+                </Link>
+                <Link
+                  href={"https://www.instagram.com/gerege.mn/"}
+                  target="_blank"
+                >
+                  <div className="lg:w-14 lg:h-14 w-10 h-10 flex justify-center items-center rounded-full bg-[#5585b6]">
+                    <Instagram className="w-5 h-5 md:w-7 md:h-7" />
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
+        {/* "title": "Social",
+        "lists": [
+          {
+            "name": "Gerege Tourist Passport Mongolia",
+            "link": "https://www.facebook.com/profile.php?id=61559305625217",
+            "icon": "facebook"
+          },
+          {
+            "name": "@gerege.mn",
+            "link": "https://www.instagram.com/gerege.mn/",
+            "icon": "instagram"
+          }
+        ] */}
       </div>
 
       <div className="mt-10"></div>
@@ -92,7 +104,9 @@ export default function Footer() {
           quality={100}
           className="hidden md:block"
         />
-        <p className="text-[10px] md:text-[14px]">{t("description")}</p>
+        <p className="text-[12px] lg:text-[14px] text-center">
+          {t("description")}
+        </p>
       </div>
     </div>
   );

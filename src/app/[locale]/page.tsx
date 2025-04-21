@@ -7,23 +7,37 @@ import WhyGeregePassport from "@/components/home/why-choose-gerege-tourist-passp
 import NewsAndTips from "@/components/home/news-and-tips/page";
 import CarouselSection from "@/components/home/carousel/page";
 import HelpCenter from "@/components/home/help-center/help-center";
+import ScrollContainer from "@/components/scroll-container/scroll-container";
+import ScrollSection from "@/components/scroll-container/scroll-section";
+import Footer from "@/components/footer/page";
 
-const Home = ({ searchParams }: IPageProps) => {
+const Home = () => {
   return (
-    <main className="min-h-screen flex flex-col items-center gap-y-28">
-      <CarouselSection />
-      <div className="container space-y-28">
+    <ScrollContainer>
+      <ScrollSection id="home">
+        <CarouselSection />
+      </ScrollSection>
+
+      <ScrollSection id="about">
         <WhyUs />
+      </ScrollSection>
+
+      <ScrollSection id="gerege-benefit">
         <Benefits />
-      </div>
-      <div className="container space-y-28">
+      </ScrollSection>
+
+      <ScrollSection id="news-and-tips">
         <NewsAndTips />
-        {/* <LoyaltyCard searchParams={searchParams} /> */}
-        <FAQ />
+      </ScrollSection>
+
+      <ScrollSection id="help-center">
         <HelpCenter />
-      </div>
-      {/* <Review /> */}
-    </main>
+      </ScrollSection>
+
+      <ScrollSection id="faq">
+        <FAQ />
+      </ScrollSection>
+    </ScrollContainer>
   );
 };
 

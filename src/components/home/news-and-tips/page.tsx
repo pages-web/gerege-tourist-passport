@@ -16,8 +16,7 @@ const NewsAndTips = () => {
 
   return (
     <div
-      id="news-and-tips"
-      className="w-full overflow-hidden flex flex-col justify-between gap-14"
+      className="container w-full overflow-hidden flex flex-col justify-between gap-14 scroll-mt-40 "
     >
       <Heading title={t("title")} desc={t("description")} data-aos="fade-up" />
 
