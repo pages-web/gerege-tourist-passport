@@ -44,3 +44,15 @@ export const useCmsTags = (variables?: OperationVariables) => {
 
   return { cmsTags, loading };
 };
+
+export const useCmsPostDetail = (variables?: OperationVariables) => {
+  const { data, loading } = useQuery(queries.cmsPostDetail, {
+    variables: {
+      ...variables,
+    },
+  });
+
+  const cmsPostDetail: ICmsPost = data?.cmsPost;
+
+  return { cmsPostDetail, loading };
+};

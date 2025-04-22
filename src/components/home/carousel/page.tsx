@@ -16,6 +16,7 @@ import {
   DotButton,
   useDotButton,
 } from "@/components/ui/EmblaCarouselDotButton";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const slides = [
   {
@@ -31,11 +32,6 @@ const slides = [
   {
     backgroundImage: "/image/pictures/cover_3.jpg",
     titleKey: "slide3_title",
-    descriptionKey: "",
-  },
-  {
-    backgroundImage: "/image/pictures/cover_4.jpg",
-    titleKey: "slide4_title",
     descriptionKey: "",
   },
 ];
@@ -59,7 +55,6 @@ const CarouselSection = () => {
 
   return (
     <Carousel
-      className="w-full h-full"
       opts={{ loop: true }}
       plugins={[plugin.current]}
       onMouseEnter={plugin.current.stop}
@@ -71,15 +66,15 @@ const CarouselSection = () => {
         {slides.map((slide, index) => (
           <CarouselItem
             key={index}
-            className="p-0 relative w-full -z-10 overflow-hidden h-[110vh]"
+            className="flex justify-center p-0 relative overflow-hidden w-full lg:h-[110vh] mx-auto -z-10"
           >
             <Image
               src={slide.backgroundImage}
               alt={slide.titleKey}
-              width={2000}
-              height={1000}
+              width={1920}
+              height={1080}
               quality={100}
-              className="h-full xl:h-fit w-full"
+              className="object-contain lg:object-cover h-full w-full"
             />
 
             {t(slide.titleKey) && (

@@ -160,6 +160,109 @@ const cmsTags = gql`
   }
 `;
 
-const queries = { cmsPosts, cmsCategories, cmsTags };
+const cmsPostDetail = gql`
+  query Post($id: String) {
+    cmsPost(_id: $id) {
+      _id
+      type
+      clientPortalId
+      title
+      slug
+      content
+      excerpt
+      categoryIds
+      status
+      tagIds
+      authorId
+      featured
+      featuredDate
+      scheduledDate
+      autoArchiveDate
+      reactions
+      reactionCounts
+      thumbnail {
+        url
+        type
+        name
+      }
+      images {
+        url
+        type
+        name
+      }
+      video {
+        url
+        type
+        name
+      }
+      audio {
+        url
+        type
+        name
+      }
+      documents {
+        url
+        type
+        name
+      }
+      attachments {
+        url
+        type
+        name
+      }
+      pdfAttachment {
+        pages {
+          url
+          name
+          type
+          size
+          duration
+        }
+      }
+      videoUrl
+      createdAt
+      updatedAt
+      authorKind
+      author {
+        ... on User {
+          _id
+          username
+          email
+          details {
+            fullName
+            shortName
+            avatar
+            firstName
+            lastName
+            middleName
+          }
+        }
+        ... on ClientPortalUser {
+          _id
+          fullName
+          firstName
+          lastName
+          email
+          username
+          customer {
+            avatar
+          }
+        }
+      }
+      categories {
+        _id
+        name
+        slug
+      }
+      tags {
+        _id
+        name
+      }
+      customFieldsData
+    }
+  }
+`;
+
+const queries = { cmsPosts, cmsCategories, cmsTags, cmsPostDetail };
 
 export default queries;

@@ -9,19 +9,24 @@ import {
 } from "@/components/ui/accordion";
 import { useCmsPosts, useCmsTags } from "@/sdk/hooks/cms";
 import { IHelp } from "@/types/data.types";
-import { Clock3, MapPin, Phone } from "lucide-react";
+import {
+  Ambulance,
+  Clock3,
+  FireExtinguisher,
+  MapPin,
+  Phone,
+  Siren,
+} from "lucide-react";
 import { Link } from "@/navigation";
+import Heading from "@/components/heading/heading";
 
 export default function HelpCenter() {
   const t = useTranslations("HelpCenter").raw;
 
   return (
-    <div className="container" >
-      <div className="space-y-5" data-aos="fade-up">
-        <h2 className="text-center uppercase text-[20px] md:text-[30px] text-[#1D2939] font-semibold scroll-mt-40 ">
-          {t("title")}
-        </h2>
-      </div>
+    <div className="container">
+      <Heading title={t("title")} data-aos="fade-up" />
+
       <Accordion
         type="single"
         collapsible
@@ -36,32 +41,32 @@ export default function HelpCenter() {
                 {help.police && help.ambulance && help.fire_department && (
                   <div className="flex flex-wrap justify-between">
                     <div className="flex items-center gap-2">
-                      <Phone className="h-5 w-5" /> Police: {help.police}
+                      <Siren className="h-5 w-5" /> Police: {help.police}
                     </div>
                     <div className="flex items-center gap-2">
-                      <Phone className="h-5 w-5" />
+                      <Ambulance className="h-5 w-5" />
                       Ambulance: {help.ambulance}
                     </div>
                     <div className="flex items-center gap-2">
-                      <Phone className="h-5 w-5" /> Fire Department:{" "}
+                      <FireExtinguisher className="h-5 w-5" /> Fire Department:{" "}
                       {help.fire_department}
                     </div>
                   </div>
                 )}
                 {help.list && (
-                  <Accordion type="single" collapsible className="pl-6">
+                  <Accordion type="single" collapsible className="pl-3 md:pl-6">
                     {help.list.map((list, index) => (
                       <AccordionItem value={`multi-item-${index}`} key={index}>
                         <AccordionTrigger>{list.title}</AccordionTrigger>
                         <AccordionContent>
-                          <div className="flex gap-4 px-10">
+                          <div className="flex gap-4 lg:px-10">
                             {list.location && (
                               <Link
                                 className="flex items-center gap-2"
                                 href={`https://www.google.com/maps?q=${list.location}`}
                                 target="_blank"
                               >
-                                <MapPin />
+                                <MapPin className="min-h-5 min-w-5" />
                                 <p
                                   dangerouslySetInnerHTML={{
                                     __html: list.locationText
@@ -74,20 +79,21 @@ export default function HelpCenter() {
 
                             {list.locationText && !list.location && (
                               <div className="flex items-center gap-2">
-                                <MapPin />
+                                <MapPin className="min-h-5 min-w-5" />
                                 {list.locationText}
                               </div>
                             )}
 
                             {list?.phone && (
                               <div className="flex gap-2 items-center">
-                                <Phone className="h-5 w-5" /> {list.phone}
+                                <Phone className="min-h-5 min-w-5" />{" "}
+                                {list.phone}
                               </div>
                             )}
 
                             {list?.timeTables && (
                               <div className="flex gap-2">
-                                <Clock3 />
+                                <Clock3 className="min-h-5 min-w-5" />
                                 <div className={`flex items-end gap-4`}>
                                   <div className="flex flex-col gap-1 capitalize">
                                     {Object.keys(list.timeTables[0].days).map(
@@ -115,7 +121,7 @@ export default function HelpCenter() {
 
                             {list?.timeTableText && (
                               <div className="flex gap-2 font-normal items-center">
-                                <Clock3 />
+                                <Clock3 className="min-h-5 min-w-5" />
                                 {list.timeTableText}
                               </div>
                             )}

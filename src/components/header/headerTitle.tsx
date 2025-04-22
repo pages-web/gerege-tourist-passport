@@ -14,7 +14,7 @@ const HeaderTitle = () => {
         pathname === "/"
           ? scrolled
             ? "text-[#6399CE]"
-            : "text-[#6399CE] lg:text-white"
+            : "text-[#6399CE] xl:text-white"
           : "text-[#6399CE]"
       }`}
     >

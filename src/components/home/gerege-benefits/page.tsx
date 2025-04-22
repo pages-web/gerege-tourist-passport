@@ -60,7 +60,7 @@ export default function Benefits() {
             }}
             className="items-center"
           >
-            <TabsList className="rounded-3xl px-0">
+            <TabsList className="h-fit rounded-3xl">
               {fixedCmsTags?.map((tag, index) => {
                 return (
                   <TabsTrigger
@@ -68,7 +68,7 @@ export default function Benefits() {
                     value={tag.name}
                     className="flex gap-2 rounded-3xl"
                   >
-                    <div className="w-8 h-8">
+                    <div className="w-11 h-11">
                       <Image
                         src={
                           tag.name === "Free"

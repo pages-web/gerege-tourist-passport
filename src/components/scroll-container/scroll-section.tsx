@@ -6,16 +6,25 @@ import { PropsWithChildren } from "react";
 const ScrollSection = ({
   children,
   isFooter,
+  itemsEnd,
   id,
-}: PropsWithChildren & { isFooter?: boolean; id?: string }) => {
+}: PropsWithChildren & {
+  isFooter?: boolean;
+  id: string;
+  itemsEnd?: boolean;
+}) => {
   const pathname = usePathname();
 
   return (
     <div
       id={id}
-      className={`lg:h-[110vh] flex  ${
-        isFooter ? "items-end" : "items-center scroll-mt-32 lg:scroll-mt-20"
-      } ${pathname === "/" ? "min-[1200px]:snap-start" : ""}`}
+      className={`lg:h-[110vh] flex ${
+        isFooter
+          ? "items-end"
+          : itemsEnd
+          ? "h-md:items-center items-end"
+          : "items-center"
+      } ${pathname === "/" ? "xl:snap-start" : ""}`}
     >
       {children}
     </div>

@@ -9,8 +9,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import FaqTab from "./faq-tab";
 import { useCmsPosts, useCmsTags } from "@/sdk/hooks/cms";
+import Heading from "@/components/heading/heading";
 
 export default function FAQ() {
   const t = useTranslations("FAQ").raw;
@@ -21,12 +21,9 @@ export default function FAQ() {
   });
 
   return (
-    <div className="container" >
-      <div className="space-y-5" data-aos="fade-up">
-        <h2 className="text-center uppercase text-[20px] md:text-[30px] text-[#1D2939] font-semibold">
-          {t("title")}
-        </h2>
-      </div>
+    <div className="container">
+      <Heading title={t("title")} data-aos="fade-up" />
+
       <Accordion
         type="single"
         collapsible

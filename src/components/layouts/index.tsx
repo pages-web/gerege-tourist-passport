@@ -14,7 +14,7 @@ const DefaultLayout = ({ children }: React.PropsWithChildren) => {
       <Header />
       {children}
       <WeatherAndCurrency />
-      <ScrollSection isFooter>
+      <ScrollSection isFooter id="footer">
         <Footer />
       </ScrollSection>
     </>

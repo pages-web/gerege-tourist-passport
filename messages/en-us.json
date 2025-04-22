@@ -12,14 +12,14 @@
   },
 
   "Carousel": {
-    "slide1_title": "(The Gerege was an official diplomatic passport used in the Mongol Empire, allowing envoys, officials, and merchants to travel freely and receive assistance. It was typically a metal plaque inscribed with the Great Khan’s authority, ensuring the bearer’s safety and unrestricted movement. Notably, Marco Polo traveled from China to Persia with a golden Gerege issued by Khubilai Khan, highlighting its importance in diplomacy and trade.)",
+    "slide1_title": "+1$ from every purchase will be donated to support children’s charity.",
 
     "slide1_description": "Explore all the best London attractions and activities, all for one low price.",
     "slide2_title": "",
     "slide2_description": "Experience the charm of London's iconic landmarks.",
     "slide3_title": "",
     "slide3_description": "Get special deals on top attractions.",
-    "slide4_title": "+1$ from every purchase will be donated to support children’s charity.",
+    "slide4_title": "",
     "slide4_description": "Organize your adventures in London.",
     "Buying now": "Buying now"
   },
@@ -37,28 +37,11 @@
       },
       {
         "title": "Safe, Simple, Smart, and Saving – The Four Pillars of the Gerege Tourist Passport",
-        "description": "These four keywords represent the core strengths of the Gerege Tourist Passport: <br></br> <ul><li>Safe: Officially registered and secure, your personal data is protected. The passport supports responsible and safe travel across Mongolia.</li><li>Simple: Easy to purchase, use, and redeem discounts. The experience is user-friendly and convenient for all travelers.</li><li>Smart: Enhanced with technology—QR codes, an online network of partners, and seamless integration to make your journey efficient and smooth.</li><li>Saving: Access discounts at over 100 establishments including hotels, restaurants, and attractions—helping you reduce travel costs without sacrificing quality.</li></ul><br/>The Gerege Tourist Passport is your trusted companion—bridging ancient Mongolian legacy with modern-day travel in a way that is educational, valuable, and inspiring."
+        "description": "These four keywords represent the core strengths of the Gerege Tourist Passport: <br></br> <ul><li><b>Safe:</b> Officially registered and secure, your personal data is protected. The passport supports responsible and safe travel across Mongolia.</li><li><b>Simple:</b> Easy to purchase, use, and redeem discounts. The experience is user-friendly and convenient for all travelers.</li><li><b>Smart:</b> Enhanced with technology—QR codes, an online network of partners, and seamless integration to make your journey efficient and smooth.</li><li><b>Saving:</b> Access discounts at over 100 establishments including hotels, restaurants, and attractions—helping you reduce travel costs without sacrificing quality.</li></ul><br/>The Gerege Tourist Passport is your trusted companion—bridging ancient Mongolian legacy with modern-day travel in a way that is educational, valuable, and inspiring."
       }
     ],
 
-    "benefits": [
-      {
-        "title": "Safe",
-        "description": "Officially registered and secure, your personal data is protected. The passport supports responsible and safe travel across Mongolia."
-      },
-      {
-        "title": "Simple",
-        "description": "Easy to purchase, use, and redeem discounts. The experience is user-friendly and convenient for all travelers."
-      },
-      {
-        "title": "Smart",
-        "description": "Enhanced with technology—QR codes, an online network of partners, and seamless integration to make your journey efficient and smooth."
-      },
-      {
-        "title": "Saving",
-        "description": "Access discounts at over 100 establishments including hotels, restaurants, and attractions—helping you reduce travel costs without sacrificing quality."
-      }
-    ]
+    "benefits": ["Safe", "Simple", "Smart", "Saving"]
   },
 
   "Gerege Tour Card Benefits": {

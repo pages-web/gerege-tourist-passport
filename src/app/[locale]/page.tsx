@@ -18,7 +18,7 @@ const Home = () => {
         <CarouselSection />
       </ScrollSection>
 
-      <ScrollSection id="about">
+      <ScrollSection id="about" itemsEnd>
         <WhyUs />
       </ScrollSection>
 
@@ -34,7 +34,7 @@ const Home = () => {
         <HelpCenter />
       </ScrollSection>
 
-      <ScrollSection id="faq">
+      <ScrollSection id="faq" itemsEnd>
         <FAQ />
       </ScrollSection>
     </ScrollContainer>

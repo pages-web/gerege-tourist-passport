@@ -81,19 +81,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        {/* "title": "Social",
-        "lists": [
-          {
-            "name": "Gerege Tourist Passport Mongolia",
-            "link": "https://www.facebook.com/profile.php?id=61559305625217",
-            "icon": "facebook"
-          },
-          {
-            "name": "@gerege.mn",
-            "link": "https://www.instagram.com/gerege.mn/",
-            "icon": "instagram"
-          }
-        ] */}
       </div>
 
       <div className="mt-10"></div>
