@@ -3,7 +3,15 @@ import React, { ReactNode } from "react";
 import Image from "../ui/image";
 
 import { useTranslations } from "next-intl";
-import { Facebook, Mail, MapPin, Phone } from "lucide-react";
+import {
+  Ambulance,
+  Facebook,
+  FireExtinguisher,
+  Mail,
+  MapPin,
+  Phone,
+  Siren,
+} from "lucide-react";
 import { Instagram } from "@mui/icons-material";
 import { Link } from "@/navigation";
 
@@ -55,8 +63,28 @@ export default function Footer() {
             return <TitleLists data={data} key={index} />;
           })}
 
-          <div className="space-y-4 w-[475px]">
-            <h3 className="font-bold text-[20px] lg:text-[24px]">Social</h3>
+          <div className="space-y-4">
+            <h3 className="font-bold text-[20px] lg:text-[24px]">
+              Emergency number in Mongolia
+            </h3>
+            <div className="flex flex-col gap-y-3">
+              <div className="flex lg:items-start items-center gap-x-2">
+                <Siren className="w-5 h-5 md:w-7 md:h-7" />
+                <p className="text-[18px]">Police: 102</p>
+              </div>
+              <div className="flex lg:items-start items-center gap-x-2">
+                <Ambulance className="w-5 h-5 md:w-7 md:h-7" />
+                <p className="text-[18px]">Ambulance: 103</p>
+              </div>
+              <div className="flex lg:items-start items-center gap-x-2">
+                <FireExtinguisher className="w-5 h-5 md:w-7 md:h-7" />
+                <p className="text-[18px]">Fire Department: 101</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="font-bold text-[20px] lg:text-[24px]">Socials</h3>
             <div className="flex flex-col gap-y-3">
               <div className="flex flex-wrap gap-x-1 md:gap-x-2">
                 <Link

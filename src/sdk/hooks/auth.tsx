@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import { useRouter, useSearchParams } from "next/navigation";
 import { onError } from "@/lib/utils";
 import { fbLogout } from "@/lib/facebook";
+import { Router } from "lucide-react";
 
 const clientPortalId = process.env.NEXT_PUBLIC_CP_ID;
 
@@ -43,10 +44,14 @@ const useLoginCallback = () => {
 
 export const useLogin = (onCompleted?: () => void) => {
   const { loginCallback } = useLoginCallback();
+  const router = useRouter();
 
   const [login, { loading }] = useMutation(mutations.login, {
     onCompleted: ({ clientPortalLogin }) => {
       loginCallback(clientPortalLogin, onCompleted);
+      if (clientPortalLogin) {
+        router.push("/");
+      }
     },
     onError,
   });

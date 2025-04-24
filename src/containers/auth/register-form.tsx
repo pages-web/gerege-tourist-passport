@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -12,20 +12,20 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Password } from "@/components/ui/password";
-import { Link } from "@/navigation";
-import { useRegister } from "@/sdk/hooks/auth";
-import { toast } from "sonner";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { InfoIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { passwordZod, phoneZod } from "@/lib/zod";
-import { LoadingIcon } from "@/components/ui/loading";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Password } from '@/components/ui/password';
+import Link from 'next/link';
+import { useRegister } from '@/sdk/hooks/auth';
+import { toast } from 'sonner';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { InfoIcon } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { passwordZod, phoneZod } from '@/lib/zod';
+import { LoadingIcon } from '@/components/ui/loading';
 
 const formSchema = z.object({
-  firstName: z.string().min(1, { message: "Нэрээ оруулна уу" }),
+  firstName: z.string().min(1, { message: 'Нэрээ оруулна уу' }),
   lastName: z.string().optional(),
   email: z.string().email(),
   phone: phoneZod,
@@ -37,11 +37,11 @@ const RegisterForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      password: "",
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      password: '',
     },
   });
   const { register, loading, clientPortalId } = useRegister();
@@ -50,17 +50,17 @@ const RegisterForm = () => {
     register({
       variables: { ...values, clientPortalId },
       onCompleted() {
-        toast.success("Congratulations, You registered successfully", {
-          description: "Таны имэйл рүү баталгаажуулах холбоос илгээлээ.",
+        toast.success('Congratulations, You registered successfully', {
+          description: 'Таны имэйл рүү баталгаажуулах холбоос илгээлээ.',
         });
-        router.push("/login");
+        router.push('/login');
       },
     });
   }
   return (
     <Form {...form}>
       <form
-        className="md:grid grid-cols-2 space-y-4 md:space-y-0 gap-y-6 gap-x-3 relative"
+        className="lg:grid grid-cols-2 space-y-4 lg:space-y-0 gap-y-6 gap-x-3 relative"
         onSubmit={form.handleSubmit(onSubmit)}
       >
         <FormField
@@ -146,30 +146,31 @@ const RegisterForm = () => {
         />
         <Button className="w-full col-span-2" size="lg" disabled={loading}>
           {loading && <LoadingIcon />}
-          Sign up
+          Бүртгүүлэх
         </Button>
         <Alert className="col-span-2">
           <InfoIcon className="h-4 w-4" />
-          <AlertTitle className="text-sm">Warning!</AlertTitle>
+          <AlertTitle className="text-sm">Санамж!</AlertTitle>
           <AlertDescription className="text-xs">
-            By clicking Sign up, you agree to our
+            Та бүртгүүлэх товчийг дарснаар таныг тус вебсайтын
             <Button
               variant="link"
               asChild
-              className="px-1 font-bold text-foreground"
+              className="h-auto px-0 py-0 mx-1 text-foreground"
               size="sm"
             >
-              <Link href="/terms-of-service">Terms,</Link>
+              <Link href="/terms-of-service">үйлчилгээний нөхцөл</Link>
             </Button>
-            and
+            болон{' '}
             <Button
               variant="link"
               asChild
-              className="px-1 font-bold text-foreground"
+              className="h-auto px-0 py-0 mx-1 text-foreground"
               size="sm"
             >
-              <Link href="/terms-of-service">Privacy Policy.</Link>
+              <Link href="/terms-of-service">нууцлалын бодлогыг</Link>
             </Button>
+            хүлээн зөвшөөрсөнд тооцно.
           </AlertDescription>
         </Alert>
       </form>

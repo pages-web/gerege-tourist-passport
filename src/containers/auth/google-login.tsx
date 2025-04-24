@@ -1,10 +1,10 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { Link } from "@/navigation";
-import { useEffect, useState } from "react";
+'use client';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const GoogleLogin = () => {
-  const [domain, setDomain] = useState("");
+  const [domain, setDomain] = useState('');
 
   useEffect(() => {
     const currentDomain = window.location.hostname;
@@ -15,15 +15,15 @@ const GoogleLogin = () => {
     const rootUrl = `https://accounts.google.com/o/oauth2/v2/auth`;
     const options = {
       redirect_uri: `https://${domain}/auth-google`,
-      client_id: process.env.NEXT_PUBLIC_GOOGLE_ID || "",
-      access_type: "offline",
-      response_type: "code",
-      prompt: "consent",
+      client_id: process.env.NEXT_PUBLIC_GOOGLE_ID || '',
+      access_type: 'offline',
+      response_type: 'code',
+      prompt: 'consent',
       scope: [
-        "https://www.googleapis.com/auth/userinfo.profile",
-        "https://www.googleapis.com/auth/userinfo.email",
-      ].join(" "),
-      state: from,
+        'https://www.googleapis.com/auth/userinfo.profile',
+        'https://www.googleapis.com/auth/userinfo.email'
+      ].join(' '),
+      state: from
     };
 
     const qs = new URLSearchParams(options);
@@ -32,7 +32,7 @@ const GoogleLogin = () => {
   };
   return (
     <Button size="lg" className="w-full text-primary" variant="outline" asChild>
-      <Link href={getGoogleUrl("/auth/login")}>
+      <Link href={getGoogleUrl('/auth/login')}>
         <GoogleIcon />
         Google-ээр нэвтрэх
       </Link>

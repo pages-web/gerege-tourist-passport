@@ -1,36 +1,36 @@
-"use client";
+'use client';
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { useResetPassword } from "@/sdk/hooks/auth";
-import { LoadingIcon } from "@/components/ui/loading";
-import { CheckCircle2Icon, XCircleIcon } from "lucide-react";
-import { passwordZod } from "@/lib/zod";
-import { Password } from "@/components/ui/password";
-import { useSearchParams } from "next/navigation";
+  FormMessage
+} from '@/components/ui/form';
+import { useResetPassword } from '@/sdk/hooks/auth';
+import { LoadingIcon } from '@/components/ui/loading';
+import { CheckCircle2Icon, XCircleIcon } from 'lucide-react';
+import { passwordZod } from '@/lib/zod';
+import { Password } from '@/components/ui/password';
+import { useSearchParams } from 'next/navigation';
 
 const formSchema = z.object({
-  password: passwordZod,
+  password: passwordZod
 });
 
 const ResetPasswordForm = () => {
-  const token = useSearchParams().get("token");
+  const token = useSearchParams().get('token');
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      password: "",
-    },
+      password: ''
+    }
   });
 
   const { loading, resetPassword, clientPortalId, success } =
@@ -38,7 +38,7 @@ const ResetPasswordForm = () => {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     resetPassword({
-      variables: { newPassword: values.password, clientPortalId, token },
+      variables: { newPassword: values.password, clientPortalId, token }
     });
   }
 

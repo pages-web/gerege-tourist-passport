@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { useCurrentUser } from "@/sdk/queries/auth.client";
 import { UserIcon, Loader2Icon } from "lucide-react";
-import { Link } from "@/navigation";
+import Link from "next/link";
 import { useEffect } from "react";
 
 const CurrentUser = () => {
@@ -11,9 +11,7 @@ const CurrentUser = () => {
 
   useEffect(() => {
     if (!sessionStorage.getItem("token")) {
-      setTimeout(() => {
-        setLoading(false);
-      }, 2000);
+      setLoading(false);
     }
   }, []);
 
@@ -28,10 +26,7 @@ const CurrentUser = () => {
     const { firstName, avatar, lastName } = currentUser;
     return (
       <Avatar asChild>
-        <Link
-          href="/profile"
-          className="md:h-[40px] md:w-[40px] border shadow-sm text-[#6399CE] border-[#6399CE]"
-        >
+        <Link href="/profile">
           <AvatarImage src={avatar} alt={currentUser.firstName} />
           <AvatarFallback>
             {(firstName || "P")[0]}
@@ -43,14 +38,16 @@ const CurrentUser = () => {
   }
 
   return (
-    <Avatar
-      className="md:h-[40px] md:w-[40px] flex justify-center items-center hover:bg-background/10 hover:text-[#6399CE] border hover:border-[#6399CE] duration-200 rounded-full "
+    <Button
+      size="icon"
+      variant={"ghost"}
+      className="hover:bg-background/10 hover:text-white"
       asChild
     >
       <Link href="/login">
-        <UserIcon className="h-4 w-4 md:h-5 md:w-5" />
+        <UserIcon className="h-5 w-5" />
       </Link>
-    </Avatar>
+    </Button>
   );
 };
 

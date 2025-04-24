@@ -15,6 +15,7 @@ import { usePossibleQuantity } from "@/sdk/hooks/cart";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { Store } from "lucide-react";
+import { currentUserAtom } from "@/store/auth.store";
 
 const GeregeButtonAdd = ({
   geregeproduct,
@@ -27,10 +28,10 @@ const GeregeButtonAdd = ({
 }) => {
   const [loading, addToCart] = useAtom(addToCartAtom);
   const [clicked, setClicked] = useState(false);
-  const [total] = useAtom(cartTotalAtom);
   const router = useRouter();
   const openCart = useSetAtom(cartSheetAtom);
-  const { checkRemainder, possibleQuantity, disableActions } =
+  const currentUser = useAtomValue(currentUserAtom);
+  const { checkRemainder, possibleQuantity } =
     usePossibleQuantity(geregeproduct);
 
   useEffect(() => {
@@ -42,6 +43,7 @@ const GeregeButtonAdd = ({
           } (${geregeproduct?.unitPrice?.toLocaleString()})`,
           action: {
             label: "View",
+
             onClick: () => {
               toast.dismiss();
             },
@@ -58,7 +60,11 @@ const GeregeButtonAdd = ({
       addToCart({ ...geregeproduct, count: 1 });
       setClicked(true);
     }
-    router.push("/cart");
+    if (!currentUser) {
+      router.push("/login");
+    } else {
+      router.push("/cart");
+    }
   };
 
   return (
