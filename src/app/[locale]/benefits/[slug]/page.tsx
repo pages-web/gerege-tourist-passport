@@ -138,11 +138,11 @@ const Benefit = ({ params }: IPageProps) => {
             >
               <h1 className="text-2xl font-bold">{post.title}</h1>
 
-              <div className="lg:h-[400px] overflow-hidden">
+              <div className="h-full w-full overflow-hidden rounded-xl aspect-video">
                 <Image
                   src={post.thumbnail?.url}
-                  width={1000}
-                  height={1000}
+                  width={1920}
+                  height={1080}
                   className="w-full h-full"
                 />
               </div>

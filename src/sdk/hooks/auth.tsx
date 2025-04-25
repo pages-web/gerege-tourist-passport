@@ -53,6 +53,7 @@ export const useLogin = (onCompleted?: () => void) => {
         router.push("/");
       }
     },
+    refetchQueries: ["clientPortalCurrentUser"],
     onError,
   });
 
