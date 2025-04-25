@@ -26,7 +26,7 @@ const FullOrders = () => {
     return (
       <div className="py-12 flex-col flex items-center">
         {/* <CartEmpty /> */}
-        <div>Танд захиалга алга</div>
+        <div>There are no orders.</div>
       </div>
     );
 

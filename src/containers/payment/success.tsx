@@ -15,10 +15,10 @@ const Success = () => {
             <CheckIcon className="h-10 w-10 stroke-white " strokeWidth={2.5} />
           </div>
           <div className="md:text-xl font-bold pt-6 text-center text-green">
-            Таны төлбөр амжилттай төлөгдлөө
+            Your payment was successful.
           </div>
           <div className="text-neutral-500 pt-2 font-medium text-center">
-            Манайхаар үйлчлүүлсэн танд баярлалаа.
+            Thank you for using our services.
           </div>
           <Button
             className="px-12 mt-4"
@@ -29,7 +29,7 @@ const Success = () => {
               setShowSuccess(false);
             }}
           >
-            Дуусгах
+            Finish.
           </Button>
         </div>
       </DialogContent>

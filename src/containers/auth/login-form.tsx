@@ -21,12 +21,12 @@ import { useLogin } from "@/sdk/hooks/auth";
 const formSchema = z.object({
   login: z
     .string()
-    .min(1, { message: "Нэвтрэх нэрээ оруулна уу" })
+    .min(1, { message: "Fill input" })
     .regex(
       /^[^\s@]+@[^\s@]+\.[^\s@]+|[0-9]{6,}$/,
-      "Буруу утас эсвэл цахим хаяг"
+      "Wrong email or phone number"
     ),
-  password: z.string().min(1, { message: "Нууц үгээ оруулна уу" }),
+  password: z.string().min(1, { message: "Fill input" }),
 });
 
 const LoginForm = () => {
@@ -54,13 +54,9 @@ const LoginForm = () => {
           name="login"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Нэвтрэх нэр</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input
-                  placeholder="цахим хаяг эсвэл утас"
-                  {...field}
-                  autoComplete="username"
-                />
+                <Input placeholder="Email" {...field} autoComplete="username" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -72,14 +68,14 @@ const LoginForm = () => {
           render={({ field }) => (
             <FormItem>
               <div className="flex items-center justify-between mb-1">
-                <FormLabel>Нууц үг</FormLabel>
+                <FormLabel>Password</FormLabel>
                 <Button
                   asChild
                   variant="link"
                   className="py-1 h-auto font-normal px-0"
                   tabIndex={-1}
                 >
-                  <Link href="/forgot">Mартсан?</Link>
+                  <Link href="/forgot">Forgot?</Link>
                 </Button>
               </div>
 
@@ -91,7 +87,7 @@ const LoginForm = () => {
           )}
         />
         <Button type="submit" className="w-full" size="lg" disabled={loading}>
-          Нэвтрэх
+          Login
         </Button>
       </form>
     </Form>

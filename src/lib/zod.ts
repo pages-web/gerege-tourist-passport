@@ -7,15 +7,15 @@ export const phoneZod = z
 
 export const passwordZod = z
   .string()
-  .min(1, { message: "Нууц үгээ оруулна уу" })
+  .min(1, { message: "Please enter your password." })
   .regex(
     /^(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
-    "Нууц үг нь дор хаяж нэг жижиг үсэг, нэг том үсэг оруулсан 8 тэмдэгтээс бүрдэх ёстой."
+    "The password must be at least 8 characters long and include at least one lowercase letter and one uppercase letter."
   );
 export const mailZod = z
   .string()
-  .min(1, { message: "Мэйл хаягаа оруулна уу." })
+  .min(1, { message: "Please enter your email." })
   .regex(
     /^([A-Z0-9_+-]+\.?)*[A-Z0-9_+-]@([A-Z0-9][A-Z0-9\-]*\.)+[A-Z]{2,}$/,
-    "Буруу мэйл байна."
+    "Invalid email"
   );

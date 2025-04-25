@@ -36,12 +36,12 @@ const ChangePassword = () => {
     const { currentPassword, newPassword, verifyPassword } = values;
 
     if (newPassword !== verifyPassword)
-      return toast.error("Нууц үг таарахгүй байна");
+      return toast.error("The password does not match.");
 
     changePassword({
       variables: { clientPortalId, currentPassword, newPassword },
       onCompleted() {
-        toast.success("Нууц үг солигдлоо");
+        toast.success("Password changed.");
         form.reset();
       },
     });

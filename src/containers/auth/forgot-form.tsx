@@ -1,33 +1,33 @@
-'use client';
+"use client";
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { useForgotPassword } from '@/sdk/hooks/auth';
-import { LoadingIcon } from '@/components/ui/loading';
-import { CheckCircle2Icon } from 'lucide-react';
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { useForgotPassword } from "@/sdk/hooks/auth";
+import { LoadingIcon } from "@/components/ui/loading";
+import { CheckCircle2Icon } from "lucide-react";
 
 const formSchema = z.object({
-  email: z.string().email()
+  email: z.string().email(),
 });
 
 const ForgotForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: ''
-    }
+      email: "",
+    },
   });
 
   const { loading, forgotPassword, clientPortalId, success } =
@@ -35,7 +35,7 @@ const ForgotForm = () => {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     forgotPassword({
-      variables: { email: values.email, clientPortalId }
+      variables: { email: values.email, clientPortalId },
     });
   }
 
@@ -47,9 +47,11 @@ const ForgotForm = () => {
           strokeWidth={1.5}
         />
         <p className="text-base font-medium my-1 text-center">
-          Танд нууц үг солих холбоос бүхий имэйл илгээлээ.
+          We have sent you an email with a link to reset your password.
         </p>
-        <p className="text-sm text-neutral-500">Та имэйл хаяг aa шалгана уу.</p>
+        <p className="text-sm text-neutral-500">
+          Please check your email address.
+        </p>
       </div>
     );
   }
@@ -65,7 +67,7 @@ const ForgotForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Цахим хаяг</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input
                   placeholder="john@doe.com"
@@ -79,7 +81,7 @@ const ForgotForm = () => {
         />
         <Button className="w-full col-span-2" size="lg" disabled={loading}>
           {loading && <LoadingIcon />}
-          Нууц үг сэргээх
+          Recover password
         </Button>
       </form>
     </Form>

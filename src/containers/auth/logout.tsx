@@ -13,7 +13,7 @@ const Logout = () => {
       disabled={loading}
       onClick={logout}
     >
-      {loading && <LoadingIcon />} Гарах
+      {loading && <LoadingIcon />} Log out
     </Button>
   );
 };
