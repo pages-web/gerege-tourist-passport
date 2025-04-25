@@ -5,7 +5,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import OrderSummary from "../order-summary/order-summary";
-import { Button } from "../ui/button";
 import { currentUserAtom } from "@/store/auth.store";
 import { useAtom, useAtomValue } from "jotai";
 import {
@@ -18,8 +17,6 @@ import { LoadingIcon } from "../ui/loading";
 import { useRouter } from "next/navigation";
 import { phoneZod } from "@/lib/zod";
 import PersonalInfo from "./personal-info";
-import Ebarimt from "./ebarimt";
-import AddressInfo from "./address-info";
 import VerifyButton from "../verify/verifyButton";
 
 export const formSchema = z
