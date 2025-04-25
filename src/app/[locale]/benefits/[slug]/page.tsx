@@ -32,6 +32,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import BenefitImage from "@/components/benefit-image/benefit-image";
 
 const Benefit = ({ params }: IPageProps) => {
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
@@ -89,10 +90,10 @@ const Benefit = ({ params }: IPageProps) => {
     );
 
   return (
-    <div className="relative min-h-screen container mt-20 flex flex-col lg:flex-row gap-10 pt-10 scroll-mt-40">
+    <div className="relative min-h-screen container lg:mt-20 flex flex-col lg:flex-row gap-10 pt-10 scroll-mt-40">
       <div className="hidden lg:flex flex-col gap-6 font-semibold sticky top-40 h-full w-[20%]">
         <h2 className="text-xl text-[#64748B]">
-          {cmsPosts[0].tags[0].name} {currentCategory?.name}
+          {cmsPosts[0]?.tags[0].name} {currentCategory?.name}
         </h2>
 
         {cmsPosts.map((post) => (
@@ -108,8 +109,8 @@ const Benefit = ({ params }: IPageProps) => {
         ))}
       </div>
 
-      <Select>
-        <SelectTrigger defaultValue={cmsPosts[0]._id} className="lg:hidden">
+      <Select value={activeId!} onValueChange={setActiveId}>
+        <SelectTrigger className="lg:hidden">
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
@@ -138,14 +139,17 @@ const Benefit = ({ params }: IPageProps) => {
             >
               <h1 className="text-2xl font-bold">{post.title}</h1>
 
-              <div className="h-full w-full overflow-hidden rounded-xl aspect-video">
-                <Image
-                  src={post.thumbnail?.url}
-                  width={1920}
-                  height={1080}
-                  className="w-full h-full"
-                />
-              </div>
+              {post.images?.length > 0 && (
+                <div className="grid grid-cols-2 gap-2">
+                  <BenefitImage attachment={post.thumbnail} />
+
+                  <div className="grid grid-cols-2 gap-2">
+                    {post.images.map((image, index) => (
+                      <BenefitImage attachment={image} key={index} />
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <div
                 dangerouslySetInnerHTML={{ __html: post.content }}

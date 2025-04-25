@@ -86,6 +86,11 @@ const cmsPosts = gql`
         thumbnail {
           url
         }
+        images {
+          url
+          type
+          name
+        }
         excerpt
         title
         updatedAt

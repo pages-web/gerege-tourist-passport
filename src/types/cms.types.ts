@@ -4,6 +4,8 @@ export interface ICmsCategory {
   _id: string;
   name: string;
   slug: string;
+  parent?: ICmsCategory;
+  parentId?: string;
 }
 
 export interface ICmsTag {
@@ -19,7 +21,7 @@ export interface ICmsPost {
   tagIds: string[];
   tags: ICmsTag[];
   thumbnail: IAttachment;
-  attachments: IAttachment[];
+  images: IAttachment[];
   title: string;
   excerpt: string;
   content: string;

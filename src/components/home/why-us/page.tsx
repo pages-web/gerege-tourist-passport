@@ -13,7 +13,7 @@ export default function WhyUs() {
 
       <div className="space-y-6">
         {t("about").map((item: any, index: number) => (
-          <div className="space-y-4">
+          <div className="space-y-4" key={index}>
             <h2 className="font-semibold">{item.title}</h2>
             <div
               className="text-[#1D2939] text-[14px] [&>ul]:list-disc [&>ul]:pl-10 "

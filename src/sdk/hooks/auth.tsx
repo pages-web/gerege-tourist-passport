@@ -1,12 +1,11 @@
 import { BaseMutationOptions, useMutation } from "@apollo/client";
 import { mutations } from "../graphql/auth";
 import { useSetAtom } from "jotai";
-import { loadingUserAtom, refetchCurrentUserAtom } from "@/store/auth.store";
+import { refetchCurrentUserAtom, loadingUserAtom } from "@/store/auth.store";
 import { toast } from "sonner";
 import { useRouter, useSearchParams } from "next/navigation";
 import { onError } from "@/lib/utils";
 import { fbLogout } from "@/lib/facebook";
-import { Router } from "lucide-react";
 
 const clientPortalId = process.env.NEXT_PUBLIC_CP_ID;
 
