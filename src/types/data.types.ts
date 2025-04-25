@@ -1,36 +1,36 @@
-export type Weekday = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
-export type Season = "autumn" | "winter" | "spring" | "summer" | "all";
+export type Weekday = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun"
+export type Season = "autumn" | "winter" | "spring" | "summer" | "all"
 
 export interface IBenefitListTimeTable {
-  season: Season;
-  days: Record<Weekday, string>;
+  season: Season
+  days: Record<Weekday, string>
 }
 export interface IBenefitList {
-  title: string;
-  locations?: { name: string; location: string }[];
-  location?: string;
-  locationText?: string;
-  website?: string;
-  facebook?: string;
-  instagram?: string;
-  timeTables?: IBenefitListTimeTable[];
-  timeTableText?: string;
-  phone?: string;
-  discount?: string;
-  app_store?: string;
-  play_store?: string;
+  title: string
+  locations?: { name: string; location: string }[]
+  location?: string
+  locationText?: string
+  website?: string
+  facebook?: string
+  instagram?: string
+  timeTables?: IBenefitListTimeTable[]
+  timeTableText?: string
+  phone?: string
+  discount?: string
+  app_store?: string
+  play_store?: string
 }
 
 export interface IBenefit {
-  title: string;
-  list: IBenefitList[];
+  title: string
+  list: IBenefitList[]
 }
 
 export interface IHelp extends IBenefitList {
-  title: string;
-  police?: string;
-  ambulance?: string;
-  fire_department?: string;
-  list: IBenefitList[];
-  locationText?: string;
+  title: string
+  police?: string
+  ambulance?: string
+  fire_department?: string
+  list: IBenefitList[]
+  locationText?: string
 }
