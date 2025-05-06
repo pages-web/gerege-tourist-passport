@@ -15,10 +15,8 @@ const NewsAndTips = () => {
   });
 
   return (
-    <div
-      className="container w-full overflow-hidden flex flex-col justify-between gap-14 scroll-mt-40 "
-    >
-      <Heading title={t("title")} desc={t("description")} data-aos="fade-up" />
+    <div className="container w-full overflow-hidden flex flex-col justify-between gap-14 scroll-mt-40 ">
+      <Heading title={t("title")} data-aos="fade-up" />
 
       <NewsCarousel posts={cmsPosts} />
     </div>

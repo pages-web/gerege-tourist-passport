@@ -1,5 +1,6 @@
 "use client";
 
+import { useMediaQuery } from "@/hooks/use-media-query";
 import { Link, usePathname } from "@/navigation";
 import { scrolledAtom } from "@/store/framer.store";
 import { useAtomValue } from "jotai";
@@ -11,6 +12,7 @@ const HeaderTexts = () => {
   const [clickedItem, setClickedItem] = useState(null);
   const scrolled = useAtomValue(scrolledAtom);
   const pathname = usePathname();
+  const isLaptop = useMediaQuery("(min-width: 1200px)");
 
   const handleItemClick = (index: any) => {
     setClickedItem(index === clickedItem ? null : index);
@@ -22,7 +24,7 @@ const HeaderTexts = () => {
         <Link key={index} href={item.href}>
           <div
             className={`text-[16px] font-semibold ${
-              pathname === "/"
+              pathname === "/" && isLaptop
                 ? scrolled
                   ? "text-gray-600"
                   : "text-white"

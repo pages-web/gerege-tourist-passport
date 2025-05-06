@@ -25,7 +25,7 @@ const HeaderContainer = ({ children }: PropsWithChildren) => {
 
   return (
     <motion.div
-      className={`w-full mx-auto sticky lg:fixed h-fit top-0 z-50 transition-all duration-300  ${
+      className={`w-full mx-auto sticky h-fit top-0 z-50 transition-all duration-300  ${
         pathname === "/"
           ? scrolled
             ? "bg-white shadow-md"

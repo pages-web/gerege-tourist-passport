@@ -66,7 +66,7 @@ const CarouselSection = () => {
         {slides.map((slide, index) => (
           <CarouselItem
             key={index}
-            className="flex justify-center p-0 relative overflow-hidden w-full lg:h-[110vh] mx-auto -z-10"
+            className="flex justify-center p-0 relative overflow-hidden w-full h-[400px] lg:h-[110vh] mx-auto -z-10"
           >
             <Image
               src={slide.backgroundImage}
@@ -74,7 +74,7 @@ const CarouselSection = () => {
               width={1920}
               height={1080}
               quality={100}
-              className="object-contain lg:object-cover h-full w-full"
+              className="object-cover h-full w-full"
             />
 
             {t(slide.titleKey) && (

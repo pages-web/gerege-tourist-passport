@@ -15,15 +15,21 @@ export default function Header() {
       {/* <LanguageAndSearch /> */}
       <div className="w-full py-5">
         <div className="container flex justify-between items-center gap-10">
-          {/* <div className="w-40">
-            <Image
-              src="/image/logo.png"
-              width={2010}
-              height={1003}
-              className="w-full h-full"
-            />
-          </div> */}
-          <HeaderTitle />
+          <div className="flex flex-col items-center">
+            <Link href={"/"}>
+              <div className="w-32 lg:w-40">
+                <Image
+                  src="/image/logo.png"
+                  width={2010}
+                  height={1003}
+                  className="w-full h-full"
+                  alt="logo"
+                />
+              </div>
+            </Link>
+
+            {/* <HeaderTitle /> */}
+          </div>
 
           <div className="lg:flex justify-between items-center text-center gap-8 hidden">
             <HeaderTexts />
@@ -31,6 +37,7 @@ export default function Header() {
             <CurrentUser />
           </div>
           <div className="lg:hidden flex gap-3">
+            <CurrentUser />
             <MobileMenu />
           </div>
         </div>

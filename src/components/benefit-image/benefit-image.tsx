@@ -13,7 +13,7 @@ const BenefitImage = ({ attachment }: { attachment: IAttachment }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="h-full w-full overflow-hidden rounded-xl aspect-video">
+        <div className="h-full w-full overflow-hidden rounded-xl aspect-video cursor-zoom-in">
           <Image
             src={attachment?.url}
             width={1920}

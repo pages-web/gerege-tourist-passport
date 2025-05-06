@@ -9,7 +9,6 @@ import CarouselSection from "@/components/home/carousel/page";
 import HelpCenter from "@/components/home/help-center/help-center";
 import ScrollContainer from "@/components/scroll-container/scroll-container";
 import ScrollSection from "@/components/scroll-container/scroll-section";
-import Footer from "@/components/footer/page";
 
 const Home = () => {
   return (
@@ -18,7 +17,7 @@ const Home = () => {
         <CarouselSection />
       </ScrollSection>
 
-      <ScrollSection id="about" itemsEnd>
+      <ScrollSection id="about" itemsEnd bg>
         <WhyUs />
       </ScrollSection>
 
@@ -26,12 +25,8 @@ const Home = () => {
         <Benefits />
       </ScrollSection>
 
-      <ScrollSection id="news-and-tips">
+      <ScrollSection id="news-and-tips" bg>
         <NewsAndTips />
-      </ScrollSection>
-
-      <ScrollSection id="help-center">
-        <HelpCenter />
       </ScrollSection>
 
       <ScrollSection id="faq" itemsEnd>

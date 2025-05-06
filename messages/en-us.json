@@ -6,7 +6,6 @@
       { "name": "About", "href": "/#about" },
       { "name": "Gerege Benefit", "href": "/#gerege-benefit" },
       { "name": "News And Tips", "href": "/#news-and-tips" },
-      { "name": "Help Center", "href": "/#help-center" },
       { "name": "FAQ", "href": "/#faq" }
     ]
   },
@@ -1300,18 +1299,8 @@
         "title": "Can You Transfer Your Gerege Passport to Someone Else?",
         "description": "The Gerege Passport is non-transferable and cannot be used by others."
       }
-    ]
-  },
-
-  "HelpCenter": {
-    "title": "Help Center",
+    ],
     "helps": [
-      {
-        "title": "Emergency Numbers in Mongolia",
-        "police": "102",
-        "ambulance": "103",
-        "fire_department": "101"
-      },
       {
         "title": "Tourist Information Centers",
         "list": [

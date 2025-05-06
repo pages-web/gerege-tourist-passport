@@ -36,6 +36,7 @@ import BenefitImage from "@/components/benefit-image/benefit-image";
 
 const Benefit = ({ params }: IPageProps) => {
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+  const linkRefs = useRef<{ [key: string]: HTMLAnchorElement | null }>({});
   const [activeId, setActiveId] = useState<string | null>(null);
 
   const t = useTranslations("Gerege Tour Card Benefits").raw;
@@ -68,12 +69,23 @@ const Benefit = ({ params }: IPageProps) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const id = entry.target.getAttribute("id");
-            if (id) setActiveId(id);
+            if (id) {
+              setActiveId(id);
+
+              // Scroll corresponding sidebar link into view
+              const linkEl = linkRefs.current[id];
+              if (linkEl) {
+                linkEl.scrollIntoView({
+                  behavior: "smooth",
+                  block: "nearest", // "center" or "start" are alternatives
+                });
+              }
+            }
           }
         });
       },
       {
-        rootMargin: "-50% 0px -50% 0px", // adjust for header offset
+        rootMargin: "-50% 0px -50% 0px",
         threshold: 0,
       }
     );
@@ -93,8 +105,8 @@ const Benefit = ({ params }: IPageProps) => {
     );
 
   return (
-    <div className="relative min-h-screen container lg:mt-20 flex flex-col lg:flex-row gap-10 pt-10 scroll-mt-40">
-      <div className="hidden lg:flex flex-col gap-6 font-semibold sticky top-40 h-full w-[20%]">
+    <div className="relative min-h-screen container flex flex-col lg:flex-row gap-10 pt-10 scroll-mt-40">
+      <div className="hidden lg:flex flex-col gap-6 font-semibold sticky top-28 max-h-[calc(100vh-10rem)] w-[20%] overflow-y-auto no-scrollbar">
         <h2 className="text-xl text-[#64748B]">
           {cmsPosts[0]?.tags[0].name} {currentCategory?.name}
         </h2>
@@ -102,6 +114,9 @@ const Benefit = ({ params }: IPageProps) => {
         {childCategories.length > 0 &&
           childCategories.map((category) => (
             <Link
+              ref={(el) => {
+                linkRefs.current[category._id] = el;
+              }}
               className={`text-sm ${
                 activeId === category._id ? "text-[#0F172A]" : "text-[#64748B]"
               }`}
@@ -115,6 +130,9 @@ const Benefit = ({ params }: IPageProps) => {
         {cmsPosts.length > 0 &&
           cmsPosts.map((post) => (
             <Link
+              ref={(el) => {
+                linkRefs.current[post._id] = el;
+              }}
               className={`text-sm ${
                 activeId === post._id ? "text-[#0F172A]" : "text-[#64748B]"
               }`}
@@ -211,9 +229,23 @@ const Benefit = ({ params }: IPageProps) => {
                 )}
 
                 <div
-                  dangerouslySetInnerHTML={{ __html: post.content }}
+                  dangerouslySetInnerHTML={{ __html: post.excerpt }}
                   className="max-w-[90%] [&>h1]:text-xl [&>h1]:font-bold [&>p]:text-base [&>ul]:list-disc [&>ul]:pl-10 [&>ol]:list-decimal [&>ol]:pl-10 space-y-2"
                 ></div>
+
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger className="font-bold text-xl">
+                      About:
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <div
+                        dangerouslySetInnerHTML={{ __html: post.content }}
+                        className="max-w-[90%] [&>h1]:text-xl [&>h1]:font-bold [&>p]:text-base [&>ul]:list-disc [&>ul]:pl-10 [&>ol]:list-decimal [&>ol]:pl-10 space-y-2"
+                      ></div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
 
                 <div className="space-y-2 lg:space-y-4">
                   {currentData?.discount && (

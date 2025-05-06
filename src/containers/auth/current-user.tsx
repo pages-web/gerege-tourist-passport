@@ -1,7 +1,10 @@
 "use client";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { useMediaQuery } from "@/hooks/use-media-query";
 import { useCurrentUser } from "@/sdk/queries/auth.client";
+import { scrolledAtom } from "@/store/framer.store";
 import { useAtomValue } from "jotai";
 import { UserIcon, Loader2Icon } from "lucide-react";
 import Link from "next/link";
@@ -9,6 +12,8 @@ import { useEffect } from "react";
 
 const CurrentUser = () => {
   const { currentUser, setLoading, loading } = useCurrentUser();
+  const scrolled = useAtomValue(scrolledAtom);
+  const isLaptop = useMediaQuery("(min-width: 1200px)");
 
   useEffect(() => {
     if (!sessionStorage.getItem("token")) {
@@ -42,7 +47,9 @@ const CurrentUser = () => {
     <Button
       size="icon"
       variant={"ghost"}
-      className="hover:bg-background/10 hover:text-white"
+      className={`hover:bg-background/10 ${
+        !scrolled && isLaptop ? "lg:text-white" : ""
+      }`}
       asChild
     >
       <Link href="/login">
