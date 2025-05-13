@@ -32,7 +32,7 @@ const BuyButton: React.FC<BuyButtonProps> = ({
           className="font-bold"
         />
         <div className="text-white font-bold text-[13px]">
-          Gerege Buy for 55$
+          Buy Gerege for 55$
         </div>
       </div>
     </button>

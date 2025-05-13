@@ -20,9 +20,9 @@ const ScrollSection = ({
   return (
     <div
       id={id}
-      className={`lg:h-[110vh] ${id !== "home" ? "py-10" : ""} ${
-        bg ? "" : "bg-slate-50"
-      }  flex ${
+      className={`${id === "home" ? "lg:h-[110vh]" : ""} ${
+        id !== "home" && !isFooter ? "py-10" : ""
+      } ${bg ? "" : "bg-slate-50"}  flex ${
         isFooter
           ? "items-end"
           : itemsEnd
