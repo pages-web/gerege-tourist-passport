@@ -1,22 +1,22 @@
-import { type OperationVariables, useMutation } from '@apollo/client';
-import { mutations } from '../graphql/payment';
-import { useDetail } from '@/components/order-detail/order-detail';
-import { useAtomValue, useSetAtom } from 'jotai';
-import { onError } from '@/lib/utils';
-import { configAtom } from '@/store/auth.store';
-import { invoiceDetailAtom } from '@/store/payment.store';
+import { type OperationVariables, useMutation } from "@apollo/client";
+import { mutations } from "../graphql/payment";
+import { useDetail } from "@/components/order-detail/order-detail";
+import { useAtomValue, useSetAtom } from "jotai";
+import { onError } from "@/lib/utils";
+import { configAtom } from "@/store/auth.store";
+import { invoiceDetailAtom } from "@/store/payment.store";
 
 const useCreateInvoice = ({
   appToken,
-  posName
+  posName,
 }: {
   appToken: string;
   posName: string;
 }) => {
   const context = {
     headers: {
-      'erxes-app-token': appToken
-    }
+      "erxes-app-token": appToken,
+    },
   };
   const { paymentIds } = useAtomValue(configAtom) || {};
   const { totalAmount, _id, customerId, customerType, number, deliveryInfo } =
@@ -30,7 +30,7 @@ const useCreateInvoice = ({
         setInvoice(data?.invoiceCreate);
       },
       context,
-      onError
+      onError,
     }
   );
 
@@ -38,16 +38,16 @@ const useCreateInvoice = ({
     createInvoice({
       variables: {
         amount: totalAmount,
-        contentType: 'pos:orders',
+        contentType: "pos:orders",
         contentTypeId: _id,
-        customerId: customerId || 'empty',
-        customerType: customerType || 'customer',
+        customerId: customerId || "empty",
+        customerType: customerType || "customer",
         description: `${number} - ${posName.toUpperCase()} - ${_id}`,
         data: { posToken: process.env.NEXT_PUBLIC_POS_TOKEN },
         paymentIds,
         phone: deliveryInfo?.phone,
-        ...variables
-      }
+        ...variables,
+      },
     });
 
   const { invoiceCreate } = data || {};

@@ -2,23 +2,23 @@ import {
   type ApolloError,
   useMutation,
   type OperationVariables,
-  BaseMutationOptions
-} from '@apollo/client';
-import { mutations } from '../graphql/order';
-import { useAtom, useAtomValue, useSetAtom } from 'jotai';
+  BaseMutationOptions,
+} from "@apollo/client";
+import { mutations } from "../graphql/order";
+import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import {
   activeOrderAtom,
   cudOrderAtom,
   loadingOrderAtom,
-  orderParamsAtom
-} from '@/store/order.store';
-import { useEffect } from 'react';
-import { toast } from 'sonner';
-import { IOrder } from '@/types/order.types';
-import { ORDER_SALE_STATUS } from '@/lib/constants';
-import { onError } from '@/lib/utils';
+  orderParamsAtom,
+} from "@/store/order.store";
+import { useEffect } from "react";
+import { toast } from "sonner";
+import { IOrder } from "@/types/order.types";
+import { ORDER_SALE_STATUS } from "@/lib/constants";
+import { onError } from "@/lib/utils";
 
-const refetchQueries = ['CurrentOrder'];
+const refetchQueries = ["CurrentOrder"];
 
 export const useOrderCUD = () => {
   const params = useAtomValue(orderParamsAtom);
@@ -34,16 +34,16 @@ export const useOrderCUD = () => {
 
   const [add] = useMutation(mutations.ordersAdd, {
     onError,
-    refetchQueries
+    refetchQueries,
   });
   const [edit] = useMutation(mutations.ordersEdit, {
     onError,
-    refetchQueries
+    refetchQueries,
   });
 
   const [remove] = useMutation(mutations.ordersCancel, {
     onError,
-    refetchQueries
+    refetchQueries,
   });
 
   useEffect(() => {
@@ -54,12 +54,12 @@ export const useOrderCUD = () => {
           edit({ variables: params });
         } else {
           remove({
-            variables: params
+            variables: params,
           });
         }
       } else {
         add({
-          variables: params
+          variables: params,
         });
       }
     }
@@ -73,16 +73,16 @@ export const useOrderChangeSaleStatus = () => {
 
   const [change, { loading }] = useMutation(mutations.orderChangeSaleStatus, {
     refetchQueries,
-    onError
+    onError,
   });
 
-  const handleConfirm = (onCompleted?: BaseMutationOptions['onCompleted']) => {
+  const handleConfirm = (onCompleted?: BaseMutationOptions["onCompleted"]) => {
     change({
       variables: {
         _id,
-        saleStatus: ORDER_SALE_STATUS.CONFIRMED
+        saleStatus: ORDER_SALE_STATUS.CONFIRMED,
       },
-      onCompleted
+      onCompleted,
     });
   };
 
@@ -91,7 +91,7 @@ export const useOrderChangeSaleStatus = () => {
 
 export const useCancelOrder = () => {
   const [cancel, { loading }] = useMutation(mutations.ordersCancel, {
-    onError
+    onError,
   });
 
   return { cancel, loading };

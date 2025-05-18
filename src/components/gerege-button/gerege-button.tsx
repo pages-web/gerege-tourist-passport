@@ -18,13 +18,18 @@ const GeregeButton = async ({
     },
   });
 
-  const geregeproduct = products.filter(
-    (product) => product.name === "GEREGE TOUR CARD"
+  const geregeproduct = products.find(
+    // (product) => product.code === "gerege_tour_card"
+    (product) => product.code === "test"
   );
+
+  if (!geregeproduct) {
+    return null;
+  }
 
   return (
     <GeregeButtonAdd
-      geregeproduct={geregeproduct[0]}
+      geregeproduct={geregeproduct}
       className={className}
       title={title}
     />

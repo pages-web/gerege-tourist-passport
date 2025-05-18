@@ -17,6 +17,7 @@ import { useAtomValue } from "jotai";
 import { deliveryItemIdAtom } from "@/store/auth.store";
 import { format } from "date-fns";
 import Price from "../price/price";
+import PaidButton from "@/containers/payment/paid-button";
 
 const OrderHeader = () => {
   const { number, createdAt, totalAmount, items, paidDate, status } =
@@ -54,7 +55,7 @@ const OrderHeader = () => {
         </div>
         <div className="flex justify-between">
           <CancelOrder />
-          {!paidDate ? <BuyButton /> : <GetEbarimt />}
+          {!paidDate ? <BuyButton /> : <PaidButton />}
         </div>
       </div>
 

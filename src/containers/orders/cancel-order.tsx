@@ -17,15 +17,13 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
 function CancelOrder() {
-  const { _id, number } = useDetail();
+  const { _id, number, paidDate } = useDetail();
   const { cancel, loading } = useCancelOrder();
   const router = useRouter();
   return (
     <AlertDialog>
-      <AlertDialogTrigger asChild>
-        <Button className="md:text-[14px] text-[12px]">
-          Cancel order
-        </Button>
+      <AlertDialogTrigger asChild disabled={!!paidDate}>
+        <Button className="md:text-[14px] text-[12px]">Cancel order</Button>
       </AlertDialogTrigger>
       <AlertDialogContent className="bg-white">
         <AlertDialogHeader>

@@ -18,7 +18,7 @@ const CartProductCard = ({
     useAtomValue(cartItemAtom);
   const [loading, changeCartItem] = useAtom(updateCartAtom);
   return (
-    <div className="relative flex border border-neutral-200 rounded-[4px] shadow-md min-w-[320px] py-4 md:px-4 last:mb-0">
+    <div className="relative flex border border-neutral-200 rounded-[4px] shadow-md min-w-[320px] py-4 px-4 last:mb-0">
       {/* <div className="relative overflow-hidden rounded-md w-[100px] md:w-[176px]">
         {(discountAmount || 0) > 0 && (
           <div className="absolute top-0 left-0 text-white bg-indigo-600 py-1 pl-1.5 pr-2 text-xs font-medium inline-flex items-center">

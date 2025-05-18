@@ -25,7 +25,6 @@ const BuyButton = () => {
   const onCompleted = useSetAtom(handleCompleteAtom);
   const { _id } = useAtomValue(invoiceDetailAtom) || {};
   const { erxesAppToken, name } = useAtomValue(configAtom) || {};
-  console.log(_id);
 
   const handlePay = () => {
     if (selectedMethod) return setOpenDetails(true);

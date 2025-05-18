@@ -7,13 +7,13 @@ import { useLocale } from "next-intl";
 
 const Cart = () => {
   const locale = useLocale();
-  console.log(locale);
+
   return (
     <CheckoutLayout title="Your cart">
-      <div className="md:grid md:grid-cols-12 md:gap-x-6">
+      <div className="md:grid md:grid-cols-12 md:gap-x-6 space-y-6 md:space-y-0">
         <CartPageContent>
           <OrderSummary className="col-span-5 md:sticky md:top-20 h-fit">
-            <Button asChild className="w-full ">
+            <Button asChild className="w-full">
               <Link href="/address">Buy</Link>
             </Button>
           </OrderSummary>

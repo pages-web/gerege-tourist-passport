@@ -34,7 +34,7 @@ const CurrentUser = () => {
       <Avatar asChild>
         <Link href="/profile">
           <AvatarImage src={avatar} alt={currentUser.firstName} />
-          <AvatarFallback>
+          <AvatarFallback className="bg-[#6399CE] text-white">
             {(firstName || "P")[0]}
             {(lastName || "")[0]}
           </AvatarFallback>
