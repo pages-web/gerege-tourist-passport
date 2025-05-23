@@ -94,6 +94,7 @@ const cmsPosts = gql`
         excerpt
         title
         updatedAt
+        customFieldsMap
       }
     }
   }
@@ -264,6 +265,7 @@ const cmsPostDetail = gql`
         name
       }
       customFieldsData
+      customFieldsMap
     }
   }
 `;

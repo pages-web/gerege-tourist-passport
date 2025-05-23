@@ -110,7 +110,7 @@
                 }
               },
               {
-                "season": "summer",
+                "season": "winter",
                 "days": {
                   "mon": "closed",
                   "tue": "closed",
@@ -287,7 +287,7 @@
         "list": [
           {
             "title": "Mongolian traditional costume rental service",
-            "location": " 47.89750837672229,106.90728148775841",
+            "location": "47.89750837672229,106.90728148775841",
             "instagram": "https://www.instagram.com/mongolian_costume_rental/",
             "timeTables": [
               {

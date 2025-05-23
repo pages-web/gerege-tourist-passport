@@ -10,6 +10,7 @@ export const useCmsPosts = (variables?: OperationVariables) => {
       perPage: 200,
       ...variables,
     },
+    fetchPolicy: "no-cache",
   });
 
   const cmsPosts: ICmsPost[] = cmsPostsData?.cmsPostList.posts || [];
@@ -50,6 +51,7 @@ export const useCmsPostDetail = (variables?: OperationVariables) => {
     variables: {
       ...variables,
     },
+    fetchPolicy: "no-cache",
   });
 
   const cmsPostDetail: ICmsPost = data?.cmsPost;

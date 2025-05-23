@@ -23,7 +23,7 @@ const BenefitImage = ({ attachment }: { attachment: IAttachment }) => {
           />
         </div>
       </DialogTrigger>
-      <DialogContent className="max-w-[1000px] pt-10 rounded-xl">
+      <DialogContent className="max-h-[80vh] max-w-[1000px] pt-10 rounded-xl overflow-y-scroll">
         <Image
           src={attachment?.url}
           width={1920}

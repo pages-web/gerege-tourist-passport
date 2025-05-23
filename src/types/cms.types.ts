@@ -25,4 +25,19 @@ export interface ICmsPost {
   title: string;
   excerpt: string;
   content: string;
+  customFieldsMap: { benefitPost: IBenefitCustomField };
+}
+
+export interface IBenefitCustomField {
+  locations?: string;
+  website_link?: string;
+  facebook_link?: string;
+  instagram_link?: string;
+  phone?: string;
+  app_store_link?: string;
+  play_store_link?: string;
+  time_table?: string;
+  winter_time_table?: string;
+  discount_value?: string;
+  location_text?: string;
 }
