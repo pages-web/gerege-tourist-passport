@@ -11,9 +11,11 @@ import PhoneDetail from "./phone-detail";
 import { Badge } from "@/components/ui/badge";
 import { useMutation } from "@apollo/client";
 import { mutations } from "@/sdk/graphql/payment";
+import BackButton from "./back-button";
 
 const QR_PAYMENTS = ["qpay", "monpay", "pocket", "qpayQuickqr"];
 const PHONE_PAYMENTS = ["socialpay", "storepay"];
+const GOLOMT_PAYMENT = ["golomt"];
 
 const PaymentDetail = () => {
   const selectedMethod = useAtomValue(handleMethodAtom);
@@ -25,6 +27,7 @@ const PaymentDetail = () => {
   const kind = payments?.find((p: IPayment) => p._id === selectedMethod)?.kind;
   const isQr = QR_PAYMENTS.includes(kind || "");
   const isPhone = PHONE_PAYMENTS.includes(kind || "");
+  const isGolomt = GOLOMT_PAYMENT.includes(kind || "");
 
   const [addTransaction, { loading: addingTransaction, reset, data }] =
     useMutation(mutations.addTransaction);
@@ -37,7 +40,7 @@ const PaymentDetail = () => {
         variables: {
           invoiceId: invoiceDetail._id,
           paymentId: selectedMethod,
-          amount: invoiceDetail.amount,
+          amount: isQr ? 196000 : invoiceDetail.amount,
         },
       });
       if (prevInvoiceDetailRef.current?._id !== invoiceDetail?._id) {
@@ -45,13 +48,15 @@ const PaymentDetail = () => {
           variables: {
             invoiceId: invoiceDetail._id,
             paymentId: selectedMethod,
-            amount: invoiceDetail.amount,
+            amount: isQr ? 196000 : invoiceDetail.amount,
           },
         });
       }
     }
     prevInvoiceDetailRef.current = invoiceDetail;
   }, [selectedMethod, invoiceDetail]);
+
+  console.log(data, "data");
 
   if (loading) return <Loading className="py-32" />;
 
@@ -64,6 +69,17 @@ const PaymentDetail = () => {
           {"Don't"} close until pay
         </DialogTitle>
       </DialogHeader>
+
+      {isGolomt && (
+        <div className="h-[80vh] flex flex-col gap-4">
+          <iframe
+            src={`https://ecommerce.golomtbank.com/payment/en/${response?.invoice}`}
+            className="w-full h-full border-none rounded-lg mb-2"
+          />
+          <BackButton />
+        </div>
+      )}
+
       {isQr &&
         (addingTransaction ? (
           <QrContainer loading />

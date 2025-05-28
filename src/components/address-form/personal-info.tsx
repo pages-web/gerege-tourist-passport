@@ -22,7 +22,7 @@ const PersonalInfo = ({
         name="firstName"
         render={({ field }) => (
           <FormItem className="col-span-3">
-            <FormLabel>Firstname / Нэр</FormLabel>
+            <FormLabel>Firstname</FormLabel>
             <FormControl>
               <Input placeholder="John" {...field} autoComplete="given-name" />
             </FormControl>
@@ -35,7 +35,7 @@ const PersonalInfo = ({
         name="lastName"
         render={({ field }) => (
           <FormItem className="col-span-3">
-            <FormLabel>Lastname / Овог</FormLabel>
+            <FormLabel>Lastname</FormLabel>
             <FormControl>
               <Input placeholder="Doe" {...field} autoComplete="family-name" />
             </FormControl>
@@ -48,7 +48,7 @@ const PersonalInfo = ({
         name="phone"
         render={({ field }) => (
           <FormItem className="col-span-3">
-            <FormLabel>Contact number / Утасны дугаар</FormLabel>
+            <FormLabel>Contact number</FormLabel>
             <FormControl>
               <Input
                 placeholder="0000 0000"
@@ -65,7 +65,7 @@ const PersonalInfo = ({
         name="email"
         render={({ field }) => (
           <FormItem className="col-span-3">
-            <FormLabel>E-mail address / И-Мэйл хаяг</FormLabel>
+            <FormLabel>E-mail address</FormLabel>
             <FormControl>
               <Input
                 placeholder="john@doe.com"

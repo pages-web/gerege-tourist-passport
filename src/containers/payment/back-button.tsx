@@ -18,7 +18,7 @@ const BackButton = ({ disabled }: { disabled?: boolean }) => {
       disabled={disabled}
       type="button"
     >
-      Буцах
+      Back
     </Button>
   );
 };

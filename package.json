@@ -46,6 +46,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cookies-next": "^4.2.1",
+    "currency-converter-lt": "^2.0.1",
     "date-fns": "^3.6.0",
     "drawer": "^0.0.2",
     "emailjs-com": "^3.2.0",
