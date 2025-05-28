@@ -246,7 +246,7 @@ const Benefit = ({ params }: IPageProps) => {
                   <Accordion type="single" collapsible>
                     <AccordionItem value="item-1">
                       <AccordionTrigger className="font-bold text-xl">
-                        About:
+                        Continued:
                       </AccordionTrigger>
                       <AccordionContent>
                         <div

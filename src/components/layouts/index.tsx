@@ -10,7 +10,7 @@ const DefaultLayout = ({ children }: React.PropsWithChildren) => {
     <>
       <Header />
       {children}
-      <div className="lg:hidden w-full fixed bottom-0 p-6 bg-slate-100">
+      <div className="lg:hidden w-full sticky bottom-0 p-6 bg-slate-100 z-50">
         <GeregeButton className="w-full" />
       </div>
       <div className="w-fit h-fit flex flex-col gap-2 fixed z-50 right-2 md:top-[76%] top-[50%]">

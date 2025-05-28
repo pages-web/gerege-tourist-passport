@@ -56,7 +56,7 @@ export const TitleLists = ({ data }: { data: Lists }) => {
 export default function Footer() {
   const t = useTranslations("footer").raw;
   return (
-    <div className="w-full bg-[#6399CE] pt-10 md:pt-10 mt-40 text-white relative overflow-hidden">
+    <div className="w-full bg-[#6399CE] pt-10 text-white relative overflow-hidden">
       <div className="container">
         <div className="flex justify-between lg:flex-row flex-col gap-8 flex-wrap">
           {t("content").map((data: any, index: number) => {

@@ -13,23 +13,23 @@ import ScrollSection from "@/components/scroll-container/scroll-section";
 const Home = () => {
   return (
     <ScrollContainer>
-      <ScrollSection id="home">
+      <ScrollSection id="home" bg>
         <CarouselSection />
       </ScrollSection>
 
-      <ScrollSection id="about" itemsEnd bg>
+      <ScrollSection id="about" itemsEnd>
         <WhyUs />
       </ScrollSection>
 
-      <ScrollSection id="gerege-benefit">
+      <ScrollSection id="gerege-benefit" bg>
         <Benefits />
       </ScrollSection>
 
-      <ScrollSection id="news-and-tips" bg>
+      <ScrollSection id="news-and-tips">
         <NewsAndTips />
       </ScrollSection>
 
-      <ScrollSection id="faq" itemsEnd>
+      <ScrollSection id="faq" itemsEnd bg>
         <FAQ />
       </ScrollSection>
     </ScrollContainer>

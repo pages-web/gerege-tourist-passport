@@ -31,7 +31,7 @@ export default function FAQ() {
   });
 
   return (
-    <div className="container">
+    <div className="container space-y-10">
       <Heading title={t("title")} data-aos="fade-up" />
 
       <Accordion
