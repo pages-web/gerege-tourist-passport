@@ -56,7 +56,6 @@ const PaymentDetail = () => {
     prevInvoiceDetailRef.current = invoiceDetail;
   }, [selectedMethod, invoiceDetail]);
 
-  console.log(data, "data");
 
   if (loading) return <Loading className="py-32" />;
 
