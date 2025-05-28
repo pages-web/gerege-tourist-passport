@@ -21,10 +21,12 @@ const GeregeButtonAdd = ({
   geregeproduct,
   className,
   title,
+  isIcon,
 }: {
   geregeproduct: IProduct;
   className?: string;
   title?: string;
+  isIcon?: boolean;
 }) => {
   const [loading, addToCart] = useAtom(addToCartAtom);
   const [clicked, setClicked] = useState(false);
@@ -67,10 +69,20 @@ const GeregeButtonAdd = ({
     }
   };
 
+  if (isIcon)
+    return (
+      <Button
+        onClick={handleClick}
+        className={`bg-[#6399CE] px-2 py-1 lg:px-4 lg:py-2 text-white md:w-[57px] w-10 md:h-[57px] h-10 font-bold md:rounded-2xl rounded-xl ${className}`}
+      >
+        <Store className="w-full h-full"/>
+      </Button>
+    );
+
   return (
     <Button
       onClick={handleClick}
-      className={`bg-[#6399CE] text-white w-fit ${className}`}
+      className={`bg-[#6399CE] text-white w-fit font-bold ${className}`}
     >
       <Store className="mr-2 w-6 h-6" /> {title || "Gerege Buy for 55$"}
     </Button>

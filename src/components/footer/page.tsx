@@ -117,7 +117,7 @@ export default function Footer() {
         <Image
           src={"/image/footer-logo.png"}
           alt=""
-          width={140}
+          width={180}
           height={85}
           quality={100}
           className="hidden md:block"

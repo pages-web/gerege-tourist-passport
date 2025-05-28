@@ -8,7 +8,6 @@ import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 const WeatherAndCurrency: React.FC = () => {
   const { weatherNow } = useWeather();
   const weatherRef = useRef<HTMLDivElement | null>(null);
-  const currencyRef = useRef<HTMLDivElement | null>(null);
   const [activeView, setActiveView] = useState<"weather" | "currency" | null>(
     null
   );
@@ -40,7 +39,7 @@ const WeatherAndCurrency: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-fit h-fit flex gap-2 fixed z-50 right-2 md:top-[76%] top-[50%]">
+    <>
       {activeView === "weather" && (
         <div
           ref={weatherRef}
@@ -84,7 +83,7 @@ const WeatherAndCurrency: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

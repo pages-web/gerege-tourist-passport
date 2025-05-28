@@ -11,6 +11,7 @@ import { Separator } from "../ui/Separator";
 import GeregeButton from "../gerege-button/gerege-button";
 import { useTranslations } from "next-intl";
 import CurrentUser from "@/containers/auth/current-user";
+import Image from "../ui/image";
 
 const MobileMenu = () => {
   const t = useTranslations("Header").raw;
@@ -22,9 +23,17 @@ const MobileMenu = () => {
       </SheetTrigger>
       <SheetContent className="w-full bg-white">
         <SheetTitle>
-          <h3 className="w-[80%] logo-text text-[20px] font-semibold text-[#6399CE]">
-            GEREGE TOURIST PASSPORT LLC
-          </h3>
+          <Link href={"/"}>
+            <div className="w-32 lg:w-40">
+              <Image
+                src="/image/logo.png"
+                width={2010}
+                height={1003}
+                className="w-full h-full"
+                alt="logo"
+              />
+            </div>
+          </Link>
         </SheetTitle>
 
         <Separator className="my-6" />
@@ -44,7 +53,7 @@ const MobileMenu = () => {
             </>
           ))}
           <SheetClose>
-            <GeregeButton />
+            <GeregeButton className="w-full text-lg"/>
           </SheetClose>
         </div>
       </SheetContent>

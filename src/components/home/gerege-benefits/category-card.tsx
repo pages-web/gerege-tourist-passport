@@ -40,7 +40,7 @@ const CategoryCard = ({
 
   if (!category.slug) {
     return (
-      <div className="relative rounded-2xl shadow-[0_1px_8px_rgba(0,0,0,0.1)] flex justify-center items-center px-4 py-10 gap-2">
+      <div className="bg-white relative rounded-2xl shadow-[0_1px_8px_rgba(0,0,0,0.1)] flex justify-center items-center px-4 py-10 gap-2">
         <div className="flex flex-col gap-2 items-center">
           <div className="w-12 h-12">
             <Image
@@ -61,7 +61,7 @@ const CategoryCard = ({
 
   return (
     <Link href={`/benefits/${category._id}`}>
-      <div className="relative cursor-pointer rounded-2xl shadow-[0_1px_8px_rgba(0,0,0,0.1)] flex justify-center items-center px-4 py-10 gap-2 group transition-all h-full">
+      <div className="bg-white relative cursor-pointer rounded-2xl shadow-[0_1px_8px_rgba(0,0,0,0.1)] flex justify-center items-center px-4 py-10 gap-2 group transition-all h-full">
         <div className="flex flex-col gap-2 items-center group-hover:opacity-0 ease-in-out duration-300">
           <div className="w-12 h-12">
             <Image

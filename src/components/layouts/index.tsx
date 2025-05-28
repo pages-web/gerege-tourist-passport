@@ -1,19 +1,22 @@
-import { ChevronDownIcon } from "@radix-ui/react-icons";
-import { Button } from "../ui/button";
-import CurrentUser from "@/containers/auth/current-user";
-import { Suspense, useEffect } from "react";
 import Footer from "../footer/page";
 import Header from "../header/header";
 import WeatherAndCurrency from "../weather-and-currency/page";
 import "aos/dist/aos.css";
 import ScrollSection from "../scroll-container/scroll-section";
+import GeregeButton from "../gerege-button/gerege-button";
 
 const DefaultLayout = ({ children }: React.PropsWithChildren) => {
   return (
     <>
       <Header />
       {children}
-      <WeatherAndCurrency />
+      <div className="lg:hidden w-full fixed bottom-0 p-6 bg-slate-100">
+        <GeregeButton className="w-full" />
+      </div>
+      <div className="w-fit h-fit flex flex-col gap-2 fixed z-50 right-2 md:top-[76%] top-[50%]">
+        <GeregeButton isIcon />
+        <WeatherAndCurrency />
+      </div>
       <ScrollSection isFooter id="footer" bg>
         <Footer />
       </ScrollSection>

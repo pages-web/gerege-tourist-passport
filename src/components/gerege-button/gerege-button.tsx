@@ -8,9 +8,11 @@ import GeregeButtonAdd from "./gerege-button-add.client";
 const GeregeButton = async ({
   className,
   title,
+  isIcon,
 }: {
   className?: string;
   title?: string;
+  isIcon?: boolean;
 }) => {
   const { products } = await getProducts({
     variables: {
@@ -32,6 +34,7 @@ const GeregeButton = async ({
       geregeproduct={geregeproduct}
       className={className}
       title={title}
+      isIcon={isIcon}
     />
   );
 };
