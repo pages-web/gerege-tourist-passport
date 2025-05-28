@@ -56,7 +56,6 @@ const PaymentDetail = () => {
     prevInvoiceDetailRef.current = invoiceDetail;
   }, [selectedMethod, invoiceDetail]);
 
-
   if (loading) return <Loading className="py-32" />;
 
   const { _id, status, response } = data?.paymentTransactionsAdd || {};

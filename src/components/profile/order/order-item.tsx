@@ -19,6 +19,7 @@ const OrderItem = ({
   paidDate,
 }: IOrder) => {
   const { deliveryConfig } = useAtomValue(configAtom) || {};
+
   return (
     <Button
       variant="outline"
