@@ -8,15 +8,15 @@ export default function WhyUs() {
   const t = useTranslations("aboutUs").raw;
 
   return (
-    <div className="container space-y-10 scroll-mt-40 flex flex-col items-center text-center">
+    <div className="container space-y-5 flex flex-col items-center text-center">
       <Heading title={t("title")} data-aos="fade-up" />
 
       <div className="max-w-8xl">
         {t("about").map((item: any, index: number) => (
           <div className="space-y-4" key={index}>
-            <h2 className="font-semibold mb-8">{item.title}</h2>
+            <h2 className="font-semibold mt-5">{item.title}</h2>
             <div
-              className="text-[#1D2939] text-[14px] [&>ul]:list-disc [&>ul]:pl-10"
+              className="text-[#1D2939] text-[14px] [&>ul]:list-disc [&>ul]:pl-11"
               dangerouslySetInnerHTML={{ __html: item.description }}
             ></div>
           </div>
