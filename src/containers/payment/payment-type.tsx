@@ -1,9 +1,9 @@
-import { memo } from 'react';
+import { memo } from "react";
 
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import Image from '@/components/ui/image';
-import { RadioGroupItem } from '@/components/ui/radio-group';
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import Image from "@/components/ui/image";
+import { RadioGroupItem } from "@/components/ui/radio-group";
 
 export interface IPaymentOption {
   _id: string;
@@ -14,15 +14,15 @@ export interface IPaymentOption {
 const PaymentType = ({
   selected,
   _id,
-  kind
+  kind,
 }: IPaymentOption & { selected: boolean }) => {
   return (
     <div className="relative">
       <Button
         variant="outline"
         className={cn(
-          'h-auto flex-col items-center md:items-start pt-5 pb-4 pl-6 gap-1 group rounded-2xl w-full border-2 border-border/10 shadow-md ease-in duration-100 transition-colors relative',
-          selected && 'bg-primary/10 hover:bg-primary/10  border-primary'
+          "h-auto flex-col items-center md:items-start pt-5 pb-4 pl-6 gap-1 group rounded-2xl w-full border-2 border-border/10 shadow-md ease-in duration-100 transition-colors relative",
+          selected && "bg-primary/10 hover:bg-primary/10  border-primary"
         )}
         asChild
       >
@@ -31,8 +31,8 @@ const PaymentType = ({
             value={_id}
             id={_id}
             className={cn(
-              'absolute right-5 top-5 h-5 w-5 border-2 shadow-none hidden md:inline-flex',
-              selected && 'border-primary'
+              "absolute right-5 top-5 h-5 w-5 border-2 shadow-none hidden md:inline-flex",
+              selected && "border-primary"
             )}
           />
 
@@ -44,12 +44,12 @@ const PaymentType = ({
             width={36}
           />
           <div className="flex-auto text-left">
-            <div className={'font-medium capitalize text-black'}>
-              {kind === 'qpayQuickqr' ? 'qpay' : kind}
+            <div className={"font-medium capitalize text-black"}>
+              {kind === "qpayQuickqr" ? "qpay" : "card"}
             </div>
           </div>
           <label
-            className={cn('absolute inset-0 rounded-2xl cursor-pointer')}
+            className={cn("absolute inset-0 rounded-2xl cursor-pointer")}
             htmlFor={_id}
           />
         </div>

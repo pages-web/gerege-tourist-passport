@@ -1,25 +1,26 @@
-'use client';
+"use client";
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage
-} from '../../ui/form';
-import { Input } from '../../ui/input';
-import { Button } from '../../ui/button';
-import { useAtomValue } from 'jotai';
-import { currentUserAtom } from '@/store/auth.store';
-import { useUserEdit } from '@/sdk/hooks/auth';
+  FormMessage,
+} from "../../ui/form";
+import { Input } from "../../ui/input";
+import { Button } from "../../ui/button";
+import { useAtomValue } from "jotai";
+import { currentUserAtom } from "@/store/auth.store";
+import { useUserEdit } from "@/sdk/hooks/auth";
+import { useTranslations } from "next-intl";
 
 const formSchema = z.object({
-  firstName: z.string().min(1, { message: 'First name is required' }),
-  lastName: z.string()
+  firstName: z.string().min(1, { message: "First name is required" }),
+  lastName: z.string(),
 });
 
 const ProfileEdit = () => {
@@ -28,14 +29,15 @@ const ProfileEdit = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     values: {
-      firstName: firstName || '',
-      lastName: lastName || ''
-    }
+      firstName: firstName || "",
+      lastName: lastName || "",
+    },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     editUser({ variables: { ...values, _id } });
   }
+  const t = useTranslations("Welcome");
 
   return (
     <Form {...form}>
@@ -48,7 +50,7 @@ const ProfileEdit = () => {
           name="firstName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Firstname</FormLabel>
+              <FormLabel>{t("firstname")}</FormLabel>
               <FormControl>
                 <Input
                   placeholder="John"
@@ -65,7 +67,7 @@ const ProfileEdit = () => {
           name="lastName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Lastname</FormLabel>
+              <FormLabel>{t("lastname")}</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Doe"
@@ -78,7 +80,7 @@ const ProfileEdit = () => {
           )}
         />
 
-        <Button disabled={loading}>Apply change</Button>
+        <Button disabled={loading}>{t("applychanges")}</Button>
       </form>
     </Form>
   );

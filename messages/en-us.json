@@ -5,7 +5,8 @@
       { "name": "Home", "href": "/" },
       { "name": "About", "href": "/#about" },
       { "name": "Gerege Benefit", "href": "/#gerege-benefit" },
-      { "name": "News And Tips", "href": "/#news-and-tips" },
+      { "name": "News", "href": "/#news-and-tips" },
+      { "name": "Tips", "href": "/#tips" },
       { "name": "FAQ", "href": "/#faq" }
     ]
   },
@@ -24,10 +25,10 @@
   },
 
   "aboutUs": {
-    "title": "About us",
+    "title": "What is the Gerege?",
     "about": [
       {
-        "title": "What is the Gerege? — Our Historical Foundation",
+        "title": "Our Historical Foundation",
         "description": "During the time of the Mongol Empire, the “Gerege” was a diplomatic passport issued to emissaries and envoys. It granted them safe passage, food, horses, lodging, and guides across the vast territory of the empire. It was the world’s first form of a universal travel token—unparalleled in any other civilization, even the Roman Empire. The holder of a Gerege traveled freely and received honorable hospitality, symbolizing power, trust, and international authority."
       },
       {
@@ -1200,7 +1201,7 @@
   },
 
   "NewsAndTips": {
-    "title": "NEWS AND TIPS",
+    "title": "NEWS",
     "description": "Here’s many things you can do in Ulaanbaatar for free and others",
     "news": [
       {
@@ -1371,5 +1372,24 @@
         ]
       }
     ]
+  },
+  "Welcome": {
+    "title": "Welcome",
+    "email": "Email",
+    "password": "Password",
+    "forgot": "Forgot?",
+    "login": "Login",
+    "signup": "Sign up",
+    "firstname": "First name",
+    "lastname": "Last name",
+    "phone": "Phone",
+    "personal": "Personal info",
+    "edithProfile": "Edith Profile",
+    "Orders": "Orders",
+    "logout": "Log Out",
+    "applychanges": "Apply changes"
+  },
+  "Tips": {
+    "title": "TIPS"
   }
 }

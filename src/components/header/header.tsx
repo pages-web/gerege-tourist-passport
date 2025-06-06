@@ -12,7 +12,7 @@ import HeaderTitle from "./headerTitle";
 export default function Header() {
   return (
     <HeaderContainer>
-      {/* <LanguageAndSearch /> */}
+      <LanguageAndSearch />
       <div className="w-full py-5">
         <div className="container flex justify-between items-center gap-10">
           <div className="flex flex-col items-center">

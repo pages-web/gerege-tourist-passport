@@ -23,6 +23,7 @@ import { InfoIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { passwordZod, phoneZod } from "@/lib/zod";
 import { LoadingIcon } from "@/components/ui/loading";
+import { useTranslations } from "next-intl";
 
 const formSchema = z.object({
   firstName: z.string().min(1, { message: "Fill input" }),
@@ -45,6 +46,7 @@ const RegisterForm = () => {
     },
   });
   const { register, loading, clientPortalId } = useRegister();
+  const t = useTranslations("Welcome");
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     register({
@@ -68,7 +70,7 @@ const RegisterForm = () => {
           name="firstName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>First Name</FormLabel>
+              <FormLabel>{t("firstname")}</FormLabel>
               <FormControl>
                 <Input
                   placeholder="John"
@@ -85,7 +87,7 @@ const RegisterForm = () => {
           name="lastName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Last Name</FormLabel>
+              <FormLabel>{t("lastname")}</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Doe"
@@ -102,7 +104,7 @@ const RegisterForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>{t("email")}</FormLabel>
               <FormControl>
                 <Input
                   placeholder="john@doe.com"
@@ -119,7 +121,7 @@ const RegisterForm = () => {
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Phone</FormLabel>
+              <FormLabel>{t("phone")}</FormLabel>
               <FormControl>
                 <Input
                   placeholder="0000 0000"
@@ -136,7 +138,7 @@ const RegisterForm = () => {
           name="password"
           render={({ field }) => (
             <FormItem className="col-span-2">
-              <FormLabel>Password</FormLabel>
+              <FormLabel>{t("password")}</FormLabel>
               <FormControl>
                 <Password {...field} autoComplete="new-password" />
               </FormControl>
@@ -146,7 +148,7 @@ const RegisterForm = () => {
         />
         <Button className="w-full col-span-2" size="lg" disabled={loading}>
           {loading && <LoadingIcon />}
-          Sign up
+          {t("signup")}
         </Button>
         <Alert className="col-span-2">
           <InfoIcon className="h-4 w-4" />

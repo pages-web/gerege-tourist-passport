@@ -9,6 +9,7 @@ import CarouselSection from "@/components/home/carousel/page";
 import HelpCenter from "@/components/home/help-center/help-center";
 import ScrollContainer from "@/components/scroll-container/scroll-container";
 import ScrollSection from "@/components/scroll-container/scroll-section";
+import Tips from "@/components/home/news-and-tips/tips";
 
 const Home = () => {
   return (
@@ -27,6 +28,10 @@ const Home = () => {
 
       <ScrollSection id="news-and-tips">
         <NewsAndTips />
+      </ScrollSection>
+
+      <ScrollSection id="tips">
+        <Tips />
       </ScrollSection>
 
       <ScrollSection id="faq" itemsEnd bg>

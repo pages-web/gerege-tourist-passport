@@ -1,9 +1,12 @@
-import { Button } from '@/components/ui/button';
-import ResetPasswordForm from '@/containers/auth/reset-password';
-import Link from 'next/link';
-import { Suspense } from 'react';
+import { Button } from "@/components/ui/button";
+import ResetPasswordForm from "@/containers/auth/reset-password";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { Suspense } from "react";
 
 const ResetPassword = () => {
+  const t = useTranslations("Welcome");
+
   return (
     <>
       <div className="text-lg lg:text-2xl font-semibold mx-auto relative lg:mt-20">

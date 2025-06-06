@@ -11,6 +11,7 @@ import { TabsList, TabsTrigger } from "../ui/tabs";
 import { useAtomValue } from "jotai";
 import { currentUserAtom } from "@/store/auth.store";
 import { useUserDetail } from "@/sdk/queries/auth.client";
+import { useTranslations } from "next-intl";
 
 const ProfileTabTrigger = ({
   value,
@@ -37,6 +38,8 @@ const ProfileTabTrigger = ({
 };
 
 const ProfileTabsList = () => {
+  const t = useTranslations("Welcome");
+
   const { firstName, isEmailVerified, isPhoneVerified } =
     useAtomValue(currentUserAtom) || {};
   const { loading } = useUserDetail();
@@ -48,28 +51,24 @@ const ProfileTabsList = () => {
         Icon={User2Icon}
         description={firstName || "-"}
       >
-        Personal info
+        {t("personal")}
       </ProfileTabTrigger>
       <ProfileTabTrigger
         value="phone"
         Icon={Smartphone}
         description={!loading && isPhoneVerified ? "Verified" : "-"}
       >
-        Phone
+        {t("phone")}
       </ProfileTabTrigger>
       <ProfileTabTrigger
         value="email"
         Icon={MailIcon}
         description={!loading && isEmailVerified ? "Verified" : "-"}
       >
-        Email
+        {t("email")}
       </ProfileTabTrigger>
-      <ProfileTabTrigger
-        value="password"
-        Icon={LockIcon}
-        description="Change"
-      >
-        Password
+      <ProfileTabTrigger value="password" Icon={LockIcon} description="Change">
+        {t("password")}
       </ProfileTabTrigger>
     </TabsList>
   );

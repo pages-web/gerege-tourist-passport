@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Password } from "@/components/ui/password";
 import Link from "next/link";
 import { useLogin } from "@/sdk/hooks/auth";
+import { useTranslations } from "next-intl";
 
 const formSchema = z.object({
   login: z
@@ -45,6 +46,7 @@ const LoginForm = () => {
       variables: { ...values, clientPortalId },
     });
   }
+  const t = useTranslations("Welcome");
 
   return (
     <Form {...form}>
@@ -54,7 +56,7 @@ const LoginForm = () => {
           name="login"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>{t("email")}</FormLabel>
               <FormControl>
                 <Input placeholder="Email" {...field} autoComplete="username" />
               </FormControl>
@@ -68,14 +70,14 @@ const LoginForm = () => {
           render={({ field }) => (
             <FormItem>
               <div className="flex items-center justify-between mb-1">
-                <FormLabel>Password</FormLabel>
+                <FormLabel>{t("password")}</FormLabel>
                 <Button
                   asChild
                   variant="link"
                   className="py-1 h-auto font-normal px-0"
                   tabIndex={-1}
                 >
-                  <Link href="/forgot">Forgot?</Link>
+                  <Link href="/forgot">{t("forgot")}</Link>
                 </Button>
               </div>
 
@@ -87,7 +89,7 @@ const LoginForm = () => {
           )}
         />
         <Button type="submit" className="w-full" size="lg" disabled={loading}>
-          Login
+          {t("login")}
         </Button>
       </form>
     </Form>

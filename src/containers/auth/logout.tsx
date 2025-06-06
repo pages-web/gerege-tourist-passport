@@ -1,11 +1,14 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import { LoadingIcon } from '@/components/ui/loading';
-import { useLogout } from '@/sdk/hooks/auth';
+import { Button } from "@/components/ui/button";
+import { LoadingIcon } from "@/components/ui/loading";
+import { useLogout } from "@/sdk/hooks/auth";
+import { useTranslations } from "next-intl";
 
 const Logout = () => {
   const { logout, loading } = useLogout();
+  const t = useTranslations("Welcome");
+
   return (
     <Button
       className="justify-start"
@@ -13,7 +16,7 @@ const Logout = () => {
       disabled={loading}
       onClick={logout}
     >
-      {loading && <LoadingIcon />} Log out
+      {loading && <LoadingIcon />} {t("logout")}
     </Button>
   );
 };

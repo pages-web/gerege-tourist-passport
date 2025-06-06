@@ -8,33 +8,6 @@ import { Separator } from "../ui/Separator";
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/navigation";
 
-const searchSuggest = [
-  {
-    id: 1,
-    title: "Chinggis Khaan",
-    name: "National Museum",
-    href: "/gerege-benefits?category=museum",
-  },
-  {
-    id: 2,
-    title: "Chinggis Khaan",
-    name: "Air port",
-    href: "",
-  },
-  {
-    id: 3,
-    title: "Chinggis Khaan",
-    name: "Air port",
-    href: "",
-  },
-  {
-    id: 4,
-    title: "Chinggis Khaan",
-    name: "Air port",
-    href: "",
-  },
-];
-
 const locales = [
   { code: "en-us", label: "EN US", flag: "/image/US.png" },
   { code: "kr", label: "KR", flag: "/image/KR.png" },

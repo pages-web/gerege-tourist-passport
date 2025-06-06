@@ -1,6 +1,9 @@
+"use client";
+
 import { SidebarNav } from "@/components/sidebar-nav/sidebar-nav";
 import { Separator } from "@/components/ui/Separator";
 import PrivateRoute from "@/containers/auth/private-route";
+import { useTranslations } from "next-intl";
 import { Suspense } from "react";
 
 const ProfileLayout = ({
@@ -8,6 +11,23 @@ const ProfileLayout = ({
   title,
   description,
 }: React.PropsWithChildren & { title: string; description: string }) => {
+  const t = useTranslations("Welcome");
+
+  const sidebarNavItems = [
+    {
+      title: t("personal"),
+      href: "/profile",
+    },
+    {
+      title: t("Orders"),
+      href: "/profile/orders",
+    },
+    {
+      title: "Log out",
+      href: "/logout",
+    },
+  ];
+
   return (
     <PrivateRoute>
       <div className="space-y-3 md:space-y-6 pt-6 md:pt-10 lg:mt-20 flex-auto container min-h-screen">
@@ -28,20 +48,5 @@ const ProfileLayout = ({
     </PrivateRoute>
   );
 };
-
-const sidebarNavItems = [
-  {
-    title: "Personal info",
-    href: "/profile",
-  },
-  {
-    title: "Orders",
-    href: "/profile/orders",
-  },
-  {
-    title: "Log out",
-    href: "/logout",
-  },
-];
 
 export default ProfileLayout;
