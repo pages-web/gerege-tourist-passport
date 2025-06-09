@@ -1259,48 +1259,6 @@
 
   "FAQ": {
     "title": "FAQ",
-    "questions": [
-      {
-        "title": "How to Use the Gerege Passport?",
-        "description": "You can use your Gerege Passport by presenting it to partner organizations, scanning the QR code located on the back of the passport, or registering the phone number of the SIM card that accompanies the passport to access services."
-      },
-      {
-        "title": "What to Do If You Lose Your Gerege Passport?",
-        "description": "If you lose your Gerege Passport, you will need to purchase a new one to continue using the services."
-      },
-      {
-        "title": "How to Activate Your Data SIM?",
-        "description": "To activate your data SIM, remove it from the package, insert it into your phone, and enter the PIN code provided on the SIM card. The SIM will be activated and usable for 14 days from the activation date."
-      },
-      {
-        "title": "Can You Extend Your Data and Days?",
-        "description": "Yes, you can extend your data and usage days. You can access suitable services through the following link. <b><a href=\"https://gmobile.mn/\" target=\"_blank\">Жимобайл ХХК - Үндэсний оператор.</a></b>"
-      },
-      {
-        "title": "Where Can You Purchase a Removable Map?",
-        "description": "You can purchase a removable map at the Mongolian Costume Rental location. You can check their Facebook page for more information. <b><a href=\"https://www.facebook.com/mongolianscratchmap\" target=\"_blank\">Mongolian Costume Rental</a></b>"
-      },
-      {
-        "title": "Where Can You Buy Hushkhan Nuts?",
-        "description": "Hushkhan nuts are available for purchase at all selling points across the country. You can check local stores or visit the website: <b><a href=\"https://hushkhan.mn/\" target=\"_blank\"> hushkhan.mn – Хушхан БРЭНД</a></b> for more details."
-      },
-      {
-        "title": "What Payment Options Are Available?",
-        "description": "You can make payments using international cards or through the Korean banking app."
-      },
-      {
-        "title": "What Should You Do If You Want to Return Your Gerege Passport for Any Reason?",
-        "description": "If there are errors or duplicate transactions during payment, you can request a refund for the difference. Returns are not possible in other cases."
-      },
-      {
-        "title": "How Long Will It Take to Receive a Refund?",
-        "description": "Refunds will be processed within 7-14 days and will be credited to your account."
-      },
-      {
-        "title": "Can You Transfer Your Gerege Passport to Someone Else?",
-        "description": "The Gerege Passport is non-transferable and cannot be used by others."
-      }
-    ],
     "helps": [
       {
         "title": "Tourist Information Centers",

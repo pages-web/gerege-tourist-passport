@@ -23,23 +23,23 @@
   },
 
   "aboutUs": {
-    "title": "About us",
+    "title": "Gerege란?",
     "about": [
       {
-        "title": "What is the Gerege? — Our Historical Foundation",
-        "description": "During the time of the Mongol Empire, the “Gerege” was a diplomatic passport issued to emissaries and envoys. It granted them safe passage, food, horses, lodging, and guides across the vast territory of the empire. It was the world’s first form of a universal travel token—unparalleled in any other civilization, even the Roman Empire. The holder of a Gerege traveled freely and received honorable hospitality, symbolizing power, trust, and international authority."
+        "title": "우리의 역사적 유산",
+        "description": "몽골 제국 시대 \"게레게(Gerege)\"는 사절과 특사에게 발급되던 외교 여권이었습니다. 이 여권을 소지한 사람은 제국 전역에서 안전하게 통행할 수 있었고, 음식, 말, 숙소, 안내자 등을 제공받을 수 있었습니다. 이는 세계 최초의 보편적인 여행 증명서로, 로마 제국조차 갖추지 못했던 독보적인 시스템이었습니다."
       },
       {
-        "title": "Modern Rebirth – The Gerege Tourist Passport",
-        "description": "The Gerege Tourist Passport is a contemporary version of this historical legacy—reimagined for today’s travelers. Designed to promote Mongolia’s culture and history to international tourists, it combines educational value with real-world benefits: free access to 8 services, discounts at over 100 partner businesses, and contributions to charitable causes such as children’s welfare."
+        "title": "현대적 부활 – Gerege 관광 여권",
+
+        "description": "게레게 관광 여권은 이 역사적 유산을 현대적으로 재해석한 것으로, 오늘날의 여행자를 위해 디자인되었습니다. 몽골의 역사와 문화를 세계에 알리고자 만들어졌으며, 교육적 가치와 실제 혜택을 결합하고 있습니다.\n8가지 무료 서비스"
       },
       {
-        "title": "Safe, Simple, Smart, and Saving – The Four Pillars of the Gerege Tourist Passport",
-        "description": "These four keywords represent the core strengths of the Gerege Tourist Passport: <br></br> <ul><li><b>Safe:</b> Officially registered and secure, your personal data is protected. The passport supports responsible and safe travel across Mongolia.</li><li><b>Simple:</b> Easy to purchase, use, and redeem discounts. The experience is user-friendly and convenient for all travelers.</li><li><b>Smart:</b> Enhanced with technology—QR codes, an online network of partners, and seamless integration to make your journey efficient and smooth.</li><li><b>Saving:</b> Access discounts at over 100 establishments including hotels, restaurants, and attractions—helping you reduce travel costs without sacrificing quality.</li></ul><br/>The Gerege Tourist Passport is your trusted companion—bridging ancient Mongolian legacy with modern-day travel in a way that is educational, valuable, and inspiring."
+        "title": "안전함, 간편함, 스마트함, 절약 – 게레게 관광 여권의 네 가지 핵심 가치",
+        "description": "이 네 가지 키워드는 게레게 관광 여권의 핵심 강점을 나타냅니다: <br></br> <ul><li><b>안전:</b> 공식 등록되어 있으며 안전하게 개인정보가 보호됩니다. 몽골 전역에서 책임 있고 안전한 여행을 지원합니다.</li><li><b>간단함:</b> 구매, 사용, 할인 혜택 이용이 쉽고 편리합니다. 모든 여행자에게 사용자 친화적인 경험을 제공합니다.</li><li><b>스마트:</b> QR 코드, 온라인 파트너 네트워크, 원활한 통합 기능으로 여행을 효율적이고 매끄럽게 만들어 줍니다.</li><li><b>절약:</b> 호텔, 음식점, 관광지 등 100개 이상의 업체에서 할인을 받을 수 있어, 품질을 희생하지 않고 여행 비용을 절감할 수 있습니다.</li></ul><br/>게레게 관광 여권은 고대 몽골 유산과 현대 여행을 교육적이고 가치 있게, 영감을 주는 방식으로 연결해주는 신뢰할 수 있는 동반자입니다."
       }
     ],
-
-    "benefits": ["Safe", "Simple", "Smart", "Saving"]
+    "benefits": ["안전", "간단함", "스마트", "절약"]
   },
 
   "WhyChooseGeregeTouristPassport": {
@@ -59,6 +59,9 @@
     "description": "울란바토르에서 무료로 할 수 있는 것들과 기타 많은 것들"
   },
 
+  "Gerege Tour Card Benefits": {
+    "title": "게레게 관광 여권의 혜택"
+  },
   "FAQ": {
     "title": "FAQ",
     "helps": [
@@ -107,10 +110,10 @@
   },
 
   "footer": {
-    "description": "Copyright 2025. ⓒ GEREGE TOURIST PASSPORT. All Rights Reserved.",
+    "description": "저작권 2025. ⓒ GEREGE TOURIST PASSPORT. 판권 소유.",
     "content": [
       {
-        "title": "Contacts",
+        "title": "연락처",
         "lists": [
           {
             "name": "+976 7777-1214",
@@ -123,10 +126,10 @@
         ]
       },
       {
-        "title": "Address",
+        "title": "주소",
         "lists": [
           {
-            "name": "1003, Minister Tower, 1st khoroo, Sukhbaatar district, Ulaanbaatar, Mongolia",
+            "name": "몽골 울란바토르 수흐바타르 구 1번 코로, 미니스터 타워 1003호",
             "icon": "mapPin"
           }
         ]
@@ -148,5 +151,8 @@
     "Orders": "주문들",
     "logout": "로그아웃",
     "applychanges": "변경 사항 적용"
+  },
+  "Tips": {
+    "title": "TIPS"
   }
 }
