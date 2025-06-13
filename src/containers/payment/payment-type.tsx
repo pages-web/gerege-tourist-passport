@@ -17,12 +17,12 @@ const PaymentType = ({
   kind,
 }: IPaymentOption & { selected: boolean }) => {
   return (
-    <div className="relative">
+    <div className="flex items-center justify-center">
       <Button
         variant="outline"
         className={cn(
-          "h-auto flex-col items-center md:items-start pt-5 pb-4 pl-6 gap-1 group rounded-2xl w-full border-2 border-border/10 shadow-md ease-in duration-100 transition-colors relative",
-          selected && "bg-primary/10 hover:bg-primary/10  border-primary"
+          "h-auto flex-col items-center md:items-start pt-5 pb-4 pl-6 gap-3 group rounded-2xl w-full max-w-sm border-2 border-border/10 shadow-md ease-in duration-100 transition-colors relative",
+          selected && "bg-primary/10 hover:bg-primary/10 border-primary"
         )}
         asChild
       >
@@ -36,20 +36,32 @@ const PaymentType = ({
             )}
           />
 
-          <Image
-            src={`/image/payments/${kind}.png`}
-            alt={kind}
-            className="object-contain rounded-lg mb-0.5"
-            height={36}
-            width={36}
-          />
+          {kind === "qpayQuickqr" ? (
+            <Image
+              src={"/image/payments/qpay.png"}
+              alt="qpay"
+              className="object-contain rounded-lg mb-2"
+              height={120}
+              width={120}
+            />
+          ) : (
+            <Image
+              src={"/image/payments/card.png"}
+              alt="card"
+              className="object-contain rounded-lg mb-2"
+              height={120}
+              width={120}
+            />
+          )}
+
           <div className="flex-auto text-left">
-            <div className={"font-medium capitalize text-black"}>
+            <div className="font-medium capitalize text-black text-lg">
               {kind === "qpayQuickqr" ? "qpay" : "card"}
             </div>
           </div>
+
           <label
-            className={cn("absolute inset-0 rounded-2xl cursor-pointer")}
+            className="absolute inset-0 rounded-2xl cursor-pointer"
             htmlFor={_id}
           />
         </div>
