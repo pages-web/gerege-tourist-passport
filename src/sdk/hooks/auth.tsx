@@ -1,7 +1,7 @@
 import { BaseMutationOptions, useMutation } from "@apollo/client";
 import { mutations } from "../graphql/auth";
 import { useSetAtom } from "jotai";
-import { refetchCurrentUserAtom, loadingUserAtom } from "@/store/auth.store";
+import { loadingUserAtom, refetchCurrentUserAtom } from "@/store/auth.store";
 import { toast } from "sonner";
 import { useRouter, useSearchParams } from "next/navigation";
 import { onError } from "@/lib/utils";
@@ -16,7 +16,6 @@ interface ILoginData {
 
 const useLoginCallback = () => {
   const router = useRouter();
-  const from = useSearchParams().get("from");
   const triggerRefetchUser = useSetAtom(refetchCurrentUserAtom);
   const setLoadingUser = useSetAtom(loadingUserAtom);
 
@@ -33,8 +32,7 @@ const useLoginCallback = () => {
         toast.success("Сайн байна уу?", {
           description: "Та амжилттай нэвтэрлээ",
         });
-
-        router.push(from ? from : "/");
+        router.push("/");
         !!callback && callback();
       }
     },
@@ -43,16 +41,11 @@ const useLoginCallback = () => {
 
 export const useLogin = (onCompleted?: () => void) => {
   const { loginCallback } = useLoginCallback();
-  const router = useRouter();
 
   const [login, { loading }] = useMutation(mutations.login, {
     onCompleted: ({ clientPortalLogin }) => {
       loginCallback(clientPortalLogin, onCompleted);
-      if (clientPortalLogin) {
-        router.push("/");
-      }
     },
-    refetchQueries: ["clientPortalCurrentUser"],
     onError,
   });
 
