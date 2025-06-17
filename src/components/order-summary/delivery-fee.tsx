@@ -10,7 +10,7 @@ const DeliveryFee = () => {
   return (
     <>
       <div className="flex justify-between items-start">
-        <span>GEREGE TOUR CARD</span>
+        <span>GEREGE TOURIST PASSPORT</span>
         <Price amount={totalAmount || 0} />
       </div>
     </>
