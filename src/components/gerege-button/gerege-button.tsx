@@ -21,8 +21,7 @@ const GeregeButton = async ({
   });
 
   const geregeproduct = products.find(
-    (product) => product.code === "gerege_tour_card"
-    // (product) => product.code === "test"
+    (product) => product._id === "cHx5zw_62eVneWNiq0gT8"
   );
 
   if (!geregeproduct) {
