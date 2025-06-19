@@ -52,7 +52,7 @@ export const formatNum = (num: number | string, splitter?: string): string => {
 };
 
 export const onError = (error: ApolloError) =>
-  toast.error("Алдаа гарлаа!", { description: error.message });
+  toast.error("", { description: error.message });
 
 export const getLabel = (status: string) =>
   statusLabel[status as keyof typeof statusLabel] || status;

@@ -17,14 +17,15 @@ export default function Header() {
         <div className="container flex justify-between items-center gap-10">
           <div className="flex flex-col items-center">
             <Link href={"/"}>
-              <div className="w-32 lg:w-40">
+              <div className="w-32 lg:w-40 group relative cursor-pointer">
                 <Image
                   src="/image/logo.png"
                   width={2010}
                   height={1003}
-                  className="w-full h-full"
+                  className="w-full h-full transition-transform duration-300 group-hover:rotate-12"
                   alt="logo"
                 />
+                <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-red-500 via-orange-400 to-transparent transition-all duration-300 group-hover:w-full"></span>
               </div>
             </Link>
 

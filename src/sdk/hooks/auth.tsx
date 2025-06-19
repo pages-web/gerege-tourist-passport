@@ -29,8 +29,8 @@ const useLoginCallback = () => {
         sessionStorage.setItem("refetchToken", refetchToken || "");
         triggerRefetchUser(true);
         setLoadingUser(true);
-        toast.success("Сайн байна уу?", {
-          description: "Та амжилттай нэвтэрлээ",
+        toast.success("Hello ?", {
+          description: "You have successfully logged in",
         });
         router.push("/");
         !!callback && callback();
