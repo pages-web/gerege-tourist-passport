@@ -23,7 +23,8 @@ const OrderSummary = ({
     <Card className={className}>
       <CardHeader className="flex-row space-y-0 justify-between items-center md:py-4 mb-4">
         <div className="font-semibold text-[12px] md:text-[16px] border border-[#AFEAFF] bg-[#AFEAFF]/30 text-[#6399CE] p-[10px] rounded-[12px]">
-          1$ from every purchase will be donated to support children's charity.
+          1$ from every purchase will be donated to support children&apos;s
+          charity.
         </div>
       </CardHeader>
       <CardContent className="py-0 md:py-0 space-y-2 mb-2">
