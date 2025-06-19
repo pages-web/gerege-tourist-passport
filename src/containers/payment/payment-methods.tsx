@@ -1,3 +1,4 @@
+"use client";
 import { usePaymentConfig } from "@/sdk/queries/payment";
 import { RadioGroup } from "@/components/ui/radio-group";
 import PaymentType from "./payment-type";
