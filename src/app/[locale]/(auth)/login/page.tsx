@@ -20,7 +20,7 @@ const Login = () => {
   const t = useTranslations("Welcome");
   return (
     <>
-      <div className="text-lg lg:text-2xl font-semibold mx-auto relative lg:mt-20">
+      <div className="text-lg lg:text-2xl font-semibold mx-auto relative lg:mt-20 ">
         {t("title")}
       </div>
       <div className="mb-auto mx-auto mt-4 lg:mt-8 w-full sm:max-w-md">
