@@ -51,8 +51,15 @@ export const formatNum = (num: number | string, splitter?: string): string => {
   return "0";
 };
 
-export const onError = (error: ApolloError) =>
-  toast.error("", { description: error.message });
+export const onError = (error: ApolloError) => {
+  const code = error.graphQLErrors?.[0]?.extensions?.code;
+
+  if (code === "UNAUTHENTICATED") {
+    toast.error("Invalid Email or Password");
+  } else {
+    toast.error(error.message);
+  }
+};
 
 export const getLabel = (status: string) =>
   statusLabel[status as keyof typeof statusLabel] || status;
