@@ -1,6 +1,7 @@
-export type CustomerType = '' | 'user' | 'company';
+export type CustomerType = "" | "user" | "company";
 
 export interface Customer {
+  gender: string;
   _id: string;
   firstName?: string;
   lastName?: string;

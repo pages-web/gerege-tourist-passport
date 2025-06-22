@@ -15,15 +15,16 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Password } from "@/components/ui/password";
-import Link from "next/link";
 import { useRegister } from "@/sdk/hooks/auth";
 import { toast } from "sonner";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { InfoIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { passwordZod, phoneZod } from "@/lib/zod";
+import { genderZod, passwordZod, phoneZod } from "@/lib/zod";
 import { LoadingIcon } from "@/components/ui/loading";
 import { useTranslations } from "next-intl";
+import { useSetAtom } from "jotai";
+import { currentUserAtom } from "@/store/auth.store";
 
 const formSchema = z.object({
   firstName: z.string().min(1, { message: "Fill input" }),
@@ -31,10 +32,14 @@ const formSchema = z.object({
   email: z.string().email(),
   phone: phoneZod,
   password: passwordZod,
+  gender: genderZod,
 });
 
 const RegisterForm = () => {
   const router = useRouter();
+  const t = useTranslations("Welcome");
+  const setCurrentUser = useSetAtom(currentUserAtom);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -43,22 +48,33 @@ const RegisterForm = () => {
       email: "",
       phone: "",
       password: "",
+      gender: "male",
     },
   });
+
   const { register, loading, clientPortalId } = useRegister();
-  const t = useTranslations("Welcome");
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     register({
       variables: { ...values, clientPortalId },
-      onCompleted() {
-        toast.success("Congratulations, You registered successfully", {
-          description: "Таны имэйл рүү баталгаажуулах холбоос илгээлээ.",
+      onCompleted(data) {
+        setCurrentUser({
+          _id: data?.registeredUser?._id ?? "",
+          email: values.email,
+          gender: values.gender,
+          firstName: values.firstName,
+          lastName: values.lastName,
         });
+
+        toast.success("Congratulations, You registered successfully", {
+          description: t("email_verification_sent"),
+        });
+
         router.push("/login");
       },
     });
   }
+
   return (
     <Form {...form}>
       <form
@@ -146,6 +162,39 @@ const RegisterForm = () => {
             </FormItem>
           )}
         />
+        <FormField
+          control={form.control}
+          name="gender"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t("gender")}</FormLabel>
+              <FormControl>
+                <div className="flex space-x-6">
+                  {["Male", "Female", "Other"].map((gender) => (
+                    <label
+                      key={gender}
+                      className={`inline-flex items-center cursor-pointer ${
+                        field.value === gender
+                          ? "font-semibold text-black"
+                          : "text-gray-400"
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        value={gender}
+                        checked={field.value === gender}
+                        onChange={() => field.onChange(gender)}
+                        className="form-radio"
+                      />
+                      <span className="ml-2">{t(gender)}</span>
+                    </label>
+                  ))}
+                </div>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <Button className="w-full col-span-2" size="lg" disabled={loading}>
           {loading && <LoadingIcon />}
           {t("signup")}
@@ -155,7 +204,7 @@ const RegisterForm = () => {
           <AlertTitle className="text-sm">Caution!</AlertTitle>
           <AlertDescription className="text-xs">
             By clicking the register button, you are considered to have accepted
-            the {`website's`} Terms of Service and Privacy Policy.
+            the website&apos;s Terms of Service and Privacy Policy.
           </AlertDescription>
         </Alert>
       </form>

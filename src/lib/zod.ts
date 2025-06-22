@@ -19,3 +19,7 @@ export const mailZod = z
     /^([A-Z0-9_+-]+\.?)*[A-Z0-9_+-]@([A-Z0-9][A-Z0-9\-]*\.)+[A-Z]{2,}$/,
     "Invalid email"
   );
+
+export const genderZod = z.enum(["male", "female", "other"], {
+  errorMap: () => ({ message: "Please select your gender." }),
+});

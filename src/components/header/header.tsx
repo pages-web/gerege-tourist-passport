@@ -25,11 +25,9 @@ export default function Header() {
                   className="w-full h-full transition-transform duration-300 group-hover:rotate-12"
                   alt="logo"
                 />
-                <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-red-500 via-orange-400 to-transparent transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-white via-gray-400 to-transparent transition-all duration-300 group-hover:w-full"></span>
               </div>
             </Link>
-
-            {/* <HeaderTitle /> */}
           </div>
 
           <div className="lg:flex justify-between items-center text-center gap-8 hidden">

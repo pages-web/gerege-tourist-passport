@@ -6,7 +6,8 @@ const Email = () => {
     <div className="py-12">
       <EmailDescription title="Your email verified">
         <p className="text-black/50">
-          If you want to change your email address, click on the {`"Change email"`} button
+          If you want to change your email address, click on the{" "}
+          {`"Change email"`} button
         </p>
       </EmailDescription>
       <ChangeEmail />

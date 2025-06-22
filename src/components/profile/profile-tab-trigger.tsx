@@ -70,6 +70,13 @@ const ProfileTabsList = () => {
       <ProfileTabTrigger value="password" Icon={LockIcon} description="Change">
         {t("password")}
       </ProfileTabTrigger>
+      <ProfileTabTrigger
+        value={"gender"}
+        description={"Read Only"}
+        Icon={User2Icon}
+      >
+        {t("gender")}
+      </ProfileTabTrigger>
     </TabsList>
   );
 };

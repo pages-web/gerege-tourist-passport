@@ -10,7 +10,7 @@
     ]
   },
   "Carousel": {
-    "slide1_title": "+ 모든 구매에서 1달러가 어린이 자선단체를 지원하는 데 기부됩니다.",
+    "slide1_title": "모든 구매에서 1달러가 어린이 자선단체를 지원하는 데 기부됩니다.",
 
     "slide1_description": "런던의 최고의 명소와 액티비티를 저렴한 가격에 즐기세요.",
     "slide2_title": "런던을 발견하세요",
@@ -150,7 +150,17 @@
     "edithProfile": "프로필 편집",
     "Orders": "주문들",
     "logout": "로그아웃",
-    "applychanges": "변경 사항 적용"
+    "applychanges": "변경 사항 적용",
+    "gender": "성별",
+    "save": "저장",
+    "selectYourGender": "성별을 선택하세요",
+    "male": "남성",
+    "female": "여성",
+    "savedSuccessfully": "성공적으로 저장되었습니다",
+    "selectGender": "성별을 선택하세요",
+    "other": "기타",
+    "successMessage": "성공적으로 등록되었습니다!",
+    "email_verification_sent": "이메일로 인증 링크를 보냈습니다."
   },
   "Tips": {
     "title": "TIPS"

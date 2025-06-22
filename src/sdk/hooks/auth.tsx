@@ -92,7 +92,7 @@ export const useUserEdit = () => {
   const [editUser, { loading }] = useMutation(mutations.userEdit, {
     onCompleted() {
       setRefetchUser(true);
-      toast.success("Хувийн мэдээлэл шинэчлэгдсэн");
+      toast.success("Personal information has been updated");
     },
     onError,
   });
