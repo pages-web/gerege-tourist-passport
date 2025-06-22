@@ -154,15 +154,17 @@
     "gender": "성별",
     "save": "저장",
     "selectYourGender": "성별을 선택하세요",
-    "male": "남성",
-    "female": "여성",
     "savedSuccessfully": "성공적으로 저장되었습니다",
     "selectGender": "성별을 선택하세요",
-    "other": "기타",
     "successMessage": "성공적으로 등록되었습니다!",
     "email_verification_sent": "이메일로 인증 링크를 보냈습니다."
   },
   "Tips": {
     "title": "TIPS"
+  },
+  "Gender": {
+    "male": "남성",
+    "female": "여성",
+    "other": "기타"
   }
 }

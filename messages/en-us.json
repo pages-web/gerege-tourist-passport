@@ -1346,18 +1346,20 @@
     "Orders": "Orders",
     "logout": "Log Out",
     "applychanges": "Apply changes",
-    "gender": "Gender",
+    "genders": "Gender",
     "save": "Save",
     "selectYourGender": "Select your gender",
-    "male": "Male",
-    "female": "Female",
     "savedSuccessfully": "Saved successfully",
     "selectGender": "Select gender",
-    "other": "Other",
     "successMessage": "Successfully registered!",
     "email_verification_sent": "Таны имэйл рүү баталгаажуулах холбоос илгээлээ."
   },
   "Tips": {
     "title": "TIPS"
+  },
+  "Gender": {
+    "male": "Male",
+    "female": "Female",
+    "other": "Other"
   }
 }

@@ -38,6 +38,8 @@ const formSchema = z.object({
 const RegisterForm = () => {
   const router = useRouter();
   const t = useTranslations("Welcome");
+  const tr = useTranslations("Gender");
+
   const setCurrentUser = useSetAtom(currentUserAtom);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -48,7 +50,7 @@ const RegisterForm = () => {
       email: "",
       phone: "",
       password: "",
-      gender: "male",
+      gender: "Male",
     },
   });
 
@@ -165,36 +167,48 @@ const RegisterForm = () => {
         <FormField
           control={form.control}
           name="gender"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{t("gender")}</FormLabel>
-              <FormControl>
-                <div className="flex space-x-6">
-                  {["Male", "Female", "Other"].map((gender) => (
-                    <label
-                      key={gender}
-                      className={`inline-flex items-center cursor-pointer ${
-                        field.value === gender
-                          ? "font-semibold text-black"
-                          : "text-gray-400"
-                      }`}
-                    >
-                      <input
-                        type="radio"
-                        value={gender}
-                        checked={field.value === gender}
-                        onChange={() => field.onChange(gender)}
-                        className="form-radio"
-                      />
-                      <span className="ml-2">{t(gender)}</span>
-                    </label>
-                  ))}
-                </div>
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
+          render={({ field }) => {
+            const genders = ["male", "female", "other"];
+            return (
+              <FormItem>
+                <FormLabel>{t("genders")}</FormLabel>
+                <FormControl>
+                  <div className="flex space-x-6">
+                    {genders.map((genderKey) => (
+                      <label
+                        key={genderKey}
+                        className={`inline-flex items-center cursor-pointer ${
+                          field.value.toLowerCase() === genderKey
+                            ? "font-semibold text-black"
+                            : "text-gray-400"
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          value={
+                            genderKey.charAt(0).toUpperCase() +
+                            genderKey.slice(1)
+                          } // Male, Female, Other
+                          checked={field.value.toLowerCase() === genderKey}
+                          onChange={() =>
+                            field.onChange(
+                              genderKey.charAt(0).toUpperCase() +
+                                genderKey.slice(1)
+                            )
+                          }
+                          className="form-radio"
+                        />
+                        <span className="ml-2">{tr(genderKey)}</span>
+                      </label>
+                    ))}
+                  </div>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            );
+          }}
         />
+
         <Button className="w-full col-span-2" size="lg" disabled={loading}>
           {loading && <LoadingIcon />}
           {t("signup")}
