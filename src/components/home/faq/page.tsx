@@ -42,7 +42,15 @@ export default function FAQ() {
       >
         {cmsPosts.map((post, index) => {
           return (
-            <AccordionItem value={post._id} key={index}>
+            <AccordionItem
+              value={post._id}
+              key={index}
+              className="border border-transparent rounded-lg m-1 text-white shadow-[0_0_10px_rgba(251,146,60,0.7)] hover:shadow-[0_0_20px_rgba(236,72,153,0.8)] transition-shadow duration-300"
+              style={{
+                background:
+                  "linear-gradient(to right, #fb923c, #ef4444, #ec4899)",
+              }}
+            >
               <AccordionTrigger>{post.title}</AccordionTrigger>
               <AccordionContent>
                 <div
@@ -55,7 +63,15 @@ export default function FAQ() {
         })}
         {t("helps").map((help: IHelp, index: number) => {
           return (
-            <AccordionItem value={`item-${index}`} key={index}>
+            <AccordionItem
+              value={`item-${index}`}
+              key={index}
+              className="border border-transparent rounded-lg m-1 text-white shadow-[0_0_10px_rgba(251,146,60,0.7)] hover:shadow-[0_0_20px_rgba(236,72,153,0.8)] transition-shadow duration-300"
+              style={{
+                background:
+                  "linear-gradient(to right, #fb923c, #ef4444, #ec4899)",
+              }}
+            >
               <AccordionTrigger>{help.title}</AccordionTrigger>
               <AccordionContent>
                 {help.list && (

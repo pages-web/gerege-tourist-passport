@@ -40,7 +40,12 @@ const CategoryCard = ({
 
   if (!category.slug) {
     return (
-      <div className="bg-white relative rounded-2xl shadow-[0_1px_8px_rgba(0,0,0,0.1)] flex justify-center items-center px-4 py-10 gap-2">
+      <div
+        className="relative cursor-pointer rounded-2xl shadow-[0_1px_8px_rgba(0,0,0,0.1)] flex flex-col items-center px-4 py-10 gap-2 group transition-all h-full overflow-hidden"
+        style={{
+          background: "linear-gradient(to right, #fb923c, #ef4444, #ec4899)",
+        }}
+      >
         <div className="flex flex-col gap-2 items-center">
           <div className="w-12 h-12">
             <Image
@@ -61,23 +66,29 @@ const CategoryCard = ({
 
   return (
     <Link href={`/benefits/${category._id}`}>
-      <div className="bg-white relative cursor-pointer rounded-2xl shadow-[0_1px_8px_rgba(0,0,0,0.1)] flex justify-center items-center px-4 py-10 gap-2 group transition-all h-full">
-        <div className="flex flex-col gap-2 items-center group-hover:opacity-0 ease-in-out duration-300">
+      <div
+        className="relative cursor-pointer rounded-2xl shadow-[0_1px_8px_rgba(0,0,0,0.1)] flex flex-col items-center px-4 py-10 gap-2 group transition-all h-full overflow-hidden"
+        style={{
+          background: "linear-gradient(to right, #fb923c, #ef4444, #ec4899)",
+        }}
+      >
+        <div className="flex flex-col gap-2 items-center group-hover:opacity-1">
           <div className="w-12 h-12">
             <Image
               src={`${currentImage}?cacheBust=${timestamp}`}
               width={160}
               height={160}
-              className="w-full h-full"
+              className="w-full h-full group-hover:rotate-12 duration-300 ease-in-out"
               alt={category.name}
               key={`${currentImage}-${timestamp}`}
               unoptimized
             />
           </div>
-          <h3 className="text-center font-bold">{category.name}</h3>
+          <h3 className="text-center font-bold relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-[#6399CE] after:w-full after:scale-x-0 after:origin-left after:transition-transform after:duration-300 group-hover:after:scale-x-100">
+            {category.name}
+          </h3>
         </div>
-
-        <h3 className="px-4 w-full capitalize text-center text-[#6399CE] justify-center flex items-center gap-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 ease-in-out duration-300">
+        <h3 className="w-full px-4 capitalize text-[#6399CE] text-center flex items-center justify-center gap-2 -translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 ease-in-out">
           About {category.name} <ArrowRight className="min-w-4 min-h-4" />
         </h3>
       </div>

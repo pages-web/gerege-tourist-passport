@@ -23,18 +23,12 @@ const HeaderTexts = () => {
       {t("texts").map((item: any, index: number) => (
         <Link key={index} href={item.href}>
           <div
-            className={`relative cursor-pointer text-[16px] font-semibold transition-colors duration-200
-              ${
-                pathname === "/" && isLaptop
-                  ? scrolled
-                    ? "text-gray-600"
-                    : "text-white"
-                  : "text-gray-600"
-              }
-              after:absolute after:right-0 after:bottom-0 after:h-[3px] after:w-0
-            after:bg-gray-400 after:transition-all after:duration-300
-              hover:after:left-0 hover:after:w-full text-pink-700 hover:text-gray-400
-            `}
+            className={`relative cursor-pointer text-[18px] font-semibold transition-colors duration-200
+            text-pink-800
+            after:absolute after:right-0 after:bottom-0 after:h-[3px] after:w-0
+            after:bg-gray-700 after:transition-all after:duration-300
+            hover:after:left-0 hover:after:w-full hover:text-gray-700
+          `}
             onClick={() => handleItemClick(index)}
           >
             {item.name}
