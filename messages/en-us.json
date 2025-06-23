@@ -1352,7 +1352,7 @@
     "savedSuccessfully": "Saved successfully",
     "selectGender": "Select gender",
     "successMessage": "Successfully registered!",
-    "email_verification_sent": "Таны имэйл рүү баталгаажуулах холбоос илгээлээ."
+    "email_sent": "A verification link has been sent to your email."
   },
   "Tips": {
     "title": "TIPS"

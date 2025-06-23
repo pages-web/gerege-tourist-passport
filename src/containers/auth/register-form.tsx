@@ -69,7 +69,7 @@ const RegisterForm = () => {
         });
 
         toast.success("Congratulations, You registered successfully", {
-          description: t("email_verification_sent"),
+          description: t("email_sent"),
         });
 
         router.push("/login");
