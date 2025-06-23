@@ -9,11 +9,11 @@ const Gender = () => {
   const gender = user?.gender || "notset";
 
   const bgColor =
-    gender === "male"
+    gender === "Male"
       ? "bg-blue-200 text-blue-800"
-      : gender === "female"
+      : gender === "Female"
       ? "bg-pink-200 text-pink-800"
-      : gender === "other"
+      : gender === "Other"
       ? "bg-gray-200 text-gray-800"
       : "bg-neutral-100 text-neutral-500";
 
