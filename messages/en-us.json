@@ -215,7 +215,8 @@
     "successMessage": "Successfully registered!",
     "email_sent": "A verification link has been sent to your email.",
     "select_age": "Select Age",
-    "payment": "Choose the payment method. Notes: Card payments are available only from abroad."
+    "payment": "Choose the payment method.",
+    "payment2": "Notes: Card payments are available only from abroad."
   },
   "Tips": {
     "title": "TIPS"
