@@ -39,6 +39,7 @@ const PaymentMethods = () => {
     <>
       <h2 className="font-medium md:text-4xl text-black mb-4">
         {t("payment")}
+        {t("payment2")}
       </h2>
       {loading || creatingInvoice ? (
         <Loading className="pt-32" />
