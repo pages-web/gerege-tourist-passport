@@ -62,7 +62,6 @@ const Benefit = ({ params }: IPageProps) => {
   const currentCategory = cmsCategories?.find(
     (category) => category._id === params.slug
   );
-
   const childCategories = cmsCategories?.filter(
     (category) => category.parentId === params.slug
   );
