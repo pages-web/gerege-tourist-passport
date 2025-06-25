@@ -3,11 +3,10 @@ import ProfileLayout from "./profile-layout";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import ProfileTabsList from "@/components/profile/profile-tab-trigger";
 import ChangePhone from "@/components/profile/profile-edit/change-phone";
-import ChangeEmail from "@/components/profile/profile-edit/change-email";
 import ChangePassword from "@/components/profile/profile-edit/change-password";
 import Email from "@/components/profile/profile-edit/email";
 import { useTranslations } from "next-intl";
-import Gender from "@/components/profile/profile-edit/gender";
+import Age from "@/components/profile/profile-edit/age";
 
 const Profile = () => {
   const t = useTranslations("Welcome").raw;
@@ -28,8 +27,8 @@ const Profile = () => {
         <TabsContent value="email">
           <Email />
         </TabsContent>
-        <TabsContent value="gender">
-          <Gender />
+        <TabsContent value="userinfo">
+          <Age />
         </TabsContent>
       </Tabs>
     </ProfileLayout>

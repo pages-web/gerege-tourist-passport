@@ -10,6 +10,7 @@ const currentUser = gql`
       erxesCustomerId
       phone
       email
+      customFieldsData
     }
   }
 `;

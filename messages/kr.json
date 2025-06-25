@@ -5,7 +5,8 @@
       { "name": "집", "href": "/" },
       { "name": "에 대한", "href": "/#about" },
       { "name": "게레게 혜택", "href": "/#gerege-benefit" },
-      { "name": "뉴스 및 팁", "href": "/#news-and-tips" },
+      { "name": "뉴스", "href": "/#news-and-tips" },
+      { "name": "팁", "href": "/#tips" },
       { "name": "자주 묻는 질문", "href": "/#faq" }
     ]
   },
@@ -57,10 +58,6 @@
   "NewsAndTips": {
     "title": "뉴스 및 팁",
     "description": "울란바토르에서 무료로 할 수 있는 것들과 기타 많은 것들"
-  },
-
-  "Gerege Tour Card Benefits": {
-    "title": "게레게 관광 여권의 혜택"
   },
   "FAQ": {
     "title": "FAQ",
@@ -151,7 +148,26 @@
     "Orders": "주문들",
     "logout": "로그아웃",
     "applychanges": "변경 사항 적용",
-    "gender": "성별",
+    "genders": "성별",
+    "age": "나이",
+    "country": "국가",
+    "Verified": "확인됨",
+    "Change": "변화",
+    "Read Only": "읽기 전용",
+    "Change phone": "전화를 바꾸다",
+    "infoPhone": "본인 명의의 휴대폰 번호에서만 요청을 보낼 수 있습니다.",
+    "Your email verified": "이메일이 확인되었습니다",
+    "Change Email": "이메일 주소를 변경하려면 '이메일 변경' 버튼을 클릭하세요.",
+    "PasswordMismatch": "비밀번호가 일치하지 않습니다.",
+    "PasswordChanged": "비밀번호가 변경되었습니다.",
+    "CurrentPassword": "현재 비밀번호",
+    "NewPassword": "새 비밀번호",
+    "VerifyNewPassword": "새 비밀번호 확인",
+    "ChangePassword": "비밀번호 변경",
+    "NotSet": "설정되지 않음",
+    "select_country": "국가 선택",
+    "select_age": "연령 선택",
+    "info": "사용자 정보",
     "save": "저장",
     "selectYourGender": "성별을 선택하세요",
     "savedSuccessfully": "성공적으로 저장되었습니다",

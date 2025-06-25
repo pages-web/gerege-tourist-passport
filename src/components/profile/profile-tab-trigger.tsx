@@ -49,33 +49,37 @@ const ProfileTabsList = () => {
       <ProfileTabTrigger
         value="info"
         Icon={User2Icon}
-        description={firstName || "-"}
+        description={firstName || t("personal")}
       >
         {t("personal")}
       </ProfileTabTrigger>
       <ProfileTabTrigger
         value="phone"
         Icon={Smartphone}
-        description={!loading && isPhoneVerified ? "Verified" : "-"}
+        description={!loading && isPhoneVerified ? t("Verified") : "-"}
       >
         {t("phone")}
       </ProfileTabTrigger>
       <ProfileTabTrigger
         value="email"
         Icon={MailIcon}
-        description={!loading && isEmailVerified ? "Verified" : "-"}
+        description={!loading && isEmailVerified ? t("Verified") : "-"}
       >
         {t("email")}
       </ProfileTabTrigger>
-      <ProfileTabTrigger value="password" Icon={LockIcon} description="Change">
+      <ProfileTabTrigger
+        value="password"
+        Icon={LockIcon}
+        description={t("Change")}
+      >
         {t("password")}
       </ProfileTabTrigger>
       <ProfileTabTrigger
-        value={"gender"}
-        description={"Read Only"}
+        value={"userinfo"}
+        description={t("Read Only")}
         Icon={User2Icon}
       >
-        {t("gender")}
+        {t("info")}
       </ProfileTabTrigger>
     </TabsList>
   );

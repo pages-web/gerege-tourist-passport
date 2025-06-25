@@ -53,7 +53,7 @@ const CurrentUser = () => {
       asChild
     >
       <Link href="/login">
-        <UserIcon className="h-5 w-5" />
+        <UserIcon className="h-6 w-6 border border-black text-black rounded" />
       </Link>
     </Button>
   );

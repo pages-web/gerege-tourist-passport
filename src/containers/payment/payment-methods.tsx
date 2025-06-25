@@ -30,13 +30,13 @@ const PaymentMethods = () => {
 
   useEffect(() => {
     if (payments.length === 1 && !creatingInvoice && data?._id) {
-      setSelectedPayment(payments[0]._id);
+      setSelectedPayment(payments[1]._id);
     }
   }, [payments, creatingInvoice, data?._id]);
 
   return (
     <>
-      <h2 className="font-medium md:text-lg text-white/80 mb-4">
+      <h2 className="font-medium md:text-4xl text-black mb-4">
         Төлбөрийн төрлөө сонгоно уу
       </h2>
       {loading || creatingInvoice ? (

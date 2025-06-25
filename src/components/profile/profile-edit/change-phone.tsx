@@ -23,6 +23,7 @@ import {
   InputOTPSeparator,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
+import { useTranslations } from "next-intl";
 
 const formSchema = z.object({
   phone: phoneZod,
@@ -30,6 +31,7 @@ const formSchema = z.object({
 
 const ChangePhone = () => {
   const { phone, _id } = useAtomValue(currentUserAtom) || {};
+  const t = useTranslations("Welcome");
   const { editUser, loading } = useUserEdit();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -51,11 +53,8 @@ const ChangePhone = () => {
       >
         <SmartphoneIcon className="h-8 w-8 text-black/60" strokeWidth={1.7} />
         <div className="text-center space-y-1 mb-4">
-          <h3 className="font-medium">Change phone</h3>
-          <div className="text-sm text-black/50">
-            You need to be able to send requests only from the mobile number in
-            your name.
-          </div>
+          <h3 className="font-medium">{t("Change phone")}</h3>
+          <div className="text-sm text-black/50">{t("infoPhone")}</div>
         </div>
         <FormField
           control={form.control}

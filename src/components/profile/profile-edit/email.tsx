@@ -1,14 +1,13 @@
 import { MailIcon } from "lucide-react";
 import ChangeEmail from "./change-email";
+import { useTranslations } from "next-intl";
 
 const Email = () => {
+  const t = useTranslations("Welcome");
   return (
     <div className="py-12">
-      <EmailDescription title="Your email verified">
-        <p className="text-black/50">
-          If you want to change your email address, click on the{" "}
-          {`"Change email"`} button
-        </p>
+      <EmailDescription title={t("Your email verified")}>
+        <p className="text-black/50">{t("Change Email")}</p>
       </EmailDescription>
       <ChangeEmail />
     </div>

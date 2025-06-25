@@ -41,12 +41,20 @@ const Benefit = ({ params }: IPageProps) => {
   const linkRefs = useRef<{ [key: string]: HTMLAnchorElement | null }>({});
   const [activeId, setActiveId] = useState<string | null>(null);
 
-  const t = useTranslations("Gerege Tour Card Benefits").raw;
+  const localeMap: Record<string, string> = {
+    "en-us": "en",
+    kr: "ko",
+  };
 
+  const currentLang = localeMap[params.locale] || "en";
   const { cmsPosts: cmsPostsAll, loading: categoryLoading } = useCmsPosts({
     categoryId: params.slug,
+    language: currentLang,
   });
-  const { cmsCategories, loading: postLoading } = useCmsCategories();
+
+  const { cmsCategories, loading: postLoading } = useCmsCategories({
+    language: currentLang,
+  });
 
   const cmsPosts = cmsPostsAll?.filter(
     (post) => post.categoryIds[0] === params.slug
@@ -54,13 +62,7 @@ const Benefit = ({ params }: IPageProps) => {
   const currentCategory = cmsCategories?.find(
     (category) => category._id === params.slug
   );
-  const currentCategoryData: IBenefit =
-    t("frees").find(
-      (free: IBenefitList) => free.title === currentCategory?.slug
-    ) ||
-    t("discount").find(
-      (free: IBenefitList) => free.title === currentCategory?.slug
-    );
+
   const childCategories = cmsCategories?.filter(
     (category) => category.parentId === params.slug
   );

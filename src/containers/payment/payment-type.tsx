@@ -55,8 +55,8 @@ const PaymentType = ({
           )}
 
           <div className="flex-auto text-left">
-            <div className="font-medium capitalize text-black text-lg">
-              {kind === "qpayQuickqr" ? "qpay" : "card"}
+            <div className={"font-medium capitalize text-black"}>
+              {kind === "qpayQuickqr" ? "qpay" : kind}
             </div>
           </div>
 

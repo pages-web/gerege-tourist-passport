@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 const login = gql`
   mutation ClientPortalLogin(
@@ -20,6 +20,7 @@ const createUser = gql`
     $email: String
     $firstName: String
     $lastName: String
+    $customFieldsData: JSON
     $password: String
     $phone: String
     $companyName: String
@@ -34,6 +35,7 @@ const createUser = gql`
       firstName: $firstName
       lastName: $lastName
       password: $password
+      customFieldsData: $customFieldsData
       phone: $phone
       companyName: $companyName
       companyRegistrationNumber: $companyRegistrationNumber

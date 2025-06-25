@@ -1,6 +1,5 @@
 "use client";
 
-import { kbCategoryDetail } from "@/sdk/queries/kb";
 import { useTranslations } from "next-intl";
 import NewsCarousel from "./news-carousel";
 import Heading from "@/components/heading/heading";

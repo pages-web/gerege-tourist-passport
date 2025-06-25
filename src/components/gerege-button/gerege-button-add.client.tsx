@@ -82,7 +82,7 @@ const GeregeButtonAdd = ({
   return (
     <Button
       onClick={handleClick}
-      className={`relative overflow-hidden bg-gradient-to-r from-pink-500 to-orange-400 text-white font-bold text-lg px-6 py-3 h-14 rounded-xl shadow-lg transition-all duration-200 ease-in-out hover:mb-2 after:content-[''] after:absolute after:top-0 after:left-[-100%] after:w-full after:h-full after:bg-white/20 after:transition-all after:duration-[550ms] after:ease-custom hover:after:left-[120%] ${className}`}
+      className={`relative overflow-hidden [#6399CE] text-white w-fit font-bold text-lg px-6 py-3 h-14 rounded-xl shadow-lg transition-all duration-200 ease-in-out after:content-[''] after:absolute after:top-0 after:left-[-100%] after:w-full after:h-full after:bg-white/20 after:transition-all after:duration-[550ms] after:ease-custom hover:after:left-[120%] ${className}`}
     >
       <Store className="mr-2 w-6 h-6" /> {title || "Gerege Buy for 55$"}
     </Button>

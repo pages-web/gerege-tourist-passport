@@ -36,16 +36,13 @@ const CategoryCard = ({
       ? "/image/discounts/beauty.png"
       : category.slug === "other"
       ? "/image/discounts/other.png"
+      : category.slug === "tests"
+      ? "/image/frees/card.jpg"
       : "/image/frees/coming.png";
 
   if (!category.slug) {
     return (
-      <div
-        className="relative cursor-pointer rounded-2xl shadow-[0_1px_8px_rgba(0,0,0,0.1)] flex flex-col items-center px-4 py-10 gap-2 group transition-all h-full overflow-hidden"
-        style={{
-          background: "linear-gradient(to right, #fb923c, #ef4444, #ec4899)",
-        }}
-      >
+      <div className="relative cursor-pointer rounded-2xl shadow-[0_1px_8px_rgba(0,0,0,0.1)] flex flex-col items-center px-4 py-10 gap-2 group transition-all h-full overflow-hidden">
         <div className="flex flex-col gap-2 items-center">
           <div className="w-12 h-12">
             <Image
@@ -66,12 +63,7 @@ const CategoryCard = ({
 
   return (
     <Link href={`/benefits/${category._id}`}>
-      <div
-        className="relative cursor-pointer rounded-2xl shadow-[0_1px_8px_rgba(0,0,0,0.1)] flex flex-col items-center px-4 py-10 gap-2 group transition-all h-full overflow-hidden"
-        style={{
-          background: "linear-gradient(to right, #fb923c, #ef4444, #ec4899)",
-        }}
-      >
+      <div className="relative cursor-pointer rounded-2xl shadow-[0_1px_8px_rgba(0,0,0,0.1)] flex flex-col items-center px-4 py-10 gap-2 group transition-all h-full overflow-hidden">
         <div className="flex flex-col gap-2 items-center group-hover:opacity-1">
           <div className="w-12 h-12">
             <Image
@@ -84,7 +76,7 @@ const CategoryCard = ({
               unoptimized
             />
           </div>
-          <h3 className="text-center font-bold relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-[#6399CE] after:w-full after:scale-x-0 after:origin-left after:transition-transform after:duration-300 group-hover:after:scale-x-100">
+          <h3 className="text-center font-bold text-black relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-[#6399CE] after:w-full after:scale-x-0 after:origin-left after:transition-transform after:duration-300 group-hover:after:scale-x-100">
             {category.name}
           </h3>
         </div>

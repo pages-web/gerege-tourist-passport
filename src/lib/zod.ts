@@ -23,3 +23,6 @@ export const mailZod = z
 export const genderZod = z.enum(["Male", "Female", "Other"], {
   errorMap: () => ({ message: "Please select your gender." }),
 });
+export const ageZod = z.enum(["0-18", "19-30", "31- 50+"], {
+  errorMap: () => ({ message: "Please select your Age." }),
+});

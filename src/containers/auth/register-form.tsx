@@ -20,11 +20,12 @@ import { toast } from "sonner";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { InfoIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { genderZod, passwordZod, phoneZod } from "@/lib/zod";
+import { ageZod, passwordZod, phoneZod } from "@/lib/zod";
 import { LoadingIcon } from "@/components/ui/loading";
 import { useTranslations } from "next-intl";
 import { useSetAtom } from "jotai";
 import { currentUserAtom } from "@/store/auth.store";
+import { useState, useEffect } from "react";
 
 const formSchema = z.object({
   firstName: z.string().min(1, { message: "Fill input" }),
@@ -32,13 +33,31 @@ const formSchema = z.object({
   email: z.string().email(),
   phone: phoneZod,
   password: passwordZod,
-  gender: genderZod,
+  age: ageZod,
+  gender: z.enum(["male", "female", "other"]),
+  country: z.string().min(1, { message: "Select a country" }),
 });
-
+interface Country {
+  code: string;
+  name: string;
+}
 const RegisterForm = () => {
   const router = useRouter();
   const t = useTranslations("Welcome");
   const tr = useTranslations("Gender");
+
+  const [countries, setCountries] = useState<Country[]>([]);
+
+  useEffect(() => {
+    fetch("/countries.json")
+      .then((res) => res.json())
+      .then((data: Country[]) => {
+        setCountries(data);
+      })
+      .catch((error) => {
+        console.error("Error loading countries:", error);
+      });
+  }, []);
 
   const setCurrentUser = useSetAtom(currentUserAtom);
 
@@ -50,22 +69,45 @@ const RegisterForm = () => {
       email: "",
       phone: "",
       password: "",
-      gender: "Male",
+      age: undefined,
+      gender: "male",
+      country: "",
     },
   });
 
   const { register, loading, clientPortalId } = useRegister();
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    const { age, gender, country, ...restValues } = values;
+
+    const customFieldsData = [
+      {
+        field: "RW9QvGiHnj4Uc_zoLXTaj",
+        value: age,
+      },
+      {
+        field: "DQQsZm-hsuQsqPb8W_vbL",
+        value: gender,
+      },
+      {
+        field: "TM6BT3QGRX2vZ50e-7VMj",
+        value: country,
+      },
+    ];
+
     register({
-      variables: { ...values, clientPortalId },
+      variables: { ...restValues, customFieldsData, clientPortalId },
       onCompleted(data) {
         setCurrentUser({
           _id: data?.registeredUser?._id ?? "",
           email: values.email,
-          gender: values.gender,
           firstName: values.firstName,
           lastName: values.lastName,
+          phone: values.phone,
+          customFieldsData: JSON,
+          age,
+          gender,
+          country,
         });
 
         toast.success("Congratulations, You registered successfully", {
@@ -80,8 +122,8 @@ const RegisterForm = () => {
   return (
     <Form {...form}>
       <form
-        className="lg:grid grid-cols-2 space-y-4 lg:space-y-0 gap-y-6 gap-x-3 relative"
         onSubmit={form.handleSubmit(onSubmit)}
+        className="lg:grid grid-cols-2 space-y-4 lg:space-y-0 gap-y-6 gap-x-3 relative"
       >
         <FormField
           control={form.control}
@@ -119,6 +161,69 @@ const RegisterForm = () => {
         />
         <FormField
           control={form.control}
+          name="age"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t("age")}</FormLabel>
+              <FormControl>
+                <select
+                  {...field}
+                  className="input w-full p-2 border rounded"
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    -- {t("select_age")} --
+                  </option>
+                  {ageZod.options.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="gender"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t("genders")}</FormLabel>
+              <FormControl>
+                <select {...field} className="input w-full p-2 border rounded">
+                  <option value="male">{tr("male")}</option>
+                  <option value="female">{tr("female")}</option>
+                  <option value="other">{tr("other")}</option>
+                </select>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="country"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t("country")}</FormLabel>
+              <FormControl>
+                <select {...field} className="input w-full p-2 border rounded">
+                  <option value="">-- {t("select_country")} --</option>
+                  {countries.map((country) => (
+                    <option key={country.code} value={country.name}>
+                      {country.name}
+                    </option>
+                  ))}
+                </select>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem>
@@ -141,11 +246,7 @@ const RegisterForm = () => {
             <FormItem>
               <FormLabel>{t("phone")}</FormLabel>
               <FormControl>
-                <Input
-                  placeholder="0000 0000"
-                  {...field}
-                  autoComplete="tel-national"
-                />
+                <Input placeholder="0000 0000" {...field} autoComplete="tel" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -164,51 +265,6 @@ const RegisterForm = () => {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="gender"
-          render={({ field }) => {
-            const genders = ["male", "female", "other"];
-            return (
-              <FormItem>
-                <FormLabel>{t("genders")}</FormLabel>
-                <FormControl>
-                  <div className="flex space-x-6">
-                    {genders.map((genderKey) => (
-                      <label
-                        key={genderKey}
-                        className={`inline-flex items-center cursor-pointer ${
-                          field.value.toLowerCase() === genderKey
-                            ? "font-semibold text-black"
-                            : "text-gray-400"
-                        }`}
-                      >
-                        <input
-                          type="radio"
-                          value={
-                            genderKey.charAt(0).toUpperCase() +
-                            genderKey.slice(1)
-                          } // Male, Female, Other
-                          checked={field.value.toLowerCase() === genderKey}
-                          onChange={() =>
-                            field.onChange(
-                              genderKey.charAt(0).toUpperCase() +
-                                genderKey.slice(1)
-                            )
-                          }
-                          className="form-radio"
-                        />
-                        <span className="ml-2">{tr(genderKey)}</span>
-                      </label>
-                    ))}
-                  </div>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            );
-          }}
-        />
-
         <Button className="w-full col-span-2" size="lg" disabled={loading}>
           {loading && <LoadingIcon />}
           {t("signup")}
@@ -217,8 +273,8 @@ const RegisterForm = () => {
           <InfoIcon className="h-4 w-4" />
           <AlertTitle className="text-sm">Caution!</AlertTitle>
           <AlertDescription className="text-xs">
-            By clicking the register button, you are considered to have accepted
-            the website&apos;s Terms of Service and Privacy Policy.
+            By clicking register, you accept the Terms of Service and Privacy
+            Policy.
           </AlertDescription>
         </Alert>
       </form>

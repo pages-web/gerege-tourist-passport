@@ -1,7 +1,10 @@
 export type CustomerType = "" | "user" | "company";
 
 export interface Customer {
+  customFieldsData: JSON;
+  age: string;
   gender: string;
+  country: string;
   _id: string;
   firstName?: string;
   lastName?: string;

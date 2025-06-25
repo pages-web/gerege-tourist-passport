@@ -13,6 +13,7 @@ const cmsPosts = gql`
     $tagIds: [String]
     $sortField: String
     $sortDirection: String
+    $language: String
   ) {
     cmsPostList(
       clientPortalId: $clientPortalId
@@ -26,6 +27,7 @@ const cmsPosts = gql`
       tagIds: $tagIds
       sortField: $sortField
       sortDirection: $sortDirection
+      language: $language
     ) {
       currentPage
       totalCount
@@ -168,7 +170,7 @@ const cmsTags = gql`
 
 const cmsPostDetail = gql`
   query Post($id: String) {
-    cmsPost(_id: $id) {
+    cmsPost(_id: $id, language: $language) {
       _id
       type
       clientPortalId

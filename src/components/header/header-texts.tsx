@@ -24,7 +24,7 @@ const HeaderTexts = () => {
         <Link key={index} href={item.href}>
           <div
             className={`relative cursor-pointer text-[18px] font-semibold transition-colors duration-200
-            text-pink-800
+            text-black
             after:absolute after:right-0 after:bottom-0 after:h-[3px] after:w-0
             after:bg-gray-700 after:transition-all after:duration-300
             hover:after:left-0 hover:after:w-full hover:text-gray-700
