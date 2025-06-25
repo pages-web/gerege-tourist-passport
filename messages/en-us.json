@@ -214,7 +214,8 @@
     "selectGender": "Select gender",
     "successMessage": "Successfully registered!",
     "email_sent": "A verification link has been sent to your email.",
-    "select_age": "Select Age"
+    "select_age": "Select Age",
+    "payment": "Select your payment type."
   },
   "Tips": {
     "title": "TIPS"

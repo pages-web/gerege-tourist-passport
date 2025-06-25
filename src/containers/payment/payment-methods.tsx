@@ -9,9 +9,10 @@ import useCreateInvoice from "@/sdk/hooks/payment";
 import { configAtom } from "@/store/auth.store";
 import { useDetail } from "@/components/order-detail/order-detail";
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const PaymentMethods = () => {
+  const t = useTranslations("Welcome");
   const { erxesAppToken, name } = useAtomValue(configAtom) || {};
   const { _id, totalAmount } = useDetail();
   const { contentTypeId } = useAtomValue(invoiceDetailAtom) || {};
@@ -37,7 +38,7 @@ const PaymentMethods = () => {
   return (
     <>
       <h2 className="font-medium md:text-4xl text-black mb-4">
-        Төлбөрийн төрлөө сонгоно уу
+        {t("payment")}
       </h2>
       {loading || creatingInvoice ? (
         <Loading className="pt-32" />
