@@ -17,7 +17,7 @@ import { Loading } from "@/components/ui/loading";
 export default function Benefits() {
   const locale = useLocale();
   const tabs = locale === "kr" ? ["무료", "할인"] : ["Free", "Discount"];
-  const t = useTranslations("Gerege Tour Card Benefits").raw;
+  const t = useTranslations("Benefit").raw;
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
   const [timestamp, setTimestamp] = useState(Date.now());
 

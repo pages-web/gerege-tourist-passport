@@ -27,7 +27,7 @@ const Home = () => {
       </ScrollSection>
 
       <ScrollSection id="news-and-tips">
-        <NewsAndTips params={{}} searchParams={{}} />
+        <NewsAndTips />
       </ScrollSection>
 
       <ScrollSection id="tips">

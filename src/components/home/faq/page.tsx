@@ -45,7 +45,7 @@ export default function FAQ() {
             <AccordionItem
               value={post._id}
               key={index}
-              className="border border-gray-400 rounded-lg m-1"
+              className="rounded-lg m-1"
             >
               <AccordionTrigger>{post.title}</AccordionTrigger>
               <AccordionContent>
@@ -62,7 +62,7 @@ export default function FAQ() {
             <AccordionItem
               value={`item-${index}`}
               key={index}
-              className="border border-gray-400 rounded-lg m-1"
+              className="rounded-lg m-1"
             >
               <AccordionTrigger>{help.title}</AccordionTrigger>
               <AccordionContent>

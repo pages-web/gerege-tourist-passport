@@ -6,7 +6,7 @@
       { "name": "에 대한", "href": "/#about" },
       { "name": "게레게 혜택", "href": "/#gerege-benefit" },
       { "name": "뉴스", "href": "/#news-and-tips" },
-      { "name": "팁", "href": "/#tips" },
+      { "name": "여행 팁", "href": "/#tips" },
       { "name": "자주 묻는 질문", "href": "/#faq" }
     ]
   },
@@ -133,6 +133,9 @@
       }
     ]
   },
+  "Benefit": {
+    "title": "게레게 투어 카드 혜택"
+  },
   "Welcome": {
     "title": "어서오세요",
     "email": "이메일",
@@ -180,7 +183,7 @@
     "other": "기타"
   },
   "Tips": {
-    "title": "TIPS"
+    "title": "여행 팁"
   },
   "Gender": {
     "male": "남성",

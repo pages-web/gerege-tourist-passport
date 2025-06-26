@@ -20,7 +20,7 @@ export default function HomePage() {
       </div>
       <WhyGeregePassport />
       <div className="container space-y-24">
-        <NewsAndTips params={{}} searchParams={{}} />
+        <NewsAndTips />
         {/* <LoyaltyCard /> */}
         <FAQ />
       </div>
