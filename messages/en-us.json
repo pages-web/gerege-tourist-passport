@@ -216,7 +216,10 @@
     "email_sent": "A verification link has been sent to your email.",
     "select_age": "Select Age",
     "payment": "Choose the payment method.",
-    "payment2": "Notes: Card payments are available only from abroad."
+    "payment2": "Notes: Card payments are available only from abroad.",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other"
   },
   "Tips": {
     "title": "TIPS"

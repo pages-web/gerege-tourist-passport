@@ -41,6 +41,7 @@ interface Country {
   code: string;
   name: string;
 }
+
 const RegisterForm = () => {
   const router = useRouter();
   const t = useTranslations("Welcome");
@@ -104,7 +105,7 @@ const RegisterForm = () => {
           firstName: values.firstName,
           lastName: values.lastName,
           phone: values.phone,
-          customFieldsData: JSON,
+          customFieldsData: customFieldsData,
           age,
           gender,
           country,

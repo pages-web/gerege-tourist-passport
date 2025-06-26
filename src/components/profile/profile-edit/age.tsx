@@ -8,16 +8,24 @@ const UserInfo = () => {
   const t = useTranslations("Welcome");
   const user = useAtomValue(currentUserAtom);
 
-  const gender = user?.gender || "notset";
-  const age = user?.age ?? null;
-  const country = user?.country ?? null;
+  const age =
+    user?.customFieldsData?.find((f) => f.field === "RW9QvGiHnj4Uc_zoLXTaj")
+      ?.value ?? null;
+  const gender =
+    user?.customFieldsData?.find((f) => f.field === "DQQsZm-hsuQsqPb8W_vbL")
+      ?.value ?? "notset";
+  const country =
+    user?.customFieldsData?.find((f) => f.field === "TM6BT3QGRX2vZ50e-7VMj")
+      ?.value ?? null;
+
+  const genderLower = gender.toLowerCase();
 
   const genderBgColor =
-    gender === "Male"
+    genderLower === "male"
       ? "bg-blue-200 text-blue-800"
-      : gender === "Female"
+      : genderLower === "female"
       ? "bg-pink-200 text-pink-800"
-      : gender === "Other"
+      : genderLower === "other"
       ? "bg-gray-200 text-gray-800"
       : "border border-red-600 text-black";
 
@@ -31,7 +39,7 @@ const UserInfo = () => {
       <div className="flex items-center">
         <span className="min-w-[80px]">{t("genders")}:</span>
         <span className={`font-medium px-3 py-1 rounded ${genderBgColor}`}>
-          {gender !== "notset" ? gender : t("NotSet")}
+          {gender !== "notset" ? t(genderLower) : t("NotSet")}
         </span>
       </div>
 

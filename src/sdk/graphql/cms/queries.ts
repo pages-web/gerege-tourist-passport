@@ -169,7 +169,7 @@ const cmsTags = gql`
 `;
 
 const cmsPostDetail = gql`
-  query Post($id: String) {
+  query Post($id: String, $language: String) {
     cmsPost(_id: $id, language: $language) {
       _id
       type
