@@ -13,6 +13,7 @@ import Header from "@/components/header/header";
 import DefaultLayout from "@/components/layouts";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import Chat from "@/components/chatBot";
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -84,6 +85,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
             <CurrentOrder />
             <OrderCRUD />
           </Providers>
+          <Chat />
           <Toaster richColors closeButton />
           <SpeedInsights />
         </NextIntlClientProvider>

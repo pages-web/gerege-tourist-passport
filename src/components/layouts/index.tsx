@@ -13,7 +13,7 @@ const DefaultLayout = ({ children }: React.PropsWithChildren) => {
       <div className="lg:hidden w-full sticky bottom-0 p-6 bg-slate-100 z-50">
         <GeregeButton className="w-full" />
       </div>
-      <div className="w-fit h-fit flex flex-col gap-2 fixed z-50 right-2 md:top-[76%] top-[50%]">
+      <div className="w-fit h-fit flex flex-col gap-2 fixed z-50 right-6 md:top-[73%] top-[50%]">
         <GeregeButton isIcon />
         <WeatherAndCurrency />
       </div>

@@ -36,8 +36,6 @@ const CategoryCard = ({
       ? "/image/discounts/beauty.png"
       : category.slug === "other"
       ? "/image/discounts/other.png"
-      : category.slug === "tests"
-      ? "/image/frees/card.jpg"
       : "/image/frees/coming.png";
 
   if (!category.slug) {
