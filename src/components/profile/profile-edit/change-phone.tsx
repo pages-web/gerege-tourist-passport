@@ -63,17 +63,17 @@ const ChangePhone = () => {
             <FormItem>
               <FormControl>
                 <InputOTP
-                  maxLength={8}
+                  maxLength={12}
                   render={({ slots }) => (
                     <>
                       <InputOTPGroup>
-                        {slots.slice(0, 4).map((slot, index) => (
+                        {slots.slice(0, 6).map((slot, index) => (
                           <InputOTPSlot key={index} {...slot} />
                         ))}
                       </InputOTPGroup>
                       <InputOTPSeparator />
                       <InputOTPGroup>
-                        {slots.slice(4).map((slot, index) => (
+                        {slots.slice(6).map((slot, index) => (
                           <InputOTPSlot key={index} {...slot} />
                         ))}
                       </InputOTPGroup>

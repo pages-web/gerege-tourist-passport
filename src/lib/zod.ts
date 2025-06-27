@@ -2,8 +2,9 @@ import { z } from "zod";
 
 export const phoneZod = z
   .string()
-  .regex(/^\d{8}$/, "Invalid Phone number")
-  .min(1, { message: "Phone is required" });
+  .regex(/^\d+$/, { message: "Phone number must contain only digits" })
+  .min(8, { message: "Phone number must be at least 8 digits" })
+  .max(12, { message: "Phone number must be at most 12 digits" });
 
 export const passwordZod = z
   .string()
