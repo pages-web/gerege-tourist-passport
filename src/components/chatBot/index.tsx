@@ -7,43 +7,29 @@ export default function Chat() {
     (window as any).erxesSettings = {
       messenger: {
         brand_id: "QutPmz",
-        appearance: {
-          position: "right",
-          style: {
-            bottom: "100px",
-          },
-        },
       },
     };
-
     const interval = setInterval(() => {
-      const erxesMessenger = document.getElementById(
-        "erxes-messenger-container"
-      );
-      if (erxesMessenger) {
-        const screenWidth = window.innerWidth;
+      const erxesLauncher = document.getElementsByClassName(
+        "erxes-launcher"
+      )[0] as HTMLElement;
 
-        if (screenWidth < 768) {
-          erxesMessenger.style.bottom = "780px";
-          erxesMessenger.style.left = "0px";
-          erxesMessenger.style.right = "20px";
-        } else if (screenWidth >= 768 && screenWidth < 900) {
-          erxesMessenger.style.bottom = "200px";
-          erxesMessenger.style.left = "20px";
-          erxesMessenger.style.right = "auto";
-        } else if (screenWidth >= 900 && screenWidth < 1300) {
-          erxesMessenger.style.bottom = "370px";
-          erxesMessenger.style.left = "30px";
-          erxesMessenger.style.right = "auto";
-        } else {
-          erxesMessenger.style.bottom = "540px";
-          erxesMessenger.style.left = "auto";
-          erxesMessenger.style.right = "20px";
-        }
+      const erxeMessengerShown = document.getElementsByClassName(
+        "erxes-messenger-shown"
+      )[0];
 
-        clearInterval(interval);
+      console.log("erxeMessengerShown", erxeMessengerShown);
+
+      console.log("erxesLauncher", erxesLauncher);
+
+      if (erxesLauncher) {
+        erxesLauncher.style.bottom = "290px";
       }
-    }, 500);
+
+      if (erxeMessengerShown) {
+        erxesLauncher.style.bottom = "90px";
+      }
+    }, 50);
 
     return () => clearInterval(interval);
   }, []);
