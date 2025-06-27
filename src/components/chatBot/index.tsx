@@ -9,29 +9,40 @@ export default function Chat() {
         brand_id: "QutPmz",
       },
     };
+
+    const adjustLauncherPosition = () => {
+      const launcher = document.querySelector(
+        ".erxes-launcher"
+      ) as HTMLElement | null;
+      const isMessengerShown = document.querySelector(".erxes-messenger-shown");
+
+      if (launcher) {
+        launcher.style.bottom = isMessengerShown ? "90px" : "20px";
+      }
+    };
+
+    const observer = new MutationObserver(() => {
+      adjustLauncherPosition();
+    });
     const interval = setInterval(() => {
-      const erxesLauncher = document.getElementsByClassName(
-        "erxes-launcher"
-      )[0] as HTMLElement;
+      const targetNode = document.body;
+      const launcherExists = document.querySelector(".erxes-launcher");
 
-      const erxeMessengerShown = document.getElementsByClassName(
-        "erxes-messenger-shown"
-      )[0];
+      if (launcherExists) {
+        observer.observe(targetNode, {
+          childList: true,
+          subtree: true,
+        });
 
-      console.log("erxeMessengerShown", erxeMessengerShown);
-
-      console.log("erxesLauncher", erxesLauncher);
-
-      if (erxesLauncher) {
-        erxesLauncher.style.bottom = "290px";
+        adjustLauncherPosition();
+        clearInterval(interval);
       }
+    }, 10);
 
-      if (erxeMessengerShown) {
-        erxesLauncher.style.bottom = "90px";
-      }
-    }, 50);
-
-    return () => clearInterval(interval);
+    return () => {
+      observer.disconnect();
+      clearInterval(interval);
+    };
   }, []);
 
   return (
