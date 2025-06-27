@@ -6,7 +6,7 @@ import Heading from "@/components/heading/heading";
 import { useCmsPosts, useCmsTags } from "@/sdk/hooks/cms";
 
 const NewsAndTips = () => {
-  const t = useTranslations("Tips").raw;
+  const t = useTranslations("NewsAndTips").raw;
   const locale = useLocale();
 
   const localeMap: Record<string, string> = {
@@ -25,7 +25,7 @@ const NewsAndTips = () => {
 
   return (
     <div className="container w-full overflow-hidden flex flex-col justify-between gap-14 scroll-mt-40 ">
-      <Heading title={t("title")} data-aos="fade-up" />
+      <Heading title={t("titles")} data-aos="fade-up" />
       <NewsCarousel posts={cmsPosts} />
     </div>
   );

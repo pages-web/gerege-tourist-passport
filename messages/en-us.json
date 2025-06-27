@@ -44,7 +44,7 @@
     "benefits": ["Safe", "Simple", "Smart", "Saving"]
   },
   "NewsAndTips": {
-    "title": "NEWS",
+    "titles": "NEWS",
     "description": "Here’s many things you can do in Ulaanbaatar for free and others",
     "news": [
       {

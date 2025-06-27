@@ -15,13 +15,32 @@ export default function Chat() {
         },
       },
     };
+
     const interval = setInterval(() => {
       const erxesMessenger = document.getElementById(
         "erxes-messenger-container"
       );
       if (erxesMessenger) {
-        erxesMessenger.style.bottom = "270px";
-        erxesMessenger.style.left = "10px";
+        const screenWidth = window.innerWidth;
+
+        if (screenWidth < 768) {
+          erxesMessenger.style.bottom = "780px";
+          erxesMessenger.style.left = "0px";
+          erxesMessenger.style.right = "20px";
+        } else if (screenWidth >= 768 && screenWidth < 900) {
+          erxesMessenger.style.bottom = "200px";
+          erxesMessenger.style.left = "20px";
+          erxesMessenger.style.right = "auto";
+        } else if (screenWidth >= 900 && screenWidth < 1300) {
+          erxesMessenger.style.bottom = "370px";
+          erxesMessenger.style.left = "30px";
+          erxesMessenger.style.right = "auto";
+        } else {
+          erxesMessenger.style.bottom = "540px";
+          erxesMessenger.style.left = "auto";
+          erxesMessenger.style.right = "20px";
+        }
+
         clearInterval(interval);
       }
     }, 500);
