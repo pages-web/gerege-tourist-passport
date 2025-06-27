@@ -67,16 +67,16 @@ const ChangePhone = () => {
                   render={({ slots }) => (
                     <>
                       <InputOTPGroup>
-                        {slots.slice(0, 6).map((slot, index) => (
+                        {slots.slice(0, 12).map((slot, index) => (
                           <InputOTPSlot key={index} {...slot} />
                         ))}
                       </InputOTPGroup>
-                      <InputOTPSeparator />
+                      {/* <InputOTPSeparator />
                       <InputOTPGroup>
                         {slots.slice(6).map((slot, index) => (
                           <InputOTPSlot key={index} {...slot} />
                         ))}
-                      </InputOTPGroup>
+                      </InputOTPGroup> */}
                     </>
                   )}
                   {...field}
