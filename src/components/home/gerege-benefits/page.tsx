@@ -49,7 +49,7 @@ export default function Benefits() {
 
   return (
     <>
-      <div className="container w-full flex flex-col gap-8 scroll-mt-40 ">
+      <div className="container w-full flex flex-col gap-8 scroll-mt-40 mt-20">
         <Heading title={t("title")} data-aos="fade-up" />
 
         <div className="flex justify-center" data-aos="fade-up">

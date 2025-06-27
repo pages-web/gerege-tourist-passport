@@ -32,5 +32,3 @@ const NewsAndTips = () => {
 };
 
 export default NewsAndTips;
-
-// News  NewsAndTips

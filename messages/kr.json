@@ -60,52 +60,51 @@
     "description": "울란바토르에서 무료로 할 수 있는 것들과 기타 많은 것들"
   },
   "FAQ": {
-    "title": "FAQ",
+    "title": "자주 묻는 질문",
     "helps": [
       {
-        "title": "Tourist Information Centers",
+        "title": "관광 안내 센터",
         "list": [
           {
-            "title": "Ulaanbaatar City Center",
+            "title": "울란바토르 시내 센터",
             "location": "47.921933758274015,106.91168166503019",
             "phone": "+976 70108687",
-            "timeTableText": "Weekdays, 08:30–17:30"
+            "timeTableText": "평일, 08:30–17:30"
           },
           {
-            "title": "Chinggis Khaan International Airport",
+            "title": "칭기즈 칸 국제공항",
             "location": "47.659159203174944,106.82449706211038",
             "phone": "+976 90228888, +976  99109012",
-            "timeTableText": "Open 24 hours on weekdays"
+            "timeTableText": "평일 24시간 운영"
           },
           {
-            "title": "Seoul Street Center – “Mongol Olle”",
+            "title": "서울 거리 센터 – “몽골올레”",
             "location": "47.91369596886584,106.90359581164682",
             "phone": "+976 91658011",
-            "timeTableText": "Weekdays, 09:30–18:30"
+            "timeTableText": "평일, 09:30–18:30"
           },
           {
-            "title": "Terelj, Nalaikh District – “Mongol Olle”",
-            "locationText": "“Mongol Olle” Info Center, 6th khoroo, Nalaikh District, Terelj, Ulaanbaatar, Mongolia",
+            "title": "테를지, 날라이흐 구역 – “몽골올레”",
+            "locationText": "“몽골올레” 안내 센터, 6동, 날라이흐 구역, 테를지, 울란바토르, 몽골",
             "phone": "+976 99779870",
-            "timeTableText": "Weekdays, 09:30–18:30"
+            "timeTableText": "평일, 09:30–18:30"
           },
           {
-            "title": "Khoroo 11, Khnokhor Village – “Mongol Olle”",
-            "locationText": "“Mongol Olle” Info Center, 11th khoroo, Khonkhor Village, Bayanzurkh District, Ulaanbaatar, Mongolia",
+            "title": "11동, 혼코르 마을 – “몽골올레”",
+            "locationText": "“몽골올레” 안내 센터, 11동, 혼코르 마을, 바양주르흐 구역, 울란바토르, 몽골",
             "phone": "+976 96668076",
-            "timeTableText": "Weekdays, 09:30–18:30"
+            "timeTableText": "평일, 09:30–18:30"
           }
         ]
       },
       {
-        "title": "Ministry of Foreign Affairs (Hotline): 11-11",
+        "title": "외교부 (핫라인): 11-11",
         "location": "47.9177210702787,106.9210269673856",
         "phone": "1111, 11322127",
-        "timeTableText": "Weekdays, 08:00–17:30"
+        "timeTableText": "평일, 08:00–17:30"
       }
     ]
   },
-
   "footer": {
     "description": "저작권 2025. ⓒ GEREGE TOURIST PASSPORT. 판권 소유.",
     "content": [

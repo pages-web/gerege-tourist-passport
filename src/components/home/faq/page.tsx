@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
-import { useState } from "react";
+import { useTranslations, useLocale } from "next-intl";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import { useTranslations } from "next-intl";
 import {
   Accordion,
   AccordionContent,
@@ -24,14 +23,24 @@ import { IHelp } from "@/types/data.types";
 
 export default function FAQ() {
   const t = useTranslations("FAQ").raw;
+  const locale = useLocale();
 
-  const { cmsTags } = useCmsTags();
+  const localeMap: Record<string, string> = {
+    "en-us": "en",
+    kr: "ko",
+  };
+
+  const currentLang = localeMap[locale] || "en";
+
+  const { cmsTags } = useCmsTags({ language: currentLang });
+
   const { cmsPosts } = useCmsPosts({
     tagIds: [cmsTags.find((tag) => tag.name === "Faq")?._id],
+    language: currentLang,
   });
 
   return (
-    <div className="container space-y-10">
+    <div className="container space-y-10 mt-24">
       <Heading title={t("title")} data-aos="fade-up" />
 
       <Accordion
@@ -40,23 +49,21 @@ export default function FAQ() {
         className="w-full"
         data-aos="fade-up"
       >
-        {cmsPosts.map((post, index) => {
-          return (
-            <AccordionItem
-              value={post._id}
-              key={index}
-              className="rounded-lg m-1"
-            >
-              <AccordionTrigger>{post.title}</AccordionTrigger>
-              <AccordionContent>
-                <div
-                  className="[&>u]:font-bold [&>u]:text-black"
-                  dangerouslySetInnerHTML={{ __html: post.content }}
-                ></div>
-              </AccordionContent>
-            </AccordionItem>
-          );
-        })}
+        {cmsPosts.map((post, index) => (
+          <AccordionItem
+            value={post._id}
+            key={index}
+            className="rounded-lg m-1"
+          >
+            <AccordionTrigger>{post.title}</AccordionTrigger>
+            <AccordionContent>
+              <div
+                className="[&>u]:font-bold [&>u]:text-black"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              ></div>
+            </AccordionContent>
+          </AccordionItem>
+        ))}
         {t("helps").map((help: IHelp, index: number) => {
           return (
             <AccordionItem

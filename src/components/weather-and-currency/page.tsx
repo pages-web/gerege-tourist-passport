@@ -43,7 +43,7 @@ const WeatherAndCurrency: React.FC = () => {
       {activeView === "weather" && (
         <div
           ref={weatherRef}
-          className="absolute -top-6 md:right-[65px] right-11 z-40"
+          className="absolute -top-6 md:right-[65px] right-10 z-40"
         >
           <Weather />
         </div>
