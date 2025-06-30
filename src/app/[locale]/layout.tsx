@@ -62,7 +62,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   const { config } = await getConfig();
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="h-[10px]">
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link

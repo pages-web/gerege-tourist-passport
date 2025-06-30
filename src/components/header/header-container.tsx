@@ -5,7 +5,7 @@ import { usePathname } from "@/navigation";
 import { scrolledAtom } from "@/store/framer.store";
 import { useScroll, motion, useMotionValueEvent } from "framer-motion";
 import { useAtom } from "jotai";
-import { PropsWithChildren, useRef, useState } from "react";
+import { PropsWithChildren } from "react";
 
 const HeaderContainer = ({ children }: PropsWithChildren) => {
   const [scrolled, setScrolled] = useAtom(scrolledAtom);
@@ -25,7 +25,8 @@ const HeaderContainer = ({ children }: PropsWithChildren) => {
 
   return (
     <motion.div
-      className={`w-full mx-auto sticky h-fit top-0 z-50 transition-all duration-300  ${
+      layout
+      className={`w-full fixed top-0 z-50 transition-all duration-300 min-h-[60px] ${
         pathname === "/"
           ? scrolled
             ? "bg-white shadow-md"
@@ -37,4 +38,5 @@ const HeaderContainer = ({ children }: PropsWithChildren) => {
     </motion.div>
   );
 };
+
 export default HeaderContainer;
